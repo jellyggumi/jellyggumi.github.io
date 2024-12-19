@@ -1,8 +1,8 @@
 ---
 layout: home
-main-title: "PHOT&#8226;O&#8226;RAMA"
-subtitle: "Photo Journal"
-description: "Photography and more"
+main-title: "GGumi looks like jelly"
+subtitle: "JellyGGumi's whole life"
+description: "Photo is memory at lovely moment"
 images:
  - image_path: /img/slider/home01.jpg
    gallery-folder: /img/slider/
@@ -77,7 +77,7 @@ images:
 
 <div id="footer" role="contentinfo">
 		<ul class="soc-icons">
-
+<!-- 
                  {% if site.facebook_username %}
 			<li>
    <a href="https://facebook.com/{{ site.facebook_username }}" style="
@@ -94,7 +94,7 @@ color:#dddddd; target="_blank" title="Twitter">
                      </span>
 </a></li>
     {% endif %}
-                {% if site.instagram_username %}
+      {% if site.instagram_username %}
 			<li>
    <a href="https://instagram.com/{{ site.instagram_username }}" style="
 color:#dddddd; target="_blank" title="Instagram">
@@ -129,8 +129,18 @@ color:#dddddd; target="_blank" title="Github">
 color:#dddddd; target="_blank" title="Email">
               <i class="fa fa-envelope-o"></i></span>
           </a> </li>
-	
-					
+     -->
+          {% if site.instagram_username %}
+          <li>
+    <a href="https://instagram.com/{{ site.instagram_username }}" style="
+    color:#dddddd; target="_blank" title="Instagram">
+                           <i class="fa fa-instagram"></i>
+                         </span>
+    </a></li>
+    <a href="mailto:{{ site.email }}" style="
+color:#dddddd; target="_blank" title="Email">
+              <i class="fa fa-envelope-o"></i></span>
+          </a> </li>
 		</ul>	
 	</div>
 
