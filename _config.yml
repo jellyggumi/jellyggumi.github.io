@@ -20,6 +20,7 @@ owner:
   favicon: favicon.ico
   info: photography website template
 
+
 # Settings for comments helper
 # Set 'provider' to the comment provider you want to use. (i.e.  Disqus, Intense Debate, livefyre, or Facebook Comments)
 # Set 'provider' to false to turn commenting off globally.
@@ -30,6 +31,29 @@ comments :
   provider : disqus
   disqus :
     short_name : ""
+
+plugins:
+  - jekyll-analytics
+
+jekyll_analytics:
+  GoogleAnalytics:          # Add, if you want to track with Google Analytics
+    id: G-LZGE8E8VHZ          # Required - replace with your tracking id
+    anonymizeIp: false      # Optional - Default: false - set to true for anonymized tracking
+
+  Matomo:                   # Add, if you want to track with Matomo (former Piwik Analytics)
+    url: matomo.example.com # Required - url to Matomo installation without trailing /
+    siteId: "1234"          # Required - replace with your Matomo site id (Write id as string)
+
+  Piwik:                    # Add, if you want to track with Piwik
+    url: piwik.example.com  # Required - url to Piwik installation without trailing /
+    siteId: "1234"          # Required - replace with your Piwik site id (Write id as string)
+
+  MPulse:                   # Add if you want to track performance with mPulse
+    apikey: XXXXX-YYYYY-ZZZZZ-AAAAA-23456   # Required - replace with your mPulse API key
+
+  Plausible:
+    domain: 'jellyggumi.github.io'   # The domain configured in plausible
+    source: 'https://plausible.example.com/js/plausible.js' # The source of the javascript
 
 # Internal nav
 nav:
