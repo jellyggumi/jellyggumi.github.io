@@ -28,6 +28,8 @@ case2:
   - image_path: /img/post_20241222/p06.jpg
     image-caption: The Public Transportation Transfer System
     image-copyright: © jelly_ggumi 
+tags: [K-Culture]
+categories: [Instruction]
 ---
 
 
