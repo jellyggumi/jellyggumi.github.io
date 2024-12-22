@@ -6,27 +6,27 @@ active: "journal"
 image:
   feature: "pc001.jpg"
 date: "2024-12-21"
-header-img: "img/postcover/pc001.jpg"
+header-img: "img/postcover/pc002.jpg"
 comments: "false"
 case1: 
   - image_path: /img/post_20241222/p01.jpg
-    image-caption: IMAGE TITLE
+    image-caption: Korea’s Delivery Culture
     image-copyright: © jelly_ggumi
   - image_path: /img/post_20241222/p02.jpg
-    image-caption: IMAGE TITLE
+    image-caption: Korea’s Restaurant Culture
     image-copyright: © jelly_ggumi
   - image_path: /img/post_20241222/p03.jpg
-    image-caption: IMAGE TITLE
+    image-caption: The Diverse Lifestyle Culture of Korea
     image-copyright: © jelly_ggumi 
 case2: 
   - image_path: /img/post_20241222/p04.jpg
-    image-caption: IMAGE TITLE
+    image-caption: A Country with Proficient English Speakers
     image-copyright: © jelly_ggumi
   - image_path: /img/post_20241222/p05.jpg
-    image-caption: IMAGE TITLE
+    image-caption: The Concept of Basic Side Dishes in Korean Restaurants
     image-copyright: © jelly_ggumi
   - image_path: /img/post_20241222/p06.jpg
-    image-caption: IMAGE TITLE
+    image-caption: The Public Transportation Transfer System
     image-copyright: © jelly_ggumi 
 ---
 
@@ -63,7 +63,7 @@ Korean restaurant culture includes many intriguing elements for foreigners. Ther
 Korea is home to a variety of unique cultural practices that often amaze foreigners! For example, when you order food, it typically arrives within 30 to 40 minutes. 
 
 Even at supermarkets with long lines, quick-handed cashiers ensure a speedy checkout process. Foreigners are especially impressed by Korea’s “ppalli-ppalli” (hurry-hurry) culture, as well as its efficient taxi services and other aspects of daily life.
-
+<br>
 <!-- Gallery __-->
 			
 {% include subgallery.html id="case1" %}
@@ -88,6 +88,7 @@ Additionally, unlike Western side dishes, which are typically chosen by the cust
 Korea’s well-developed public transportation transfer system is something that amazes many foreigners when they visit. In many other countries, public transportation systems often lack convenient transfer options, causing inconvenience. However, Korea operates various modes of transportation, including subways, buses, and trains, all interconnected through an efficient transfer system.
 
 This seamless integration between different modes of transportation provides foreigners with a sense of amazement and convenience, making their travel experiences in Korea much smoother and more enjoyable!
+<br>
 
 <!-- Gallery __-->
 			
