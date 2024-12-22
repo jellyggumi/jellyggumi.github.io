@@ -55,16 +55,16 @@ categories: [Instruction]
 
 <h3>Korea’s Restaurant Culture</h3>
 
-One of the most notable aspects of Korean culture that surprises foreigners when they visit is the restaurant culture! Korea’s restaurant culture is quite different from that of other countries.
+<p>One of the most notable aspects of Korean culture that surprises foreigners when they visit is the restaurant culture! Korea’s restaurant culture is quite different from that of other countries.
 
-Korean restaurant culture includes many intriguing elements for foreigners. There’s no need to tip table servers, you don’t have to pay for water, and side dishes are often unlimited. Additionally, the culture of sharing tables with others provides foreigners with a unique and refreshing experience that feels truly distinctive!
+Korean restaurant culture includes many intriguing elements for foreigners. There’s no need to tip table servers, you don’t have to pay for water, and side dishes are often unlimited. Additionally, the culture of sharing tables with others provides foreigners with a unique and refreshing experience that feels truly distinctive!</p>
 
 
 <h3>The Diverse Lifestyle Culture of Korea</h3>
 
-Korea is home to a variety of unique cultural practices that often amaze foreigners! For example, when you order food, it typically arrives within 30 to 40 minutes. 
+<p>Korea is home to a variety of unique cultural practices that often amaze foreigners! For example, when you order food, it typically arrives within 30 to 40 minutes. 
 
-Even at supermarkets with long lines, quick-handed cashiers ensure a speedy checkout process. Foreigners are especially impressed by Korea’s “ppalli-ppalli” (hurry-hurry) culture, as well as its efficient taxi services and other aspects of daily life.
+Even at supermarkets with long lines, quick-handed cashiers ensure a speedy checkout process. Foreigners are especially impressed by Korea’s “ppalli-ppalli” (hurry-hurry) culture, as well as its efficient taxi services and other aspects of daily life.</p>
 <br>
 <!-- Gallery __-->
 			
@@ -74,22 +74,22 @@ Even at supermarkets with long lines, quick-handed cashiers ensure a speedy chec
 
 <h3>A Country with Proficient English Speakers</h3>
 
-Korea is not an English-speaking country, nor is it like Singapore or the Philippines, where English is widely used as an official language in Asia. However, many foreign tourists who have visited Korea often express their surprise, saying they expected communication to be difficult but found that people speak English better than they anticipated.
+<p>Korea is not an English-speaking country, nor is it like Singapore or the Philippines, where English is widely used as an official language in Asia. However, many foreign tourists who have visited Korea often express their surprise, saying they expected communication to be difficult but found that people speak English better than they anticipated.
 
-As in many non-English-speaking countries, younger people tend to be more proficient in English. But in Korea, tourists are particularly amazed by how well they can communicate in English when they approach someone for help, even though it’s not an English-speaking country.
+As in many non-English-speaking countries, younger people tend to be more proficient in English. But in Korea, tourists are particularly amazed by how well they can communicate in English when they approach someone for help, even though it’s not an English-speaking country.</p>
 
 <h3>The Concept of Basic Side Dishes in Korean Restaurants</h3>
 
-Korea’s restaurant culture features an abundance of side dishes served alongside the main course, which is often referred to as a “hansang charim,” meaning a well-prepared table setting. When you order a main dish at a Korean restaurant, the sheer variety and quantity of side dishes can be astonishing. What’s even more surprising to foreigners is that these side dishes are often offered with unlimited refills, bringing both delight and amazement.
+<p>Korea’s restaurant culture features an abundance of side dishes served alongside the main course, which is often referred to as a “hansang charim,” meaning a well-prepared table setting. When you order a main dish at a Korean restaurant, the sheer variety and quantity of side dishes can be astonishing. What’s even more surprising to foreigners is that these side dishes are often offered with unlimited refills, bringing both delight and amazement.
 
-Additionally, unlike Western side dishes, which are typically chosen by the customer, Korean side dishes are pre-selected and served by the restaurant. This unique approach highlights the cultural difference and emphasizes that the concept of “banchan” (side dishes) is best left untranslated in English to preserve its cultural significance.
+Additionally, unlike Western side dishes, which are typically chosen by the customer, Korean side dishes are pre-selected and served by the restaurant. This unique approach highlights the cultural difference and emphasizes that the concept of “banchan” (side dishes) is best left untranslated in English to preserve its cultural significance.</p>
 
 
 <h3>The Public Transportation Transfer System</h3>
 
-Korea’s well-developed public transportation transfer system is something that amazes many foreigners when they visit. In many other countries, public transportation systems often lack convenient transfer options, causing inconvenience. However, Korea operates various modes of transportation, including subways, buses, and trains, all interconnected through an efficient transfer system.
+<p>Korea’s well-developed public transportation transfer system is something that amazes many foreigners when they visit. In many other countries, public transportation systems often lack convenient transfer options, causing inconvenience. However, Korea operates various modes of transportation, including subways, buses, and trains, all interconnected through an efficient transfer system.
 
-This seamless integration between different modes of transportation provides foreigners with a sense of amazement and convenience, making their travel experiences in Korea much smoother and more enjoyable!
+This seamless integration between different modes of transportation provides foreigners with a sense of amazement and convenience, making their travel experiences in Korea much smoother and more enjoyable!</p>
 <br>
 
 <!-- Gallery __-->
