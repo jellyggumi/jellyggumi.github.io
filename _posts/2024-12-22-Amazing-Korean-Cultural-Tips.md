@@ -7,7 +7,7 @@ image:
   feature: "pc001.jpg"
 date: "2024-12-21"
 header-img: "img/postcover/pc002.jpg"
-comments: "false"
+comments: false
 case1: 
   - image_path: /img/post_20241222/p01.jpg
     image-caption: Korea’s Delivery Culture
