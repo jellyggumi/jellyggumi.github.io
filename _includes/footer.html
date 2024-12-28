@@ -66,7 +66,13 @@
                         </a>
                     </li>
                     {% endif %} -->
-
+                    {% if site.naver_username %}
+                        <li>
+                    <a href="https://blog.naver.com/{{ site.naver_username }}" style="color:#dddddd; target="_blank" title="Naver">
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                    </span>
+                    </a></li>
+                    {% endif %}
                     {% if site.instagram_username %}
                     <li>
                         <a href="https://instagram.com/{{ site.instagram_username }}" data-toggle="tooltip" title="Instagram">
@@ -86,12 +92,12 @@
           </a> </li>
 
          <li>
-                        <a href="{{ "/feed.xml" | prepend: site.baseurl }}" data-toggle="tooltip" title="Feed">
+                        <!-- <a href="{{ "/feed.xml" | prepend: site.baseurl }}" data-toggle="tooltip" title="Feed">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
                             </span>
-                        </a>
+                        </a> -->
                     </li>
                 </ul>
                 <p class="copyright text-muted">Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}</p>
