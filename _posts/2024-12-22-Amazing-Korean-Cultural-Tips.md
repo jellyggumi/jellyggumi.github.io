@@ -1,6 +1,6 @@
 ---
 layout: "post"
-title: "6 Amazing Korean Cultural Tips That Surprise Foreigners"
+title: "Amazing Korean Cultural Tips That Surprise Foreigners"
 subtitle: "Unique Lifestyle Culture of Korea"
 active: "journal"
 image:
