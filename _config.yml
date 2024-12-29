@@ -72,7 +72,7 @@ translations:
 destination:      	 ./_site
 port:             	 4000
 
-
+google_site_verification: mfV0-xbtMeYnOR_RUx43PwdtFtWH5HlaJ7xFxITxyRA
 # Build settings
 markdown: kramdown
 highlighter: rouge
