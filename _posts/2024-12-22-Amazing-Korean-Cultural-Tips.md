@@ -30,6 +30,9 @@ case2:
     image-copyright: © jelly_ggumi 
 tags: [K-Culture]
 categories: [Instruction]
+sitemap :
+  changefreq : daily
+  priority : 1.0
 ---
 
 
