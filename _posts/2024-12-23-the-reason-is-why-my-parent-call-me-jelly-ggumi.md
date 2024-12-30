@@ -9,14 +9,14 @@ date: "2024-12-23"
 header-img: "img/postcover/pc003.jpg"
 comments: false
 case1: 
-  - image_path: /img/post/20241222/p01.jpg
-    image-caption: Korea’s Delivery Culture
+  - image_path: /img/post/20241223/p01.jpg
+    image-caption: Jelly GGumi at first
     image-copyright: © jelly_ggumi
-  - image_path: /img/post/20241222/p02.jpg
-    image-caption: Korea’s Restaurant Culture
+  - image_path: /img/post/20241223/p02.jpg
+    image-caption: More bigger Jelly GGumi
     image-copyright: © jelly_ggumi
-  - image_path: /img/post/20241222/p03.jpg
-    image-caption: The Diverse Lifestyle Culture of Korea
+  - image_path: /img/post/20241223/p03.jpg
+    image-caption: More bigger Jelly GGumi
     image-copyright: © jelly_ggumi 
 
 tags: [JellyGGumi]
