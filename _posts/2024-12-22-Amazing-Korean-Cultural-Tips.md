@@ -9,27 +9,27 @@ date: "2024-12-21"
 header-img: "img/postcover/pc002.jpg"
 comments: false
 case1: 
-  - image_path: /img/post_20241222/p01.jpg
+  - image_path: /img/post/20241222/p01.jpg
     image-caption: Korea’s Delivery Culture
     image-copyright: © jelly_ggumi
-  - image_path: /img/post_20241222/p02.jpg
+  - image_path: /img/post/20241222/p02.jpg
     image-caption: Korea’s Restaurant Culture
     image-copyright: © jelly_ggumi
-  - image_path: /img/post_20241222/p03.jpg
+  - image_path: /img/post/20241222/p03.jpg
     image-caption: The Diverse Lifestyle Culture of Korea
     image-copyright: © jelly_ggumi 
 case2: 
-  - image_path: /img/post_20241222/p04.jpg
+  - image_path: /img/post/20241222/p04.jpg
     image-caption: A Country with Proficient English Speakers
     image-copyright: © jelly_ggumi
-  - image_path: /img/post_20241222/p05.jpg
+  - image_path: /img/post/20241222/p05.jpg
     image-caption: The Concept of Basic Side Dishes in Korean Restaurants
     image-copyright: © jelly_ggumi
-  - image_path: /img/post_20241222/p06.jpg
+  - image_path: /img/post/20241222/p06.jpg
     image-caption: The Public Transportation Transfer System
     image-copyright: © jelly_ggumi 
 tags: [K-Culture]
-categories: [Instruction]
+categories: [Cultural Tips]
 sitemap :
   changefreq : daily
   priority : 1.0
