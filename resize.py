@@ -1,7 +1,7 @@
 from PIL import Image
 import os 
 
-def resize_images_from_folder(folder_path,size=(2048, 2048)):
+def resize_images_from_folder(folder_path):
     """
     지정된 폴더에서 이미지를 읽어오는 함수.
 
@@ -20,9 +20,10 @@ def resize_images_from_folder(folder_path,size=(2048, 2048)):
             if os.path.isfile(file_path) and file_name.lower().endswith(('png', 'jpg', 'jpeg', 'bmp', 'gif')):
                 try:
                     img = Image.open(file_path)  # 이미지 열기
-                    resized_img = img.resize(size)
-                    # images.append(img)
+                    w,h = img.size
                     # Save the resized image
+                    # resized_img = img.resize((w, h), Image.ANTIALIAS)
+                    resized_img = img.resize((w, h))
                     resized_img.save(file_path)
                     print(f"이미지 로드 성공: {file_name}")
                 except Exception as e:
