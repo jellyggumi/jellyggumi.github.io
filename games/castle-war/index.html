@@ -1,54 +1,197 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="ko">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | castle-war</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#0a0c14">
+    <title>Castle War | 물리 공성전</title>
+    <meta name="description" content="영웅을 발사해 성벽을 무너뜨리고 적의 핵심 성채를 점령하는 2D 물리 공성전.">
+    <link rel="canonical" href="https://jellyggumi.github.io/games/castle-war/">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
+
+    <meta property="og:title" content="Castle War — 캐슬 워">
+    <meta property="og:description" content="영웅을 발사해 성벽을 무너뜨리고 적의 핵심 성채를 점령하는 2D 물리 공성전.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jellyggumi.github.io/games/castle-war/">
+    <meta property="og:site_name" content="Castle War">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:image" content="https://jellyggumi.github.io/games/castle-war/social-preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="공성 발사대에서 날아간 기사가 적 성벽을 무너뜨리는 Castle War 전장.">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Castle War — 캐슬 워">
+    <meta name="twitter:description" content="영웅을 발사해 성벽을 무너뜨리고 적의 핵심 성채를 점령하는 2D 물리 공성전.">
+    <meta name="twitter:image" content="https://jellyggumi.github.io/games/castle-war/social-preview.png">
+    <meta name="twitter:image:alt" content="공성 발사대에서 날아간 기사가 적 성벽을 무너뜨리는 Castle War 전장.">
+    <style>
+      :root {
+        color-scheme: dark;
+        --kr-font: "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR",
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      }
+
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        overscroll-behavior: none;
+        background: #05060a;
+        touch-action: none;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+      }
+
+      body {
+        font-family: var(--kr-font);
+      }
+
+      #unity-container {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background: #05060a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      #unity-canvas {
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: #0a0c14;
+        touch-action: none;
+        outline: 3px solid transparent;
+        outline-offset: -3px;
+      }
+
+      #unity-canvas:focus-visible {
+        outline-color: #f2c14f;
+      }
+
+      /* Dark siege loading screen */
+      #unity-loading-bar {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 22px;
+        background:
+          radial-gradient(ellipse at 50% 30%, rgba(70, 90, 140, 0.18) 0%, rgba(5, 6, 10, 0) 60%),
+          linear-gradient(180deg, #0a0c16 0%, #05060a 60%, #020204 100%);
+        z-index: 20;
+      }
+
+      #unity-loading-emblem {
+        font-size: 52px;
+        filter: drop-shadow(0 0 18px rgba(120, 160, 255, 0.35));
+        animation: castle-pulse 1.8s ease-in-out infinite;
+      }
+
+      @keyframes castle-pulse {
+        0%, 100% { transform: scale(1); opacity: 0.92; }
+        50% { transform: scale(1.06); opacity: 1; }
+      }
+
+      #unity-loading-text {
+        font-family: var(--kr-font);
+        font-size: 16px;
+        letter-spacing: 0.02em;
+        color: #cfd8f0;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+      }
+
+      #unity-progress-bar-empty {
+        width: min(320px, 70vw);
+        height: 10px;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(140, 170, 255, 0.28);
+        overflow: hidden;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+      }
+
+      #unity-progress-bar-full {
+        width: 0%;
+        height: 100%;
+        border-radius: 6px;
+        background: linear-gradient(90deg, #3a5bc7 0%, #6f9dff 60%, #a9c4ff 100%);
+        box-shadow: 0 0 10px rgba(111, 157, 255, 0.6);
+        transition: width 0.15s ease-out;
+      }
+
+      #unity-warning {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 30;
+        font-family: var(--kr-font);
+        font-size: 13px;
+        pointer-events: none;
+      }
+
+      #unity-warning > div {
+        pointer-events: auto;
+        margin: 6px auto;
+        max-width: 90vw;
+        border-radius: 6px;
+        text-align: center;
+      }
+
+      #unity-footer {
+        display: none;
+      }
+    </style>
   </head>
   <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
+    <div id="unity-container">
+      <canvas id="unity-canvas" width="960" height="600" tabindex="-1" aria-label="Castle War gameplay canvas"></canvas>
       <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
+        <div id="unity-loading-emblem">🏰</div>
         <div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
         </div>
+        <div id="unity-loading-text">불러오는 중…</div>
       </div>
-      <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">castle-war</div>
-      </div>
+      <div id="unity-warning"></div>
     </div>
     <script>
-
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+      var loadingText = document.querySelector("#unity-loading-text");
       var warningBanner = document.querySelector("#unity-warning");
 
-      // Shows a temporary message banner/ribbon for a few seconds, or
-      // a permanent error message on top of the canvas if type=='error'.
-      // If type=='warning', a yellow highlight color is used.
-      // Modify or remove this function to customize the visually presented
-      // way that non-critical warnings and error messages are presented to the
-      // user.
+      // Shows a temporary message banner/ribbon for a few seconds, or a permanent
+      // error message on top of the canvas if type=='error'.
       function unityShowBanner(msg, type) {
         function updateBannerVisibility() {
-          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+          warningBanner.style.display = warningBanner.children.length ? "block" : "none";
         }
-        var div = document.createElement('div');
+        var div = document.createElement("div");
         div.innerHTML = msg;
         warningBanner.appendChild(div);
-        if (type == 'error') div.style = 'background: red; padding: 10px;';
+        if (type == "error") div.style = "background: #7a1f1f; color: #ffe4e4; padding: 10px;";
         else {
-          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-          setTimeout(function() {
+          if (type == "warning") div.style = "background: #7a5a1f; color: #fff3d6; padding: 10px;";
+          setTimeout(function () {
             warningBanner.removeChild(div);
             updateBannerVisibility();
           }, 5000);
@@ -69,63 +212,50 @@
         showBanner: unityShowBanner,
       };
 
-      // By default, Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
+      // Keep keyboard input (1/2/3 unit select, etc.) flowing to the canvas after
+      // boot and on every tap/click. tabindex=-1 keeps this single full-screen
+      // application surface out of normal document Tab order while preserving
+      // programmatic focus and the focus-visible treatment above.
+      function focusCanvas() {
+        if (canvas) canvas.focus();
+      }
+      canvas.tabIndex = -1;
+      canvas.addEventListener("click", focusCanvas);
+      canvas.addEventListener("pointerdown", focusCanvas);
 
-      // If you would like all file writes inside Unity Application.persistentDataPath
-      // directory to automatically persist so that the contents are remembered when
-      // the user revisits the site the next time, uncomment the following line:
-      // config.autoSyncPersistentDataPath = true;
-      // This autosyncing is currently not the default behavior to avoid regressing
-      // existing user projects that might rely on the earlier manual
-      // JS_FileSystem_Sync() behavior, but in future Unity version, this will be
-      // expected to change.
+      // Block the browser gestures that fight a full-screen touch siege game:
+      // page scroll/bounce, pinch-zoom, and the long-press context menu.
+      var preventDefaultTouch = function (e) { e.preventDefault(); };
+      canvas.addEventListener("touchstart", preventDefaultTouch, { passive: false });
+      canvas.addEventListener("touchmove", preventDefaultTouch, { passive: false });
+      canvas.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+      document.addEventListener("gesturestart", preventDefaultTouch);
 
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
         container.className = "unity-mobile";
-        canvas.className = "unity-mobile";
-
-        // To lower canvas resolution on mobile devices to gain some
-        // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
-
-
-      } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
+        config.devicePixelRatio = 1;
       }
 
-      loadingBar.style.display = "block";
+      loadingBar.style.display = "flex";
 
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
-              }).then((unityInstance) => {
-                loadingBar.style.display = "none";
-                fullscreenButton.onclick = () => {
-                  unityInstance.SetFullscreen(1);
-                };
-              }).catch((message) => {
-                alert(message);
-              });
-            };
+        }).then((unityInstance) => {
+          loadingBar.style.display = "none";
+          // Unity's loader resets the canvas tabindex; keep it programmatically
+          // focusable without adding a single application surface to Tab order.
+          canvas.tabIndex = -1;
+          focusCanvas();
+        }).catch((message) => {
+          loadingText.textContent = "불러오지 못했습니다";
+          unityShowBanner(message, "error");
+        });
+      };
 
       document.body.appendChild(script);
-
     </script>
   </body>
 </html>

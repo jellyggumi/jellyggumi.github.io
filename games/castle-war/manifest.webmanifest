@@ -1,0 +1,27 @@
+{
+  "name": "Castle War — 캐슬 워",
+  "short_name": "Castle War",
+  "description": "영웅을 발사해 성벽을 무너뜨리고 적의 핵심 성채를 점령하는 2D 물리 공성전.",
+  "lang": "ko-KR",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#05060a",
+  "theme_color": "#0a0c14",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

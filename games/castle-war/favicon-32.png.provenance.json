@@ -1,0 +1,18 @@
+{
+  "file": "favicon-32.png",
+  "prompt": "Purpose-drawn 32px Castle War favicon: three-tower stone keep, split blue/red inner field, simplified gold helmet/shield, transparent-text-free dark background.",
+  "tool": "ImageMagick 7.1.1 purpose-drawn pixel primitives",
+  "generatedAt": "2026-08-09T08:12:53.945Z",
+  "checksumSha256": "ccbcc2085021760416548c6db3af9c96b04955448760fafdf0ec34826a5c99b6",
+  "runtimeEligible": true,
+  "notes": "Authored directly at 32x32; not a blurred reduction.",
+  "width": 32,
+  "height": 32,
+  "audit": {
+    "reviewDate": "2026-08-09",
+    "evidence": "Independent release-art review found no visually apparent third-party marks; provenance and banner/favicon defects were then remediated.",
+    "status": "independent PASS — FinalReleaseArtReview",
+    "closedAt": "2026-08-09T08:16:29.820Z",
+    "result": "No remaining S1-S3 release-art findings; dimensions, exact asset SHA-256, crest remediation, icon legibility, metadata wiring, and keyboard focus treatment independently verified."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "file": "icon-192.png",
+  "prompt": "192x192 PWA icon derived from the audited Castle War icon source.",
+  "tool": "ImageMagick 7.1.1 point-filter resize",
+  "generatedAt": "2026-08-09T08:12:53.945Z",
+  "checksumSha256": "6b978967b1414f5d5e5dde0d85cbbeb2c209f730d05f7b408a64fb01c7d12eb1",
+  "runtimeEligible": true,
+  "notes": "Source: _workspace/current/design/concept/release/castle-war-icon-source.png.",
+  "width": 192,
+  "height": 192,
+  "audit": {
+    "reviewDate": "2026-08-09",
+    "evidence": "Independent release-art review found no visually apparent third-party marks; provenance and banner/favicon defects were then remediated.",
+    "status": "independent PASS — FinalReleaseArtReview",
+    "closedAt": "2026-08-09T08:16:29.821Z",
+    "result": "No remaining S1-S3 release-art findings; dimensions, exact asset SHA-256, crest remediation, icon legibility, metadata wiring, and keyboard focus treatment independently verified."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "file": "apple-touch-icon.png",
+  "prompt": "180x180 icon derived from the audited Castle War icon source.",
+  "tool": "ImageMagick 7.1.1 point-filter resize",
+  "generatedAt": "2026-08-09T08:12:53.945Z",
+  "checksumSha256": "d9cf72e2109976a1c000ca345b25fa34d22a588e4d76f5c2b597c1335fbf5bc8",
+  "runtimeEligible": true,
+  "notes": "Source: _workspace/current/design/concept/release/castle-war-icon-source.png.",
+  "width": 180,
+  "height": 180,
+  "audit": {
+    "reviewDate": "2026-08-09",
+    "evidence": "Independent release-art review found no visually apparent third-party marks; provenance and banner/favicon defects were then remediated.",
+    "status": "independent PASS — FinalReleaseArtReview",
+    "closedAt": "2026-08-09T08:16:29.821Z",
+    "result": "No remaining S1-S3 release-art findings; dimensions, exact asset SHA-256, crest remediation, icon legibility, metadata wiring, and keyboard focus treatment independently verified."
+  }
+}
