@@ -1,0 +1,42 @@
+---
+layout: null
+title: Games
+permalink: /games/
+---
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Games · Jelly GGumi</title>
+<style>
+  :root { --bg:#101418; --card:#1b232b; --ink:#e8edf2; --sub:#9fb0bf; --accent:#5aa9e6; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--ink); font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif; min-height:100vh; display:flex; flex-direction:column; align-items:center; padding:48px 20px; }
+  h1 { font-size:2rem; letter-spacing:.08em; margin-bottom:.4rem; }
+  p.tag { color:var(--sub); margin-bottom:36px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,320px)); gap:20px; width:100%; max-width:720px; justify-content:center; }
+  .card { background:var(--card); border-radius:14px; padding:24px; text-decoration:none; color:inherit; display:block; transition:transform .15s ease, box-shadow .15s ease; border:1px solid #2a3540; }
+  .card:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,.4); border-color:var(--accent); }
+  .card .icon { font-size:2.2rem; }
+  .card h2 { font-size:1.25rem; margin:.6rem 0 .3rem; }
+  .card p { color:var(--sub); font-size:.9rem; line-height:1.5; }
+  .card .cta { display:inline-block; margin-top:14px; color:var(--accent); font-weight:600; font-size:.9rem; }
+  a.home { margin-top:40px; color:var(--sub); text-decoration:none; font-size:.85rem; }
+  a.home:hover { color:var(--ink); }
+</style>
+</head>
+<body>
+  <h1>GAMES</h1>
+  <p class="tag">Jelly GGumi's playground</p>
+  <div class="grid">
+    <a class="card" href="/games/castle-war/">
+      <span class="icon">🏰</span>
+      <h2>Castle War</h2>
+      <p>청군 vs 홍군 진영간 성채 공성전. 바람을 읽고 유닛을 날려 적의 성을 무너뜨리세요. 물리 기반 파괴 + 3개의 전장.</p>
+      <span class="cta">▶ PLAY</span>
+    </a>
+  </div>
+  <a class="home" href="/">← jellyggumi.github.io</a>
+</body>
+</html>
