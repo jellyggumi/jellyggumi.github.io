@@ -157,6 +157,53 @@
       #unity-footer {
         display: none;
       }
+      /* Rotate-to-landscape gate. Hidden by default so a desktop browser at any window
+         shape never sees it; shown only on a touch device held upright. */
+      #rotate-prompt {
+        display: none;
+      }
+      @media (orientation: portrait) and (hover: none) and (pointer: coarse) {
+        #rotate-prompt {
+          position: fixed;
+          inset: 0;
+          z-index: 50;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 0.6rem;
+          padding: 2rem;
+          text-align: center;
+          background: #05060a;
+          color: #e8eef4;
+          font-family: var(--kr-font);
+        }
+        #rotate-prompt .rotate-icon {
+          font-size: 3.4rem;
+          animation: rotate-hint 2.4s ease-in-out infinite;
+        }
+        #rotate-prompt .rotate-title {
+          margin: 0;
+          font-size: 1.25rem;
+          font-weight: 800;
+          letter-spacing: 0.04em;
+        }
+        #rotate-prompt .rotate-sub {
+          margin: 0;
+          font-size: 0.9rem;
+          line-height: 1.5;
+          color: #9db0c0;
+        }
+        /* The canvas keeps running underneath; we only cover it, so rotating resumes
+           exactly where the player was instead of restarting the match. */
+      }
+      @keyframes rotate-hint {
+        0%, 45% { transform: rotate(0deg); }
+        60%, 100% { transform: rotate(-90deg); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #rotate-prompt .rotate-icon { animation: none; transform: rotate(-90deg); }
+      }
     </style>
   </head>
   <body>
@@ -170,6 +217,17 @@
         <div id="unity-loading-text">불러오는 중…</div>
       </div>
       <div id="unity-warning"></div>
+      <!--
+        The board is a wide 39-47 world-unit battlefield with both castles on screen at
+        once. In portrait that framing either crushes the play area or hides one keep, so
+        rather than ship a second HUD layout we ask for the rotation. Pure CSS media query:
+        no script, nothing to fail, and it disappears the moment the device turns.
+      -->
+      <div id="rotate-prompt" role="alertdialog" aria-live="polite">
+        <div class="rotate-icon">📱</div>
+        <p class="rotate-title">가로로 돌려주세요</p>
+        <p class="rotate-sub">공성전은 양쪽 성이 한 화면에 보여야 합니다</p>
+      </div>
     </div>
     <script>
       var container = document.querySelector("#unity-container");
