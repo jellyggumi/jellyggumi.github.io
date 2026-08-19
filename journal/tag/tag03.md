@@ -1,6 +1,6 @@
 ---
 layout: "journal_by_tag"
-tag: "tag03"
-permalink: "/journal/tag/tag03/"
+tag: "JellyGGumi"
+permalink: "/journal/tag/JellyGGumi/"
 header-img: "img/archive-bg.jpg"
 ---

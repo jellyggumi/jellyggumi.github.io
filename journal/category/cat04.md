@@ -1,6 +1,6 @@
 ---
 layout: "journal_by_category"
-category: "cat04"
-permalink: "/journal/category/cat04/"
+category: "Birth"
+permalink: "/journal/category/birth/"
 header-img: "img/archive-bg.jpg"
 ---

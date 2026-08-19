@@ -1,6 +1,6 @@
 ---
 layout: "journal_by_category"
-category: "cat01"
-permalink: "/journal/category/cat01/"
+category: "Cultural Tips"
+permalink: "/journal/category/Cultural Tips/"
 header-img: "img/archive-bg.jpg"
 ---

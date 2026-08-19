@@ -1,6 +1,6 @@
 ---
 layout: "journal_by_tag"
-tag: "tag02"
-permalink: "/journal/tag/tag02/"
+tag: "K-Culture"
+permalink: "/journal/tag/k-culture/"
 header-img: "img/archive-bg.jpg"
 ---
