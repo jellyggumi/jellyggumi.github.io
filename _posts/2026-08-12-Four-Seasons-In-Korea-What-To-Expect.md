@@ -45,7 +45,9 @@ sitemap :
 
 <h3>Summer, Humidity and Jangma</h3>
 
-<p>Summer is hot and genuinely humid, and the defining feature is jangma, the East Asian monsoon rain period that typically falls across early to mid summer. Rain during this stretch is heavy rather than drizzly, and it can persist for days.</p>
+<p>Summer is hot and genuinely humid. The first act is jangma, the East Asian monsoon rain period that typically runs from around late June into July. Rain in that stretch is heavy rather than drizzly, and while it was once described as days of steady rain, recent years have skewed towards shorter concentrated downpours.</p>
+
+<p>Worth knowing: jangma is not the hottest part of summer. The most oppressive heat usually arrives <em>after</em> it, through late July and August, which is what most visitors end up experiencing as Korean summer.</p>
 
 <p>Air conditioning is widespread indoors, which creates a sharp contrast with the heat outside. A compact umbrella is more useful than a rain jacket, since the rain is warm and a jacket traps humidity. Late summer is also typhoon season, and while direct impacts vary considerably by year, it is worth being aware of when planning coastal travel.</p>
 

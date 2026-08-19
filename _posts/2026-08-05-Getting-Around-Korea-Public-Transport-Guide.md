@@ -4,9 +4,9 @@ title: "Getting Around Korea: A Public Transport Guide"
 subtitle: "Cards, subways, buses and transfers explained"
 active: "journal"
 image:
-  feature: "pc004.jpg"
+  feature: "pc008.jpg"
 date: "2026-08-05"
-header-img: "img/postcover/pc004.jpg"
+header-img: "img/postcover/pc008.jpg"
 comments: false
 tags: [K-Culture]
 categories: [Cultural Tips]
@@ -55,6 +55,8 @@ sitemap :
 <p>On buses you tap the card when boarding and again when leaving. Tagging off is not a formality. It is how the system knows your journey ended, which lets it treat a following bus or subway leg as a continuation of the same trip rather than a new fare.</p>
 
 <p>Because of this, a trip involving a bus, then a subway, then another bus can cost far less than three separate fares. If you forget to tag off, the system cannot link the next leg and you may be charged as though you started fresh. It is a small habit with a real effect on cost.</p>
+
+<p>The link is not open-ended. You have roughly half an hour after tagging off to begin the next leg, extended late at night, and there is a limit on how many transfers one journey can chain. Losing the discount to a long coffee stop between legs is the most common way visitors get caught out, so treat the window as the thing to plan around.</p>
 
 
 <h3>Travelling Between Cities</h3>

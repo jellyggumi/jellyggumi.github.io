@@ -40,12 +40,12 @@ sitemap :
 
 <p>What makes Hangul look unfamiliar is that letters are grouped into square syllable blocks rather than written in a single line. Each block is one syllable, and you read the letters inside it in a fixed order: the initial consonant, then the vowel, then any final consonant.</p>
 
-<p>A worked example makes this concrete. In 한 (han), ㅎ is the initial consonant, ㅏ is the vowel, and ㄴ is the final consonant. In 글 (geul), ㄱ is initial, ㅡ is the vowel, and ㄹ is final. Put the two blocks together and you get 한글, hangul. The blocks stack either left-to-right or top-to-bottom depending on the shape of the vowel, which is purely a layout rule.</p>
+<p>A worked example makes this concrete. In 한 (han), ㅎ is the initial consonant, ㅏ is the vowel, and ㄴ is the final consonant. In 글 (geul), ㄱ is initial, ㅡ is the vowel, and ㄹ is final. Put the two blocks together and you get 한글 &mdash; romanised <em>hangeul</em> under the official Revised Romanization, though the older spelling <em>hangul</em> is far more common in English. The blocks stack either left-to-right or top-to-bottom depending on the shape of the vowel, which is purely a layout rule.</p>
 
 
 <h3>The Shape of the System</h3>
 
-<p>Vowels are built from a small number of strokes: a long vertical or horizontal line with short marks added. ㅏ, ㅓ, ㅗ, ㅜ, ㅡ and ㅣ are the core set, and others are formed by combining them. Once you recognise the base strokes, unfamiliar vowels become readable by decomposition rather than memorisation.</p>
+<p>Vowels are built from a small number of strokes: a long vertical or horizontal line with short marks added. ㅏ, ㅓ, ㅗ, ㅜ, ㅡ and ㅣ are the everyday building blocks, and the rest are formed either by adding a stroke to one of them or by combining two. Adding a stroke gives the iotised series &mdash; ㅏ becomes ㅑ, ㅓ becomes ㅕ &mdash; while combining gives compounds such as ㅘ. Once you recognise the base strokes, unfamiliar vowels become readable by decomposition rather than memorisation.</p>
 
 <p>Consonants include ㄱ, ㄴ, ㄷ, ㄹ, ㅁ, ㅂ, ㅅ, ㅇ, ㅈ, ㅎ and several others. One quirk worth knowing early: ㅇ is silent when it sits in the initial position, acting as a placeholder because every syllable block needs an initial consonant slot filled. In the final position it carries an "ng" sound.</p>
 
@@ -59,9 +59,9 @@ sitemap :
 
 <h3>Phrases That Actually Get Used</h3>
 
-<p>A short, reliable list is more useful than a long one you half-remember. 안녕하세요 (annyeonghaseyo) is the standard greeting. 감사합니다 (gamsahamnida) is thank you. 죄송합니다 (joesonghamnida) is a sincere apology, while 실례합니다 (sillyehamnida) is closer to "excuse me" when getting someone's attention.</p>
+<p>A short, reliable list is more useful than a long one you half-remember. 안녕하세요 (annyeonghaseyo) is the standard greeting. 감사합니다 (gamsahamnida) is thank you. 죄송합니다 (joesonghamnida) is a sincere apology, while 실례합니다 (sillyehamnida) is what you say when interrupting someone or squeezing past them.</p>
 
-<p>For getting around, 여기요 (yeogiyo) works to call a server, and 얼마예요? (eolmayeyo) asks the price. 네 (ne) is yes and 아니요 (aniyo) is no. Romanisation here is approximate, since several Korean sounds have no exact English equivalent, and hearing them spoken is worth more than any written transcription.</p>
+<p>For getting around, 저기요 (jeogiyo) or 여기요 (yeogiyo) is how you actually get a server's attention, and 얼마예요? (eolmayeyo) asks the price. 네 (ne) is yes and 아니요 (aniyo) is no. Romanisation here is approximate, since several Korean sounds have no exact English equivalent, and hearing them spoken is worth more than any written transcription.</p>
 
 
 <h3>Two Number Systems, Two Jobs</h3>
