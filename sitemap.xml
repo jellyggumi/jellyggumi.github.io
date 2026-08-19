@@ -29,4 +29,21 @@ layout: null
 
     </url>
     {% endfor %}
+    {% for page in site.pages %}
+    {% if page.url != null and page.sitemap.exclude != true %}
+    {% assign ext = page.url | split: '.' | last %}
+    {% if ext == 'html' or page.url contains '/' %}
+    {% unless page.url contains '404' or page.url contains 'sitemap' or page.url contains 'feed' or page.url contains 'search' or ext == 'xml' or ext == 'json' or ext == 'txt' %}
+    <url>
+        <loc>{{ site.url }}{{ page.url }}</loc>
+        {% if page.lastmod %}
+        <lastmod>{{ page.lastmod | date_to_xmlschema }}</lastmod>
+        {% endif %}
+        <changefreq>{% if page.sitemap.changefreq %}{{ page.sitemap.changefreq }}{% else %}monthly{% endif %}</changefreq>
+        <priority>{% if page.sitemap.priority %}{{ page.sitemap.priority }}{% else %}0.6{% endif %}</priority>
+    </url>
+    {% endunless %}
+    {% endif %}
+    {% endif %}
+    {% endfor %}
 </urlset>
