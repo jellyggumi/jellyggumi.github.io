@@ -32,8 +32,16 @@ layout: null
     {% for page in site.pages %}
     {% if page.url != null and page.sitemap.exclude != true %}
     {% assign ext = page.url | split: '.' | last %}
-    {% if ext == 'html' or page.url contains '/' %}
-    {% unless page.url contains '404' or page.url contains 'sitemap' or page.url contains 'feed' or page.url contains 'search' or ext == 'xml' or ext == 'json' or ext == 'txt' or ext == 'css' or ext == 'js' or ext == 'scss' or ext == 'map' %}
+    {% comment %}
+      Exact-path exclusions, not substring matches: a substring test on
+      'feed' or 'search' would silently drop legitimate pages such as
+      /research/ or /journal/feedback/. Paginator pages are excluded too —
+      their content changes on every publish, so they are index churn.
+    {% endcomment %}
+    {% assign is_special = false %}
+    {% if page.url == '/404.html' or page.url == '/sitemap.xml' or page.url == '/feed.xml' or page.url == '/search.html' or page.url == '/search/' or page.url == '/search.json' %}{% assign is_special = true %}{% endif %}
+    {% if page.url contains '/journal/page' %}{% assign is_special = true %}{% endif %}
+    {% unless is_special or ext == 'xml' or ext == 'json' or ext == 'txt' or ext == 'css' or ext == 'js' or ext == 'scss' or ext == 'map' %}
     <url>
         <loc>{{ site.url }}{{ page.url | replace: ' ', '%20' }}</loc>
         {% if page.lastmod %}
@@ -43,7 +51,6 @@ layout: null
         <priority>{% if page.sitemap.priority %}{{ page.sitemap.priority }}{% else %}0.6{% endif %}</priority>
     </url>
     {% endunless %}
-    {% endif %}
     {% endif %}
     {% endfor %}
 </urlset>

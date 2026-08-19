@@ -53,6 +53,20 @@ images:
 							<p>{{ page.description }}</p>
 						    </div>
 				<h2><a href="{{ site.baseurl }}/games/" style="color:#dddddd;"><strong>🎮 GAMES</strong></a></h2><br />
+
+				{% if site.posts.size > 0 %}
+				<div class="entry-summary" style="margin-top:6px;">
+					<p style="color:#dddddd;margin-bottom:4px;"><strong>LATEST WRITING</strong></p>
+					<ul style="list-style:none;padding:0;margin:0;">
+						{% for post in site.posts limit: 4 %}
+						<li style="margin-bottom:3px;">
+							<a href="{{ post.url | prepend: site.baseurl }}" style="color:#dddddd;">{{ post.title }}</a>
+						</li>
+						{% endfor %}
+					</ul>
+					<p style="margin-top:6px;"><a href="{{ site.baseurl }}/journal/" style="color:#dddddd;"><strong>ALL POSTS &rarr;</strong></a></p>
+				</div>
+				{% endif %}
         
 			</div>
 			
