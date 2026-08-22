@@ -1,195 +1,129 @@
 ---
 layout: home
-main-title: ""
+title: ""
 subtitle: "Jelly GGumi"
-description: "Photo is lovely memory at the moment  📷 "
+description: "First-hand guides to Korean culture, food and daily life for visitors and newcomers, alongside a family growth diary from Seoul."
 images:
  - image_path: /img/slider/home01.jpg
-   gallery-folder: /img/slider/
+   gallery-folder: /gallery/
  - image_path: /img/slider/home02.jpg
-   gallery-folder: /img/slider/
+   gallery-folder: /gallery/
  - image_path: /img/slider/home03.jpg
-   gallery-folder: /img/slider/
+   gallery-folder: /gallery/
  - image_path: /img/slider/home04.jpg
-   gallery-folder: /img/slider/
+   gallery-folder: /gallery/
  - image_path: /img/slider/home05.jpg
-   gallery-folder: /img/slider/
+   gallery-folder: /gallery/
  - image_path: /img/slider/home06.jpg
-   gallery-folder: /img/slider/
+   gallery-folder: /gallery/
+sitemap:
+  changefreq: daily
+  priority: 1.0
+extra_css:
+  - /css/WYSIWYG.css
 ---
 
+{% comment %}
+  This file used to open a full <html>/<head>/<body> inside the home layout, which
+  already provides them, and loaded a second copy of jQuery, Bootstrap and the CSS
+  that head.html had already pulled in. It is now a fragment; the layout owns the
+  document and head.html owns the assets.
 
-<html class="no-js" lang="en">
-<head>
-	<meta content="charset=utf-8">
+  Slider images previously pointed at {{ site.url }}-prefixed absolute paths, which
+  broke local preview. relative_url keeps them origin-agnostic.
+{% endcomment %}
 
-<!-- CSS -->
-     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-     <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css" type="text/css" media="screen" />
-      <link rel="stylesheet" href="{{ site.baseurl }}/css/galleries.css" media="screen" />
-<link rel="stylesheet" href="{{ site.baseurl }}/css/WYSIWYG.css" media="screen" />
+<script src="{{ '/js/modernizr.js' | relative_url }}"></script>
 
-	<!-- Modernizr -->
-  <script src="{{ site.baseurl }}/js/modernizr.js"></script>
+<section id="content" role="main">
+  <div class="wrapper">
 
+    <div class="position-absolute" id="main">
 
+      <h1 class="site-title-visually-plain">{{ site.title }}</h1>
+      <p class="site-tagline">{{ site.description }}</p>
 
-</head>
+      {% comment %}
+        The home page is the site's strongest crawl entry point, so it links directly
+        into each section rather than relying on the nav alone.
+      {% endcomment %}
+      <nav class="home-links" aria-label="Sections">
+        <a href="{{ '/journal/' | relative_url }}"><strong>JOURNAL</strong></a>
+        <a href="{{ '/gallery/' | relative_url }}"><strong>GALLERY</strong></a>
+        <a href="{{ '/games/' | relative_url }}"><strong>GAMES</strong></a>
+        <a href="https://blog.naver.com/{{ site.naver_username }}" rel="noopener">NAVER BLOG</a>
+      </nav>
 
-<body class="fullscreen">
+      {% if site.posts.size > 0 %}
+      <div class="home-latest">
+        <p class="home-latest__label"><strong>Latest writing</strong></p>
+        <ul>
+          {% for post in site.posts limit: 4 %}
+          <li>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <span class="home-latest__date">{{ post.date | date: "%b %-d" }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+        <p class="home-latest__more">
+          <a href="{{ '/journal/' | relative_url }}"><strong>All {{ site.posts.size }} posts &rarr;</strong></a>
+        </p>
+      </div>
+      {% endif %}
 
-<!-- MAIN CONTENT SECTION  _____________________________________________-->
-	<section id="content" role="main">
-		<div class="wrapper">
-
-			<!-- WYSIWYG -->
-
-		<div class="position-absolute">
-      <!-- <h2 class="big no-margin"><strong>{{ page.main-title }}</strong></h2> -->
-        
-				<h2 class="no-margin" ><a href="https://blog.naver.com/{{ site.naver_username }}"><img src="/img/Naver Logo.png" style="filter: opacity(0.8) invert(1) brightness(0); width: 200px;"></a></h2>
-				<h2><a href="https://blog.naver.com/{{ site.naver_username }}" style="color:#dddddd;"><strong>{{ page.subtitle }}</strong></a></h2>
-                <div class="entry-summary">
-							<p>{{ page.description }}</p>
-						    </div>
-				<h2><a href="{{ site.baseurl }}/games/" style="color:#dddddd;"><strong>🎮 GAMES</strong></a></h2><br />
-
-				{% if site.posts.size > 0 %}
-				<div class="entry-summary" style="margin-top:6px;">
-					<p style="color:#dddddd;margin-bottom:4px;"><strong>LATEST WRITING</strong></p>
-					<ul style="list-style:none;padding:0;margin:0;">
-						{% for post in site.posts limit: 4 %}
-						<li style="margin-bottom:3px;">
-							<a href="{{ post.url | prepend: site.baseurl }}" style="color:#dddddd;">{{ post.title }}</a>
-						</li>
-						{% endfor %}
-					</ul>
-					<p style="margin-top:6px;"><a href="{{ site.baseurl }}/journal/" style="color:#dddddd;"><strong>ALL POSTS &rarr;</strong></a></p>
-				</div>
-				{% endif %}
-        
-			</div>
-			
-			<div class="gallery fullscreen-gallery kenburns-gallery">
-
-				<canvas id="kenburns"></canvas>
-				
-{% for image in page.images %}  	
-
-				<figure class="gallery-item">
-					<header class='gallery-icon'>
-
-<a href="{{ site.url }}{{ site.baseurl }}{{ image.gallery-folder }}">
-<img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>
-	
-				</header>	
-				</figure>
-
-{% endfor %}
-
-				</div>
-			<!-- END WYSIWYG -->
-			
-	
-		</div><!-- END .wrapper -->
-		
-	</section>
-
-<div id="footer" role="contentinfo">
-		<ul class="soc-icons">
-
-                 <!-- {% if site.facebook_username %}
-			<li>
-   <a href="https://facebook.com/{{ site.facebook_username }}" style="
-color:#dddddd; target="_blank" title="Facebook">
-                       <i class="fa fa-facebook"></i>
-                     </span>
-</a></li>
-    {% endif %}
- {% if site.twitter_username %}
-			<li>
-   <a href="https://twitter.com/{{ site.twitter_username }}" style="
-color:#dddddd; target="_blank" title="Twitter">
-                       <i class="fa fa-twitter"></i>
-                     </span>
-</a></li>
-    {% endif %} -->
-      <!-- {% if site.naver_username %}
-    <li>
- <a href="https://blog.naver.com/{{ site.naver_username }}" style="color:#dddddd; target="_blank" title="Naver">
-                     <i class="fa fa-thumbs-o-up"></i>
-                   </span>
-</a></li>
-    {% endif %} -->
-    {% if site.youtube_username %}
-    <li>
- <a href="https://www.youtube.com/@{{ site.youtube_username }}" style="color:#dddddd; target="_blank" title="Naver">
-                     <i class="fa fa-youtube-play"></i>
-                   </span>
-</a></li>
-    {% endif %}
+      <ul class="soc-icons home-soc">
+        {% if site.youtube_username %}
+        <li><a href="https://www.youtube.com/@{{ site.youtube_username }}" title="YouTube" rel="me noopener">
+          <i class="fa fa-youtube-play" aria-hidden="true"></i><span class="sr-only">YouTube</span></a></li>
+        {% endif %}
         {% if site.instagram_username %}
-			<li>
-   <a href="https://instagram.com/{{ site.instagram_username }}" style="color:#dddddd; target="_blank" title="Instagram">
-                       <i class="fa fa-instagram"></i>
-                     </span>
-</a></li>
-    {% endif %}
-    
-                    <!-- {% if site.flickr_username %}
-						<li>
-   <a href="https://flickr.com/photos/{{ site.flickr_username }}" style="
-color:#dddddd; target="_blank" title="Flickr">
-              <i class="fa fa-flickr"></i>
-                     </span>
- </a></li>	
-     {% endif %}
-                    {% if site.deviantart_username %}
-			<li>
-   <a href="http://{{ site.deviantart_username }}.deviantart.com" style="
-color:#dddddd; target="_blank" title="DeviantArt">
-<i class="fa fa-deviantart"></i> </span>
-</a></li>	
-    {% endif %}
-                  {% if site.github_username %}
-    <li>
-   <a href="https://github.com/{{ site.github_username }}" style="
-color:#dddddd; target="_blank" title="Github">
-              <i class="fa fa-github"></i>
-                     </span>
-            
-      </a></li>	
-      {% endif %} -->
+        <li><a href="https://instagram.com/{{ site.instagram_username }}" title="Instagram" rel="me noopener">
+          <i class="fa fa-instagram" aria-hidden="true"></i><span class="sr-only">Instagram</span></a></li>
+        {% endif %}
+        <li><a href="mailto:{{ site.email }}" title="Email">
+          <i class="fa fa-envelope-o" aria-hidden="true"></i><span class="sr-only">Email</span></a></li>
+      </ul>
 
-  <li>
-    <a href="mailto:{{ site.email }}" style="
-color:#dddddd; target="_blank" title="Email">
-              <i class="fa fa-envelope-o"></i></span>
-          </a> </li>
-	
-					
-		</ul>	
-	</div>
+      {% comment %}
+        About / Contact / Privacy are unreachable from here otherwise: the fullscreen
+        body hides overflow, so the shared footer never comes into view.
+      {% endcomment %}
+      <ul class="footer-nav home-footer-nav">
+        {% for nav_hash in site.footer_nav %}
+          {% for nav_item in nav_hash %}
+          <li><a href="{{ nav_item[1] | relative_url }}">{{ nav_item[0] }}</a></li>
+          {% endfor %}
+        {% endfor %}
+      </ul>
 
-  
-<!-- jQuery -->
-  <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    </div>
 
-  <script src="{{ site.baseurl }}/js/retina.min.js"></script> 
+    <div class="gallery fullscreen-gallery kenburns-gallery">
+      <canvas id="kenburns"></canvas>
+      {% for image in page.images %}
+      <figure class="gallery-item">
+        <header class="gallery-icon">
+          <a href="{{ image.gallery-folder | relative_url }}">
+            {% comment %}
+              The first frame is the largest paint on the page, so it loads eagerly and
+              is fetch-prioritised; the rest are only revealed by the slideshow and can
+              wait. kenburns.js reads these into a canvas, so they must stay in the DOM.
+            {% endcomment %}
+            <img src="{{ image.image_path | relative_url }}"
+                 alt=""
+                 {% if forloop.first %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %}
+                 decoding="async">
+          </a>
+        </header>
+      </figure>
+      {% endfor %}
+    </div>
 
-<!-- include mousewheel plugins -->
-<script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
-<!-- include gallery cycle plugin -->
-<script src="{{ site.baseurl }}/js/jquery.cycle.min.js"></script>
-<!-- include kenburns plugins -->
-<script src="{{ site.baseurl }}/js/kenburns.min.js"></script>
-<!-- include svg line drawing plugin -->
-<script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
-<!-- include custom script -->
-<script src="{{ site.baseurl }}/js/scripts.js"></script>
+  </div>
+</section>
 
-
-       </body>
-    </html>
-
+<script src="https://code.jquery.com/jquery-2.1.3.min.js" integrity="sha256-ivk71nXhz9nsyFDoYoGf2sbjrR9ddh+XDkCcfZxjvcM=" crossorigin="anonymous"></script>
+<script src="{{ '/js/jquery.mousewheel.min.js' | relative_url }}"></script>
+<script src="{{ '/js/jquery.cycle.min.js' | relative_url }}"></script>
+<script src="{{ '/js/kenburns.min.js' | relative_url }}"></script>
+<script src="{{ '/js/scripts.js' | relative_url }}"></script>

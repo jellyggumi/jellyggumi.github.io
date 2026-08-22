@@ -1,27 +1,63 @@
 ---
+layout: null
+sitemap:
+  exclude: true
 ---
+{% comment %}
+  Search index. Two bugs fixed:
+
+  1. `"content": {{ page.content | jsonify }}` sat inside a `for post in site.posts`
+     loop. `page` there is search.json itself, so every post entry carried this file's
+     own body instead of the post's — the index was unusable for content matching.
+  2. The pages loop emitted `{ }` for any page without a title, leaving empty objects
+     and a trailing comma in the array. Untitled pages are now skipped outright.
+
+  Content is truncated: the index is fetched on every visit to /search/, and shipping
+  every full article would make it heavier than the pages it searches.
+{% endcomment %}
 [
-  {% for post in site.posts %}
-    {
-      "title"    : "{{ post.title | escape }}",
-      "category" : "{{ post.category }}",
-      "tags"     : "{{ post.tags | join: ', ' }}",
-      "url"      : "{{ site.baseurl }}{{ post.url }}",
-      "date"     : "{{ post.date }}",
-      "content"   : {{ page.content | jsonify }}
-    } {% unless forloop.last %},{% endunless %}
-  {% endfor %}
-  ,
+  {% comment %}
+    Index and listing pages are excluded. Their body text is a concatenation of every
+    post title, category name and tag on the site, so they matched almost any query and
+    outranked nothing useful — searching "jjimjilbang" returned the Jjimjilbang post
+    and then "Categories" and "Tags", which help nobody. Real content only: posts, plus
+    the standalone informational pages.
+  {% endcomment %}
+  {% assign skip_urls = "/search/,/404.html,/journal/,/journal/archive/,/journal/category/,/journal/tag/,/gallery/,/games/,/naver/" | split: "," %}
+  {% assign entries = "" | split: "" %}
+  {% for post in site.posts %}{% assign entries = entries | push: post %}{% endfor %}
   {% for page in site.pages %}
-   {
-     {% if page.title != nil %}
-        "title"    : "{{ page.title | escape }}",
-        "category" : "{{ page.category }}",
-        "tags"     : "{{ page.tags | join: ', ' }}",
-        "url"      : "{{ site.baseurl }}{{ page.url }}",
-        "date"     : "{{ page.date }}",
-        "content"   : {{ page.content | jsonify }}
-     {% endif %}
-   } {% unless forloop.last %},{% endunless %}
+    {% unless skip_urls contains page.url %}
+      {% comment %}
+        Paginated journal pages and the per-category/per-tag archives are generated
+        listings too; they all live under /journal/page or /journal/category/ or
+        /journal/tag/, so a prefix test catches them without listing each one.
+      {% endcomment %}
+      {% assign is_listing = false %}
+      {% if page.url contains '/journal/page' %}{% assign is_listing = true %}{% endif %}
+      {% if page.url contains '/journal/category/' %}{% assign is_listing = true %}{% endif %}
+      {% if page.url contains '/journal/tag/' %}{% assign is_listing = true %}{% endif %}
+      {% comment %}
+        `page.title` is compared against "" rather than tested for truthiness: the home
+        page carries `title: ""`, and an empty string is truthy in Liquid, so a bare
+        `{% raw %}{% if page.title %}{% endraw %}` admitted it and produced an entry
+        with a blank label in the results list.
+      {% endcomment %}
+      {% assign entry_title = page.title | strip %}
+      {% if entry_title != "" and is_listing == false %}
+        {% assign entries = entries | push: page %}
+      {% endif %}
+    {% endunless %}
+  {% endfor %}
+  {% for item in entries %}
+  {
+    "title": {{ item.title | jsonify }},
+    "url": {{ item.url | relative_url | jsonify }},
+    "date": {% if item.date %}{{ item.date | date: "%Y-%m-%d" | jsonify }}{% else %}""{% endif %},
+    "category": {{ item.categories | join: ", " | jsonify }},
+    "tags": {{ item.tags | join: ", " | jsonify }},
+    "desc": {{ item.description | default: item.subtitle | default: "" | strip_html | normalize_whitespace | jsonify }},
+    "content": {{ item.content | strip_html | normalize_whitespace | truncate: 1200 | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
   {% endfor %}
 ]

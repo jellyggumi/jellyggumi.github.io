@@ -1,106 +1,61 @@
 ---
 layout: page
 title: Search
-description: "What are you looking for?"
+description: "Search every guide and diary entry on JellyGGumi Growth Diary by keyword, topic or tag."
 header-img: "img/archive-bg.jpg"
 permalink: /search/
+sitemap:
+  exclude: true
 ---
 
+<div class="post-body">
 
-<style type="text/css">
-            
-      #search-input {
-        display: inline-block;
-        color: #008989;
-        background-color: #12161d;
-        border-color: #223333;
-        padding: .5em;
-        width: 100%;
-        font-size: 0.8em;
-      }
-        
-         #search-input:focus {
-        display: inline-block;
-        color: #ddd;
-        background-color: #12161d;
-        border-color: #223333;
-        border-width: thick;
-        border-style: outset;
-        box-shadow: -1px 1px 5px 5px #008989;
-        outline: 0;
-        width: 100%;
-        font-size: 0.8em;
-              }
+  <label for="search-input" class="search-label">Search this site</label>
+  {% comment %}
+    type="search" gives mobile keyboards a search key and a native clear button.
+    autocomplete is off because browser-suggested values here are never useful.
+  {% endcomment %}
+  <input type="search" id="search-input" class="search-input"
+         placeholder="Try: hangul, subway, jjimjilbang, bibimbap"
+         autocomplete="off" autocapitalize="none" spellcheck="false">
 
-    </style>
+  {% comment %}
+    aria-live so results are announced to screen readers as they appear, since the
+    list updates without a page load.
+  {% endcomment %}
+  <p id="search-status" class="search-status" role="status" aria-live="polite"></p>
 
-<!-- Html Elements for Search -->
-<input type="text" id="search-input" placeholder="Enter keywords...">
-<ul id="results-container" style="list-style-type: none;"></ul>    
+  <ul id="results-container" class="search-results" data-index="{{ '/search.json' | relative_url }}"></ul>
 
-<!-- Script pointing to jekyll-search.js -->
-<script src="{{ site.baseurl }}/js/jekyll-search.js" type="text/javascript"></script>
+  <noscript>
+    <p>Search needs JavaScript. You can still browse
+      <a href="{{ '/journal/' | relative_url }}">all posts</a>,
+      or use the category and tag lists below.</p>
+  </noscript>
 
+  <hr class="small">
 
-    <script type="text/javascript">
-      SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
-        resultsContainer: document.getElementById('results-container'),
-        json: '{{ site.baseurl }}/search.json',
-        searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
-        noResultsText: 'No results found',
-        limit: 10,
-        fuzzy: true,
-        exclude: ['Welcome']
-      })
-    </script>
+  <h3>Categories</h3>
+  <ul class="section-index">
+    {% assign categories = site.categories | sort %}
+    {% for category in categories %}
+    <li>
+      <a href="{{ category[0] | slugify | prepend: '/journal/category/' | append: '/' | relative_url }}">
+        <span class="section-index__name">{{ category[0] | replace: '-', ' ' | escape }}</span>
+        <span class="section-index__count">{{ category[1].size }} post{% unless category[1].size == 1 %}s{% endunless %}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
 
-<br>
-  <div id="tags">
-  	<h5>tag cloud</h5>
-   {% assign tags = site.tags | sort %}
-{% for tag in tags %}
- <span class="site-tag">
-    <a href="{{ site.baseurl }}/journal/tag/{{ tag | first | slugify }}/"
-        style="font-size: {{ tag | last | size  |  times: 4 | plus: 80  }}%">
-            {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
-    </a>
-</span>{% unless forloop.last %}&nbsp;{% endunless %}{% endfor %}
+  <h3>Tags</h3>
+  <p class="tag-cloud">
+    {% assign tags = site.tags | sort %}
+    {% for tag in tags %}
+    <a href="{{ tag[0] | slugify | prepend: '/journal/tag/' | append: '/' | relative_url }}">{{ tag[0] | replace: '-', ' ' | escape }} ({{ tag[1].size }})</a>{% unless forloop.last %} {% endunless %}
+    {% endfor %}
+  </p>
 
 </div>
 
-
-<style>
-.site-tag a {
-    display: inline-block;
-    margin-right: 12px;
-}
-</style>
-
-<br>
-  <div id="categories">
-  	<h5>categories</h5>
-   {% assign categories = site.categories | sort %}
-{% for category in categories %}
- <span class="site-category">
-    <a href="{{ site.baseurl }}/journal/category/{{ category | first | slugify }}/">
-            {{ category[0] | replace:'-', ' ' }} ({{ category | last | size }})
-    </a>
-</span>{% unless forloop.last %}&nbsp;{% endunless %}{% endfor %}
-
-</div>
-
-
-<br>
-<h6>Image Source: <a href="https://unsplash.com/photos/I_LgQ8JZFGE">UNSPLASH</a>
-
-
-<style>
-.site-category a {
-    display: inline-block;
-    margin-right: 12px;
-}
-</style>
-
-
-
+<script src="{{ '/js/site-search.js' | relative_url }}" defer></script>

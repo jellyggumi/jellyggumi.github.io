@@ -7,7 +7,14 @@ var scrolltotop={
 //startline: Integer. Number of pixels from top of doc scrollbar is scrolled before showing control
 //scrollto: Keyword (Integer, or "Scroll_to_Element_ID"). How far to scroll document up when control is clicked on (0=top).
 setting: {startline:100, scrollto: 0, scrollduration:1000, fadeduration:[500, 100]},
-controlHTML: '<img src="https://cloud.githubusercontent.com/assets/14811095/13691821/88412468-e744-11e5-8bb5-94340afd92e7.png" style="filter:alpha(opacity=100); -moz-opacity:1;"/>', //HTML for control, which is auto wrapped in DIV w/ ID="topcontrol"
+{% comment %}
+  The control graphic used to be hotlinked from cloud.githubusercontent.com — a PNG
+  uploaded to someone's GitHub issue thread. It still resolves today, but it is an
+  external request on every page for a 3KB arrow, pointing at a URL nobody here
+  controls. Inlined as an SVG data URI instead: no request, no third-party dependency,
+  and it scales cleanly on a high-DPR screen.
+{% endcomment %}
+controlHTML: '<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" role="img" aria-label="Scroll to top"><circle cx="21" cy="21" r="20" fill="rgba(83,7,32,0.85)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/><path d="M21 13.5 L28 22 L23.6 22 L23.6 29 L18.4 29 L18.4 22 L14 22 Z" fill="#ffffff"/></svg>', //HTML for control, auto-wrapped in DIV#topcontrol
 controlattrs: {offsetx:35, offsety:60}, //offset of control relative to right/ bottom of window corner
 anchorkeyword: '#top', //Enter href value of HTML anchors on the page that should also act as "Scroll Up" links
 state: {isvisible:false, shouldvisible:false},

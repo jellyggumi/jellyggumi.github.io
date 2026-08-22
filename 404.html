@@ -1,11 +1,55 @@
 ---
 layout: page
-header-img: "img/404.jpg"
-permalink: "/404.html"
-redirect_to: "baseurl/journal/"
+title: "Page not found"
+description: "That page does not exist. Links to the journal, gallery and search so you can find what you were looking for."
+permalink: /404.html
+header-img: "img/misc-bg.jpg"
+sitemap:
+  exclude: true
 ---
 
-<p><h1>Whoops, this page doesn't exist.</p>
-<p>You will be redirected to <a href="{{ site.baseurl }}/journal/">JOURNAL</a> in few seconds.</p></h1>
+{% comment %}
+  The previous version set `<meta http-equiv="refresh" content="5; url=/journal">` and
+  a `redirect_to` front-matter key. Two problems with that:
+
+    * A timed meta-refresh off an error page is a soft-404 signal: Google sees a 404
+      status whose content bounces the user somewhere unrelated, and it is a documented
+      accessibility failure because a reader cannot control or stop the redirect.
+    * The `redirect_to: "baseurl/journal/"` value was a literal string beginning
+      "baseurl", not a resolved path, so it was never a working redirect anyway.
+
+  It also emitted `<p><h1>...</p></h1>` — interleaved, unclosed tags — and a stray
+  `</div>` closing an element it never opened. Replaced with a real, navigable 404.
+{% endcomment %}
+
+<div class="post-body">
+
+<p>The page you asked for does not exist. It may have been moved, or the link that
+brought you here may be wrong.</p>
+
+<h3>Where to go instead</h3>
+
+<ul>
+  <li><a href="{{ '/journal/' | relative_url }}">All posts</a> &mdash; guides to Korean
+      culture, food, transport and daily life, newest first.</li>
+  <li><a href="{{ '/search/' | relative_url }}">Search</a> &mdash; if you know roughly
+      what you were looking for.</li>
+  <li><a href="{{ '/gallery/' | relative_url }}">Photo albums</a> &mdash; the family diary
+      side of the site.</li>
+  <li><a href="{{ '/games/' | relative_url }}">Games</a> &mdash; browser games built here.</li>
+  <li><a href="{{ '/' | relative_url }}">Home</a></li>
+</ul>
+
+<h3>Recent posts</h3>
+
+<ul>
+  {% for post in site.posts limit: 5 %}
+  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <br><small>{{ post.date | date: "%B %-d, %Y" }}</small></li>
+  {% endfor %}
+</ul>
+
+<p>If you followed a link from this site and it broke, please
+<a href="{{ '/contact/' | relative_url }}">tell me</a> so it can be fixed.</p>
 
 </div>

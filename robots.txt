@@ -1,4 +1,15 @@
+# Search pages produce a distinct URL per query and hold no content of their own, so
+# crawling them spends budget on nothing; everything they link to is reachable from
+# /journal/, /journal/archive/ and the sitemap. Paginated journal pages change
+# composition on every publish, so /journal/archive/ is the stable complete index.
+#
+# No blanket "Allow: /" below, deliberately: anything not disallowed is already allowed,
+# and a leading "Allow: /" is treated as the first match by order-based parsers, which
+# makes every Disallow after it inert. Note also that a blank line terminates a record —
+# the rules must sit directly under the User-agent line with no blank line between.
 User-agent: *
-Allow: /
+Disallow: /search/
+Disallow: /search.json
+Disallow: /journal/page
 
 Sitemap: https://jellyggumi.github.io/sitemap.xml

@@ -1,0 +1,72 @@
+---
+layout: page
+title: "Contact"
+description: "How to reach the author of JellyGGumi Growth Diary, including corrections, questions and permission requests for photos."
+permalink: /contact/
+header-img: "img/about-bg.jpg"
+sitemap:
+  changefreq: yearly
+  priority: 0.5
+---
+
+<div class="post-body">
+
+<p>This site is written and maintained by one person, so every message arrives directly
+rather than through a support queue. Email is the only channel; there is no contact form
+here, because a form would need a third-party service collecting your details before a
+message ever reached me.</p>
+
+<h3>Email</h3>
+
+<p>Write to <a href="mailto:{{ site.email }}">{{ site.email }}</a>. Replies are usually sent
+within a few days. Messages in English or Korean are both fine.</p>
+
+<h3>What is Worth Writing About</h3>
+
+<ul>
+  <li><strong>Corrections.</strong> If something on this site is wrong, out of date, or
+      misleading, this is the most useful message you can send. Please include the page
+      and what specifically is wrong, and it will be checked and amended.</li>
+  <li><strong>Questions about a post.</strong> If a guide left something unclear, say so
+      &mdash; that gap is usually worth fixing in the post itself, so the answer helps
+      everyone who reads it afterwards.</li>
+  <li><strong>Photo permissions.</strong> Photographs here are family photographs and are
+      not licensed for reuse. If you want to use one, ask first and explain where and how.</li>
+  <li><strong>Suggestions.</strong> If there is something about living in or visiting Korea
+      you looked for here and could not find, that is a genuinely helpful signal.</li>
+</ul>
+
+<h3>What This Site Does Not Do</h3>
+
+<p>To set expectations honestly: this is a personal blog, not a business or a travel agency.
+It does not accept paid guest posts, sponsored placements, or link-insertion requests, and
+those emails will not receive a reply. It also cannot arrange bookings, act as a translator,
+or give individual visa, legal, medical or financial advice.</p>
+
+<h3>About the Author</h3>
+
+<p>Details about who writes this site and why are on the
+<a href="{{ '/about/' | relative_url }}">about page</a>. How your data is handled when you
+visit, including cookies and advertising, is covered in the
+<a href="{{ '/privacy/' | relative_url }}">privacy policy</a>.</p>
+
+</div>
+
+{% comment %}
+  ContactPage structured data with a real, reachable email. AdSense and Search both
+  treat a verifiable contact route as a baseline trust signal for a site carrying ads.
+{% endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "url": {{ '/contact/' | absolute_url | jsonify }},
+  "name": "Contact",
+  "mainEntity": {
+    "@type": "Person",
+    "name": {{ site.owner.name | jsonify }},
+    "email": {{ site.email | prepend: 'mailto:' | jsonify }},
+    "url": {{ '/about/' | absolute_url | jsonify }}
+  }
+}
+</script>

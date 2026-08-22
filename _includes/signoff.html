@@ -1,5 +1,18 @@
-<div class="post-author text-center">                       
-	        <img src="{{ site.baseurl }}/img/{{ site.owner.avatar }}" alt="{{ site.owner.name }}'s photo" itemprop="image" class="post-avatar img-circle img-responsive"/>    
-	    <h4>By <span itemprop="name" class="fn"><a href="{{ site.baseurl }}/about/" title="About {{ site.owner.name }}" itemprop="url">{{ site.owner.name }}</a></span></h4>
-	    <div style="font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; display:inline-block;font-size:.75em;">{{ site.owner.info }}</div>
+{% comment %}
+  Post byline. `width`/`height` added: .img-circle caps the avatar at 50px, but with no
+  intrinsic size declared the browser reserved nothing until the file arrived, so the
+  footer of every post shifted downward mid-load. The file itself is 150px so it stays
+  sharp on a 3x display; the attributes describe that, and CSS scales it down.
+
+  `loading="lazy"` because the byline sits below a 1,300-word article — it is never in
+  the first viewport.
+{% endcomment %}
+<div class="post-author text-center">
+  <img src="{{ site.owner.avatar | prepend: '/img/' | relative_url }}"
+       alt="{{ site.owner.name }}"
+       width="150" height="150"
+       loading="lazy" decoding="async"
+       class="post-avatar img-circle img-responsive" />
+  <h4>By <a href="{{ '/about/' | relative_url }}" title="About {{ site.owner.name }}">{{ site.owner.name }}</a></h4>
+  <div class="post-author__info">{{ site.owner.info }}</div>
 </div>

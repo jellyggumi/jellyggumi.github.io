@@ -1,55 +1,82 @@
 ---
-layout: null
-title: Games
+layout: page
+title: "Games"
+description: "Browser games built for this site, including Castle War, a physics-based siege game playable free in a browser."
+active: games
 permalink: /games/
+header-img: "img/misc-bg.jpg"
+sitemap:
+  changefreq: monthly
+  priority: 0.7
 ---
-<!doctype html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Games · Jelly GGumi</title>
-<style>
-  :root { --bg:#0e1216; --card:#19222b; --line:#2b3742; --ink:#e9eef3; --sub:#9db0c0; --accent:#f0b24a; }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { background:var(--bg); color:var(--ink); min-height:100vh; padding:48px 20px 64px;
-    font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
-    display:flex; flex-direction:column; align-items:center; }
-  h1 { font-size:1.9rem; letter-spacing:.22em; }
-  p.tag { color:var(--sub); margin:.5rem 0 2.2rem; font-size:.95rem; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,420px));
-    gap:22px; width:100%; max-width:880px; justify-content:center; }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:14px;
-    overflow:hidden; display:flex; flex-direction:column; }
-  .card video { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; background:#000; }
-  .body { padding:18px 20px 20px; }
-  .body h2 { font-size:1.3rem; margin-bottom:.4rem; }
-  .body p { color:var(--sub); font-size:.9rem; line-height:1.55; }
-  .play { display:inline-block; margin-top:16px; padding:11px 26px; border-radius:99px;
-    background:var(--accent); color:#2b1d02; font-weight:800; letter-spacing:.06em;
-    text-decoration:none; }
-  .play:hover { filter:brightness(1.08); }
-  .play:focus-visible { outline:3px solid #fff; outline-offset:2px; }
-  a.home { margin-top:40px; color:var(--sub); text-decoration:none; font-size:.85rem; }
-  a.home:hover { color:var(--ink); }
-</style>
-</head>
-<body>
-  <h1>GAMES</h1>
-  <p class="tag">Jelly GGumi's playground</p>
-  <div class="grid">
-    <article class="card">
-      <!-- preload="none": the narrative reel is ~8MB and should cost nothing until played. -->
-      <video src="/games/castle-war-intro.mp4" poster="/games/castle-war-poster.jpg"
-             controls muted playsinline preload="none"></video>
-      <div class="body">
-        <h2>Castle War</h2>
-        <p>청군과 홍군의 성채 공성전. 바람을 읽고 유닛을 날려 적의 코어를 무너뜨리세요.
-           물리 기반 붕괴, 세 개의 전장, 전투 중 병력 생성.</p>
-        <a class="play" href="/games/castle-war/">▶ 플레이</a>
-      </div>
-    </article>
-  </div>
-  <a class="home" href="/">← jellyggumi.github.io</a>
-</body>
-</html>
+
+{% comment %}
+  This page used `layout: null`, so it rendered as a standalone document with no site
+  navigation, no breadcrumb, no meta description and no way back into the rest of the
+  site except one hand-written link. It is now a normal page: the header, nav, footer
+  and metadata all come from the layout, and only the card styling is local.
+
+  The game itself at /games/castle-war/ stays a standalone document on purpose — it is
+  a full-screen canvas app, and wrapping it in the site chrome would fight its own
+  viewport handling.
+{% endcomment %}
+
+<div class="post-body">
+  <p>Small browser games, playable free with nothing to install. They are built as a side
+  project alongside the writing, and they run on a phone as well as a desktop.</p>
+</div>
+
+<div class="game-grid">
+  <article class="game-card">
+    {% comment %}
+      preload="none": the narrative reel is ~8MB. Without this the browser starts
+      buffering it on page load, on mobile data, for a video most visitors never play.
+      The poster frame is what they actually see until they press play.
+    {% endcomment %}
+    <video src="{{ '/games/castle-war-intro.mp4' | relative_url }}"
+           poster="{{ '/games/castle-war-poster.jpg' | relative_url }}"
+           controls muted playsinline preload="none"
+           width="640" height="360"></video>
+    <div class="game-card__body">
+      <h2>Castle War</h2>
+      <p>청군과 홍군의 성채 공성전. 바람을 읽고 유닛을 날려 적의 코어를 무너뜨리세요.
+         물리 기반 붕괴, 세 개의 전장, 전투 중 병력 생성.</p>
+      <p class="game-card__meta">A physics-based siege game: read the wind, launch your
+         units and collapse the enemy core. Three battlefields, destructible structures,
+         and reinforcements built mid-match. Korean interface.</p>
+      <a class="game-card__play" href="{{ '/games/castle-war/' | relative_url }}">▶ 플레이 / Play</a>
+    </div>
+  </article>
+</div>
+
+{% comment %}
+  VideoGame structured data, so the game is eligible to be understood as a game rather
+  than an unlabelled page with a video on it.
+{% endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Castle War",
+  "description": "A physics-based siege game playable in a browser. Launch units against enemy castles across three battlefields, accounting for wind, with destructible structures and mid-match reinforcements.",
+  "url": {{ '/games/castle-war/' | absolute_url | jsonify }},
+  "image": {{ '/games/castle-war-poster.jpg' | absolute_url | jsonify }},
+  "inLanguage": "ko",
+  "genre": ["Strategy", "Physics"],
+  "playMode": "SinglePlayer",
+  "applicationCategory": "Game",
+  "gamePlatform": "Web browser",
+  "operatingSystem": "Any",
+  "author": {
+    "@type": "Person",
+    "name": {{ site.owner.name | jsonify }},
+    "url": {{ '/about/' | absolute_url | jsonify }}
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>

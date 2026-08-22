@@ -1,27 +1,131 @@
 ---
 layout: page
-title: "Hi, There"
-description: "Let me introduce myself"
+title: "About"
+description: "Who writes JellyGGumi Growth Diary, what the site covers, and how its guides to Korean culture and daily life are put together."
 active: about
 header-img: "img/about-bg.jpg"
+sitemap:
+  changefreq: monthly
+  priority: 0.7
 ---
 
-<iframe width="1184" height="666" src="https://www.youtube.com/embed/5_FM0YJhqAI?autoplay=1&mute=1&controls=1&loop=1&playlist=5_FM0YJhqAI" title="우리의 소중한 만남의 시간 ( I&#39;m Coming to See You )" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{% comment %}
+  Rewritten for two reasons.
 
-<h1>I'm jelly ggumi.</h1>
-<br>
-<h4>Hi, Everyone. It's nice to meet you.</h4>
-<br>
-<h4>I'm jelly ggumi. This is my nickname that my parents call me.</h4>
-<br>
-<h4>I was born in south korea at 6 June 2024. My name is INa Jeong.</h4>
-<br>
-<h4>If you want to know about K-culture like a K-pop or south korea, i was able to show you about that with my life.</h4>
-<br>
-<h4>That's my reason why i started gitblog, i want to announce my country. Because it's really my life and proud of me.</h4>
-<br>
-<h4>Let's start, come with me~ 👉👇👇👇</h4>
-<br>
-<!-- 
-<br>
-<h6><p>Image Source: <a href="https://unsplash.com/photos/Dwheufds6kQ/">Unsplash</a></p></h6> -->
+  Substance: the previous version was a short stack of <h4> lines and an autoplaying
+  YouTube iframe. An about page is where a reader — and an ad-network reviewer — looks
+  to find out who is writing and why they should be believed, and a page that answers
+  neither is the single most common thing cited in "low value content" findings.
+
+  Behaviour: the iframe carried autoplay=1 with loop and playlist, so arriving on the
+  page started a video unprompted. That is an accessibility failure (WCAG 2.2.2, no
+  mechanism to stop moving content) and it downloaded the player and video on every
+  visit. It is now click-to-play behind the poster, loaded lazily.
+{% endcomment %}
+
+<div class="post-body">
+
+<h2>About this site</h2>
+
+<p>This is a family site with two halves that belong together. One half is a set of
+practical guides to Korean culture and everyday life, written for people visiting Korea
+or moving here. The other is a growth diary for our daughter, INa &mdash; known in the
+family as Jelly GGumi &mdash; born in South Korea on 6 June 2024.</p>
+
+<h3>Who writes it</h3>
+
+<p>I am INa's parent, and I live in Korea. The guides here are not compiled from other
+travel sites: they are written from doing these things, in Korean, as a matter of ordinary
+routine &mdash; sorting the recycling, topping up a transit card, taking a baby to a
+bathhouse, arguing about which regional soup is best.</p>
+
+<p>That is also the limit of what this site claims. It is a personal account, not an
+official source. It does not give legal, medical, visa or financial advice, and where a
+detail is likely to change &mdash; a fare, a price, an opening time &mdash; the guides
+deliberately describe how something works rather than quoting a number that will be wrong
+within a year.</p>
+
+<h3>What you will find</h3>
+
+<ul>
+  <li><a href="{{ '/journal/category/cultural-tips/' | relative_url }}">Cultural tips</a>
+      &mdash; etiquette, holidays, names and forms of address, and the conventions that
+      most reliably catch visitors out.</li>
+  <li><a href="{{ '/journal/category/food-dining/' | relative_url }}">Food and dining</a>
+      &mdash; how a Korean meal is actually structured, what to order, and the regional
+      dishes worth travelling for.</li>
+  <li><a href="{{ '/journal/category/travel-transport/' | relative_url }}">Travel and transport</a>
+      &mdash; getting around, the seasons, palaces, temples and the river.</li>
+  <li><a href="{{ '/journal/category/daily-life/' | relative_url }}">Daily life</a>
+      &mdash; the practical machinery of living here: convenience stores, connectivity,
+      waste rules, shopping.</li>
+  <li><a href="{{ '/journal/category/family-diary/' | relative_url }}">Family diary</a>
+      &mdash; INa's milestones and the Korean traditions that mark them.</li>
+</ul>
+
+<h3>How it is written</h3>
+
+<p>Each guide takes one subject and tries to answer it properly rather than broadly: what
+the thing is, how it works, why it works that way, and what a newcomer gets wrong about it.
+Korean terms are given in Hangul with a romanisation, because the romanisation alone is
+often useless for actually reading a sign.</p>
+
+<p>New posts go up roughly twice a month. Corrections are genuinely welcome &mdash; if
+something here is wrong or has gone out of date, please
+<a href="{{ '/contact/' | relative_url }}">say so</a> and it will be fixed and dated.</p>
+
+<h3>Where else this is published</h3>
+
+<p>Most of the day-to-day writing happens in Korean on Naver Blog, Korea's largest
+blogging platform. That archive is indexed on the
+<a href="{{ '/naver/' | relative_url }}">Naver page</a>. Photographs from the family diary
+are collected in the <a href="{{ '/gallery/' | relative_url }}">albums</a>, and there are a
+couple of <a href="{{ '/games/' | relative_url }}">browser games</a> built alongside all of
+this.</p>
+
+<h3>A short film</h3>
+
+<p>This is the video we made when INa arrived.</p>
+
+{% comment %}
+  loading="lazy" plus no autoplay: the player is only fetched if the reader scrolls to
+  it, and it only plays if they press play. `title` is required for the iframe to be
+  announced meaningfully by a screen reader.
+{% endcomment %}
+<div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/5_FM0YJhqAI"
+          title="I'm Coming to See You — a short film for INa's arrival"
+          loading="lazy"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+</div>
+
+<p>Advertising and cookies on this site are described in the
+<a href="{{ '/privacy/' | relative_url }}">privacy policy</a>.</p>
+
+</div>
+
+{% comment %}
+  Person + WebSite structured data so the author is an identifiable entity rather than
+  an anonymous byline.
+{% endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "url": {{ '/about/' | absolute_url | jsonify }},
+  "mainEntity": {
+    "@type": "Person",
+    "name": {{ site.owner.name | jsonify }},
+    "description": "Parent of INa (Jelly GGumi), living in South Korea and writing first-hand guides to Korean culture and daily life.",
+    "email": {{ site.email | prepend: 'mailto:' | jsonify }},
+    "url": {{ '/about/' | absolute_url | jsonify }},
+    "sameAs": [
+      "https://blog.naver.com/{{ site.naver_username }}",
+      "https://www.youtube.com/@{{ site.youtube_username }}",
+      "https://instagram.com/{{ site.instagram_username }}"
+    ]
+  }
+}
+</script>

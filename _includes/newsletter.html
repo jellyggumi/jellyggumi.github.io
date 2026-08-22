@@ -1,27 +1,23 @@
+{% comment %}
+  This block used to be a TinyLetter signup form. TinyLetter was retired in 2024 and
+  tinyletter.com now 301s to a Mailchimp pricing page, so submitting the form sent a
+  reader to a sales page instead of subscribing them — a broken control on every page
+  of the site. The form also posted to a list named `photorgasms` with an onsubmit
+  handler opening a third, different URL, so it had not worked correctly for some time.
 
-        <div class="row"  style="background-color: #530720; padding-bottom: 40px; margin-top: 50px; margin-bottom: 80px;">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+  Rather than ship a dead form, this offers the two subscription routes that do work:
+  the site's own RSS feed, and the Naver blog where the same author posts in Korean.
+{% endcomment %}
 
-      <center><h4><p>SUBSCRIBE TO RECEIVE POSTS DIRECTLY TO YOUR INBOX</h4></center>
-
-
-<form style="padding:3px;text-align:center;font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:12px;" action="https://tinyletter.com/photorgasms" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/yourproject', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"><input type="text" placeholder="Enter your email address"  style="width:200px;height:30px;border:0;background-color:#5A0F28;color:#dddddd;outline:0;padding-left:12px;" name="email" id="tlemail" />&nbsp; &nbsp; <input type="submit" value="Get notified!" style="background-color:#470118;color:#dddddd;height:30px;border:0;" /></form>
-            </div>
-        </div>
-     
-<style type="text/css">
-        .tlemail::-webkit-input-placeholder {
-   color: rgba(255,255,255,.45);
-}
-       .tlemail:-moz-placeholder { /* Firefox 18- */
-   color: rgba(255,255,255,.45);  
-}
-
-      .tlemail::-moz-placeholder {  /* Firefox 19+ */
-   color: rgba(255,255,255,.45);  
-}
-
-      .tlemail:-ms-input-placeholder {  
-   color: rgba(255,255,255,.45);  
-}
-    </style>
+<div class="row follow-strip">
+  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <p class="follow-strip__title"><strong>Follow new posts</strong></p>
+    <p class="follow-strip__body">
+      New guides are published roughly twice a month. Subscribe by
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>, or read along on the
+      <a href="https://blog.naver.com/{{ site.naver_username }}" rel="noopener">Naver blog</a>.
+      Questions and corrections are welcome by
+      <a href="{{ '/contact/' | relative_url }}">email</a>.
+    </p>
+  </div>
+</div>

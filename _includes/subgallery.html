@@ -1,3 +1,16 @@
+{% comment %}
+  Inline photo set for a post. Three fixes over the previous version:
+
+  1. The <img> now points at the generated `.thumb.webp` while the lightbox <a> keeps
+     the full-size file. Grid tiles were previously loading multi-megapixel originals
+     at thumbnail size.
+  2. `loading="lazy"` plus explicit width/height: these galleries sit well below the
+     fold, and reserving the box stops each arrival shifting the layout.
+  3. The caption was used verbatim as an `id`. Captions are prose containing spaces
+     and punctuation, and repeat across posts, so that emitted invalid and duplicated
+     IDs. Dropped — nothing linked to them.
+{% endcomment %}
+
 {% if include.id %}
   {% assign gallery = page.[include.id] %}
 {% else %}
@@ -6,23 +19,24 @@
 
 <div class="gallery masonry-gallery">
   {% for img in gallery %}
+  {% assign thumb = img.image_path | replace: '.jpg', '.thumb.webp' | replace: '.jpeg', '.thumb.webp' | replace: '.JPG', '.thumb.webp' | replace: '.png', '.thumb.webp' %}
 
   <figure class="gallery-item">
-
-	<header class='gallery-icon'>
-
-<a href="{{ site.url }}{{ site.baseurl }}{{ img.image_path }}" class="popup"  title="{{ img.image-caption }}" data-caption="{{ img.image-copyright }}">
-<img src="{{ site.url }}{{ site.baseurl }}{{ img.image_path }}"></a>
-						
-	</header>	
-		
-   <figcaption class='gallery-caption'>
-		<div class="entry-summary" id="{{ img.image-caption }}">
-				<h3>{{img.image-caption}}</h3>
-					<p>{{img.image-copyright}}</p>
-						</div>
-					</figcaption>
-				</figure>
+    <header class="gallery-icon">
+      <a href="{{ img.image_path | relative_url }}" class="popup"
+         title="{{ img.image-caption }}" data-caption="{{ img.image-copyright }}">
+        <img src="{{ thumb | relative_url }}"
+             alt="{{ img.image-caption | default: 'Photo' }}"
+             loading="lazy" decoding="async" width="700" height="467">
+      </a>
+    </header>
+    <figcaption class="gallery-caption">
+      <div class="entry-summary">
+        <h3>{{ img.image-caption }}</h3>
+        <p>{{ img.image-copyright }}</p>
+      </div>
+    </figcaption>
+  </figure>
 
   {% endfor %}
 </div>

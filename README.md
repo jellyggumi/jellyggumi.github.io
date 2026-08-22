@@ -1,167 +1,128 @@
-p h o t o r a m a 
-====================
-
-![photorama](https://raw.githubusercontent.com/sunbliss/photorama/gh-pages/photorama_thumb.gif)
-
-----------
-
----> [DEMO](https://sunbliss.github.io/photorama/ "DEMO")  <---
-
-----------
-
-A theme for **jekyll**. 
-
-Created for gh-pages (project page).
-
-This template was crafted having in mind the photobloggers and the artists.
-
-It uses [Clean Blog](https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll "Clean Blog") as its basis.
-
-----------
-## Change Log
-
-### Version 2.2 (4/23/2018)
-
-<a href="https://github.com/sunbliss/photorama/wiki/How-to-get-SSL-on-Jekyll%3F"> How to get SSL Certificate (Https) For Jekyll</a>
-
-### Version 2.1 (3/22/2017)
-
-* Fixed script loading. 
-* Fixed padding bottom for the navbar toggle menu.
-
-
-### Version 2.0 (2/4/2017)
-
-* HTTPS is now enforced. 
-
-~~**Custom Domains are not supported.**~~
-
-~~For the time being, the only way to apply a custom domain name is by removing HTTPS as of the previous version. 
-Hoping Github developers will give its users the ability to add a custom domain served under security.~~
-
-### Version 1.2 (1/31/2017)
-
-* Fixed footer code so that the twitter icon links to the twitter_username instead of instagram_username.
-
-### Version 1.1 (7/15/2016)
-
-* Improved galleries and search section.
-* Better rendering of the header text.
-
-### Version 1.0 (6/19/2016)
-* Initial Template
-
-----------
-
- **IMPORTANT!!!**
-================
-
-### Before you begin: Change the URL and the BASEURL as well as the internal nav links in the _config.yml
-
-The **URL** should say `https://yourusername.github.io`
-
-The **BASEURL** should say `/repositoryname`
-
-**Internal nav** should say
-
-  nav:
-
-  - GALLERY: `"https://yourusername.github.io/repositoryname/gallery/"`
-  - JOURNAL: `"https://yourusername.github.io/repositoryname/journal/"`
-  - ABOUT: `"https://yourusername.github.io/repositoryname/about/`"
-
-If there are problems with loading assets like CSS files and images, make sure that both **URL** and **BASEURL** are set correctly!!! 
-
-----------
-
-~~**NOT FOR HTTPS served repos!!!**~~
-==================================
-
-~~* Applies for v1.2!~~
-
-If you want to use your **own domain** go to the root of your project's repository, create a CNAME file and add a line with your domain name, e.g. `www.yourdomain.com`.
-
-Go to your domain name registrar and add a CNAME record pointing your domain to GitHub Pages:
-- type: CNAME
-- host: www.yourdomainname.com
-- answer: yourusername.github.io/repositoryname
-- TTL: 300
-
-----------
-
-Usage
-============ 
-
-###Quick Start
-
-1. [Fork this repository](https://github.com/sunbliss/photorama/fork) to get started. 
-2. Go to `https://github.com/yourusername/photorama/settings`
-3. Rename the repository to your new project, e.g. *myphotoblog*
-2. Create a new branch called `gh-pages` in your repository. 
-3. Go to the branches directory at `https://github.com/yourusername/repositoryname/branches` and *change* **default branch** to **gh-pages**.
-4. Delete **master** branch. 
-3. GitHub will build your site automatically and publish it at `https://yourusername.github.io/repositoryname/`.  
-
-----------
-
-- The homepage welcomes the visitors with 3 animated photos of your choice. It is recommended that all three are landscape orientated for best view.
-
-To change the welcome content at the far left of the Home page go here: `/index.html` and fill the responding lines of the YAML with your desired text.
-
-----------
-
-- To enable **disqus** comments in the posts, change their front matter for comments to 'true'.
-
-You must have a registered account in disqus, where you will also register a forum for your website.
-
-Find the line `s.src = '//yourproject.disqus.com/embed.js';  // ` in the disqus_comments.html and REPLACE 'yourproject' with your forum shortname.
-
-----------
-
-- In order to send **newsletters** about your posts to your subscribers, you should register an account in [tinyletter](http://www.tinyletter.com " tinyletter").
-
-Find the line `'https://tinyletter.com/yourproject', ` in the *newsletter.html* and replace 'yourproject' with your registered website.
-
-You can always ommit the newsletter rendering by deleting the line `{% include newsletter.html %}
-` in the *default.html* layout.
-
-----------
-
-If you want to use the matching **NEWSLETTER** template, you must always create a new file  by copying its respective index.html and renaming it to e.g. 2016-March-newsletter.html and then save it inside the folder and the accompanying images inside the 'images folder', so it can be accessed to your viewers through their browser. In this case the root url for the above newsletter will be ***http://yourgithubusername.github.io/yourproject/2016-March-newsletter.html***. Copy this link and replace this part of the code `http://www.yoursite.com/newsletter/year-month-newsletter` with it.
-
-----------
-
-**TAGS** and **CATEGORIES** of the posts 
-
-When you add a tag or a category name in the front matter of a post, don't forget to add the responding markdown files in /journal/tag/ folder and in /journal/category folder, so they can always render when browsing the journal or searching in the respective page.
-
-----------
-
-All the credits and the helpers can be found at **ABOUT** page.
-
-
-----------
-
-Read <a href="https://sunbliss.github.io/photorama/journal/images-size-for-better-performance/">**this**</a> post if you want to ensure your website always loads fast.
-
-
-----------
-
-I hope you will find it useful for your projects, photographic or not.
-
-
-----------
-
-
-##License
+# JellyGGumi Growth Diary
+
+Source for **[jellyggumi.github.io](https://jellyggumi.github.io)** — a Jekyll site with two
+halves: first-hand guides to Korean culture, food and daily life written for visitors and
+newcomers, and a family growth diary for INa (Jelly GGumi), born in South Korea on 6 June 2024.
+
+Built on the [photorama](https://github.com/sunbliss/photorama) Jekyll theme, which is in turn
+based on [Clean Blog](https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll).
+This README describes *this* site; the upstream theme's own setup notes do not apply here and
+in places contradict this configuration.
+
+---
+
+## Layout
+
+```
+_posts/             the 21 guides and diary entries
+_layouts/           default, page, post, home, journal_by_category, journal_by_tag
+_includes/          head, nav, footer, breadcrumbs, share, signoff, subgallery, …
+journal/            index, archive, and the category/ and tag/ stub pages
+gallery/            album index plus one page per album
+games/              games index; games/castle-war/ is a standalone canvas app
+img/postcover/      post cover images (pc*.jpg) and their .thumb.webp thumbnails
+css/site.css        additions and corrections layered over the theme's main.css
+tools/make_covers.py  regenerates the generated post covers
+```
+
+## Local build
+
+There is no Gemfile; the site is built by GitHub Pages from the default branch. To preview
+locally you need `jekyll` and `jekyll-paginate`:
+
+```sh
+gem install jekyll jekyll-paginate jekyll-sitemap
+jekyll serve            # http://localhost:4000
+```
+
+`jekyll-paginate` is required. Without it `paginator` is nil and `/journal/` renders with no
+posts — GitHub Pages loads it from its own plugin whitelist, so that failure only shows up
+locally.
+
+## Writing a post
+
+Put a file in `_posts/` named `YYYY-MM-DD-Title-In-Kebab-Case.md`. Front matter:
+
+```yaml
+---
+layout: "post"
+title: "Title Case Headline"
+subtitle: "One clarifying line"
+description: "A standalone sentence of roughly 120-155 characters. Required — it becomes the
+meta description, the Open Graph description and the search-result snippet."
+active: "journal"
+image:
+  feature: "pc101.jpg"
+date: "2026-06-06"
+header-img: "img/postcover/pc101.jpg"
+comments: false
+tags: [Food, Seoul]
+categories: [Food & Dining]
+sitemap:
+  changefreq: monthly
+  priority: 0.8
+---
+```
+
+The body is a **bare HTML fragment**: no `<html>`, `<head>`, `<body>`, `<section>` or wrapper
+`<div>`. The layout supplies the document and the reading column, and it renders `title` as the
+page `<h1>` — so the body should not repeat the title as a heading.
+
+### Taxonomy
+
+Categories and tags are fixed sets. Adding a new one means adding a matching stub page, or its
+archive URL 404s:
+
+- category → `journal/category/<slug>.md` with `layout: journal_by_category` and `category:`
+- tag → `journal/tag/<slug>.md` with `layout: journal_by_tag` and `tag:`
+
+Current categories: `Cultural Tips`, `Food & Dining`, `Travel & Transport`, `Daily Life`,
+`Family Diary`.
+
+## Images
+
+Post covers live in `img/postcover/` as `pcNNN.jpg` at 1375×675, each with a generated
+`pcNNN.thumb.webp` used by the journal card grid. Gallery photographs are capped at 2048px on
+the long edge with a 700px `.thumb.webp` beside each one; grids load the thumbnail and the
+lightbox loads the full file.
+
+`tools/make_covers.py` regenerates the generated covers. It is deterministic — seeded per
+filename — and asserts two things per cover: the headline region stays dark enough for white
+text (≥4.5:1) and the motif region stays bright enough to be visible.
+
+## Notes for future changes
+
+- `baseurl` is `""`, not `"/"`. A bare `"/"` makes every `| prepend: site.baseurl` produce a
+  doubled slash, and `//css/main.css` is a protocol-relative URL pointing at a host named `css`.
+- Use `| relative_url` rather than prepending `site.baseurl` by hand.
+- An empty string is truthy in Liquid. `{% if page.title %}` is true for `title: ""`; compare
+  against `""` instead.
+- Escape taxonomy names on output. `Food & Dining` contains a literal ampersand, which is
+  invalid unescaped in both text and attribute values.
+- Per-page stylesheets go in front matter as `extra_css:`, not as a `<link>` in the body.
+- Liquid parses tags inside `{% comment %}` blocks, so a literal `{% … %}` in a comment is a
+  syntax error.
+
+## License
 
 The MIT License (MIT)
 
 Copyright (c) 2014 Filippo Oretti, Dario Andrei
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+and associated documentation files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all copies or
+substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+Photographs in `gallery/` and `img/` are family photographs and are not covered by the above
+licence. Please ask before reusing them.
