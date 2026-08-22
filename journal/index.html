@@ -1,85 +1,120 @@
 ---
 layout: page
-description: "Journal"
-title: "Writings"
+title: "Journal"
+description: "Guides to Korean culture, food, transport and daily life, written from living here, plus a family growth diary."
 active: journal
 header-img: "img/writing-bg.jpg"
+sitemap:
+  changefreq: weekly
+  priority: 0.9
 ---
 
-<head>
-<link rel="stylesheet" href="{{ site.baseurl }}/css/journal.css" media="screen" />
-</head>
+{% comment %}
+  Two bugs were fixed in this listing:
 
-<body class="journal">
-<div class="archive">
-  <h1 class="archive-title" style="display:inline-block;"> POSTS </h1>
+  1. A dead re-assign of site.posts.first sat inside the paginator loop. Liquid's
+     for-loop rebinds the loop variable each pass so the render survived, but the line
+     was dead and actively misleading — it read as though every card showed the newest
+     post. Removed.
+  2. Cards carried no excerpt, so the index gave a reader nothing to choose between.
+     They now show the post's own description.
 
-<div style="font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; display:inline-block;margin-left:.5em;">
-    Browse by <a href="{{ site.baseurl }}/journal/category/">Category</a> or <a href="{{ site.baseurl }}/journal/tag/">Tag</a>
-  </div>
+  The listing also no longer hardcodes inline styles on every element; that moved to
+  .post-card in site.css.
+{% endcomment %}
+
+<div class="post-body">
+  <p>
+    Everything published here, newest first. Browse by
+    <a href="{{ '/journal/category/' | relative_url }}">category</a>,
+    <a href="{{ '/journal/tag/' | relative_url }}">tag</a> or the
+    <a href="{{ '/journal/archive/' | relative_url }}">full archive</a>,
+    or jump straight into a section below.
+  </p>
+  <p class="journal-cadence">
+    {{ site.posts.size }} posts so far. New guides go up roughly twice a month &mdash;
+    see the <a href="{{ '/journal/archive/' | relative_url }}">archive</a> for the
+    publishing schedule.
+  </p>
 </div>
 
-<section class="section--postsWrapper">
-  <div class="container">
-    <div class="blockGroup">
-      <ul class="blockGroup-list">
-
-{% for post in paginator.posts %}
-
-
- {% assign post = site.posts.first %}
-  {% assign content = post.content %}
-  
-<li class="block">
-<div class="postArticle-wrapper">
-
-<div class="post-preview" style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #530720;">
-    
-<a href="{{ post.url | prepend: site.baseurl }}">
-        {% if post.image.feature %}
-	<img src="{{ site.baseurl }}/img/postcover/{{ post.image.feature }}">
-	{% endif %}
- 
- 
-        <p class="post-title" style="font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 16px; margin-left: 1em;"> &#9658; {{ post.title }}
-        </p>
-</a>
-        {% if post.subtitle %}
-        <p class="post-subtitle" style="font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; margin-left: 1em;"> {{ post.subtitle }}</p>
-        {% endif %}
-    
-    <p class="post-meta" style="font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 10px; margin-left: 1em;"> Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
-</div>
-
-</div>
-</li>
- {% endfor %}
-<p>&nbsp;</p>
-      </ul>
-    </div>
-  </div>
-</section>
-
-
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager" style="font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;" >
-    {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-    </li>
-    {% endif %}
-
-<span class="button-height"> Page {{paginator.page}} of {{paginator.total_pages}}</span>
-
-    {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </li>
-    {% endif %}
+{% comment %}
+  Category entry points with live counts. A reader landing here from search gets a
+  route into a whole topic rather than a flat reverse-chronological wall.
+{% endcomment %}
+{% assign all_categories = site.categories | sort %}
+{% if all_categories.size > 0 %}
+<ul class="section-index">
+  {% for cat in all_categories %}
+  <li>
+    <a href="{{ cat[0] | slugify | prepend: '/journal/category/' | append: '/' | relative_url }}">
+      <span class="section-index__name">{{ cat[0] | escape }}</span>
+      <span class="section-index__count">{{ cat[1].size }} post{% unless cat[1].size == 1 %}s{% endunless %}</span>
+    </a>
+  </li>
+  {% endfor %}
 </ul>
 {% endif %}
 
-<br>
+<section aria-label="All posts">
+  {% comment %}
+    Fall back to the full post list when `paginator` is nil. jekyll-paginate only
+    defines it when the plugin is actually loaded, and a missing plugin previously
+    rendered this page with zero posts — a silently empty content hub.
+  {% endcomment %}
+  {% if paginator.posts %}{% assign post_list = paginator.posts %}{% else %}{% assign post_list = site.posts %}{% endif %}
 
-</body>
+  <ul class="post-cards">
+    {% for post in post_list %}
+    <li class="post-card">
+      {% if post.image.feature %}
+      {% assign card_thumb = post.image.feature | replace: '.jpg', '.thumb.webp' | replace: '.png', '.thumb.webp' | prepend: '/img/postcover/' %}
+      <a class="post-card__thumb" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
+        {% comment %}
+          Decorative here: the adjacent title link carries the accessible name, so an
+          empty alt plus aria-hidden stops a screen reader announcing the same
+          destination twice. First two cards load eagerly as they are above the fold.
+        {% endcomment %}
+        <img src="{{ card_thumb | relative_url }}" alt=""
+             width="700" height="394" decoding="async"
+             loading="{% if forloop.index <= 2 %}eager{% else %}lazy{% endif %}">
+      </a>
+      {% endif %}
+      <div class="post-card__body">
+        <h2 class="post-card__title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h2>
+        {% if post.description %}
+        <p class="post-card__desc">{{ post.description | strip_html | truncate: 150 }}</p>
+        {% elsif post.subtitle %}
+        <p class="post-card__desc">{{ post.subtitle }}</p>
+        {% endif %}
+        <p class="post-card__meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+          {% if post.categories.size > 0 %}
+            &middot; <a href="{{ post.categories | first | slugify | prepend: '/journal/category/' | append: '/' | relative_url }}">{{ post.categories | first | escape }}</a>
+          {% endif %}
+        </p>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+{% if paginator.total_pages > 1 %}
+<nav class="post-body" aria-label="Pagination">
+  <ul class="pager">
+      {% if paginator.previous_page %}
+      <li class="previous">
+          <a href="{{ paginator.previous_page_path | relative_url }}" rel="prev">&larr; Newer Posts</a>
+      </li>
+      {% endif %}
+      <span class="button-height">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+      {% if paginator.next_page %}
+      <li class="next">
+          <a href="{{ paginator.next_page_path | relative_url }}" rel="next">Older Posts &rarr;</a>
+      </li>
+      {% endif %}
+  </ul>
+</nav>
+{% endif %}

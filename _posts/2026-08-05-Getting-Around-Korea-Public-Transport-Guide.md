@@ -2,31 +2,21 @@
 layout: "post"
 title: "Getting Around Korea: A Public Transport Guide"
 subtitle: "Cards, subways, buses and transfers explained"
+description: "How Korea's subway, buses, trains and taxis actually work, from T-money cards and transfers to KTX tickets and late-night options."
 active: "journal"
 image:
   feature: "pc008.jpg"
 date: "2026-08-05"
 header-img: "img/postcover/pc008.jpg"
 comments: false
-tags: [K-Culture]
-categories: [Cultural Tips]
+tags: [Transport, Practical]
+categories: [Travel & Transport]
 sitemap :
   changefreq : daily
   priority : 1.0
 ---
 
-
-<html class="no-js" lang="en">
-<head>
-	<meta content="charset=utf-8">
-</head>
-
-    <body>
-
-<section id="content" role="main">
-		<div class="wrapper">
-	<br><br>
-			<h2>{{page.title}}</h2>
+<p>Korea has one of the most usable public transport networks anywhere, and almost all of it runs off a single card you can buy in a convenience store. The mechanics are simple once someone explains them, but nobody does, and two of the conventions &mdash; tagging off, and what a station name actually refers to &mdash; catch out visitors who otherwise navigate perfectly well. This is how the system fits together, from your first day to the last train home.</p>
 
 
 <h3>Start With a Transit Card</h3>
@@ -35,19 +25,7 @@ sitemap :
 
 <p>The card matters more than it first appears. It works across subways, city buses and taxis, and it is what makes the transfer discount system work at all. Paying a single cash fare on a bus is possible, but you lose the transfer benefit and you need exact change. Loading a modest amount and topping up at any station is far less friction.</p>
 
-
-<h3>Reading the Subway</h3>
-
-<p>Subway lines are numbered and colour-coded, and station signage carries Korean, English and often Chinese characters. Each station also has a number, which is genuinely helpful when a station name is unfamiliar: you can track your position by counting stations rather than parsing names.</p>
-
-<p>Transfers between lines are marked clearly, though some interchange stations involve a long walk. Doors are marked on the platform floor, and trains show the next stop on in-car displays. If you are unsure which direction you need, the platform signs list the terminal station for that direction rather than the immediate next stop, so it helps to know the end of your line.</p>
-
-
-<h3>Buses and Their Colours</h3>
-
-<p>In Seoul, city buses are colour-coded by the kind of route they run. Blue buses generally cover longer trunk routes across the city, green buses handle shorter neighbourhood and feeder routes, yellow buses run circular routes in the centre, and red buses connect the city with surrounding areas. Other cities use their own schemes, so the colour logic is not nationwide.</p>
-
-<p>Buses are often faster than the subway for short hops and they show you the city instead of a tunnel. The tradeoff is that they are more sensitive to traffic, and stop announcements move quickly. Sitting near the front and watching the display is the simplest way to avoid missing a stop.</p>
+<p>Buying one is undramatic: you say 티머니 (timeoni) at a convenience store counter, hand over cash, and the assistant sells and loads the card in one movement. 캐시비 (kaesibi), Cashbee, is the other main brand. The card also pays at convenience stores, vending machines and station lockers, and a leftover balance is refundable at the counter, as our guide to <a href="/journal/Korean-Convenience-Stores-A-Practical-Guide/">Korean convenience stores</a> describes.</p>
 
 
 <h3>Why You Tag On and Off</h3>
@@ -56,7 +34,29 @@ sitemap :
 
 <p>Because of this, a trip involving a bus, then a subway, then another bus can cost far less than three separate fares. If you forget to tag off, the system cannot link the next leg and you may be charged as though you started fresh. It is a small habit with a real effect on cost.</p>
 
+<p>Tapping out does a second job that is easy to miss: it is how the fare is worked out at all, since fares go by distance rather than a flat charge. The subway enforces it, because the exit gate will not open without a tap. On a bus nothing stops you stepping off the rear door, which is why bus legs are where it goes wrong.</p>
+
 <p>The link is not open-ended. You have roughly half an hour after tagging off to begin the next leg, extended late at night, and there is a limit on how many transfers one journey can chain. Losing the discount to a long coffee stop between legs is the most common way visitors get caught out, so treat the window as the thing to plan around.</p>
+
+
+<h3>Reading the Subway</h3>
+
+<p>Subway lines are numbered and colour-coded, and station signage carries Korean, English and often Chinese characters. Each station also has a number, which is genuinely helpful when a station name is unfamiliar: you can track your position by counting stations rather than parsing names.</p>
+
+<p>Transfers between lines are marked clearly, though some interchange stations involve a long walk. Doors are marked on the platform floor, and trains show the next stop on in-car displays. If you are unsure which direction you need, the platform signs list the terminal station for that direction rather than the immediate next stop, so it helps to know the end of your line.</p>
+
+<p>The subway is the default in Seoul, and the reason is not raw speed but immunity to traffic: a journey takes about as long at eight in the morning as at two in the afternoon. Each line keeps its colour across maps, signage and platform edges, so an interchange can be followed by colour alone. Line 2 is the exception worth learning, being a loop.</p>
+
+<p>Platform screen doors are fitted across most of the network, removing the drop to the track and fixing the door positions that make orderly queuing possible. Step-free access is good but uneven: most stations have a lift, though it often serves one exit rather than all, so find that exit before you set off.</p>
+
+
+<h3>Buses and Their Colours</h3>
+
+<p>In Seoul, city buses are colour-coded by the kind of route they run. Blue buses generally cover longer trunk routes across the city, green buses handle shorter neighbourhood and feeder routes, yellow buses run circular routes in the centre, and red buses connect the city with surrounding areas. Other cities use their own schemes, so the colour logic is not nationwide.</p>
+
+<p>Buses are often faster than the subway for short hops and they show you the city instead of a tunnel. The tradeoff is that they are more sensitive to traffic, and stop announcements move quickly. Sitting near the front and watching the display is the simplest way to avoid missing a stop.</p>
+
+<p>The colours are only half of it. A route number also encodes which part of the city a bus starts and ends in. Smaller than any are 마을버스 (maeulbeoseu), village buses: short green shuttles threading through hillside streets a full-size bus cannot reach.</p>
 
 
 <h3>Travelling Between Cities</h3>
@@ -64,6 +64,15 @@ sitemap :
 <p>For intercity travel the main choice is between rail and express buses. KTX is the high-speed rail service and is usually the fastest option between major cities, with reserved seating and frequent departures on the busiest corridors. Conventional rail services cost less and stop more often.</p>
 
 <p>Express and intercity buses reach many places rail does not, and terminals are common even in smaller towns. Booking ahead matters around major holidays, when demand for both rail and buses rises sharply. Treat any specific fare or duration you read online as approximate and check current schedules before committing to a plan.</p>
+
+<p>Rail has more tiers than the KTX name suggests. KTX leaves Seoul from Seoul Station, or Yongsan for the south-west, while SRT is a separate high-speed operator serving overlapping destinations from Suseo &mdash; the commonest way to reach the wrong station holding a valid ticket. ITX trains sit below them as limited-express, slower than KTX but quicker than the older all-stops 무궁화 (mugunghwa) services. On a coach, seat class matters more than the operator.</p>
+
+
+<h3>Taxis and the Last Train</h3>
+
+<p>Taxis cost less relative to everything else than visitors expect. Standard cabs are the ordinary silver, white or orange ones; 모범택시 (mobeomtaeksi), deluxe taxis, are black with a gold stripe and charge more for a more experienced driver. A lit 빈차 (bincha) sign means empty, so street hailing works outside the late-night peak, but app hailing is what locals use.</p>
+
+<p>The subway does not run all night. Trains stop somewhere around midnight, earlier at the far ends of a line than in the centre, so check the last train before a late dinner rather than after one. Seoul runs night buses on a few long routes; elsewhere the answer is a taxi.</p>
 
 
 <h3>Etiquette That Locals Notice</h3>
@@ -73,13 +82,10 @@ sitemap :
 <p>Phone calls on public transport are usually kept short and quiet, and most people use earphones for audio. Eating a full meal on a train carriage is uncommon on urban lines. None of this is enforced aggressively, but following it makes a visible difference to how comfortable a crowded carriage feels.</p>
 
 
-<h3>Apps Worth Installing</h3>
+<h3>Apps, Exits and Two Reliable Mistakes</h3>
 
 <p>Korean map and transit apps generally give better routing than international alternatives, particularly for bus arrivals and subway exit numbers. Exit numbers are worth paying attention to: large stations can have many exits spread over a wide area, and choosing the right one saves a long detour above ground.</p>
 
 <p>Real-time arrival information is widely available for both subways and buses, which changes how you plan. Rather than memorising a timetable, you check the next arrival and adjust. For a first visit, that single habit removes most of the uncertainty from getting around.</p>
 
-<!-- end of GALLERY __ -->
-
-</div><!-- end of WRAPPER __ -->
-</section>
+<p>Two mistakes catch almost everyone. The first is failing to tap out on a bus. The second is treating a station as a point rather than an area: a large interchange spreads hundreds of metres underground, and the gap between two exits can be a main road you must then find a crossing for. Korean addresses include the exit number for that reason, and only a Korean map app reads them properly, for reasons our post on <a href="/journal/Staying-Connected-In-Korea-SIM-Wifi-And-Apps/">staying connected in Korea</a> explains. After that, the remaining variable is the <a href="/journal/Four-Seasons-In-Korea-What-To-Expect/">weather by season</a>.</p>

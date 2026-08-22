@@ -1,0 +1,84 @@
+---
+layout: page
+title: "Archive"
+description: "Every post on JellyGGumi Growth Diary listed by date, with a monthly index and the site's publishing schedule."
+active: journal
+permalink: /journal/archive/
+header-img: "img/misc-bg.jpg"
+sitemap:
+  changefreq: weekly
+  priority: 0.6
+---
+
+{% comment %}
+  A complete date-ordered index. Two purposes:
+
+    * For a reader: the fastest way to see everything that exists, and the only view
+      that is not paginated.
+    * For a crawler: one page linking to every post, so nothing depends on walking
+      paginated pages to be discovered.
+
+  Counts and groupings are computed from the posts themselves — nothing here is a
+  hand-maintained list that can fall out of date.
+{% endcomment %}
+
+<div class="post-body">
+
+<p>Every post, newest first. There are currently
+<strong>{{ site.posts.size }} posts</strong> across
+<strong>{{ site.categories.size }} categories</strong>.
+You can also browse by <a href="{{ '/journal/category/' | relative_url }}">category</a>,
+by <a href="{{ '/journal/tag/' | relative_url }}">tag</a>, or
+<a href="{{ '/search/' | relative_url }}">search</a>.</p>
+
+<h3>Publishing schedule</h3>
+
+<p>New guides go up roughly twice a month. The subject rotates between the four
+non-diary sections so no one area goes stale: something practical about daily life,
+something about food, something about travel or the seasons, and something about
+culture or language. Family diary entries are published when there is a milestone
+worth recording rather than on a schedule.</p>
+
+<p>Existing posts are revised when something changes on the ground &mdash; a system is
+replaced, a rule is amended, a place closes. Where a post has been materially updated,
+the revision date is shown alongside it below.</p>
+
+{% comment %}
+  Group by year, then by month. `date: "%Y"` on each post and a change-detection
+  variable is the standard Liquid approach; Jekyll has no group_by filter available on
+  GitHub Pages without a plugin.
+{% endcomment %}
+{% assign current_year = "" %}
+{% assign current_month = "" %}
+
+{% for post in site.posts %}
+  {% assign post_year = post.date | date: "%Y" %}
+  {% assign post_month = post.date | date: "%B %Y" %}
+
+  {% if post_year != current_year %}
+    {% unless forloop.first %}</ul>{% endunless %}
+    <h3 class="archive-year">{{ post_year }}</h3>
+    {% assign current_year = post_year %}
+    {% assign current_month = "" %}
+  {% endif %}
+
+  {% if post_month != current_month %}
+    {% unless current_month == "" %}</ul>{% endunless %}
+    <h4 class="archive-month">{{ post.date | date: "%B" }}</h4>
+    <ul class="archive-list">
+    {% assign current_month = post_month %}
+  {% endif %}
+
+  <li>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <span class="archive-meta">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b" }}</time>
+      {% if post.categories.size > 0 %} &middot; {{ post.categories | first | escape }}{% endif %}
+      {% if post.lastmod %} &middot; updated {{ post.lastmod | date: "%-d %b %Y" }}{% endif %}
+    </span>
+  </li>
+
+  {% if forloop.last %}</ul>{% endif %}
+{% endfor %}
+
+</div>
