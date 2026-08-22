@@ -1,9 +1,12 @@
 ---
 layout: page
-title: "ALBUMS"
-description: "archive"
+title: "Albums"
+description: "Photo albums following INa from birth through her first year, arranged by milestone."
 active: gallery
 header-img: "img/gallery-bg.jpg"
+sitemap:
+  changefreq: monthly
+  priority: 0.7
 images:
  - image_path: /gallery/albums/alb01.jpg
    gallery-folder: /gallery/gallery01/
@@ -11,84 +14,61 @@ images:
    gallery-date: June 2024
  - image_path: /gallery/albums/alb02.jpg
    gallery-folder: /gallery/gallery02/
-   gallery-name: 50days
+   gallery-name: 50 Days
    gallery-date: July 2024
  - image_path: /gallery/albums/alb03.jpg
    gallery-folder: /gallery/gallery03/
-   gallery-name: 100days
+   gallery-name: 100 Days
    gallery-date: October 2024
  - image_path: /gallery/albums/alb05.jpg
    gallery-folder: /gallery/gallery05/
    gallery-name: Traveling Abroad
    gallery-date: December 2024
+extra_css:
+  - /css/selena.css
+extra_js:
+  - /js/isotope.pkgd.min.js
+  - /js/jquery.mousewheel.min.js
+  - /js/scripts.js
 ---
-<!-- - image_path: /gallery/albums/alb04.jpg
-   gallery-folder: /gallery/gallery04/
-   gallery-name: 150days
-   gallery-date: November 2024 -->
 
-<html class="no-js" lang="en">
-<head>
-	<meta content="charset=utf-8">
-    <link rel="stylesheet" href="{{ "/css/selena.css" | prepend: site.baseurl }}">
-</head>
+{% comment %}
+  This page previously opened a nested <html>/<head>/<body> inside the page layout,
+  which already supplies all three. It now contributes a fragment.
 
+  Album tiles load the generated .thumb.webp rather than the multi-megapixel album
+  cover: at tile size the original was roughly 30x more bytes than the display needed.
+{% endcomment %}
 
-    <body class="gallery">
- 
-	<section id="content" role="main">
-		<div class="wrapper">
-	
-			<h2>{{page.title}}</h2>
-			
-			<!-- Gallery __-->
-			<div class="gallery masonry-gallery">
-				
-{% for image in page.images %}  	
+<div class="post-body">
+  <p>Albums are grouped by milestone, newest additions last. Each opens a full set of
+  photographs; click any image to view it larger.</p>
+</div>
 
-	               <figure class="gallery-item">
-                         <figure class="effect-selena">
-					<header class='gallery-icon'>
-		       
-<a href="{{ site.url }}{{ site.baseurl }}{{ image.gallery-folder }}">
-<img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>
-
-					</header>	
-					<figcaption class='gallery-caption'>
-						<div class="entry-summary">
-							<h3>{{image.gallery-name}}</h3>
-							<p>{{image.gallery-date}}</p>
-						</div>
-					</figcaption>
-                       </figure>
-				</figure>
-							
-{% endfor %}		
-				
-			</div>
-			
-		</div><!-- END .wrapper -->
-	</section>
-
-
-<br>
-<!-- <h6><p>Image Source: <a href="https://unsplash.com/photos/YOT6kS8YtEA/">Unsplash</a></p></h6> -->
-
-<!-- jQuery -->    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="{{ site.baseurl }}/js/retina.min.js"></script>
-<!-- include Masonry -->
-<script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script> 
-<!-- include mousewheel plugins -->
-<script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
-<!-- include carousel plugins -->
-<script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
-<!-- include svg line drawing plugin -->
-<script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
-<!-- include custom script -->
-<script src="{{ site.baseurl }}/js/scripts.js"></script>
-<!-- Modernizr -->
- <script src="{{ site.baseurl }}/js/modernizr.js"></script>
-
-</body></html>
+<section id="content" role="main" aria-label="Photo albums">
+  <div class="wrapper">
+    <div class="gallery masonry-gallery">
+      {% for image in page.images %}
+      {% assign thumb = image.image_path | replace: '.jpg', '.thumb.webp' | replace: '.JPG', '.thumb.webp' %}
+      <figure class="gallery-item">
+        <figure class="effect-selena">
+          <header class="gallery-icon">
+            <a href="{{ image.gallery-folder | relative_url }}">
+              <img src="{{ thumb | relative_url }}"
+                   alt="{{ image.gallery-name }} album, {{ image.gallery-date }}"
+                   loading="{% if forloop.index <= 2 %}eager{% else %}lazy{% endif %}"
+                   decoding="async" width="700" height="525">
+            </a>
+          </header>
+          <figcaption class="gallery-caption">
+            <div class="entry-summary">
+              <h3>{{ image.gallery-name }}</h3>
+              <p>{{ image.gallery-date }}</p>
+            </div>
+          </figcaption>
+        </figure>
+      </figure>
+      {% endfor %}
+    </div>
+  </div>
+</section>
