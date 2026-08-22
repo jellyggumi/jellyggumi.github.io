@@ -1,35 +1,49 @@
 ---
 layout: page
-title: tags
-description: archive
-header-img: "img/misc-bg.jpg"
 ---
 
-<div id="post-content">
-    {% if site.tags[page.tag] %}
-        {% for post in site.tags[page.tag] %}
-            {% capture post_year %}{{ post.date | date: '%Y' }}{% endcapture %}
-            {% if forloop.first %}
-                <h3>{{ post_year }}</h3><div class="list-group"style="display: inline-block;">
-            {% endif %}
-			
-            {% if forloop.first == false %}
-                {% assign previous_index = forloop.index0 | minus: 1 %}
-                {% capture previous_post_year %}{{ site.tags[page.tag][previous_index].date | date: '%Y' }}{% endcapture %}
-                {% if post_year != previous_post_year %}
-                    </div><h3>{{ post_year }}</h3><div class="category-list" >
-                {% endif %}
-            {% endif %}
-			
-            <a href="{{ site.baseurl }}{{ post.url }}">
-                <h4>{{ post.title }}</h4>
-            </a>
+{% comment %}
+  Tag archive. Same rewrite as journal_by_category.html: per-page title and
+  description instead of a shared "tags"/"archive" pair, balanced markup, and post
+  cards rather than a bare list of <h4> links.
+{% endcomment %}
 
-            {% if forloop.last %}
-                </div>
+<div class="post-body">
+  {% assign tag_posts = site.tags[page.tag] %}
+
+  {% if tag_posts and tag_posts.size > 0 %}
+    <p>{{ tag_posts.size }} post{% unless tag_posts.size == 1 %}s{% endunless %}
+       tagged <strong>{{ page.tag | escape }}</strong>.
+       Back to <a href="{{ '/journal/' | relative_url }}">all posts</a>.</p>
+
+    <ul class="post-cards">
+      {% for post in tag_posts %}
+      <li class="post-card">
+        {% if post.image.feature %}
+        {% assign card_thumb = post.image.feature | replace: '.jpg', '.thumb.webp' | replace: '.png', '.thumb.webp' | prepend: '/img/postcover/' %}
+        <a class="post-card__thumb" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
+          <img src="{{ card_thumb | relative_url }}" alt=""
+               width="700" height="394" decoding="async"
+               loading="{% if forloop.index <= 2 %}eager{% else %}lazy{% endif %}">
+        </a>
+        {% endif %}
+        <div class="post-card__body">
+          <h2 class="post-card__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          {% if post.description %}
+          <p class="post-card__desc">{{ post.description | strip_html | truncate: 150 }}</p>
+          {% endif %}
+          <p class="post-card__meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+            {% if post.categories.size > 0 %}
+              &middot; <a href="{{ post.categories | first | slugify | prepend: '/journal/category/' | append: '/' | relative_url }}">{{ post.categories | first | escape }}</a>
             {% endif %}
-        {% endfor %}
-    {% else %}
-        <p>There are no posts for this tag.</p>
-    {% endif %}
+          </p>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>There are no posts with this tag yet.
+       Browse <a href="{{ '/journal/' | relative_url }}">all posts</a> instead.</p>
+  {% endif %}
 </div>

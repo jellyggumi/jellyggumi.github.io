@@ -3,12 +3,12 @@ layout: default
 ---
 
 <!-- Page Header -->
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+<header class="intro-header"{% if page.header-img %} style="background-image: url('{{ page.header-img | relative_url }}')"{% elsif site.header-img %} style="background-image: url('{{ site.header-img | relative_url }}')"{% endif %}>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading">
-                    <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+                    <h1>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</h1>
                     <hr class="small">
                     <span class="subheading">{{ page.description }}</span>
                 </div>
@@ -17,16 +17,42 @@ layout: default
     </div>
 </header>
 
+{% comment %}
+  Breadcrumbs are suppressed on the home page, where "Home / Home" is noise.
+{% endcomment %}
+{% unless page.url == "/" %}{% include breadcrumbs.html %}{% endunless %}
+
 <!-- Main Content -->
 <div class="container">
-	<div class="row">
+	<div class="row" id="main">
 					{{ content }}
 	</div>
 </div>
 
-<!-- jQuery -->    
+{% comment %}
+  jQuery is loaded from one origin across every layout. post.html and gallery pages
+  previously pulled 2.1.1 from ajax.googleapis.com while index.html pulled 2.1.3 from
+  code.jquery.com, so a reader moving between them paid for a second copy of jQuery
+  and a second DNS/TLS handshake for no benefit. SRI hash pins the delivered bytes.
+{% endcomment %}
+<script src="https://code.jquery.com/jquery-2.1.3.min.js" integrity="sha256-ivk71nXhz9nsyFDoYoGf2sbjrR9ddh+XDkCcfZxjvcM=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="{{ '/js/main.min.js' | relative_url }}"></script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<!-- Custom Theme JavaScript -->
-<script src="{{ site.baseurl }}/js/main.min.js "></script>
+{% comment %}
+  Page-level scripts, declared in front matter as `extra_js:`, emitted here so they run
+  AFTER jQuery.
+
+  This exists because of a real break: the gallery pages had their own <script> tags in
+  their body — isotope, mousewheel, scripts.js — all of which depend on jQuery. Page
+  content is emitted before this block, so those ran first and threw
+  "jQuery is not defined", leaving the masonry gallery unlaid-out. Loading jQuery again
+  inside each page would fix the order at the cost of a second copy, so the ordering is
+  fixed here instead.
+{% endcomment %}
+{% for script in page.extra_js %}
+<script src="{{ script | relative_url }}"></script>
+{% endfor %}
+{% if page.extra_js_inline %}
+<script>{{ page.extra_js_inline }}</script>
+{% endif %}

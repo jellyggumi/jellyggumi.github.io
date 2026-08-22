@@ -1,0 +1,67 @@
+{% comment %}
+  Breadcrumb trail plus its BreadcrumbList structured data, emitted together so the
+  visible path and the machine-readable one can never drift apart.
+
+  Depth is derived from context rather than hardcoded:
+    - a post   -> Home / Journal / <Category> / <Title>
+    - a page   -> Home / <Title>
+  The final crumb is plain text, not a link: linking a page to itself gives a reader
+  nothing and Google explicitly expects the current item to be unlinked.
+{% endcomment %}
+
+{% assign crumb_category = page.categories | first %}
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="{{ '/' | relative_url }}">Home</a></li>
+    {% if page.date %}
+      <li><a href="{{ '/journal/' | relative_url }}">Journal</a></li>
+      {% if crumb_category %}
+      <li><a href="{{ crumb_category | slugify | prepend: '/journal/category/' | append: '/' | relative_url }}">{{ crumb_category | escape }}</a></li>
+      {% endif %}
+    {% endif %}
+    <li><span aria-current="page">{{ page.title | default: site.title | escape }}</span></li>
+  </ol>
+</nav>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": {{ '/' | absolute_url | jsonify }}
+    }{% if page.date %},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Journal",
+      "item": {{ '/journal/' | absolute_url | jsonify }}
+    }{% if crumb_category %},
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": {{ crumb_category | jsonify }},
+      "item": {{ crumb_category | slugify | prepend: '/journal/category/' | append: '/' | absolute_url | jsonify }}
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": {{ page.title | jsonify }}
+    }{% else %},
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": {{ page.title | jsonify }}
+    }{% endif %}{% else %},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": {{ page.title | default: site.title | jsonify }}
+    }{% endif %}
+  ]
+}
+</script>

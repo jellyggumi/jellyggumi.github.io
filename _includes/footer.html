@@ -4,117 +4,81 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-                <ul class="list-inline text-center">
+                {% comment %}
+                  Secondary navigation. About, Contact and Privacy need to be
+                  reachable from every page — that is both an AdSense review
+                  expectation and how a reader looks for who runs a site — but they
+                  are not browsing destinations, so they sit here instead of crowding
+                  the header.
+                {% endcomment %}
+                <nav aria-label="Site information">
+                  <ul class="footer-nav">
+                    {% for nav_hash in site.footer_nav %}
+                      {% for nav_item in nav_hash %}
+                        <li><a href="{{ nav_item[1] | relative_url }}">{{ nav_item[0] }}</a></li>
+                      {% endfor %}
+                    {% endfor %}
+                  </ul>
+                </nav>
 
-                    <!-- {% if site.facebook_username %}
-                    <li>
-                        <a href="https://facebook.com/{{ site.facebook_username }}" data-toggle="tooltip" title="Facebook">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    {% endif %}
-                    {% if site.twitter_username %}
-                    <li>
-                        <a href="https://twitter.com/{{ site.twitter_username }}" data-toggle="tooltip" title="Twitter">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    {% endif %}
-                    {% if site.instagram_username %}
-                    <li>
-                        <a href="https://instagram.com/{{ site.instagram_username }}" data-toggle="tooltip" title="Instagram">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    {% endif %}
-                    {% if site.flickr_username %}
-                    <li>
-                        <a href="https://flickr.com/photos/{{ site.flickr_username }}" data-toggle="tooltip" title="Flickr">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-flickr fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    {% endif %}
-                    {% if site.deviantart_username %}
-                    <li>
-                        <a href="http://{{ site.deviantart_username }}.deviantart.com">
-                            <span class="fa-stack fa-lg" data-toggle="tooltip" title="Deviantart">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-deviantart fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    {% endif %}
-                    {% if site.github_username %}
-                    <li>
-                        <a href="https://github.com/{{ site.github_username }}" data-toggle="tooltip" title="Github">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    {% endif %} -->
+                <ul class="list-inline text-center">
                     {% if site.naver_username %}
                     <li>
-                        <a href="https://blog.naver.com/{{ site.naver_username }}" data-toggle="tooltip" title="Naver">
+                        <a href="https://blog.naver.com/{{ site.naver_username }}" title="Naver blog" rel="me noopener" target="_blank">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-thumbs-o-up fa-stack-1x fa-inverse"></i>
                             </span>
+                            <span class="sr-only">Naver blog</span>
                         </a>
                     </li>
                     {% endif %}
                     {% if site.youtube_username %}
                     <li>
-                        <a href="https://www.youtube.com/@{{ site.youtube_username }}" data-toggle="tooltip" title="Youtube">
+                        <a href="https://www.youtube.com/@{{ site.youtube_username }}" title="YouTube" rel="me noopener" target="_blank">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-youtube-play fa-stack-1x fa-inverse"></i>
                             </span>
+                            <span class="sr-only">YouTube</span>
                         </a>
                     </li>
                     {% endif %}
                     {% if site.instagram_username %}
                     <li>
-                        <a href="https://instagram.com/{{ site.instagram_username }}" data-toggle="tooltip" title="Instagram">
+                        <a href="https://instagram.com/{{ site.instagram_username }}" title="Instagram" rel="me noopener" target="_blank">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
                             </span>
+                            <span class="sr-only">Instagram</span>
                         </a>
                     </li>
                     {% endif %}
-            <li>
-    <a href="mailto:{{ site.email }}" data-toggle="tooltip" target="_blank" title="Email">
-                       <span class="fa-stack fa-lg">
+                    <li>
+                        {% comment %}
+                          A mailto: must not carry target="_blank" — it opens a blank
+                          tab that never navigates, leaving the reader on an empty page.
+                        {% endcomment %}
+                        <a href="mailto:{{ site.email }}" title="Email">
+                            <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
-</span>
-          </a> </li>
-
-                    <!-- <li>
-                        <a href="{{ "/feed.xml" | prepend: site.baseurl }}" data-toggle="tooltip" title="Feed">
+                            </span>
+                            <span class="sr-only">Email</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ '/feed.xml' | relative_url }}" title="RSS feed">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
                             </span>
+                            <span class="sr-only">RSS feed</span>
                         </a>
-                    </li> -->
+                    </li>
                 </ul>
                 <p class="copyright text-muted">Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}</p>
-<!-- <center><h6><p>Powered by <a href="https://github.com/jekyll/">Jekyll</a>.</p></h6></center> -->
             </div>
         </div>
     </div>

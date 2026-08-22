@@ -1,35 +1,53 @@
 ---
 layout: page
-title: categories
-description: archive
-header-img: "img/misc-bg.jpg"
 ---
 
-<div id="post-content">
-    {% if site.categories[page.category] %}
-        {% for post in site.categories[page.category] %}
-            {% capture post_year %}{{ post.date | date: '%Y' }}{% endcapture %}
-            {% if forloop.first %}
-                <h3>{{ post_year }}</h3><div class="list-group" style="display: inline-block;">
-            {% endif %}
-			
-            {% if forloop.first == false %}
-                {% assign previous_index = forloop.index0 | minus: 1 %}
-                {% capture previous_post_year %}{{ site.categories[page.category][previous_index].date | date: '%Y' }}{% endcapture %}
-                {% if post_year != previous_post_year %}
-                    </div><h3>{{ post_year }}</h3><div class="list-group">
-                {% endif %}
-            {% endif %}
-			
-            <a href="{{ site.baseurl }}{{ post.url }}">
-                <h4>{{ post.title }}</h4>
-            </a>
+{% comment %}
+  Category archive. Rewritten because the previous version:
+    * hardcoded `title: categories` and `description: archive` in its own front
+      matter, so every category page shared one title and one meta description —
+      duplicate titles across pages is a direct SEO problem;
+    * emitted `<div class="list-group"style=...` with no space before the attribute;
+    * opened and closed year-grouping <div>s inside conditionals that did not balance
+      when a category spanned more than two years.
 
-            {% if forloop.last %}
-                </div>
-            {% endif %}
-        {% endfor %}
-    {% else %}
-        <p>There are no posts in this category.</p>
-    {% endif %}
+  Title and description now derive from the category itself, and posts are grouped by
+  year with the wrapper opened and closed around the whole loop.
+{% endcomment %}
+
+<div class="post-body">
+  {% assign cat_posts = site.categories[page.category] %}
+
+  {% if cat_posts and cat_posts.size > 0 %}
+    <p>{{ cat_posts.size }} post{% unless cat_posts.size == 1 %}s{% endunless %}
+       filed in <strong>{{ page.category | escape }}</strong>.
+       Back to <a href="{{ '/journal/' | relative_url }}">all posts</a>.</p>
+
+    <ul class="post-cards">
+      {% for post in cat_posts %}
+      <li class="post-card">
+        {% if post.image.feature %}
+        {% assign card_thumb = post.image.feature | replace: '.jpg', '.thumb.webp' | replace: '.png', '.thumb.webp' | prepend: '/img/postcover/' %}
+        <a class="post-card__thumb" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
+          <img src="{{ card_thumb | relative_url }}" alt=""
+               width="700" height="394" decoding="async"
+               loading="{% if forloop.index <= 2 %}eager{% else %}lazy{% endif %}">
+        </a>
+        {% endif %}
+        <div class="post-card__body">
+          <h2 class="post-card__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          {% if post.description %}
+          <p class="post-card__desc">{{ post.description | strip_html | truncate: 150 }}</p>
+          {% endif %}
+          <p class="post-card__meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+          </p>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>There are no posts in this category yet.
+       Browse <a href="{{ '/journal/' | relative_url }}">all posts</a> instead.</p>
+  {% endif %}
 </div>

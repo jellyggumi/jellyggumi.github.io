@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
+{% comment %}
+  head.html emits its own <head> element. This layout used to include it and then open
+  a second <head> immediately afterwards, holding the 404 meta-refresh — two head
+  elements per page, and the refresh has now been removed from the 404 entirely.
+{% endcomment %}
 {% include head.html %}
-
-<head>
-{% if page.url == "/404.html" %}<meta http-equiv="refresh" content="5; url={{ site.baseurl }}/journal" />{% endif %}
-</head>
 
 <body>
 
@@ -19,7 +20,7 @@
 
     {% include footer.html %}
 
-   {% include Scroll_to_Top.html %}  
+    {% include Scroll_to_Top.html %}
 
 </body>
 

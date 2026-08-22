@@ -1,18 +1,27 @@
 # Site settings
 title: JellyGGumi Growth Diary
 email: "banggujin@gmail.com"
-description: "Photo is memory"
+# Used as the fallback meta description and in the WebSite structured data, so it
+# has to describe the site to a stranger. "Photo is memory" told a search user
+# nothing about what they would find here.
+description: "First-hand guides to Korean culture, food and daily life for visitors and newcomers, alongside a family growth diary from Seoul."
+tagline: "Photo is memory"
 url: "https://jellyggumi.github.io"
-baseurl: "/"
+# Empty, not "/". The site is served from the domain root, and a bare "/" made
+# every `| prepend: site.baseurl` produce a doubled slash — "//css/main.css" is a
+# protocol-relative URL pointing at a host literally named "css". GitHub Pages
+# normalises it away, which hid the bug in production while breaking local builds.
+baseurl: ""
 naver_username: "jelly_ggumi"
 youtube_username: "jelly_ggumi"
 facebook_username: ""
 twitter_username: ""
 instagram_username: "jelly._.ggumi"
-github_username:  "jellyggumi"
-deviantart_username: ""
-flickr_username: ""
-discus_shortname: ""
+github_username: "jellyggumi"
+# `discus_shortname` (sic) used to sit here. Misspelt, referenced by nothing, and
+# duplicating the real setting under `comments.disqus.short_name` below. Removed.
+# deviantart_username and flickr_username were also removed: both were empty and both
+# only ever guarded commented-out markup in the footer.
 share: true
 
 # Owner/author information
@@ -25,24 +34,31 @@ owner:
 plugins:
   - jekyll-sitemap
 
-# Settings for comments helper
-# Set 'provider' to the comment provider you want to use. (i.e.  Disqus, Intense Debate, livefyre, or Facebook Comments)
-# Set 'provider' to false to turn commenting off globally.
-#Set 'provider: false' to disable comments globally.
-# Disable comments for individual pages/posts by specifying 'comments: false' in the page/post YAML Front Matter.
-#
-comments :
-  provider : disqus
-  disqus :
-    short_name : ""
+# Comments. `short_name` is empty, so disqus_comments.html renders nothing — the include
+# now requires a non-empty shortname rather than falling through to the vendor's
+# "yourproject.disqus.com" placeholder. To turn comments on: register a Disqus forum,
+# put its shortname here, and set `comments: true` in a post's front matter.
+comments:
+  provider: disqus
+  disqus:
+    short_name: ""
 
-# Internal nav
+# Main navigation — content sections only. About/Contact/Privacy live in the
+# footer so the header stays focused on things a reader actually browses.
+# Relative paths: absolute URLs here broke the active-page highlight and made
+# local preview links jump to production.
 nav:
-  - GALLERY: "https://jellyggumi.github.io/gallery/"  
-  - JOURNAL: "https://jellyggumi.github.io/journal/"
-  - ABOUT: "https://jellyggumi.github.io/about/"
-  - NAVER: "https://jellyggumi.github.io/naver/"
-  - PRIVACY: "https://jellyggumi.github.io/privacy/"
+  - JOURNAL: "/journal/"
+  - GALLERY: "/gallery/"
+  - GAMES: "/games/"
+  - NAVER: "/naver/"
+
+# Secondary navigation, rendered in the footer.
+footer_nav:
+  - ABOUT: "/about/"
+  - CONTACT: "/contact/"
+  - PRIVACY: "/privacy/"
+  - RSS: "/feed.xml"
 
 # All translation keys
 translations:
@@ -57,28 +73,42 @@ google_site_verification: mfV0-xbtMeYnOR_RUx43PwdtFtWH5HlaJ7xFxITxyRA
 # Build settings
 markdown: kramdown
 highlighter: rouge
-permalink: pretty
-paginate: 5
-paginate_path: "/journal/page:num/"
+# Single permalink key. A second `permalink:` used to follow this line; YAML keeps
+# the last occurrence, so `pretty` was silently discarded. Declaring the real
+# scheme once removes the ambiguity.
 permalink: "/journal/:title/"
+paginate: 6
+paginate_path: "/journal/page:num/"
 categories_path: "/journal/category/"
 tags_path: "/journal/tag/"
-gems: 
- - jekyll-paginate
- - jekyll-sitemap
- - jekyll-include-cache
- - jekyll-gist
- - jekyll-analytics
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 
-# SiteMap
-sitemap:
-    file: "/sitemap.xml"
-    exclude:
-        - "/atom.xml"
-        - "/feed.xml"
-        - "/feed/index.xml"
-    include_posts:
-        - "/writing/"
-    change_frequency_name: "change_frequency"
-    priority_name: "priority"
+# `gems:` was renamed to `plugins:` in Jekyll 3.5 and is ignored by current
+# versions — locally that silently disabled pagination and emptied the journal
+# index. GitHub Pages loads jekyll-paginate from its own whitelist, which is why
+# production still worked and the breakage only showed up in a local build.
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-include-cache
+
+exclude:
+  - node_modules
+  - README.md
+  - LICENSE
+  - resize.py
+  - tools
+
+# The `sitemap:` block below is not read by anything.
+#
+# sitemap.xml in this repo is a hand-written Liquid template that reads each page's own
+# `sitemap:` front matter (changefreq / priority / exclude) and decides inclusion itself.
+# These keys are the configuration surface of the third-party `jekyll-sitemap-plugin`
+# gem, which is not installed and is not in `plugins:` above — and the `jekyll-sitemap`
+# gem that *is* listed takes no configuration at all and does not overwrite an existing
+# sitemap.xml.
+#
+# Kept only as a pointer to where sitemap behaviour actually lives, since deleting it
+# outright would leave no trace of why the keys were once here.
+#   -> to exclude a page:      sitemap: { exclude: true } in its front matter
+#   -> to set change frequency: sitemap: { changefreq: weekly }
+#   -> to set priority:         sitemap: { priority: 0.8 }

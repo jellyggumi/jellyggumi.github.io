@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
 {% include head.html %}
-<link rel="shortcut icon" href="{{ root_url }}/favicon.ico?" type="image/x-icon">
-<link rel="icon" href="{{ root_url }}/favicon.ico?" type="image/x-icon">
-</head>
 
-<body>
+{% comment %}
+  The home page is a fixed-viewport kenburns slideshow: body.fullscreen sets
+  overflow:hidden, so the usual footer and newsletter blocks would be unreachable
+  below the fold. It therefore uses this layout rather than default.html, and carries
+  its own compact link row inside the visible area instead.
 
+  head.html used to be included inside a second <head> element here, nesting one head
+  inside another. It emits its own <head>, so it is included directly.
+{% endcomment %}
+
+<body class="fullscreen">
 
     {% include nav.html %}
 
     {{ content }}
 
-    </body>
+</body>
 
 </html>
-

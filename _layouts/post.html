@@ -1,233 +1,168 @@
 ---
 layout: default
+extra_css:
+  - /css/tags-wrap.css
 ---
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        
-        <meta name="viewport" content="width=device-width">
-
-<link href="{{ site.baseurl }}/css/tags-wrap.css" rel="stylesheet" />
-  
-    </head>
-    <body>
-  
-
-{% assign post = page %}
+{% comment %}
+  This layout previously opened its own <html>, <head> and <body> while already being
+  wrapped by default.html, producing three nested documents per page. It also dropped
+  {{ content }} straight into a Bootstrap .row with no column, so its negative side
+  margins pushed body text past the viewport edge on phones. Both are fixed here:
+  the layout contributes a fragment, and the article body sits in a real column.
+{% endcomment %}
 
 <article>
+
 <!-- Post Header -->
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% endif %}')">
+<header class="intro-header"{% if page.header-img %} style="background-image: url('{{ page.header-img | relative_url }}')"{% endif %}>
     <div class="container">
         <div class="row">
-                            <div class="post-heading">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
                     <h1 style="color: #acd578;">{{ page.title }}</h1>
                     {% if page.subtitle %}
                     <h2 class="subheading">{{ page.subtitle }}</h2>
                     {% endif %}
-                    <span class="meta">Posted on {{ page.date | date: "%B %-d, %Y" }}</span>
 
-<span class="time-tag-categ" style="font-size:.7em;background-color: rgba(128, 128, 128, 0.45);">
+                    {% comment %}
+                      A machine-readable datetime alongside the human one. The reading
+                      estimate divides by 180 wpm; `number_of_words` on `content` counts
+                      the rendered body, and the `| plus: 1` floor stops a short post
+                      claiming "0 minute read".
+                    {% endcomment %}
+                    <span class="meta">
+                      Posted on <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+                    </span>
 
-{% assign minutes = content | number_of_words | divided_by: 180 %}
-<i class="fa fa-clock-o"></i>&nbsp;{% if minutes == 0 %}{% assign minutes = 1 %}{% endif %}
-{{ minutes }} minute read
-
-
-
- {% if post.tags.size > 0 %}
-  &sim; Tagged with <i class="fa fa-tags"></i>{% if post.tags.size == 1 %} {% else %}{% endif %}&nbsp;:&nbsp;{% for tag in page.tags %}<a href="{{ site.baseurl }}/journal/tag/{{  tag | slugify }}/" data-toggle="tooltip" title="Other posts tagged with {{ tag }}" rel="tag">{{ tag }}</a>{% unless forloop.last %}&nbsp;&bull;&nbsp;{% endunless %}{% endfor %}{% endif %}
-
-
-  {% if post.categories.size > 0 %}
-   &sim; Filed in <i class="fa fa-briefcase"></i>{% if post.categories.size == 1 %} {% else %}{% endif %}&nbsp;:&nbsp;{% for tag in page.categories %}<a href="{{ site.baseurl }}/journal/category/{{ tag | slugify }}/" data-toggle="tooltip" title="Other posts filed in {{ tag }} category" rel="tag">{{ tag }}</a>{% unless forloop.last %}&nbsp;&bull;&nbsp;{% endunless %}{% endfor %}{% endif %}
-                    
-   </span>
-
+                    {% assign minutes = content | number_of_words | divided_by: 180 %}
+                    {% if minutes == 0 %}{% assign minutes = 1 %}{% endif %}
+                    <span class="time-tag-categ" style="font-size:.7em;background-color: rgba(128, 128, 128, 0.45);">
+                      <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;{{ minutes }} minute read
+                      {% if page.categories.size > 0 %}
+                        {% comment %}
+                          `escape` on the title attribute and the link text: the
+                          category "Food & Dining" contains a literal ampersand, which
+                          is invalid unescaped in an attribute value and in text.
+                        {% endcomment %}
+                        &sim; Filed in <i class="fa fa-briefcase" aria-hidden="true"></i>&nbsp;:&nbsp;{% for category in page.categories %}<a href="{{ category | slugify | prepend: '/journal/category/' | append: '/' | relative_url }}" title="Other posts filed in {{ category | escape }}" rel="tag">{{ category | escape }}</a>{% unless forloop.last %}&nbsp;&bull;&nbsp;{% endunless %}{% endfor %}
+                      {% endif %}
+                      {% if page.tags.size > 0 %}
+                        &sim; Tagged <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;:&nbsp;{% for tag in page.tags %}<a href="{{ tag | slugify | prepend: '/journal/tag/' | append: '/' | relative_url }}" title="Other posts tagged with {{ tag | escape }}" rel="tag">{{ tag | escape }}</a>{% unless forloop.last %}&nbsp;&bull;&nbsp;{% endunless %}{% endfor %}
+                      {% endif %}
+                    </span>
+                </div>
             </div>
         </div>
     </div>
 </header>
 
+{% include breadcrumbs.html %}
+
 <!-- Post Content -->
+<div class="container">
+    <div class="row">
+        <div class="post-body" id="main">
+            {{ content }}
 
-    <div class="container">
-        <div class="row">
-            
+            {% include signoff.html %}
 
-               				{{ content }}
-
-                <br>
-          <br>
-    <br>
-
-
-               {% include signoff.html %} 
-    <hr class="small">
- {% if site.share %}{% include share.html %}{% endif %}
-                        
-{% if site.comments %}{% include disqus_comments.html %}{% endif %}
-                        
-                <br>
-
-                <ul class="pager">
-                    {% if page.previous.url %}
-                    <li class="previous">
-                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&larr; Previous Post</a>
-                    </li>
-                    {% endif %}
-                    {% if page.next.url %}
-                    <li class="next">
-                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next Post &rarr;</a>
-                    </li>
-                    {% endif %}
-                </ul>
-
+            <hr class="small">
+            {% if site.share %}{% include share.html %}{% endif %}
+            {% if site.comments %}{% include disqus_comments.html %}{% endif %}
         </div>
     </div>
+</div>
+
+{% comment %}
+  Related posts. Every article ends in at least one onward path, so neither a reader
+  nor a crawler hits a dead end. Preference order: same category first, then anything
+  else recent, capped at three. `unless post.url == page.url` keeps the current
+  article out of its own list.
+{% endcomment %}
+{% assign this_category = page.categories | first %}
+{% assign related = "" | split: "" %}
+{% if this_category %}
+  {% for post in site.posts %}
+    {% if post.url != page.url and post.categories contains this_category and related.size < 3 %}
+      {% assign related = related | push: post %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% for post in site.posts %}
+  {% unless post.url == page.url or related contains post %}
+    {% if related.size < 3 %}{% assign related = related | push: post %}{% endif %}
+  {% endunless %}
+{% endfor %}
+
+{% if related.size > 0 %}
+<aside class="related">
+  <h3>Keep reading</h3>
+  <ul>
+    {% for post in related %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <span class="related__meta">
+        {{ post.date | date: "%B %-d, %Y" }}{% if post.categories.size > 0 %} &middot; {{ post.categories | first | escape }}{% endif %}
+      </span>
+    </li>
+    {% endfor %}
+  </ul>
+</aside>
+{% endif %}
+
+<div class="container">
+  <div class="row">
+    <div class="post-body">
+      <ul class="pager">
+          {% if page.previous.url %}
+          <li class="previous">
+              <a href="{{ page.previous.url | relative_url }}" title="{{ page.previous.title }}">&larr; Previous Post</a>
+          </li>
+          {% endif %}
+          {% if page.next.url %}
+          <li class="next">
+              <a href="{{ page.next.url | relative_url }}" title="{{ page.next.title }}">Next Post &rarr;</a>
+          </li>
+          {% endif %}
+      </ul>
+    </div>
+  </div>
+</div>
+
 </article>
 
-<br>
+{% comment %}
+  The full tag and category clouds used to be rendered at the foot of every single
+  post, repeating the same block of links site-wide. That is duplicated boilerplate
+  on every article; the archive pages linked from the breadcrumb and the meta line
+  are the right home for it. Removed here in favour of the focused "Keep reading"
+  list above.
+{% endcomment %}
 
-<hr class="medium">
-
-            <div class="tags-wrap">
-   <div class="tags">
-
-  <div class="section-heading group" style="color: #fff; text-align: center; margin-top: 10px;">
-
-    <h3>Tags Cloud</h3>
-
-  </div>
-
-{% assign rawtags = "" %}
-{% for post in site.posts %}
-{% assign ttags = post.tags | join:'|' | append:'|' %}
-{% assign rawtags = rawtags | append:ttags %}
-{% endfor %}
-
-{% assign rawtags = rawtags | split:'|' | sort %}
-
-{% assign tags = "" %}
-
-{% for tag in rawtags %}
-{% if tag != "" %}
-
-{% if tags == "" %}
-{% assign tags = tag | split:'|' %}
-{% endif %}
-
-{% unless tags contains tag %}
-{% assign tags = tags | join:'|' | append:'|' | append:tag | split:'|' %}
-{% endunless %}
-{% endif %}
-{% endfor %}
-
-  <div class="tag-list">
-    {% for tag in tags %}
-<a href="{{ site.baseurl }}/journal/tag/{{ tag | slugify }}/" style="text-decoration:none;"> {{ tag }} </a> &nbsp;&nbsp;
-{% endfor %}
-  </div>
-
-</div>
-
-<hr class="medium">
-
-<div class="categories">
-
-  <div class="section-heading group" style="color: #fff; text-align: center; margin-top: 10px;">
-
-    <h3>Categories Cloud</h3>
-
-  </div>
-
- 
-{% assign rawcategories = "" %}
-{% for post in site.posts %}
-{% assign tcategories = post.categories | join:'|' | append:'|' %}
-{% assign rawcategories = rawcategories | append:tcategories %}
-{% endfor %}
-
-{% assign rawcategories = rawcategories | split:'|' | sort %}
-
-{% assign categories = "" %}
-
-{% for category in rawcategories %}
-{% if tag != "" %}
-
-{% if categories == "" %}
-{% assign categories = category | split:'|' %}
-{% endif %}
-
-{% unless categories contains category %}
-{% assign categories = categories | join:'|' | append:'|' | append:category | split:'|' %}
-{% endunless %}
-{% endif %}
-{% endfor %}
-
- <div class="category-list">
-   {% for category in categories %}
-<a href="{{ site.baseurl }}/journal/category/{{ category | slugify }}/"> {{ category }} </a> &nbsp;&nbsp;
-{% endfor %}
-  </div>
-
-</div>
-
-<hr class="medium">
-
-<br>
-<br>
-
-       </div>
-
-
-<!-- jQuery -->    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<!-- Custom Theme JavaScript -->
-<script src="{{ site.baseurl }}/js/main.min.js "></script>
-<!-- include image popups -->
-<script src="{{ site.baseurl }}/js/jquery.magnific-popup.js"></script>
-
-<script type="text/javascript">
-      $(document).ready(function($) {
-        $('a.popup').magnificPopup({
-         type: 'image',
-	  gallery:{
-         enabled:true,
-         navigateByImgClick: true,
-         preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-       },
-image: {
-      titleSrc: function(item) {
-              return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
-            }
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-2.1.3.min.js" integrity="sha256-ivk71nXhz9nsyFDoYoGf2sbjrR9ddh+XDkCcfZxjvcM=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="{{ '/js/main.min.js' | relative_url }}"></script>
+{% comment %}
+  isotope + mousewheel are required by scripts.js to lay out `.masonry-gallery`,
+  which `subgallery.html` emits for posts carrying inline photo sets. Dropping them
+  left that gallery as an unstyled vertical stack.
+{% endcomment %}
+<script src="{{ '/js/isotope.pkgd.min.js' | relative_url }}"></script>
+<script src="{{ '/js/jquery.mousewheel.min.js' | relative_url }}"></script>
+<script src="{{ '/js/jquery.magnific-popup.js' | relative_url }}"></script>
+<script>
+  $(document).ready(function($) {
+    $('a.popup').magnificPopup({
+      type: 'image',
+      gallery: { enabled: true, navigateByImgClick: true, preload: [0, 1] },
+      image: {
+        titleSrc: function(item) {
+          return item.el.attr('title') + '&nbsp;' + item.el.attr('data-caption');
         }
-          // other options
-      });
-});
-    </script>
-
-<script src="{{ site.baseurl }}/js/retina.min.js"></script>
-<!-- include Masonry -->
-<script src="{{ site.baseurl }}/js/isotope.pkgd.min.js"></script> 
-<!-- include mousewheel plugins -->
-<script src="{{ site.baseurl }}/js/jquery.mousewheel.min.js"></script>
-<!-- include carousel plugins -->
-<script src="{{ site.baseurl}}/js/jquery.tinycarousel.min.js"></script>
-<!-- include svg line drawing plugin -->
-<script src="{{ site.baseurl }}/js/jquery.lazylinepainter.min.js"></script>
-<!-- include custom script -->
-<script src="{{ site.baseurl }}/js/scripts.js"></script>
-<!-- Modernizr -->
- <script src="{{ site.baseurl }}/js/modernizr.js"></script>
-
-</body>
-</html>
-
-
-
-
+      }
+    });
+  });
+</script>
+<script src="{{ '/js/scripts.js' | relative_url }}"></script>
