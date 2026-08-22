@@ -16,7 +16,7 @@ sitemap :
   priority : 1.0
 ---
 
-<p>Korea's four seasons are genuinely distinct, to the point that the same street can feel like a different country six months apart. That matters more for planning than a list of average temperatures suggests: it is humidity, monsoon timing and air quality that decide what a given month is actually like to be outside in. Here is what each season does, and what it means for what you pack.</p>
+<p>Deciding when to come to Korea matters more than it would in a milder climate. The same itinerary in Seoul is a different holiday in April and in August, and festivals, food and whether the mountains are worth the trip all hang on the season rather than the place.</p>
 
 
 <h3>Why Seasonality Matters Here</h3>
@@ -24,8 +24,6 @@ sitemap :
 <p>Korea has four clearly distinct seasons, and the gap between them is wide enough that the same city can feel like a different place six months apart. This is not a mild, gently shifting climate. Summer and winter sit at genuine extremes, and the two short shoulder seasons are correspondingly prized.</p>
 
 <p>That distinctness shapes food, clothing, travel habits and even architecture. Deciding when to visit is therefore less about finding good weather and more about choosing which version of the country you want to see.</p>
-
-<p>The upshot is that Korea rewards planning around a season rather than a place. The same itinerary in Seoul is a different holiday in April and August, and festivals, food and mountain access hang on that calendar.</p>
 
 
 <h3>Spring and the Blossom Window</h3>
@@ -41,7 +39,7 @@ sitemap :
 
 <p>Two different things get folded into one complaint. 미세먼지 (misemeonji) is fine particulate pollution, measured as PM10 and PM2.5, worst from late winter through spring. 황사 (hwangsa), yellow dust, is separate: mineral sand lifted from the deserts of Mongolia and northern China on spring winds. One is smog, the other grit, and only the second turns the light yellow.</p>
 
-<p>On severity the honest answer is that it varies enormously, day to day and year to year, and how much originates domestically rather than upwind is genuinely disputed. A bad spring week is unpleasant; plenty of spring days are clear. Residents simply check the reading, which sits in every weather app.</p>
+<p>On severity the honest answer is that it varies enormously, day to day and year to year, and how much originates domestically rather than upwind is disputed. A bad spring week is unpleasant; plenty of spring days are clear. Residents simply check the reading, which sits in every weather app.</p>
 
 <p>On a bad day the response is to move indoors rather than lose the day, and rated masks are sold in any pharmacy. A mountain walk keeps until the reading drops.</p>
 
