@@ -1,0 +1,40 @@
+{%- comment -%}
+  Google Analytics 4, emitted from <head>.
+
+  The measurement ID used to be hard-coded twice in head.html — once in the
+  loader URL and once in the gtag('config') call — so changing property meant
+  editing a template and remembering both occurrences. It now comes from
+  `google_analytics.id` in _config.yml, and emptying that value takes analytics
+  off the site entirely.
+
+  Production-only, for the same reason as AdSense: a local `jekyll serve` should
+  not push the author's own reloads into the property and skew the numbers of a
+  site that measures single-digit daily users.
+
+  Unlike ads, analytics is *not* withheld from the 404 and search pages. The
+  reasoning is the opposite: a 404 has no content to place an ad beside, but
+  knowing that readers are landing on one is exactly the signal worth having.
+  The property currently records views on "Page not found", and those are the
+  broken inbound links worth fixing.
+
+  The snippet stays `async` with an immediate `gtag('js')`, i.e. Google's own
+  published form, rather than being deferred behind DOMContentLoaded. Deferring
+  it would drop the shortest sessions and quietly change what the property
+  measures; this change is meant to move where the ID lives, not to move the
+  numbers.
+{%- endcomment -%}
+{%- if jekyll.environment == 'production'
+  and site.google_analytics.id != empty
+  and site.google_analytics.id
+-%}
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics.id }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ site.google_analytics.id }}');
+    </script>
+{%- endif -%}

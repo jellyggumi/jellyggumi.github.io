@@ -219,13 +219,16 @@
     {% endcomment %}
     {% include adsense.html %}
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LZGE8E8VHZ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-LZGE8E8VHZ');
-    </script>
+    {% comment %}
+      Analytics. The measurement ID was hard-coded here twice — in the loader URL
+      and in the gtag('config') call — so the two could drift apart in an edit and
+      the page would keep loading a tag while reporting to nothing. Both now read
+      `google_analytics.id` from _config.yml.
+
+      Kept separate from adsense.html on purpose: they share a production gate but
+      not a page gate. Ads are withheld from the 404 and search pages; analytics is
+      not, because a view on "Page not found" is a broken inbound link worth seeing.
+    {% endcomment %}
+    {% include google-analytics.html %}
 
 </head>

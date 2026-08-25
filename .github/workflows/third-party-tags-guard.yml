@@ -1,21 +1,25 @@
-# AdSense wiring guard.
+# Third-party tag wiring guard — AdSense and Google Analytics.
 #
 # This repository is published by the GitHub Pages *legacy* build straight off
 # gh-pages — there is no deploy workflow to hang a check on, which is why this
 # file exists on its own. It deploys nothing and cannot block a Pages build; it
 # is a signal, so a bad edit is visible as a red check instead of being found
-# weeks later as "why has this site earned nothing".
+# weeks later as "why has this site earned nothing" or "why did analytics stop".
 #
 # It is deliberately a source-level check rather than a Jekyll build. The repo
-# ships no Gemfile, and the two failures actually worth catching are both
-# visible in the source:
+# ships no Gemfile, and every failure worth catching is visible in the source:
 #
 #   - the publisher ID in _config.yml drifting from the one in /ads.txt. AdSense
 #     reports that as "ads.txt missing" and holds ad serving off, and because
 #     the site keeps rendering perfectly it produces no other symptom.
-#   - the loader include being dropped from <head> during an unrelated refactor,
-#     which silently removes every ad and the ownership meta tag along with it.
-name: AdSense guard
+#   - a loader include being dropped from <head> during an unrelated refactor,
+#     which silently removes every ad, the ownership meta tag, or the whole
+#     analytics property, with no visible change to any page.
+#   - an ID hard-coded back into a template. Both IDs used to live that way, and
+#     the analytics one appeared twice in the same file, which is a pair that can
+#     drift apart in an edit and leave the page loading a tag that reports to
+#     nothing.
+name: Third-party tag guard
 
 on:
   push:
@@ -24,10 +28,11 @@ on:
       - "_config.yml"
       - "ads.txt"
       - "_includes/adsense*.html"
+      - "_includes/google-analytics.html"
       - "_includes/head.html"
       - "_includes/post-content.html"
       - "_layouts/post.html"
-      - ".github/workflows/adsense-guard.yml"
+      - ".github/workflows/third-party-tags-guard.yml"
   pull_request:
   workflow_dispatch:
 
@@ -80,15 +85,53 @@ jobs:
             status=1
           fi
 
-          # A hard-coded publisher ID anywhere outside _config.yml and ads.txt is
-          # how the two drifted apart in the first place.
-          stray=$(grep -rln "ca-pub-[0-9]" --include="*.html" --include="*.md" --include="*.js" . \
-            | grep -v "^./_config.yml" || true)
+          # A hard-coded publisher ID in a template is how the ID and /ads.txt
+          # drifted apart in the first place.
+          #
+          # Scoped to _includes and _layouts on purpose. Scanning the whole tree
+          # would also read _posts, and a guide that quotes an AdSense snippet is
+          # legitimate content, not a wiring bug — the check would fail on a
+          # correct article and the fix would be to weaken the check. The
+          # invariant is only ever about templates.
+          stray=$(grep -rln "ca-pub-[0-9]" _includes _layouts || true)
           if [ -n "$stray" ]; then
-            echo "::error::publisher ID hard-coded outside _config.yml:"
+            echo "::error::publisher ID hard-coded in a template; it must read site.google_ad_client:"
             echo "$stray"
             status=1
           fi
 
           [ "$status" -eq 0 ] && echo "AdSense wiring intact."
+          exit $status
+
+      - name: Verify the analytics tag is still wired and configured once
+        run: |
+          status=0
+
+          id=$(sed -n 's/^[[:space:]]\{1,\}id:[[:space:]]*"\{0,1\}\(G-[A-Z0-9]*\)"\{0,1\}.*/\1/p' _config.yml | head -1)
+          if [ -z "$id" ]; then
+            echo "google_analytics.id is empty in _config.yml - analytics is disabled, skipping."
+            exit 0
+          fi
+          echo "configured measurement ID: $id"
+
+          if ! grep -q "include[[:space:]]\+google-analytics\.html" _includes/head.html; then
+            echo "::error::_includes/head.html no longer includes google-analytics.html - the property would stop receiving data with no visible change to any page."
+            status=1
+          fi
+
+          # The include must read the ID from config, not carry its own copy.
+          if grep -q "G-[A-Z0-9]\{6,\}" _includes/google-analytics.html; then
+            echo "::error::_includes/google-analytics.html hard-codes a measurement ID; it must read site.google_analytics.id."
+            status=1
+          fi
+
+          # Same scoping rationale as the publisher check above: templates only.
+          stray_ga=$(grep -rln "G-[A-Z0-9]\{9,\}" _includes _layouts || true)
+          if [ -n "$stray_ga" ]; then
+            echo "::error::measurement ID hard-coded in a template; it must read site.google_analytics.id:"
+            echo "$stray_ga"
+            status=1
+          fi
+
+          [ "$status" -eq 0 ] && echo "Analytics wiring intact."
           exit $status

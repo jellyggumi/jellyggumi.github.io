@@ -71,6 +71,16 @@ port:             	 4000
 
 google_site_verification: mfV0-xbtMeYnOR_RUx43PwdtFtWH5HlaJ7xFxITxyRA
 
+# Google Analytics 4 measurement ID. Leave empty to take analytics off the site.
+# The ID was hard-coded in head.html twice — in the loader URL and in the
+# gtag('config') call — which is a pair that can drift apart in an edit and leave
+# the page loading a tag that reports to nothing.
+#
+# Property: "jellyggumi" under the "banggujin" Analytics account
+# (banggujin@gmail.com), the same identity that owns the AdSense account below.
+google_analytics:
+  id: "G-LZGE8E8VHZ"
+
 # Google AdSense publisher ID. Leave empty to take AdSense off the site entirely:
 # the loader, the ownership meta tag and every ad unit are all gated on this one
 # value. Must stay in sync with the publisher declared in /ads.txt — CI fails the
