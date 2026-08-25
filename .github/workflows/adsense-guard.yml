@@ -1,0 +1,94 @@
+# AdSense wiring guard.
+#
+# This repository is published by the GitHub Pages *legacy* build straight off
+# gh-pages — there is no deploy workflow to hang a check on, which is why this
+# file exists on its own. It deploys nothing and cannot block a Pages build; it
+# is a signal, so a bad edit is visible as a red check instead of being found
+# weeks later as "why has this site earned nothing".
+#
+# It is deliberately a source-level check rather than a Jekyll build. The repo
+# ships no Gemfile, and the two failures actually worth catching are both
+# visible in the source:
+#
+#   - the publisher ID in _config.yml drifting from the one in /ads.txt. AdSense
+#     reports that as "ads.txt missing" and holds ad serving off, and because
+#     the site keeps rendering perfectly it produces no other symptom.
+#   - the loader include being dropped from <head> during an unrelated refactor,
+#     which silently removes every ad and the ownership meta tag along with it.
+name: AdSense guard
+
+on:
+  push:
+    branches: [gh-pages]
+    paths:
+      - "_config.yml"
+      - "ads.txt"
+      - "_includes/adsense*.html"
+      - "_includes/head.html"
+      - "_includes/post-content.html"
+      - "_layouts/post.html"
+      - ".github/workflows/adsense-guard.yml"
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify ads.txt matches the configured publisher
+        run: |
+          client=$(sed -n 's/^google_ad_client:[[:space:]]*"\{0,1\}\(ca-pub-[0-9]*\)"\{0,1\}.*/\1/p' _config.yml | head -1)
+          if [ -z "$client" ]; then
+            echo "google_ad_client is empty in _config.yml - ads are disabled, skipping ads.txt check."
+            exit 0
+          fi
+          pub=${client#ca-}
+          if [ ! -f ads.txt ]; then
+            echo "::error::google_ad_client is set to $client but ads.txt does not exist."
+            exit 1
+          fi
+          if ! grep -qE "^google\.com,[[:space:]]*$pub,[[:space:]]*DIRECT" ads.txt; then
+            echo "::error::ads.txt has no DIRECT record for $pub (AdSense will report it as missing)."
+            cat ads.txt
+            exit 1
+          fi
+          echo "ads.txt authorizes $pub"
+
+      - name: Verify the loader is still wired into <head>
+        run: |
+          status=0
+
+          # Match the include by its target file only. Pinning the exact Liquid
+          # spacing here would make the check assert its own formatting rather
+          # than the wiring it is meant to protect.
+          if ! grep -q "include[[:space:]]\+adsense\.html" _includes/head.html; then
+            echo "::error::_includes/head.html no longer includes adsense.html - the site would ship no AdSense loader and no ownership meta tag."
+            status=1
+          fi
+          if ! grep -q "include[[:space:]]\+adsense-post\.html" _layouts/post.html; then
+            echo "::error::_layouts/post.html no longer includes adsense-post.html - the bottom-of-post unit is gone."
+            status=1
+          fi
+          if ! grep -q "include[[:space:]]\+post-content\.html" _layouts/post.html; then
+            echo "::error::_layouts/post.html no longer renders the body through post-content.html - the in-article unit can never be placed."
+            status=1
+          fi
+          if ! grep -q "include[[:space:]]\+adsense-in-article\.html" _includes/post-content.html; then
+            echo "::error::_includes/post-content.html no longer includes adsense-in-article.html."
+            status=1
+          fi
+
+          # A hard-coded publisher ID anywhere outside _config.yml and ads.txt is
+          # how the two drifted apart in the first place.
+          stray=$(grep -rln "ca-pub-[0-9]" --include="*.html" --include="*.md" --include="*.js" . \
+            | grep -v "^./_config.yml" || true)
+          if [ -n "$stray" ]; then
+            echo "::error::publisher ID hard-coded outside _config.yml:"
+            echo "$stray"
+            status=1
+          fi
+
+          [ "$status" -eq 0 ] && echo "AdSense wiring intact."
+          exit $status

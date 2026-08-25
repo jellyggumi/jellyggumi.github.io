@@ -744,3 +744,48 @@ input:focus-visible {
   font-size: 0.75em;
   color: #9a9a9a;
 }
+
+/* --------------------------------------------------------------------------
+   AdSense placements.
+
+   Bootstrap 3 is what this site ships, so there is no `my-4` spacing utility to
+   lean on — the vertical rhythm is declared here instead.
+
+   Two things this has to get right, both of them AdSense policy rather than
+   taste:
+
+   1. An ad must not be mistaken for content or for navigation. The rule above
+      each unit and the "Advertisement" label give it a visible boundary, which
+      is what "clearly distinguishable" means in practice.
+   2. The reserved height stops the page reflowing when a unit fills. Without it
+      the paragraph under an in-article ad jumps down as the creative loads,
+      which is both a Core Web Vitals (CLS) penalty and the mechanism behind
+      accidental clicks — the thing invalid-traffic detection acts on.
+
+   `min-height` rather than a fixed height: a fluid in-article creative decides
+   its own size, and pinning it would crop the ad.
+   -------------------------------------------------------------------------- */
+.post-ad {
+  max-width: 760px;
+  margin: 2.6em auto;
+  padding: 0 15px;
+  min-height: 100px;
+  overflow: hidden;
+}
+.post-ad::before {
+  content: "Advertisement";
+  display: block;
+  border-top: 1px solid #2a2a2a;
+  padding-top: 0.7em;
+  margin-bottom: 0.7em;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #7a7a7a;
+}
+.post-ad .adsbygoogle {
+  width: 100%;
+}
+.post-ad-bottom {
+  margin-bottom: 1.2em;
+}

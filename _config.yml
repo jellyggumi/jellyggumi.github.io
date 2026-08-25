@@ -70,6 +70,27 @@ destination:      	 ./_site
 port:             	 4000
 
 google_site_verification: mfV0-xbtMeYnOR_RUx43PwdtFtWH5HlaJ7xFxITxyRA
+
+# Google AdSense publisher ID. Leave empty to take AdSense off the site entirely:
+# the loader, the ownership meta tag and every ad unit are all gated on this one
+# value. Must stay in sync with the publisher declared in /ads.txt — CI fails the
+# build if they disagree, because a mismatch is exactly the state AdSense reports
+# as "ads.txt missing" while ad serving stays switched off.
+#
+# Status (AdSense dashboard, banggujin@gmail.com):
+# jellyggumi.github.io is registered under this account, its ads.txt reads as
+# "승인됨" (authorised) and the site sits at "준비 중" — Google is reviewing it.
+# Auto ads are enabled account-side; the units below are the manual placements
+# that sit alongside them. Nothing serves until the review passes.
+google_ad_client: ca-pub-6960738425944933
+
+# Ad unit slot IDs, created in the AdSense dashboard under Ads > By ad unit.
+# Leave a slot empty to hide that placement without touching any template — an
+# <ins> with an empty data-ad-slot is an unfillable request, not an ad.
+google_ad_slots:
+  post_bottom: "5870536631" # jellyggumi-post-bottom, display, under the body of every post
+  post_in_article: "9426638261" # jellyggumi-in-article, fluid, auto-placed mid-post
+
 # Build settings
 markdown: kramdown
 highlighter: rouge

@@ -1,0 +1,35 @@
+{%- comment -%}
+  In-article unit, injected between two paragraphs of a post body by
+  `post-content.html`. The loader is emitted once per page by `adsense.html`
+  from <head>, so only the slot and its push() call live here.
+
+  `data-ad-format="fluid"` with `data-ad-layout="in-article"` is the native
+  format: Google sizes it to the measured reading column and styles it to sit in
+  running text, which is what makes a mid-article placement acceptable rather
+  than an interruption.
+
+  Guard conditions are checked again by the caller before it decides whether to
+  split the body at all; they are repeated here so the include is safe to call
+  from anywhere.
+{%- endcomment -%}
+{%- if jekyll.environment == 'production'
+  and site.google_ad_client != empty
+  and site.google_ad_client
+  and site.google_ad_slots.post_in_article != empty
+  and site.google_ad_slots.post_in_article
+  and page.ads != false
+-%}
+<div class="post-ad post-ad-in-article">
+  <ins
+    class="adsbygoogle"
+    style="display:block; text-align:center;"
+    data-ad-layout="in-article"
+    data-ad-format="fluid"
+    data-ad-client="{{ site.google_ad_client }}"
+    data-ad-slot="{{ site.google_ad_slots.post_in_article }}"
+  ></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+{%- endif -%}

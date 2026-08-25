@@ -208,19 +208,16 @@
     {% endcomment %}
 
     {% comment %}
-      AdSense is withheld from the error page and from the search page. Google's own
-      policy is that ads should sit beside content the publisher provides: a 404 has
-      none, and an empty search page has none until the reader types something. Serving
-      ads there risks a policy finding for no reason, since neither page is a
-      destination anyone lands on deliberately from search.
+      AdSense. The publisher ID used to be hard-coded on the next line, which meant
+      the only way to disable ads — for a local preview, or if the account ever
+      changes — was to edit a template, and nothing tied the ID here to the one
+      declared in /ads.txt. Both now come from `google_ad_client` in _config.yml,
+      and CI fails the build if the two disagree.
+
+      adsense.html owns the whole decision: production-only, client-must-be-set,
+      and withheld from the error and search pages. See the include for why.
     {% endcomment %}
-    {% assign no_ads = false %}
-    {% if page.url == "/404.html" or page.url == "/search/" %}{% assign no_ads = true %}{% endif %}
-    {% unless no_ads %}
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6960738425944933"
-         crossorigin="anonymous"></script>
-    {% endunless %}
+    {% include adsense.html %}
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LZGE8E8VHZ"></script>

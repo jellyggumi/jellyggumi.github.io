@@ -1,1 +1,4 @@
+# Authorized Digital Sellers for jellyggumi.github.io
+# Publisher ID of the Google account that owns this site (banggujin@gmail.com).
+# Keep this in sync with `google_ad_client` in _config.yml.
 google.com, pub-6960738425944933, DIRECT, f08c47fec0942fa0

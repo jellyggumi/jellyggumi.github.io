@@ -63,7 +63,20 @@ extra_css:
 <div class="container">
     <div class="row">
         <div class="post-body" id="main">
-            {{ content }}
+            {% comment %}
+              The body is rendered through post-content.html rather than emitted
+              directly, because that include is what splits it at a paragraph
+              boundary past the midpoint to place the in-article ad unit. With
+              ads off it returns the body untouched.
+            {% endcomment %}
+            {% include post-content.html content=content %}
+
+            {% comment %}
+              Bottom-of-post unit: after the article, before the sign-off and the
+              share row, so it is adjacent to the content it belongs to and is
+              never mistaken for site navigation.
+            {% endcomment %}
+            {% include adsense-post.html %}
 
             {% include signoff.html %}
 
