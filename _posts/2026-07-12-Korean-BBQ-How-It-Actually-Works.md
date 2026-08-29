@@ -11,9 +11,20 @@ header-img: "img/postcover/pc111.jpg"
 comments: false
 tags: [Food, Etiquette]
 categories: [Food & Dining]
-sitemap :
-  changefreq : monthly
-  priority : 0.8
+reviewed: "2026-08-29"
+lastmod: "2026-08-29"
+ai_assisted: true
+content_type: guide
+sources:
+  - label: "Korea Tourism Organization – About Korean Food"
+    publisher: "Korea Tourism Organization (VISITKOREA)"
+    url: "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=229195"
+  - label: "Korea Tourism Organization – Samgyeopsal"
+    publisher: "Korea Tourism Organization (VISITKOREA)"
+    url: "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=178546"
+  - label: "Livestock Products Grading"
+    publisher: "Korea Institute for Animal Products Quality Evaluation"
+    url: "https://www.ekape.or.kr/english/contents/list.do?menuId=menu156582"
 ---
 <p>Korean barbecue is one of the few restaurant formats where the guest does the cooking, and that is what makes a first visit disorienting. The meat arrives raw, nobody explains the tongs, and there is a moment where you are holding a lettuce leaf without knowing what goes in it. None of it is difficult once you know the shape of the meal.</p>
 
@@ -49,6 +60,8 @@ sitemap :
 
 <p>Whoever is grilling also does the cutting, and the meat is cut to a size that goes into the mouth in one go. Korean table etiquette has little patience for biting a piece in half and returning the remainder to your plate, which is why the one-bite rule shows up again in the wrap.</p>
 
+
+<!--post-ad-break-->
 
 <h3>Banchan Refills Are Free</h3>
 

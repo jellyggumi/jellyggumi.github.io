@@ -1,7 +1,7 @@
 # Search pages produce a distinct URL per query and hold no content of their own, so
 # crawling them spends budget on nothing; everything they link to is reachable from
-# /journal/, /journal/archive/ and the sitemap. Paginated journal pages change
-# composition on every publish, so /journal/archive/ is the stable complete index.
+# /journal/ and the sitemap. Paginated journal pages stay crawlable because they carry
+# a `noindex, follow` meta tag; blocking them here would prevent crawlers from seeing it.
 #
 # No blanket "Allow: /" below, deliberately: anything not disallowed is already allowed,
 # and a leading "Allow: /" is treated as the first match by order-based parsers, which
@@ -10,6 +10,5 @@
 User-agent: *
 Disallow: /search/
 Disallow: /search.json
-Disallow: /journal/page
 
 Sitemap: https://jellyggumi.github.io/sitemap.xml

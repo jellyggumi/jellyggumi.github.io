@@ -2,11 +2,11 @@
 layout: "journal_by_category"
 category: "Family Diary"
 title: "Family Diary"
-description: "The family side of this site: INa's milestones, Korean birth traditions and how she got her name."
+description: "First-hand family stories from Korea: the newborn months, Korean milestone celebrations, parent routines and practical lessons."
 permalink: "/journal/category/family-diary/"
 active: journal
 header-img: "img/archive-bg.jpg"
 sitemap:
-  changefreq: weekly
-  priority: 0.6
+  exclude: true
+robots: "noindex, follow"
 ---

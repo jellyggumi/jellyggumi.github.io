@@ -7,6 +7,6 @@ permalink: "/journal/tag/practical/"
 active: journal
 header-img: "img/archive-bg.jpg"
 sitemap:
-  changefreq: weekly
-  priority: 0.4
+  exclude: true
+robots: "noindex, follow"
 ---

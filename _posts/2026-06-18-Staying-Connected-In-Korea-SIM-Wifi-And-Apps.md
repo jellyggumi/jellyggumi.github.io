@@ -11,9 +11,23 @@ header-img: "img/postcover/pc102.jpg"
 comments: false
 tags: [Practical]
 categories: [Daily Life]
-sitemap :
-  changefreq : monthly
-  priority : 0.8
+reviewed: "2026-08-29"
+lastmod: "2026-08-29"
+ai_assisted: true
+content_type: guide
+sources:
+  - label: "Conditional Approval of Google 1:5,000 Map Export"
+    publisher: "Ministry of Land, Infrastructure and Transport"
+    url: "https://www.korea.kr/news/policyNewsView.do?newsId=148960112"
+  - label: "Airport SIM, eSIM and Pocket Wi-Fi Desks"
+    publisher: "Incheon International Airport Corporation"
+    url: "https://www.airport.kr/ap_en/1536/subview.do"
+  - label: "Telecommunications Business Act, Article 32-4"
+    publisher: "Korean Law Information Center"
+    url: "https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%A0%84%EA%B8%B0%ED%86%B5%EC%8B%A0%EC%82%AC%EC%97%85%EB%B2%95/%EC%A0%9C32%EC%A1%B0%EC%9D%984"
+  - label: "Seoul Free WiFi"
+    publisher: "Seoul Metropolitan Government"
+    url: "https://english.seoul.go.kr/policy/smart-city/seoul-free-wifi/"
 ---
 <p>Two separate things get confused under the heading of staying connected. One is getting a data signal, which in Korea is easy and almost impossible to get badly wrong. The other is being able to sign up for Korean services, which is a different problem with a different solution. The second half matters more than most visitors expect.</p>
 
@@ -58,6 +72,8 @@ sitemap :
 <p>The trade-offs are practical. It is another device to charge every night and it must be handed back on schedule. More importantly it only covers people standing near it, so the moment the group splits up for an afternoon, only whoever is holding it stays online. For a solo traveller it is the wrong tool.</p>
 
 
+<!--post-ad-break-->
+
 <h3>Public Wifi Is Dense Enough to Rely On</h3>
 
 <p>Free public wifi in Korea is unusually widespread, and unlike the token provision in many countries it is worth connecting to. Government-backed hotspots signposted <strong>Public WiFi Free</strong> cover stations, libraries, community centres, buses and many public buildings. Subway platforms and trains carry their own networks.</p>
@@ -80,7 +96,7 @@ sitemap :
 
 <p>Google Maps works in Korea for searching landmarks and for basic public transport routing, so it is not useless. But walking directions are patchy and driving navigation is largely absent, which is why visitors relying on it end up circling a block looking for an entrance.</p>
 
-<p>The cause is regulatory rather than technical. South Korea restricts the export of detailed mapping data, and because Google processes its map data on servers outside the country, it cannot use the fine-grained road information that turn-by-turn navigation needs.</p>
+<p>The legal position changed in February 2026: South Korea conditionally approved Google's export of 1:5,000 mapping data, subject to security masking and domestic-processing safeguards. That approval is a process rather than an instant product change, so do not plan a trip on the assumption that Google now has the same entrance-level detail and navigation coverage as the local services.</p>
 
 <p>What Koreans use is <strong>Naver Map</strong> or <strong>Kakao Map</strong>. Both have English interfaces, both do walking, driving and transit properly, and both carry building-level detail &mdash; which floor a restaurant is on, which subway exit to take. Install one before you arrive and treat it as the default, alongside our <a href="/journal/Getting-Around-Korea-Public-Transport-Guide/">public transport guide</a>.</p>
 

@@ -11,9 +11,20 @@ header-img: "img/postcover/pc114.jpg"
 comments: false
 tags: [Seoul, Seasons]
 categories: ["Travel & Transport"]
-sitemap :
-  changefreq : monthly
-  priority : 0.8
+reviewed: "2026-08-29"
+lastmod: "2026-08-29"
+ai_assisted: true
+content_type: guide
+sources:
+  - label: "Seoul Metropolitan Government – Hangang Parks"
+    publisher: "Seoul Metropolitan Government"
+    url: "https://world.seoul.go.kr/service/amusement/hangang/hangang-parks"
+  - label: "Korea Tourism Organization – Banpo Bridge Rainbow Fountain"
+    publisher: "Korea Tourism Organization (VISITKOREA)"
+    url: "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=91783"
+  - label: "Seoul City Wall – Official Trail Guide"
+    publisher: "Seoul Metropolitan Government"
+    url: "https://seoulcitywall.seoul.go.kr/en/content/53.do"
 ---
 <p>The 한강 (Hangang), the Han River, cuts Seoul into a northern and a southern half and is close to a kilometre wide in places. Visitors see it from a bridge or a train window and file it away as scenery. Residents treat it as a facility they use on a weekday evening. That difference is worth closing, because the riverside and the mountains behind it are the parts of Seoul that cost nothing.</p>
 
@@ -58,6 +69,8 @@ sitemap :
 
 <p>Drinking outdoors is broadly permitted in Korea, though the city has designated no-drinking zones, so read the signs. Rubbish goes in the bins or home with you, and open flames are confined to the barbecue areas. Wider expectations around public behaviour are in our <a href="/journal/Amazing-Korean-Cultural-Tips/">Korean cultural tips</a>.</p>
 
+
+<!--post-ad-break-->
 
 <h3>The River After Dark</h3>
 

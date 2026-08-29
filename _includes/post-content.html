@@ -1,61 +1,42 @@
 {%- comment -%}
-  Renders a post body and, when ads are enabled, injects one in-article ad unit
-  into the middle of it.
+  Renders a post body and, when ads are enabled, replaces one explicit
+  `<!--post-ad-break-->` source marker with the in-article ad unit.
 
   Call as: {% include post-content.html content=content %}
 
-  Placement rules:
-    - split the body on paragraph ends (`</p>`), keeping every byte of markup —
-      the split is on a marker inserted straight after the tag, so nothing is
-      consumed and re-joining the pieces reproduces the original document;
-    - only run on posts with at least `MIN_PARAGRAPHS` paragraphs, so a short
-      post is never interrupted by an ad;
-    - insert at the first boundary at or after the midpoint whose *next* block
-      opens a new top-level paragraph or heading. That keeps the unit out of the
-      middle of blockquotes, list items, tables and figure captions, where a
-      fluid <ins> would break the enclosing element's layout;
-    - never insert inside the last two blocks, so the in-article unit cannot end
-      up sitting on top of the bottom-of-post unit.
+  The marker is authored between top-level blocks, normally immediately before
+  an <h3>. That is deliberately less clever than parsing paragraph endings in
+  Liquid: a string split cannot know whether a paragraph is nested inside a
+  list, blockquote, table or figure. Explicit placement therefore preserves
+  valid HTML by construction.
 
+  Exactly one marker is required. If a post has none or more than one, or if ads
+  are disabled, the body is emitted verbatim and no in-article unit is inserted.
   Opt a single post out with `ads: false` in its front matter.
-
-  When ads are off the body is emitted verbatim, with no split and no loop, so
-  this include costs nothing on a non-production build.
 {%- endcomment -%}
 
-{%- assign MIN_PARAGRAPHS = 8 -%}
-{%- assign ANCHOR = '<!--ad-anchor-->' -%}
-
+{%- assign AD_BREAK = '<!--post-ad-break-->' -%}
 {%- assign ads_on = false -%}
-{%- if jekyll.environment == 'production'
-  and site.google_ad_client != empty
-  and site.google_ad_client
-  and site.google_ad_slots.post_in_article != empty
-  and site.google_ad_slots.post_in_article
-  and page.ads != false
--%}
-  {%- assign ads_on = true -%}
-{%- endif -%}
+{%- unless page.robots contains 'noindex' -%}
+  {%- if jekyll.environment == 'production'
+    and site.google_ad_client != empty
+    and site.google_ad_client
+    and site.google_ad_slots.post_in_article != empty
+    and site.google_ad_slots.post_in_article
+    and page.ads != false
+  -%}
+    {%- assign ads_on = true -%}
+  {%- endif -%}
+{%- endunless -%}
 
 {%- if ads_on -%}
-  {%- assign blocks = include.content | replace: '</p>', '</p><!--ad-anchor-->' | split: ANCHOR -%}
+  {%- assign ad_parts = include.content | split: AD_BREAK -%}
 {%- endif -%}
 
-{%- if ads_on == false or blocks.size < MIN_PARAGRAPHS -%}
-  {{ include.content }}
+{%- if ads_on and ad_parts.size == 2 -%}
+  {{ ad_parts[0] }}
+  {%- include adsense-in-article.html -%}
+  {{ ad_parts[1] }}
 {%- else -%}
-  {%- assign midpoint = blocks.size | divided_by: 2 -%}
-  {%- assign placed = false -%}
-  {%- for block in blocks -%}
-    {{- block -}}
-    {%- unless placed -%}
-      {%- if forloop.index >= midpoint and forloop.rindex > 2 -%}
-        {%- assign next_open = blocks[forloop.index] | strip | slice: 0, 2 -%}
-        {%- if next_open == '<p' or next_open == '<h' -%}
-          {%- include adsense-in-article.html -%}
-          {%- assign placed = true -%}
-        {%- endif -%}
-      {%- endif -%}
-    {%- endunless -%}
-  {%- endfor -%}
+  {{ include.content }}
 {%- endif -%}

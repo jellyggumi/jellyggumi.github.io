@@ -1,6 +1,6 @@
 ---
 layout: "post"
-title: "The reason is why my parent call me jelly ggumi?"
+title: "Why My Parents Call Me Jelly GGumi"
 subtitle: "The Birth Story of JellyGGumi"
 description: "How a Korean prenatal nickname becomes a name: what kkum means, why families give a baby a taemyeong before birth, and how INa became Jelly GGumi."
 active: "journal"
@@ -22,9 +22,20 @@ case1:
 
 tags: [Family, JellyGGumi]
 categories: [Family Diary]
-sitemap :
-  changefreq : daily
-  priority : 1.0
+reviewed: "2026-08-29"
+lastmod: "2026-08-29"
+ai_assisted: true
+content_type: personal
+sources:
+  - label: "National Institute of Korean Language – Romanization of Korean"
+    publisher: "National Institute of Korean Language"
+    url: "https://www.korean.go.kr/front_eng/roman/roman_01.do"
+  - label: "Do Unborn Babies Need Names? In Korea, Absolutely"
+    publisher: "The Korea Herald"
+    url: "https://koreaherald.com/article/10547500"
+  - label: "Korean Names Look Simple – Structure, Meaning and Romanization"
+    publisher: "Ministry of Culture, Sports and Tourism"
+    url: "https://www.mcst.go.kr/english/policy/kocis/newsView.jsp?pSeq=88"
 ---
 <p>The name "Jelly GGumi" was given to me by my mom, inspired by my teddy bear-like appearance, soft and squishy like jelly. "GGumi" was actually my prenatal nickname, and it comes from the Korean word for dream. This is the story of where it came from, and why a Korean family gives a baby a name months before the baby has a legal one.</p>
 
@@ -33,18 +44,18 @@ sitemap :
 
 <p>꿈 (kkum) is the Korean word for dream. It covers both senses the English word does: the thing that happens while you are asleep, and the thing you spend years working towards. It comes from the verb 꾸다 (kkuda), which is what you do to a dream &mdash; Korean does not "have" a dream, it "dreams" one, using a separate verb for the act.</p>
 
-<p>꾸미 (kkumi) is 꿈 with the affectionate ending -이 (-i) attached, which Korean adds freely to names and nouns to make them sound soft and familiar. When you attach it, the final ㅁ of 꿈 slides forward into the empty consonant slot of the next syllable, so 꿈이 is pronounced kku-mi rather than kkum-i. That is a standard feature of how Hangul syllable blocks work rather than anything unusual, and we have written about the blocks themselves in our <a href="/journal/Hangul-And-First-Korean-Phrases/">introduction to Hangul</a>.</p>
+<p>When 꿈 is followed by 이, it is written 꿈이 and pronounced <em>kkumi</em>: the final ㅁ carries into the next spoken syllable. Our family turned that sound into the playful spelling 꾸미 for the prenatal nickname. That family spelling is the reason this site uses “GGumi” rather than claiming it as the official romanisation of 꿈. We have written more about syllable blocks in our <a href="/journal/Hangul-And-First-Korean-Phrases/">introduction to Hangul</a>.</p>
 
-<p>So 꾸미 is not a random cute sound. It is "dream" made small and fond. Put the loanword 젤리 (jelli) in front of it and you get 젤리꾸미 &mdash; Jelly GGumi. My mom thought 꾸미 sounded like a word that brings to mind a cuddly little bear, so she decided to call me GGumi.</p>
+<p>Put the loanword 젤리 (jelli) in front and our nickname becomes 젤리꾸미 &mdash; Jelly GGumi. My mom thought the sound suited a cuddly little bear, so GGumi stayed.</p>
 
 
 <h3>태명 (taemyeong): the Name Before the Name</h3>
 
-<p>The habit of naming a baby before birth is not a family quirk. It is a widely followed Korean custom with its own word: 태명 (taemyeong), from 태 (tae), meaning womb or unborn child, and 명 (myeong), meaning name. Almost every expecting Korean family picks one, usually within the first few months.</p>
+<p>Giving a baby a nickname before birth is common enough in Korea to have its own word: 태명 (taemyeong), from 태 (tae), meaning womb or unborn child, and 명 (myeong), meaning name. Korean reporting describes the practice as widespread and records nicknames built from wishes, food and whatever the first scan reminded the parents of. We chose ours early in the pregnancy.</p>
 
-<p>The reason it exists is practical as much as sentimental. A Korean child's legal name is registered after birth, and settling it often involves grandparents, careful thought about the written characters, and sometimes a professional naming service. That takes time, and none of it can sensibly happen before anyone has met the baby. Meanwhile there is a person to talk about, and "the baby" is a cold way to refer to someone you already think about every day. The 태명 fills that gap.</p>
+<p>For our family, the reason was practical as much as sentimental. The legal name would be settled after birth, but meanwhile there was already a person we talked about every day. Calling her “the baby” felt cold, and the 태명 filled that gap.</p>
 
-<p>Most 태명 fall into two groups. Some are plain hopes: 튼튼이 (teunteuni) from 튼튼하다, meaning sturdy, is one of the most common in Korea, because a healthy baby is the only thing anyone actually asks for. Others are small food words chosen purely because they are affectionate &mdash; 콩 (kong), a bean, or 딸기 (ttalgi), a strawberry &mdash; often because that is genuinely what the first scan looked like. Ours belongs to the first group. The nickname gets used by everyone, including the clinic staff, and it is often written by hand on the ultrasound printouts.</p>
+<p>Health wishes and affectionate food words are common patterns in the examples Korean parents report: 튼튼이 (teunteuni), from 튼튼하다, means sturdy; 콩 (kong) is a bean; and 딸기 (ttalgi) is a strawberry. Our nickname belongs to the wish-shaped group. At our own appointments, clinic staff used it too, and it was written on the ultrasound printouts. Those last details are our family's experience, not a rule every clinic follows.</p>
 
 
 <h3>The First Scan</h3>
@@ -60,8 +71,10 @@ sitemap :
 
 <!-- end of GALLERY __ -->
 
-<p>Korean prenatal care involves more frequent ultrasounds than many countries consider standard, which is one of the first things foreign parents in Korea tend to notice. It means the growth is documented in far more steps than a handful of milestone images, and it turns the scan photographs into something closer to a flip-book than a record.</p>
+<p>Our prenatal appointments produced a long sequence of ultrasound images. Seeing the growth in so many small steps turned the photographs into something closer to a flip-book than a handful of isolated milestones.</p>
 
+
+<!--post-ad-break-->
 
 <h3>Growing Out of the Frame</h3>
 

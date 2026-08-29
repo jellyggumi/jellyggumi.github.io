@@ -1,129 +1,90 @@
 ---
-layout: home
+layout: default
 title: ""
 subtitle: "Jelly GGumi"
-description: "First-hand guides to Korean culture, food and daily life for visitors and newcomers, alongside a family growth diary from Seoul."
-images:
- - image_path: /img/slider/home01.jpg
-   gallery-folder: /gallery/
- - image_path: /img/slider/home02.jpg
-   gallery-folder: /gallery/
- - image_path: /img/slider/home03.jpg
-   gallery-folder: /gallery/
- - image_path: /img/slider/home04.jpg
-   gallery-folder: /gallery/
- - image_path: /img/slider/home05.jpg
-   gallery-folder: /gallery/
- - image_path: /img/slider/home06.jpg
-   gallery-folder: /gallery/
+description: "Source-checked guides to Korean culture, food and daily life, alongside a first-hand family growth diary from Seoul."
 sitemap:
-  changefreq: daily
-  priority: 1.0
-extra_css:
-  - /css/WYSIWYG.css
+  changefreq: weekly
+  priority: 0.8
 ---
 
-{% comment %}
-  This file used to open a full <html>/<head>/<body> inside the home layout, which
-  already provides them, and loaded a second copy of jQuery, Bootstrap and the CSS
-  that head.html had already pulled in. It is now a fragment; the layout owns the
-  document and head.html owns the assets.
-
-  Slider images previously pointed at {{ site.url }}-prefixed absolute paths, which
-  broke local preview. relative_url keeps them origin-agnostic.
-{% endcomment %}
-
-<script src="{{ '/js/modernizr.js' | relative_url }}"></script>
-
-<section id="content" role="main">
-  <div class="wrapper">
-
-    <div class="position-absolute" id="main">
-
-      <h1 class="site-title-visually-plain">{{ site.title }}</h1>
-      <p class="site-tagline">{{ site.description }}</p>
-
-      {% comment %}
-        The home page is the site's strongest crawl entry point, so it links directly
-        into each section rather than relying on the nav alone.
-      {% endcomment %}
-      <nav class="home-links" aria-label="Sections">
-        <a href="{{ '/journal/' | relative_url }}"><strong>JOURNAL</strong></a>
-        <a href="{{ '/gallery/' | relative_url }}"><strong>GALLERY</strong></a>
-        <a href="{{ '/games/' | relative_url }}"><strong>GAMES</strong></a>
-        <a href="https://blog.naver.com/{{ site.naver_username }}" rel="noopener">NAVER BLOG</a>
-      </nav>
-
-      {% if site.posts.size > 0 %}
-      <div class="home-latest">
-        <p class="home-latest__label"><strong>Latest writing</strong></p>
-        <ul>
-          {% for post in site.posts limit: 4 %}
-          <li>
-            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-            <span class="home-latest__date">{{ post.date | date: "%b %-d" }}</span>
-          </li>
-          {% endfor %}
-        </ul>
-        <p class="home-latest__more">
-          <a href="{{ '/journal/' | relative_url }}"><strong>All {{ site.posts.size }} posts &rarr;</strong></a>
-        </p>
+<main id="main" class="home-main">
+  <section class="home-hero" aria-labelledby="home-title">
+    <img class="home-hero__image"
+         src="{{ '/img/slider/home01.jpg' | relative_url }}"
+         alt="A family moment from the JellyGGumi photo diary"
+         width="1600" height="1067" fetchpriority="high" decoding="async">
+    <div class="home-hero__shade"></div>
+    <div class="home-hero__content">
+      <p class="home-eyebrow">Korea, lived from the inside</p>
+      <h1 id="home-title">{{ site.title }}</h1>
+      <p class="home-hero__lede">A Korea-based family publication about the routines that guidebooks skip: how a meal is structured, why a transit transfer works, what a Korean first birthday means, and what daily life looks like with a growing child.</p>
+      <div class="home-actions">
+        <a class="home-action home-action--primary" href="{{ '/journal/' | relative_url }}">Read the guides</a>
+        <a class="home-action" href="{{ '/about/' | relative_url }}">About the author</a>
       </div>
-      {% endif %}
+    </div>
+  </section>
 
-      <ul class="soc-icons home-soc">
-        {% if site.youtube_username %}
-        <li><a href="https://www.youtube.com/@{{ site.youtube_username }}" title="YouTube" rel="me noopener">
-          <i class="fa fa-youtube-play" aria-hidden="true"></i><span class="sr-only">YouTube</span></a></li>
-        {% endif %}
-        {% if site.instagram_username %}
-        <li><a href="https://instagram.com/{{ site.instagram_username }}" title="Instagram" rel="me noopener">
-          <i class="fa fa-instagram" aria-hidden="true"></i><span class="sr-only">Instagram</span></a></li>
-        {% endif %}
-        <li><a href="mailto:{{ site.email }}" title="Email">
-          <i class="fa fa-envelope-o" aria-hidden="true"></i><span class="sr-only">Email</span></a></li>
-      </ul>
-
-      {% comment %}
-        About / Contact / Privacy are unreachable from here otherwise: the fullscreen
-        body hides overflow, so the shared footer never comes into view.
-      {% endcomment %}
-      <ul class="footer-nav home-footer-nav">
-        {% for nav_hash in site.footer_nav %}
-          {% for nav_item in nav_hash %}
-          <li><a href="{{ nav_item[1] | relative_url }}">{{ nav_item[0] }}</a></li>
-          {% endfor %}
-        {% endfor %}
-      </ul>
-
+  <section class="home-section" aria-labelledby="latest-heading">
+    <div class="home-section__heading">
+      <p class="home-eyebrow">Latest writing</p>
+      <h2 id="latest-heading">Practical guides and family stories</h2>
+      <p>Each guide answers one concrete question in full, keeps Korean terms in Hangul where that helps, and points readers toward the related background instead of repeating the same introduction on every page.</p>
     </div>
 
-    <div class="gallery fullscreen-gallery kenburns-gallery">
-      <canvas id="kenburns"></canvas>
-      {% for image in page.images %}
-      <figure class="gallery-item">
-        <header class="gallery-icon">
-          <a href="{{ image.gallery-folder | relative_url }}">
-            {% comment %}
-              The first frame is the largest paint on the page, so it loads eagerly and
-              is fetch-prioritised; the rest are only revealed by the slideshow and can
-              wait. kenburns.js reads these into a canvas, so they must stay in the DOM.
-            {% endcomment %}
-            <img src="{{ image.image_path | relative_url }}"
-                 alt=""
-                 {% if forloop.first %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %}
-                 decoding="async">
-          </a>
-        </header>
-      </figure>
+    <ul class="post-cards home-post-cards">
+      {% for post in site.posts limit: 6 %}
+      <li class="post-card">
+        {% if post.image.feature %}
+        {% assign thumb = post.image.feature | prepend: '/img/postcover/' | replace: '.jpg', '.thumb.webp' %}
+        <a class="post-card__thumb" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
+          <img src="{{ thumb | relative_url }}" alt="" loading="{% if forloop.index <= 2 %}eager{% else %}lazy{% endif %}" decoding="async" width="480" height="270">
+        </a>
+        {% endif %}
+        <div class="post-card__body">
+          <h3 class="post-card__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p class="post-card__desc">{{ post.description }}</p>
+          <p class="post-card__meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+            {% if post.categories.size > 0 %} &middot; {{ post.categories | first | escape }}{% endif %}
+          </p>
+        </div>
+      </li>
       {% endfor %}
+    </ul>
+    <p class="home-all-posts"><a href="{{ '/journal/' | relative_url }}">Browse all {{ site.posts.size }} articles &rarr;</a></p>
+  </section>
+
+  <section class="home-section home-values" aria-labelledby="value-heading">
+    <div class="home-section__heading">
+      <p class="home-eyebrow">Why this site exists</p>
+      <h2 id="value-heading">Useful context, not a tourism checklist</h2>
     </div>
+    <div class="home-value-grid">
+      <article>
+        <h3>Everyday Korean context</h3>
+        <p>The journal explains the unwritten part of a routine: when to tap a transport card, how a barbecue table divides the work, or why a Korean word on a sign matters more than its romanisation.</p>
+      </article>
+      <article>
+        <h3>A real family record</h3>
+        <p>The diary and albums document INa's milestones and family travel. The linked Korean-language Naver archive contains the longer day-to-day record behind this English site.</p>
+      </article>
+      <article>
+        <h3>Transparent editing</h3>
+        <p>AI may assist research and drafting, but it is not treated as a source. The <a href="{{ '/editorial-policy/' | relative_url }}">editorial policy</a> explains the workflow, correction standard and what readers should verify before relying on a changing detail.</p>
+      </article>
+    </div>
+  </section>
 
-  </div>
-</section>
-
-<script src="https://code.jquery.com/jquery-2.1.3.min.js" integrity="sha256-ivk71nXhz9nsyFDoYoGf2sbjrR9ddh+XDkCcfZxjvcM=" crossorigin="anonymous"></script>
-<script src="{{ '/js/jquery.mousewheel.min.js' | relative_url }}"></script>
-<script src="{{ '/js/jquery.cycle.min.js' | relative_url }}"></script>
-<script src="{{ '/js/kenburns.min.js' | relative_url }}"></script>
-<script src="{{ '/js/scripts.js' | relative_url }}"></script>
+  <section class="home-section home-about" aria-labelledby="about-heading">
+    <div>
+      <p class="home-eyebrow">Behind JellyGGumi</p>
+      <h2 id="about-heading">Written from a home in Korea</h2>
+    </div>
+    <div class="home-about__copy">
+      <p>JellyGGumi is maintained by INa's parent, living in Korea. It is a personal publication rather than a travel agency or official authority. That boundary matters: lived observations are labelled as such, changing rules should be checked against the linked official source, and corrections are welcomed.</p>
+      <p><a href="{{ '/about/' | relative_url }}">Read the full background</a> or <a href="{{ '/contact/' | relative_url }}">send a correction</a>.</p>
+    </div>
+  </section>
+</main>

@@ -11,9 +11,20 @@ header-img: "img/postcover/pc112.jpg"
 comments: false
 tags: [Food, Practical]
 categories: [Food & Dining]
-sitemap :
-  changefreq : monthly
-  priority : 0.8
+reviewed: "2026-08-29"
+lastmod: "2026-08-29"
+ai_assisted: true
+content_type: guide
+sources:
+  - label: "Korea Tourism Organization – K-Local Food Trip 33"
+    publisher: "Korea Tourism Organization (VISITKOREA)"
+    url: "https://english.visitkorea.or.kr/svc/contents/contentsView.do?menuSn=904&vcontsId=221205"
+  - label: "UNESCO Intangible Heritage – Culture of Jeju Haenyeo"
+    publisher: "UNESCO"
+    url: "https://ich.unesco.org/en/RL/culture-of-jeju-haenyeo-women-divers-01068"
+  - label: "UNESCO Creative City of Gastronomy – Jeonju (archived)"
+    publisher: "UNESCO"
+    url: "https://web.archive.org/web/20250408192437/https://www.unesco.org/en/creative-cities/jeonju"
 ---
 <p>Korea is a small country that eats in very different ways depending on where you stand in it. A stew in Jeolla is seasoned differently from the same stew in Gyeongsang, the noodles in Busan exist because of a specific piece of history, and Jeju cooks as an island rather than a province. Seoul has everything, which is partly a problem: the capital flattens regional cooking into a national average.</p>
 
@@ -38,7 +49,7 @@ sitemap :
 
 <p>부산 (Busan) is Korea's largest port, and its food follows from that. Raw fish, 회 (hoe), is eaten casually rather than ceremonially, and the seafood markets are working markets with restaurants attached.</p>
 
-<p>Two dishes are properly local. 돼지국밥 (dwaeji-gukbap) is a milky pork bone broth with rice and sliced pork, seasoned at the table with shrimp paste, chives and chilli rather than in the kitchen &mdash; you build it yourself, which surprises people expecting a finished bowl. 밀면 (milmyeon) is a wheat-flour cold noodle dish that exists because of the Korean War: northern refugees who had eaten buckwheat 냉면 found buckwheat scarce in the south and substituted wheat flour.</p>
+<p>Two dishes are properly local. 돼지국밥 (dwaeji-gukbap) is a pork broth with rice and sliced pork, seasoned at the table with shrimp paste, chives and chilli rather than entirely in the kitchen &mdash; you finish the bowl yourself, which surprises people expecting a fixed result. 밀면 (milmyeon) is Busan's wheat-flour cold noodle dish, lighter in texture than the buckwheat 냉면 it resembles.</p>
 
 
 <h3>Jeju Cooks Like an Island</h3>
@@ -52,8 +63,10 @@ sitemap :
 
 <p>안동 (Andong) in North Gyeongsang is inland, conservative and old, and its two famous foods both come from being far from the coast. 안동찜닭 (Andong jjimdak) is chicken braised with glass noodles, potato and vegetables in a dark soy base &mdash; savoury and mildly sweet rather than spicy in its original form. It comes from the chicken alley in Andong's old market and spread nationwide from there.</p>
 
-<p>안동간고등어 (Andong gan-godeungeo), salted mackerel, is the more interesting one. Andong sits roughly a day's journey from the East Sea by old roads, and mackerel spoils quickly, so fish carried inland was heavily salted en route. The salting became the point rather than a compromise, and salt-cured mackerel grilled with rice is now a speciality people travel to eat.</p>
+<p>안동간고등어 (Andong gan-godeungeo), salted mackerel, is the sharper contrast: a preserved fish dish rather than a braise. The mackerel is salt-cured, grilled and eaten with rice, and it is now one of the foods most closely associated with Andong.</p>
 
+
+<!--post-ad-break-->
 
 <h3>Gangwon: Chuncheon Chicken and Gangneung Tofu</h3>
 
@@ -73,7 +86,7 @@ sitemap :
 
 <p>대구 (Daegu) has a reputation for both the hottest summers on the peninsula and the spiciest food, and the two are linked in local folklore if not in agronomy. The dishes to look for are 막창 (makchang), grilled intestine, 따로국밥 (tarogukbap), a spicy beef soup served with the rice deliberately kept in a separate bowl, and the sticky braised ribs of Dongin-dong.</p>
 
-<p>경주 (Gyeongju), the old Silla capital an hour away, is a heritage city and its food follows. 황남빵 (Hwangnam-bbang), a thin pastry packed with red bean paste and stamped on top, has been made there since the 1930s and is the standard thing to carry home. It belongs to a category of regional confections bought as gifts rather than eaten on the spot, and every sizeable town has one.</p>
+<p>경주 (Gyeongju), the old Silla capital an hour away, is a heritage city and its food follows. 황남빵 (Hwangnam-bbang), a thin pastry packed with red bean paste and stamped on top, is the standard thing to carry home. It belongs to a category of regional confections bought as gifts rather than eaten on the spot, and every sizeable town seems to have one.</p>
 
 
 <h3>How to Eat Well Outside Seoul</h3>

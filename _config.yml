@@ -4,9 +4,10 @@ email: "banggujin@gmail.com"
 # Used as the fallback meta description and in the WebSite structured data, so it
 # has to describe the site to a stranger. "Photo is memory" told a search user
 # nothing about what they would find here.
-description: "First-hand guides to Korean culture, food and daily life for visitors and newcomers, alongside a family growth diary from Seoul."
+description: "Source-checked guides to Korean culture, food and daily life, alongside a first-hand family growth diary from Seoul."
 tagline: "Photo is memory"
 url: "https://jellyggumi.github.io"
+timezone: Asia/Seoul
 # Empty, not "/". The site is served from the domain root, and a bare "/" made
 # every `| prepend: site.baseurl` produce a doubled slash — "//css/main.css" is a
 # protocol-relative URL pointing at a host literally named "css". GitHub Pages
@@ -31,9 +32,6 @@ owner:
   favicon: favicon.ico
   info: Jelly GGumi Blog
 
-plugins:
-  - jekyll-sitemap
-
 # Comments. `short_name` is empty, so disqus_comments.html renders nothing — the include
 # now requires a non-empty shortname rather than falling through to the vendor's
 # "yourproject.disqus.com" placeholder. To turn comments on: register a Disqus forum,
@@ -56,6 +54,7 @@ nav:
 # Secondary navigation, rendered in the footer.
 footer_nav:
   - ABOUT: "/about/"
+  - EDITORIAL: "/editorial-policy/"
   - CONTACT: "/contact/"
   - PRIVACY: "/privacy/"
   - RSS: "/feed.xml"
@@ -87,11 +86,14 @@ google_analytics:
 # build if they disagree, because a mismatch is exactly the state AdSense reports
 # as "ads.txt missing" while ad serving stays switched off.
 #
-# Status (AdSense dashboard, banggujin@gmail.com):
-# jellyggumi.github.io is registered under this account, its ads.txt reads as
-# "승인됨" (authorised) and the site sits at "준비 중" — Google is reviewing it.
-# Auto ads are enabled account-side; the units below are the manual placements
-# that sit alongside them. Nothing serves until the review passes.
+# Status checked 2026-08-29 in the AdSense dashboard (banggujin@gmail.com):
+# jellyggumi.github.io is registered under this account and its ads.txt reads as
+# "승인됨" (authorised). The site currently reads "주의 필요 / 가치가 별로 없는
+# 콘텐츠"; the local changes in this branch prepare a re-review, but no new review
+# has been requested. Auto ads are enabled account-side; the units below are the
+# manual placements that sit alongside them. Nothing serves until review passes.
+# Privacy & messaging also shows one published European regulations consent
+# message covering jellyggumi.github.io (English plus 31 additional languages).
 google_ad_client: ca-pub-6960738425944933
 
 # Ad unit slot IDs, created in the AdSense dashboard under Ads > By ad unit.
@@ -119,8 +121,6 @@ tags_path: "/journal/tag/"
 # production still worked and the breakage only showed up in a local build.
 plugins:
   - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-include-cache
 
 exclude:
   - node_modules

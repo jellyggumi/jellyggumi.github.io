@@ -14,7 +14,13 @@ sitemap:
     <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
     <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% for post in site.posts limit:20 %}
+    {% comment %}
+      The search overlay consumes this same feed. Keeping only twenty items made
+      every older article silently disappear from on-site search once the family
+      archive grew past that threshold. Descriptions keep the feed compact, so the
+      complete post list is both a valid RSS archive and a complete search index.
+    {% endcomment %}
+    {% for post in site.posts %}
       <item>
         <title>{{ post.title | xml_escape }}</title>
         {% comment %}

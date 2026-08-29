@@ -789,3 +789,400 @@ input:focus-visible {
 .post-ad-bottom {
   margin-bottom: 1.2em;
 }
+
+/* --------------------------------------------------------------------------
+   Content-first home page.
+   The old home was a fixed 100vh slideshow with roughly eighty words and no
+   scrollable reading path. The hero remains photographic, but the page now
+   exposes real article summaries, authorship and editorial standards.
+   -------------------------------------------------------------------------- */
+.home-main {
+  background: #090909;
+  color: #e8e8e8;
+}
+.home-hero {
+  position: relative;
+  min-height: min(78vh, 820px);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  isolation: isolate;
+}
+.home-hero__image,
+.home-hero__shade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.home-hero__image {
+  object-fit: cover;
+  object-position: center 42%;
+  z-index: -2;
+}
+.home-hero__shade {
+  background:
+    linear-gradient(180deg, rgba(5, 5, 7, .18) 10%, rgba(5, 5, 7, .52) 55%, #090909 100%),
+    linear-gradient(90deg, rgba(5, 5, 7, .78) 0%, rgba(5, 5, 7, .18) 70%);
+  z-index: -1;
+}
+.home-hero__content {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 150px 0 92px;
+}
+.home-eyebrow {
+  margin: 0 0 .75rem;
+  color: #f3a2b6;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.home-hero h1 {
+  max-width: 760px;
+  margin: 0 0 .3em;
+  color: #fff;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: clamp(2.6rem, 8vw, 5.8rem);
+  line-height: .98;
+  letter-spacing: -.035em;
+  text-shadow: 0 3px 24px rgba(0, 0, 0, .65);
+}
+.home-hero__lede {
+  max-width: 680px;
+  margin: 0;
+  color: #f0f0f0;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.65;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, .8);
+}
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 2rem;
+}
+.home-action {
+  display: inline-block;
+  padding: .78rem 1.15rem;
+  border: 1px solid rgba(255, 255, 255, .65);
+  border-radius: 999px;
+  color: #fff;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .055em;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, .22);
+  backdrop-filter: blur(8px);
+}
+.home-action--primary {
+  border-color: #d94f70;
+  background: #d94f70;
+}
+.home-action:hover,
+.home-action:focus {
+  border-color: #fff;
+  background: #fff;
+  color: #1a1013;
+}
+.home-section {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 84px 0;
+}
+.home-section + .home-section {
+  border-top: 1px solid #242424;
+}
+.home-section__heading {
+  max-width: 720px;
+  margin-bottom: 2.2rem;
+}
+.home-section h2 {
+  margin: 0 0 .45em;
+  color: #fff;
+  font-size: clamp(1.9rem, 4vw, 3.1rem);
+  line-height: 1.12;
+}
+.home-section__heading > p:last-child,
+.home-about__copy p,
+.home-value-grid p {
+  color: #bdbdbd;
+  font-size: .92rem;
+  line-height: 1.75;
+}
+.home-post-cards {
+  max-width: none;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.home-post-cards .post-card__title {
+  font-size: .95rem;
+}
+.home-all-posts {
+  margin: 1.8rem 0 0;
+  text-align: right;
+  font-size: .82rem;
+  font-weight: 700;
+}
+.home-all-posts a {
+  text-decoration: none;
+}
+.home-value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+.home-value-grid article {
+  padding: 24px;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  background: #121212;
+}
+.home-value-grid h3 {
+  margin: 0 0 .55em;
+  color: #f3f3f3;
+  font-size: 1.05rem;
+}
+.home-value-grid p {
+  margin: 0;
+}
+.home-about {
+  display: grid;
+  grid-template-columns: minmax(220px, .8fr) minmax(300px, 1.2fr);
+  gap: clamp(32px, 7vw, 100px);
+  align-items: start;
+}
+.home-about__copy p:first-child {
+  margin-top: 0;
+}
+@media (max-width: 860px) {
+  .home-post-cards,
+  .home-value-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .home-value-grid article:last-child {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 620px) {
+  .home-hero {
+    min-height: 680px;
+  }
+  .home-hero__content {
+    width: min(100% - 30px, 1120px);
+    padding-bottom: 64px;
+  }
+  .home-section {
+    width: min(100% - 30px, 1120px);
+    padding: 60px 0;
+  }
+  .home-post-cards,
+  .home-value-grid,
+  .home-about {
+    grid-template-columns: 1fr;
+  }
+  .home-value-grid article:last-child {
+    grid-column: auto;
+  }
+}
+
+/* Editorial provenance and source lists on article pages. */
+.editorial-disclosure,
+.article-sources {
+  margin: 2.6em 0 0;
+  padding: 1.25em 1.35em;
+  border: 1px solid #303030;
+  border-radius: 10px;
+  background: #121212;
+}
+.editorial-disclosure {
+  border-left: 4px solid #d94f70;
+}
+.editorial-disclosure p,
+.article-sources p,
+.article-sources li {
+  font-size: .78rem;
+  line-height: 1.65;
+}
+.editorial-disclosure p,
+.article-sources__reviewed,
+.article-sources__note {
+  margin: 0;
+  color: #b9b9b9;
+}
+.article-sources h2 {
+  margin: 0 0 .25em;
+  color: #acd578;
+  font-size: 1.15rem;
+}
+.article-sources ul {
+  margin: 1em 0;
+  padding-left: 1.2em;
+}
+.article-sources li {
+  margin-bottom: .65em;
+  color: #999;
+}
+.article-sources a {
+  font-weight: 700;
+}
+.article-sources__reviewed {
+  font-size: .7rem !important;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.article-sources__note {
+  padding-top: .9em;
+  border-top: 1px solid #2b2b2b;
+}
+
+/* Firsthand article photography: real captions, stable aspect ratios and a
+   narrower portrait treatment so phone photos do not overwhelm the text. */
+.post-photo {
+  margin: 2.2em auto;
+}
+.post-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.post-photo--portrait {
+  max-width: 620px;
+}
+.post-photo figcaption {
+  padding: .75em .2em 0;
+  color: #9f9f9f;
+  font-size: .875rem;
+  line-height: 1.55;
+}
+
+.post-body blockquote.sponsorship-disclosure {
+  margin: 0 0 1.8em;
+  padding: 1em 1.1em;
+  border-left: 4px solid #d94f70;
+  border-radius: 0 6px 6px 0;
+  background: rgba(217, 79, 112, .08);
+  color: #d8d8d8;
+  font-style: normal;
+}
+.sponsorship-disclosure p {
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Reflow hardening for long English parenting titles and mixed photo assets.
+
+   New family stories use longer natural-language titles, product names and
+   source labels than the original theme anticipated. These rules keep the
+   content responsible for its own wrapping instead of hiding overflow at the
+   viewport, so 320px screens and 200% zoom retain every word and control.
+   -------------------------------------------------------------------------- */
+.post-body,
+.post-card,
+.post-card__body,
+.intro-header .post-heading,
+.related {
+  min-width: 0;
+}
+
+.intro-header .post-heading h1,
+.intro-header .post-heading .subheading,
+.intro-header .post-heading .meta,
+.time-tag-categ,
+.post-body,
+.post-body a,
+.post-body figcaption,
+.post-card__title,
+.post-card__desc,
+.post-card__meta,
+.article-sources li,
+.related a {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.intro-header .post-heading h1 {
+  font-size: clamp(2rem, 7vw, 3.4375rem);
+  line-height: 1.08;
+  letter-spacing: -.025em;
+  hyphens: auto;
+}
+
+.intro-header .post-heading .subheading {
+  font-size: clamp(1.1rem, 3.8vw, 1.875rem);
+  line-height: 1.25;
+}
+
+.intro-header .post-heading .meta {
+  font-size: clamp(.88rem, 2.8vw, 1.25rem);
+  line-height: 1.45;
+}
+
+.time-tag-categ {
+  display: inline-block;
+  max-width: 100%;
+  margin-top: .75em;
+  line-height: 1.55;
+}
+
+.post-photo,
+.post-body iframe,
+.post-body video,
+.post-body svg {
+  max-width: 100%;
+}
+
+.post-body pre {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.post-body code {
+  overflow-wrap: anywhere;
+}
+
+.post-body table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 480px) {
+  .post-body,
+  .breadcrumbs,
+  .related,
+  .post-ad {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .post-photo {
+    margin: 1.65em 0;
+  }
+
+  .editorial-disclosure,
+  .article-sources {
+    padding: 1.05em;
+  }
+
+  .intro-header .post-heading,
+  .intro-header .page-heading,
+  .intro-header .site-heading {
+    padding: 90px 0 42px;
+  }
+}
+
+@media (max-width: 350px) {
+  .post-cards {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .post-card__body {
+    padding: 14px 14px 17px;
+  }
+}

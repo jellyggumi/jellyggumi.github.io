@@ -11,9 +11,20 @@ header-img: "img/postcover/pc108.jpg"
 comments: false
 tags: [Shopping, Practical]
 categories: [Daily Life]
-sitemap :
-  changefreq : monthly
-  priority : 0.8
+reviewed: "2026-08-29"
+lastmod: "2026-08-29"
+ai_assisted: true
+content_type: guide
+sources:
+  - label: "MFDS – Functional Cosmetics and SPF/PA Standards"
+    publisher: "Ministry of Food and Drug Safety"
+    url: "https://www.mfds.go.kr/eng/wpge/m_24/de011014l001.do"
+  - label: "Korea Tourism Organization – Duty Free and Tax Refunds"
+    publisher: "Korea Tourism Organization (VISITKOREA)"
+    url: "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=140736"
+  - label: "Korea Customs Service – Tax Refund"
+    publisher: "Korea Customs Service"
+    url: "https://www.customs.go.kr/english/cm/cntnts/cntntsView.do?mi=10803&cntntsId=5504"
 ---
 <p>Skincare is one of the few things almost every visitor to Korea buys, and one of the easiest to buy badly. The shops are dense, generous with samples and built around a routine most newcomers only half understand, so it is common to fly home with products you never open. This is how the shops work, and how to buy things you will actually use.</p>
 
@@ -60,6 +71,8 @@ sitemap :
 
 <p>The real risk of the long routine is not cost but overlap. Stacking several active ingredients at once is a common cause of irritation, and when your skin reacts you cannot tell which product caused it. Introduce one product at a time and give it a fortnight. That habit does more than any specific purchase.</p>
 
+
+<!--post-ad-break-->
 
 <h3>Sheet Masks Are the Sensible First Purchase</h3>
 

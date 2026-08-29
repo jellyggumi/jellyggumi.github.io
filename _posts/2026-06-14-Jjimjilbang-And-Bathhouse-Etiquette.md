@@ -11,9 +11,20 @@ header-img: "img/postcover/pc105.jpg"
 comments: false
 tags: [Etiquette, Tradition]
 categories: [Cultural Tips]
-sitemap :
-  changefreq : monthly
-  priority : 0.8
+reviewed: "2026-08-29"
+lastmod: "2026-08-29"
+ai_assisted: true
+content_type: guide
+sources:
+  - label: "Public Health Control Act – Public Bathhouse Businesses"
+    publisher: "Korea Legislation Research Institute"
+    url: "https://elaw.klri.re.kr/eng_service/lawView.do?hseq=37688&lang=ENG"
+  - label: "Korea.net – Jjimjilbang, Korean Sauna and Spa"
+    publisher: "Korean Culture and Information Service"
+    url: "https://www.korea.net/NewsFocus/Society/view?articleId=236353"
+  - label: "Korea Tourism Organization – Jjimjil Spa Practice and Admission"
+    publisher: "Korea Tourism Organization (VISITKOREA)"
+    url: "https://english.visitkorea.or.kr/svc/contents/infoHtmlView.do?vcontsId=193081"
 ---
 <p>A Korean bathhouse is one of the few places where a visitor's uncertainty is entirely about procedure rather than language. The rules are firm, but there are not many of them, and nobody in the building is paying you the attention you fear. What follows is the order things happen in, from the shoe locker to the checkout desk. The broader everyday conventions sit in <a href="/journal/Amazing-Korean-Cultural-Tips/">Amazing Korean cultural tips</a>; these are specific to the bath.</p>
 
@@ -58,6 +69,8 @@ sitemap :
 
 <p>The cold pool is the one visitors skip and regulars do not. Alternating hot and cold is the actual point rather than an endurance test, and the loose, slightly stunned feeling afterwards is why people come twice a week for forty years. Go in slowly to the waist, breathe out, and give it fifteen seconds before deciding you hate it. Your head goes nowhere near the water in a shared pool, the small towel stays out of it, and the hot pool is closer to a quiet carriage than a jacuzzi.</p>
 
+
+<!--post-ad-break-->
 
 <h3>The Dry Floor: Uniform, Heated Rooms, Sleeping</h3>
 

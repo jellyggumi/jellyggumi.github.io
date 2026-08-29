@@ -4,6 +4,10 @@ MIT Licensed
 */
 .super-search-btn {
 	color: #fff;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
     transition: color .4s;
     text-shadow: 2px 2px #000;
 }
@@ -27,7 +31,11 @@ MIT Licensed
 }
 .super-search__close-btn {
 	color: #d3d3d3;
-     transition: color .4s;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    transition: color .4s;
 	position: absolute;
 	right: 10px;
 	top: 15px;

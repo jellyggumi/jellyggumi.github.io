@@ -11,9 +11,20 @@ header-img: "img/postcover/pc008.jpg"
 comments: false
 tags: [Transport, Practical]
 categories: [Travel & Transport]
-sitemap :
-  changefreq : daily
-  priority : 1.0
+reviewed: "2026-08-29"
+lastmod: "2026-08-29"
+ai_assisted: true
+content_type: guide
+sources:
+  - label: "Korea Tourism Organization – Transportation Cards"
+    publisher: "Korea Tourism Organization (VISITKOREA)"
+    url: "https://english.visitkorea.or.kr/svc/contents/infoBscView.do?vcontsId=140663"
+  - label: "Tmoney – Official Foreign Visitor Card Guide"
+    publisher: "Tmoney Co., Ltd."
+    url: "https://pay.tmoney.co.kr/ncs/pct/ugd/ReadFrgnGd.dev"
+  - label: "Seoul Metropolitan Government – Climate Card"
+    publisher: "Seoul Metropolitan Government"
+    url: "https://english.seoul.go.kr/policy/transportation/climate-card/"
 ---
 
 <p>Korea is easy to move around without a car, not because the network is enormous but because it is coherent. One card covers nearly everything, a bus leg followed by a subway leg is priced as one journey, and live arrival information is standard. Most of what catches visitors out reduces to two habits.</p>
@@ -25,7 +36,7 @@ sitemap :
 
 <p>The card matters more than it first appears. It works across subways, city buses and taxis, and it is what makes the transfer discount system work at all. Paying a single cash fare on a bus is possible, but you lose the transfer benefit and you need exact change. Loading a modest amount and topping up at any station is far less friction.</p>
 
-<p>Buying one is undramatic: you say 티머니 (timeoni) at a convenience store counter, hand over cash, and the assistant sells and loads the card in one movement. 캐시비 (kaesibi), Cashbee, is the other main brand. The card also pays at shops, vending machines and station lockers, and a leftover balance is refundable, as our guide to <a href="/journal/Korean-Convenience-Stores-A-Practical-Guide/">convenience stores</a> describes.</p>
+<p>Buying one is undramatic: you say 티머니 (timeoni) at a convenience store counter, hand over cash, and the assistant sells and loads the card in one movement. 이즐 (ijeul), EZL, is the other nationwide prepaid-card brand. The card also pays at shops, vending machines and station lockers, and a leftover balance is refundable, as our guide to <a href="/journal/Korean-Convenience-Stores-A-Practical-Guide/">convenience stores</a> describes.</p>
 
 
 <h3>Why You Tag On and Off</h3>
@@ -49,6 +60,8 @@ sitemap :
 
 <p>Platform screen doors are fitted across most of the network, removing the drop to the track and fixing the door positions that make orderly queuing possible. Step-free access is uneven: most stations have a lift, though it often serves one exit rather than all, so find it first.</p>
 
+
+<!--post-ad-break-->
 
 <h3>Buses and Their Colours</h3>
 

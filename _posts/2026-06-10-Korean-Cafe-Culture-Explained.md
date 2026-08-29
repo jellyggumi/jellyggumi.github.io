@@ -11,23 +11,31 @@ header-img: "img/postcover/pc103.jpg"
 comments: false
 tags: [Food, Seoul]
 categories: [Food & Dining]
-sitemap :
-  changefreq : monthly
-  priority : 0.8
+reviewed: "2026-08-29"
+lastmod: "2026-08-29"
+ai_assisted: true
+content_type: guide
+sources:
+  - label: "Service Industry Survey – Coffee Shops (2023 table; checked 29 August 2026)"
+    publisher: "Korean Statistical Information Service (KOSIS)"
+    url: "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_2KB9002&markType=C"
+  - label: "A Graduate Student’s View of Korean Cafe Culture"
+    publisher: "Korea.net Honorary Reporters"
+    url: "https://www.korea.net/NewsFocus/HonoraryReporters/view?articleId=255784"
 ---
-<p>Korea has more cafes per street than almost anywhere a visitor is likely to have arrived from, and the reason is not that Koreans drink an extraordinary amount of coffee. Cafes here do a job that other kinds of space do elsewhere. Once you understand what that job is, the rest of it &mdash; how you order, how long you may sit, whether to tip &mdash; follows from it without much guesswork.</p>
+<p>Cafes are unusually visible in everyday Korean life. The official Service Industry Survey counted 106,452 coffee shops nationwide in 2023, but the more useful point for a visitor is what those rooms do beyond selling coffee. They provide a meeting place, a study desk and climate shelter. Once you understand those uses, ordering and table etiquette make much more sense.</p>
 
 
 <h3>Why There Are So Many Cafes</h3>
 
-<p>In a dense Korean neighbourhood you will often pass several cafes on a single block, and one building can hold two or three of them on different floors. This is not a tourist-district effect. It holds in residential areas, near universities, beside office towers and along ordinary shopping streets, and it is one of the first things visitors notice once they stop looking for it.</p>
+<p>In the Seoul neighbourhoods I use, several cafes on a single block are ordinary, and one building can hold two or three on different floors. The official count shows that this is not only a tourist-district impression: coffee shops form a large nationwide service industry.</p>
 
-<p>The main driver is that homes are small and inviting acquaintances into them is far less common than in many Western cultures. Meeting someone therefore means meeting somewhere, and a cafe is the cheapest neutral ground available. It is also a low barrier business to open, so supply has comfortably kept pace with demand. Large low-price chains sit next door to independent shops and premium chains without much apparent conflict, because they are serving slightly different sittings rather than competing for the same hour.</p>
+<p>One reason they matter is that a cafe is neutral ground. Students, colleagues, friends and families can meet without turning a home or a restaurant table into the venue. Large low-price chains, independent shops and premium chains often sit close together because they offer different combinations of price, room, dessert and atmosphere.</p>
 
 
-<h3>The Drink Buys the Seat</h3>
+<h3>A Drink Usually Buys Time</h3>
 
-<p>The single most useful thing to understand is that in Korea a drink is effectively rent on a chair. Buying one coffee and staying for two or three hours is normal, unremarkable and broadly expected. Visitors who come from places where lingering over a single cup feels like an imposition tend to over-correct, ordering repeatedly out of guilt or leaving long before they need to.</p>
+<p>In the ordinary cafes I use, buying a drink and staying to talk or work is common. It is not an unlimited right: a posted time limit, a one-drink-per-person notice or staff request is the rule, and a full room calls for more awareness than a quiet weekday afternoon. Visitors who feel guilty after one cup can usually relax, then read the room.</p>
 
 <p>What people actually do in that time varies. Students spread out textbooks, freelancers work through a laptop afternoon, friends hold conversations that would be awkward in a restaurant with a queue outside, and job candidates kill the hour before an interview. Cafes also function as climate shelter: humid Korean summers and genuinely cold winters make an air-conditioned or heated room with a table a small luxury, which is worth planning around if you are visiting in the heat or the cold described in <a href="/journal/Four-Seasons-In-Korea-What-To-Expect/">the four seasons guide</a>.</p>
 
@@ -45,6 +53,8 @@ sitemap :
 
 <p>There are practical reasons behind it. It is unsweetened, so it does not fight with food. It sits at the cheap end of almost every menu. It arrives in a large cup with a lot of ice, which means it survives a long sitting without going unpleasant in the way a latte does. It also cuts through the sweet and spicy registers that dominate Korean food, which is why you will see it beside a plate of fried chicken as often as beside a laptop.</p>
 
+
+<!--post-ad-break-->
 
 <h3>The Seasonal Menu Runs on a Cycle</h3>
 

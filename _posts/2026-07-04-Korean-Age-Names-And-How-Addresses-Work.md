@@ -11,9 +11,23 @@ header-img: "img/postcover/pc109.jpg"
 comments: false
 tags: [Language, K-Culture]
 categories: [Cultural Tips]
-sitemap :
-  changefreq : monthly
-  priority : 0.8
+reviewed: "2026-08-29"
+lastmod: "2026-08-29"
+ai_assisted: true
+content_type: guide
+sources:
+  - label: "Korea.net – Revised Age Counting System"
+    publisher: "Korean Culture and Information Service"
+    url: "https://www.korea.net/NewsFocus/policies/view?articleId=234677"
+  - label: "Seoul Global Center – International Age Standardization Law"
+    publisher: "Seoul Metropolitan Government"
+    url: "https://global.seoul.go.kr/web/news/senw/bordContDetail.do?brd_no=5&lang=EN&mode=W&post_no=FFC8FBFA445D0162E053C0A8A023740D"
+  - label: "Road Name Address Guide"
+    publisher: "Ministry of the Interior and Safety"
+    url: "https://www.juso.go.kr/EnGuideBook"
+  - label: "National Institute of Korean Language – Romanization of Korean"
+    publisher: "National Institute of Korean Language"
+    url: "https://www.korean.go.kr/front_eng/roman/roman_01.do"
 ---
 <p>Three things tend to trip up newcomers in their first week in Korea, and none of them is the language itself. Someone asks how old you are within a minute of meeting you. Nobody uses your given name. And the address you carefully wrote down does not seem to help the taxi driver. Each has a straightforward explanation, and each is easier to absorb before you arrive than after.</p>
 
@@ -62,6 +76,8 @@ sitemap :
 
 <p>Sharing a surname implies no relation whatsoever, which is why a surname alone is close to useless for identifying anyone. Given names are usually two syllables chosen for their meaning, and relatives of the same generation sometimes share one of them &mdash; a 돌림자 (dollimja), or generation character. Romanisation is a family's own choice rather than a rule.</p>
 
+
+<!--post-ad-break-->
 
 <h3>Nobody Will Call You by Your Given Name Alone</h3>
 

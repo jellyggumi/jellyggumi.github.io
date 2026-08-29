@@ -7,6 +7,6 @@ permalink: "/journal/category/travel-transport/"
 active: journal
 header-img: "img/archive-bg.jpg"
 sitemap:
-  changefreq: weekly
-  priority: 0.6
+  exclude: true
+robots: "noindex, follow"
 ---

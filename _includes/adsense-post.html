@@ -11,6 +11,7 @@
 
   Opt a single post out with `ads: false` in its front matter.
 {%- endcomment -%}
+{%- unless page.robots contains 'noindex' -%}
 {%- if jekyll.environment == 'production'
   and site.google_ad_client != empty
   and site.google_ad_client
@@ -32,3 +33,4 @@
   </script>
 </div>
 {%- endif -%}
+{%- endunless -%}

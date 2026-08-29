@@ -11,9 +11,20 @@ header-img: "img/postcover/pc007.jpg"
 comments: false
 tags: [Language, K-Culture]
 categories: [Cultural Tips]
-sitemap :
-  changefreq : daily
-  priority : 1.0
+reviewed: "2026-08-29"
+lastmod: "2026-08-29"
+ai_assisted: true
+content_type: guide
+sources:
+  - label: "National Institute of Korean Language – Romanization of Korean"
+    publisher: "National Institute of Korean Language"
+    url: "https://www.korean.go.kr/front_eng/roman/roman_01.do"
+  - label: "National Hangeul Museum – Hunminjeongeum Permanent Exhibition"
+    publisher: "National Hangeul Museum"
+    url: "https://www.hangeul.go.kr/en/exhi/dailyExhibition.do"
+  - label: "Hunminjeongeum Manuscript – Memory of the World"
+    publisher: "Korean National Commission for UNESCO"
+    url: "https://unesco.or.kr/eng/mow/"
 ---
 <p>Korean is often called a hard language, and the writing system gets caught up in that reputation unfairly. The alphabet is the easy part, and it was built that way deliberately by someone who wanted it to be learnable.</p>
 
@@ -49,8 +60,10 @@ sitemap :
 
 <p>Two shifts account for most of what a beginner mishears. A 받침 followed by a block beginning with ㅇ slides across into it, so 한국어 (hangugeo) is spoken "han-gu-geo". And a stop before a nasal turns nasal itself, which is why 감사합니다 is romanised gamsaha<em>mni</em>da rather than gamsahap-nida. 신라 reaches English as Silla for the same reason.</p>
 
-<p>That also explains why romanisation looks inconsistent from sign to sign. Two systems are in circulation: the official Revised Romanization adopted in 2000, and the older McCune-Reischauer it replaced. Busan and Pusan, Jeju and Cheju are the same places under different rules, and names were never converted, which is why Lee, Park and Hyundai keep their old spellings.</p>
+<p>That also helps explain why romanisation looks inconsistent from sign to sign. Two systems appear frequently: the official Revised Romanization adopted in 2000, and the older McCune-Reischauer system it replaced for government place names. Busan and Pusan, and Jeju and Cheju, reflect different rules. Personal and brand spellings do not have to follow the place-name conversion, which helps explain familiar forms such as Lee, Park and Hyundai.</p>
 
+
+<!--post-ad-break-->
 
 <h3>Particles, and Why Word Order Feels Loose</h3>
 
@@ -63,7 +76,7 @@ sitemap :
 
 <p>Korean encodes politeness in verb endings rather than only in word choice, and the same sentence can be phrased at several different levels of formality. For a visitor, this sounds more intimidating than it is in practice.</p>
 
-<p>The practical advice is to default to the polite form ending in -요. It is appropriate with strangers, shop staff, older people and in almost any everyday situation, and it will never come across as rude. The more casual forms are for close friends and people younger than you, and the highly formal forms appear in announcements and business settings. Which form fits whom is bound up with age and rank, covered in our post on <a href="/journal/Korean-Age-Names-And-How-Addresses-Work/">Korean age, names and how addresses work</a>.</p>
+<p>The practical advice is to default to the polite form ending in -요. It is generally appropriate with strangers, shop staff and older people, and is a safer default than casual speech in everyday situations. Casual forms are used with close friends and, depending on the relationship, people younger than the speaker; highly formal forms appear in announcements and many business settings. Which form fits whom is bound up with age, familiarity and rank, covered in our post on <a href="/journal/Korean-Age-Names-And-How-Addresses-Work/">Korean age, names and how addresses work</a>.</p>
 
 <p>A short, reliable list is more useful than a long one you half-remember. 안녕하세요 (annyeonghaseyo) is the standard greeting. 감사합니다 (gamsahamnida) is thank you. 죄송합니다 (joesonghamnida) is a sincere apology, while 실례합니다 (sillyehamnida) is what you say when interrupting someone or squeezing past them.</p>
 

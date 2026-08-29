@@ -5,6 +5,7 @@ MIT Licensed
 (function () {
 	var searchFile = '/feed.xml',
 		searchEl,
+		searchButtonEl,
 		searchInputEl,
 		searchResultsEl,
 		currentInputValue = '',
@@ -52,16 +53,18 @@ MIT Licensed
 
 	window.toggleSearch = function toggleSearch() {
 		searchEl.classList.toggle('is-active');
-		if (searchEl.classList.contains('is-active')) {
+		var isOpen = searchEl.classList.contains('is-active');
+		searchEl.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+		searchButtonEl.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+		if (isOpen) {
 			// while opening
 			searchInputEl.value = '';
+			setTimeout(function () { searchInputEl.focus(); }, 210);
 		} else {
 			// while closing
 			searchResultsEl.classList.add('is-hidden');
+			searchButtonEl.focus();
 		}
-		setTimeout(function () {
-			searchInputEl.focus();
-		}, 210);
 	}
 
 	function handleInput() {
@@ -97,6 +100,7 @@ MIT Licensed
 	function init(options) {
 		searchFile = options.searchFile || searchFile;
 		searchEl = document.querySelector(options.searchSelector || '#js-super-search');
+		searchButtonEl = document.querySelector('.super-search-btn');
 		searchInputEl = document.querySelector(options.inputSelector || '#js-super-search__input');
 		searchResultsEl = document.querySelector(options.resultsSelector || '#js-super-search__results');
 
@@ -113,7 +117,7 @@ MIT Licensed
 
 		// Toggle on ESC key
 		window.addEventListener('keyup', function onKeyPress(e) {
-			if (e.which === 27) {
+			if (e.which === 27 && searchEl.classList.contains('is-active')) {
 				toggleSearch();
 			}
 		});

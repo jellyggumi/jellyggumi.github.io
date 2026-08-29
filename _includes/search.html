@@ -1,11 +1,12 @@
-<a href="javascript:void(0)" title="SEARCH" onclick="superSearch.toggle()" class="super-search-btn">
-<span class="fa fa-search" style="font-size:1em; position:fixed; right: .75em; top: 1em; z-index: 2;"></span>
-</a>
-<div class="super-search" id="js-super-search">
-<a href="javascript:void(0)" onclick="superSearch.toggle()" class="super-search__close-btn"">
-<span class="fa fa-close" style="font-size:48px;"></span>
-</a>
-<input type="text" placeholder="Type here to search" class="super-search__input" id="js-super-search__input">
+<button type="button" title="Search" aria-label="Open search" aria-controls="js-super-search" aria-expanded="false" onclick="superSearch.toggle()" class="super-search-btn">
+<span class="fa fa-search" aria-hidden="true" style="font-size:1em; position:fixed; right: .75em; top: 1em; z-index: 2;"></span>
+</button>
+<div class="super-search" id="js-super-search" role="search" aria-hidden="true">
+<button type="button" aria-label="Close search" onclick="superSearch.toggle()" class="super-search__close-btn">
+<span class="fa fa-close" aria-hidden="true" style="font-size:48px;"></span>
+</button>
+<label class="sr-only" for="js-super-search__input">Search articles</label>
+<input type="search" placeholder="Type here to search" class="super-search__input" id="js-super-search__input" autocomplete="off">
 <ul class="super-search__results" id="js-super-search__results"></ul>
 </div>
 

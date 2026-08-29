@@ -11,9 +11,23 @@ header-img: "img/postcover/pc101.jpg"
 comments: false
 tags: [Practical, Food]
 categories: [Daily Life]
-sitemap :
-  changefreq : monthly
-  priority : 0.8
+reviewed: "2026-08-29"
+lastmod: "2026-08-29"
+ai_assisted: true
+content_type: guide
+sources:
+  - label: "Korea Tourism Organization – Popular Items in Korean Convenience Stores"
+    publisher: "Korea Tourism Organization (VISITKOREA)"
+    url: "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=184588"
+  - label: "KOCIS – Convenience Stores in Daily Korean Life"
+    publisher: "Korean Culture and Information Service"
+    url: "https://www.korean-culture.org/eng/webzine/202407/sub09.html"
+  - label: "Korea Tourism Organization – Transportation Cards"
+    publisher: "Korea Tourism Organization (VISITKOREA)"
+    url: "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=140663"
+  - label: "Resources Saving and Recycling Promotion Act, Article 10"
+    publisher: "Korean Law Information Center"
+    url: "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=112759"
 ---
 <p>A Korean convenience store is not a smaller, worse version of a supermarket. It is a piece of everyday infrastructure that happens to also sell crisps. Most of what it does is not shopping at all: it is a hot meal, a topped-up transit card, a cash machine, a parcel counter and a bill payment window, open when nothing else is. Understanding that changes how you use one.</p>
 
@@ -45,10 +59,12 @@ sitemap :
 
 <p>Everything that is not on the hot counter, you heat yourself, and this is the part visitors hesitate over longest. The chilled cabinets hold 도시락 (dosirak), a compartmented lunch box of rice and several side dishes, along with pasta, soups, rice bowls and 삼각김밥 (samgak gimbap), the triangular rice parcel wrapped in seaweed.</p>
 
-<p>The sequence is pay first, then heat. Every branch has a microwave, almost always beside the window seating or the hot water dispenser. Lunch box packaging carries a printed heating time in seconds: peel the film back to the marked point, put it in, key in the time. Nobody supervises this and nobody minds you doing it.</p>
+<p>The sequence is pay first, then heat. Most branches have a microwave, usually beside the window seating or the hot water dispenser. Lunch box packaging carries a printed heating time in seconds: peel the film back to the marked point, put it in and key in the time. Heating packaged food yourself is normal.</p>
 
 <p>Samgak gimbap has its own small trick. The wrapper is numbered one, two, three, and the design keeps the seaweed crisp until you open it, so pulling the tabs in order matters.</p>
 
+
+<!--post-ad-break-->
 
 <h3>Why Instant Noodles Get Eaten in the Shop</h3>
 
@@ -89,7 +105,7 @@ sitemap :
 <li>Sending and receiving domestic parcels</li>
 </ul>
 
-<p>One small thing to expect at the end of any purchase: carrier bags are charged for separately and are not offered automatically, so you will be asked whether you want one. Most people carry their own or simply hold what they bought.</p>
+<p>One small thing to expect at the end of any purchase: disposable plastic carrier bags are not supplied. A shop may sell a paper bag or an official volume-based waste bag instead, but it will not be added automatically. Most people carry their own bag or simply hold what they bought.</p>
 
 
 <h3>Eating In, Late Hours and the Unwritten Rules</h3>

@@ -1,5 +1,5 @@
 {%- comment -%}
-  In-article unit, injected between two paragraphs of a post body by
+  In-article unit, injected at an explicit top-level source marker by
   `post-content.html`. The loader is emitted once per page by `adsense.html`
   from <head>, so only the slot and its push() call live here.
 
@@ -8,10 +8,10 @@
   running text, which is what makes a mid-article placement acceptable rather
   than an interruption.
 
-  Guard conditions are checked again by the caller before it decides whether to
-  split the body at all; they are repeated here so the include is safe to call
-  from anywhere.
+  Guard conditions are checked again by the caller before it replaces the marker;
+  they are repeated here so the include is safe to call from anywhere.
 {%- endcomment -%}
+{%- unless page.robots contains 'noindex' -%}
 {%- if jekyll.environment == 'production'
   and site.google_ad_client != empty
   and site.google_ad_client
@@ -33,3 +33,4 @@
   </script>
 </div>
 {%- endif -%}
+{%- endunless -%}

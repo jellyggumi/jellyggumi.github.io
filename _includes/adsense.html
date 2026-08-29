@@ -1,40 +1,33 @@
 {%- comment -%}
-  The single adsbygoogle loader for the whole page, emitted from <head>.
+  Keep ownership verification separate from ad delivery.
 
-  Everything about whether ads exist on this site is decided here:
+  The ownership meta tag is safe on every production page and gives AdSense a
+  stable way to associate the site with its publisher. The ad loader is much
+  narrower: it appears only on full editorial posts (or a page that explicitly
+  opts in with `adsense: true`). This prevents account-level Auto ads from being
+  placed on the home page, taxonomy/archive listings, galleries, games, search,
+  legal pages or other screens whose job is navigation rather than reading.
 
-    - `site.google_ad_client` empty  -> no AdSense on the site at all;
-    - non-production build           -> no AdSense, so local previews and
-                                        `bundle exec jekyll serve` never call
-                                        Google and never risk an invalid-traffic
-                                        finding from the author's own reloads;
-    - 404 / search pages             -> no AdSense. Google's policy is that ads
-                                        sit beside content the publisher
-                                        provides. A 404 has none, and an empty
-                                        search page has none until the reader
-                                        types something. Neither is a
-                                        destination anyone lands on from search,
-                                        so serving ads there buys nothing and
-                                        risks a policy finding.
-
-  The individual ad units (`adsense-post.html`, `adsense-in-article.html`) repeat
-  the production/client test rather than trusting this include, because a unit
-  rendered without its loader is an empty <ins> that never fills.
-
-  `google-adsense-account` is the ownership meta tag AdSense looks for while it
-  reviews a site; it is what lets the crawler tie this domain to the publisher
-  account even on a page where no ad unit happens to render.
+  A page marked noindex is never ad-eligible, even if its layout is `post`.
+  Local previews remain entirely disconnected from AdSense.
 {%- endcomment -%}
-{%- assign ads_page = true -%}
-{%- if page.url == '/404.html' or page.url == '/search/' -%}{%- assign ads_page = false -%}{%- endif -%}
+{%- assign ads_page = false -%}
+{%- if page.layout == 'post' or page.adsense == true -%}
+  {%- assign ads_page = true -%}
+{%- endif -%}
+{%- if page.robots contains 'noindex' or page.ads == false -%}
+  {%- assign ads_page = false -%}
+{%- endif -%}
 {%- if jekyll.environment == 'production'
   and site.google_ad_client != empty
   and site.google_ad_client
-  and ads_page
 -%}
-    <!-- Google AdSense -->
+    <!-- Google AdSense ownership -->
     <meta name="google-adsense-account" content="{{ site.google_ad_client }}">
+    {%- if ads_page %}
+    <!-- Google AdSense loader: substantial editorial pages only -->
     <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.google_ad_client }}"
          crossorigin="anonymous"></script>
+    {%- endif %}
 {%- endif -%}

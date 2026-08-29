@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Journal"
-description: "Guides to Korean culture, food, transport and daily life, written from living here, plus a family growth diary."
+description: "Source-checked guides to Korean culture, food, transport and daily life, plus a first-hand family growth diary."
 active: journal
 header-img: "img/writing-bg.jpg"
 sitemap:
@@ -32,9 +32,15 @@ sitemap:
     or jump straight into a section below.
   </p>
   <p class="journal-cadence">
-    {{ site.posts.size }} posts so far. New guides go up roughly twice a month &mdash;
-    see the <a href="{{ '/journal/archive/' | relative_url }}">archive</a> for the
-    publishing schedule.
+    {{ site.posts.size }} posts so far. New guides are published when the research or a
+    new family story is ready; the <a href="{{ '/journal/archive/' | relative_url }}">archive</a>
+    keeps the complete date-ordered record.
+  </p>
+  <p class="journal-cadence">
+    <strong>Archive translation note:</strong> in August 2026, selected entries from our
+    2024 Korean family diary were translated and re-edited for this English journal.
+    Each adaptation names the original publication date, links the Korean source and
+    separates the historical experience from any rule or price that may have changed.
   </p>
 </div>
 
@@ -109,7 +115,7 @@ sitemap:
           <a href="{{ paginator.previous_page_path | relative_url }}" rel="prev">&larr; Newer Posts</a>
       </li>
       {% endif %}
-      <span class="button-height">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+      <li class="button-height" aria-current="page">Page {{ paginator.page }} of {{ paginator.total_pages }}</li>
       {% if paginator.next_page %}
       <li class="next">
           <a href="{{ paginator.next_page_path | relative_url }}" rel="next">Older Posts &rarr;</a>

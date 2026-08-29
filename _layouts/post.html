@@ -33,6 +33,9 @@ extra_css:
                     {% endcomment %}
                     <span class="meta">
                       Posted on <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+                      {% if page.reviewed %}
+                        &middot; Reviewed <time datetime="{{ page.reviewed | date_to_xmlschema }}">{{ page.reviewed | date: "%B %-d, %Y" }}</time>
+                      {% endif %}
                     </span>
 
                     {% assign minutes = content | number_of_words | divided_by: 180 %}
@@ -65,11 +68,39 @@ extra_css:
         <div class="post-body" id="main">
             {% comment %}
               The body is rendered through post-content.html rather than emitted
-              directly, because that include is what splits it at a paragraph
-              boundary past the midpoint to place the in-article ad unit. With
-              ads off it returns the body untouched.
+              directly, because that include replaces one explicit top-level source
+              marker with the in-article ad unit. With ads off it returns the body
+              untouched (the marker remains an invisible HTML comment).
             {% endcomment %}
             {% include post-content.html content=content %}
+
+            {% if page.ai_assisted == true %}
+            <aside class="editorial-disclosure" aria-label="Editorial disclosure">
+              <p><strong>How this article was made:</strong>
+              {% if page.content_type == 'personal' %}
+                This story comes from the family's own record. AI assisted the English editing, structure and contextual sections; it did not supply the personal events or photographs. Contextual claims were checked against the references where listed.
+              {% else %}
+                AI assisted research, organisation and drafting. It is not treated as a source; factual claims were checked against the references below.
+              {% endif %}
+              <a href="{{ '/editorial-policy/' | relative_url }}">Read the editorial policy.</a></p>
+            </aside>
+            {% endif %}
+
+            {% if page.sources.size > 0 %}
+            <section class="article-sources" id="sources" aria-labelledby="sources-heading">
+              <h2 id="sources-heading">Sources checked</h2>
+              {% if page.reviewed %}<p class="article-sources__reviewed">Last reviewed {{ page.reviewed | date: "%B %-d, %Y" }}.</p>{% endif %}
+              <ul>
+                {% for source in page.sources %}
+                <li>
+                  <a href="{{ source.url | escape }}" rel="noopener">{{ source.label | escape }}</a>
+                  {% if source.publisher %}<span> &mdash; {{ source.publisher | escape }}</span>{% endif %}
+                </li>
+                {% endfor %}
+              </ul>
+              <p class="article-sources__note">Schedules, prices and operating rules can change. Where a detail is time-sensitive, the linked operator remains the final authority.</p>
+            </section>
+            {% endif %}
 
             {% comment %}
               Bottom-of-post unit: after the article, before the sign-off and the

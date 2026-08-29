@@ -11,9 +11,20 @@ header-img: "img/postcover/pc005.jpg"
 comments: false
 tags: [Food, Etiquette]
 categories: [Food & Dining]
-sitemap :
-  changefreq : daily
-  priority : 1.0
+reviewed: "2026-08-29"
+lastmod: "2026-08-29"
+ai_assisted: true
+content_type: guide
+sources:
+  - label: "Korea Tourism Organization – About Korean Food"
+    publisher: "Korea Tourism Organization (VISITKOREA)"
+    url: "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=229195"
+  - label: "Seoul Tourism Organization – The Basics of Korean Etiquette"
+    publisher: "Seoul Tourism Organization (VisitSeoul)"
+    url: "https://english.visitseoul.net/etiquette"
+  - label: "Korea.net – Alcohol in Korean Life: Drinking Manners"
+    publisher: "Korean Culture and Information Service"
+    url: "https://www.korea.net/NewsFocus/Culture/view?articleId=117340"
 ---
 <p>A Korean table is organised by conventions nobody states out loud. Where you sit, who lifts a spoon first, which hand holds the bottle and who pays are all settled before the food arrives. Little of it is enforced on visitors, and none of it is complicated.</p>
 
@@ -51,6 +62,8 @@ sitemap :
 
 <p>Lifting a rice bowl off the table to eat from it is also less common than in some neighbouring food cultures. The bowl stays down and the spoon travels up, which is why the spoon does so much of the work here. These are conventions rather than laws, and no one expects a visitor to be flawless.</p>
 
+
+<!--post-ad-break-->
 
 <h3>Shared Dishes and the Communal Spoon</h3>
 

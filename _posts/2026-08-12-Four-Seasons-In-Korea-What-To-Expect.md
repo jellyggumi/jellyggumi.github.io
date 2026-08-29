@@ -11,9 +11,20 @@ header-img: "img/postcover/pc006.jpg"
 comments: false
 tags: [Seasons, Practical]
 categories: [Travel & Transport]
-sitemap :
-  changefreq : daily
-  priority : 1.0
+reviewed: "2026-08-29"
+lastmod: "2026-08-29"
+ai_assisted: true
+content_type: guide
+sources:
+  - label: "Korea Tourism Organization – Climate and Seasons"
+    publisher: "Korea Tourism Organization (VISITKOREA)"
+    url: "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=140636"
+  - label: "Seoul Metropolitan Government – Seoul Climate and Four Seasons"
+    publisher: "Seoul Metropolitan Government"
+    url: "https://english.seoul.go.kr/seoul-views/meaning-of-seoul/3-climate/"
+  - label: "AirKorea – Particulate Matter (PM10 and PM2.5)"
+    publisher: "Korea Environment Corporation"
+    url: "https://www.airkorea.or.kr/eng/annualAirQualityTrends?pMENU_NO=161"
 ---
 
 <p>Deciding when to come to Korea matters more than it would in a milder climate. The same itinerary in Seoul is a different holiday in April and in August, and festivals, food and whether the mountains are worth the trip all hang on the season rather than the place.</p>
@@ -54,6 +65,8 @@ sitemap :
 
 <p>Air conditioning is widespread indoors, which creates a sharp contrast with the heat outside. A compact umbrella is more useful than a rain jacket, since the rain is warm and a jacket traps humidity. Late summer is also typhoon season, and while direct impacts vary considerably by year, it is worth being aware of when planning coastal travel.</p>
 
+
+<!--post-ad-break-->
 
 <h3>Tropical Nights and Why Humidity Rules</h3>
 

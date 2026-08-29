@@ -7,7 +7,7 @@ active: "journal"
 image:
   feature: "pc001.jpg"
 date: "2024-12-21"
-header-img: "img/postcover/pc002.jpg"
+header-img: "img/postcover/pc001.jpg"
 comments: false
 case1: 
   - image_path: /img/post/20241222/p01.jpg
@@ -31,9 +31,24 @@ case2:
     image-copyright: © jelly_ggumi 
 tags: [Etiquette, K-Culture]
 categories: [Cultural Tips]
-sitemap :
-  changefreq : daily
-  priority : 1.0
+reviewed: "2026-08-29"
+lastmod: "2026-08-29"
+ai_assisted: true
+content_type: guide
+robots: "noindex, follow"
+ads: false
+sitemap:
+  exclude: true
+sources:
+  - label: "Seoul Tourism Organization – The Basics of Korean Etiquette"
+    publisher: "Seoul Tourism Organization (VisitSeoul)"
+    url: "https://english.visitseoul.net/etiquette"
+  - label: "Korea Tourism Organization – About Korean Food"
+    publisher: "Korea Tourism Organization (VISITKOREA)"
+    url: "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=229195"
+  - label: "Seoul Metropolitan Government – Public Transportation"
+    publisher: "Seoul Metropolitan Government"
+    url: "https://english.seoul.go.kr/service/movement/public-transportation/"
 ---
 <p>Most of what surprises visitors to Korea is not one dramatic difference but a set of small habits that quietly assume things a newcomer would not. Parcels are left in hallways. Side dishes arrive unordered and get refilled unasked. Nobody tips. This post collects the ones that come up most often, and explains why each habit exists rather than only that it does.</p>
 
@@ -69,6 +84,8 @@ sitemap :
 {% include subgallery.html id="case1" %}
 
 <!-- end of GALLERY __ -->
+
+<!--post-ad-break-->
 
 <h3>A Country with Proficient English Speakers</h3>
 

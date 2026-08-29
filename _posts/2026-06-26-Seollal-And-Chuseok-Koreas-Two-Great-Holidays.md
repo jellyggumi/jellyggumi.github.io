@@ -11,9 +11,20 @@ header-img: "img/postcover/pc106.jpg"
 comments: false
 tags: [Tradition, K-Culture]
 categories: [Cultural Tips]
-sitemap :
-  changefreq : monthly
-  priority : 0.8
+reviewed: "2026-08-29"
+lastmod: "2026-08-29"
+ai_assisted: true
+content_type: guide
+sources:
+  - label: "Korea Tourism Organization – Korea Public Holidays"
+    publisher: "Korea Tourism Organization (VISITKOREA)"
+    url: "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=140038"
+  - label: "Korea Tourism Organization – Chuseok"
+    publisher: "Korea Tourism Organization (VISITKOREA)"
+    url: "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=231314"
+  - label: "Seoul Metropolitan Government – Four Major National Holidays"
+    publisher: "Seoul Metropolitan Government"
+    url: "https://english.seoul.go.kr/service/amusement/traditional-culture/koreas-four-major-national-holidays/"
 ---
 <p>Korea has a long list of public holidays, and for a visitor most are simply days when the banks are shut. Two are different in kind. 설날 (Seollal), the lunar new year, and 추석 (Chuseok), the autumn harvest holiday, are the dates on which the country stops being a place you can move around freely and becomes several million family houses with the doors closed. Understanding them is partly cultural interest and partly logistics.</p>
 
@@ -45,6 +56,8 @@ sitemap :
 
 <p>It is worth being accurate about how universal this is, because visitors are often told every Korean family does it. Many Christian families hold a memorial service instead. Many households have simplified the table, and some stopped altogether as families dispersed and as the preparation burden &mdash; traditionally falling on the women of the household &mdash; was questioned.</p>
 
+
+<!--post-ad-break-->
 
 <h3>세배 and 세뱃돈</h3>
 

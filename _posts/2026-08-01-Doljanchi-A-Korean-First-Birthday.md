@@ -11,9 +11,20 @@ header-img: "img/postcover/pc115.jpg"
 comments: false
 tags: [Family, Tradition, JellyGGumi]
 categories: [Family Diary]
-sitemap :
-  changefreq : monthly
-  priority : 0.8
+reviewed: "2026-08-29"
+lastmod: "2026-08-29"
+ai_assisted: true
+content_type: guide
+sources:
+  - label: "Encyclopedia of Korean Culture – Dol"
+    publisher: "Academy of Korean Studies"
+    url: "https://encykorea.aks.ac.kr/Article/E0016110"
+  - label: "Encyclopedia of Korean Culture – Dolsang"
+    publisher: "Academy of Korean Studies"
+    url: "https://encykorea.aks.ac.kr/Article/E0016146"
+  - label: "Encyclopedia of Korean Folk Culture"
+    publisher: "National Folk Museum of Korea"
+    url: "https://folkency.nfm.go.kr/en/main"
 ---
 <p>INa was born on 6 June 2024, which put her first birthday on 6 June 2025. In a lot of countries that would mean a cake, a few photographs and an early bedtime. In Korea it means 돌잔치 (doljanchi), a named occasion with its own table, its own clothing and its own small ceremony, and one that older Koreans still rank alongside a wedding as a day worth doing properly.</p>
 
@@ -45,7 +56,7 @@ sitemap :
 <li>무지개떡 (mujigaetteok) &mdash; layered rainbow rice cake, for a full and varied life.</li>
 <li>쌀 (ssal) &mdash; a bowl of uncooked rice, for never going hungry.</li>
 <li>대추 (daechu) &mdash; dried jujubes, associated with a large family and many descendants.</li>
-<li>실타래 (siltarae) &mdash; skeins of thread, for length of days.</li>
+<li>실타래 (siltarae) &mdash; skeins of thread used among the doljabi objects, for length of days.</li>
 <li>Stacked seasonal fruit, for plain abundance.</li>
 </ul>
 
@@ -56,10 +67,12 @@ sitemap :
 
 <p>The ceremony proper is 돌잡이 (doljabi). A small set of objects is set out in front of the child, the room goes quiet, and whatever the child reaches for first is said to hint at the shape of their life. Everyone photographs it.</p>
 
-<p>The traditional objects are few and their meanings fixed. 실 (sil), thread, is long life. 쌀 (ssal), rice, is never going without. 돈 (don), money, is wealth. A 붓 (but), a calligraphy brush, or a 책 (chaek), a book, is scholarship &mdash; the old highest ambition, since passing the state examinations was the route into office. A 활 (hwal), a bow, once appeared on boys' tables for courage, and a 자 (ja), a ruler, on girls' tables for domestic skill. Those last two have largely dropped out.</p>
+<p>A core set of traditional objects recurs, though families and event vendors vary the selection. 실 (sil), thread, represents long life; 쌀 (ssal), rice, freedom from hunger; and 돈 (don), money, wealth. A 붓 (but), a calligraphy brush, or a 책 (chaek), a book, points to scholarship &mdash; historically a major ambition because passing the state examinations opened a route into office. Older sets could also include a 활 (hwal), a bow, associated with a military career, or a 자 (ja), a ruler, associated with domestic skill. These are less common in contemporary displays.</p>
 
 <p>Modern tables have absorbed newer ambitions instead. A 청진기 (cheongjingi), a stethoscope, stands for medicine; a 마이크 (maikeu), a microphone, for performing; a 판사봉 (pansabong), a gavel, for law. Nobody in the room treats the outcome as a prediction. It is a photograph and a story to tell the child later, and the parents usually have a quiet preference about which object happens to be nearest.</p>
 
+
+<!--post-ad-break-->
 
 <h3>돌복 (dolbok), the Clothes</h3>
 

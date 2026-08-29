@@ -11,9 +11,23 @@ header-img: "img/postcover/pc107.jpg"
 comments: false
 tags: [Practical]
 categories: [Daily Life]
-sitemap :
-  changefreq : monthly
-  priority : 0.8
+reviewed: "2026-08-29"
+lastmod: "2026-08-29"
+ai_assisted: true
+content_type: guide
+sources:
+  - label: "RFID-Based Food Waste Management System"
+    publisher: "Korea Environment Corporation"
+    url: "https://keco.or.kr/en/lay1/S295T387C404/contents.do"
+  - label: "Food Waste Separation and Disposal Standard"
+    publisher: "Seoul Metropolitan Government"
+    url: "https://english.seoul.go.kr/seoul-distributes-outline-of-food-waste-disposal-standard-in-ten-languages-for-foreign-residents/"
+  - label: "Recycling and Trash Disposal"
+    publisher: "Jung-gu Office, Seoul"
+    url: "https://www.junggu.seoul.kr/english/content.do?cmsid=14842"
+  - label: "Waste Discharge Guide"
+    publisher: "Yangcheon-gu Office, Seoul"
+    url: "https://www.yangcheon.go.kr/english/english/03/10302000000002016110903.jsp"
 ---
 <p>Korea runs on two everyday systems a short trip never exposes you to. Waste separation is stricter and more legally structured than most newcomers expect. Delivery is faster and more trusting than most newcomers expect. Both are learned informally &mdash; from a neighbour, a building manager, or the mild embarrassment of getting it wrong in front of the whole block.</p>
 
@@ -60,6 +74,8 @@ sitemap :
 
 <p>One shortcut is worth knowing before you book anything. When you buy a large appliance, the delivery team will normally take the old one away as part of the installation, which is simpler than arranging disposal yourself.</p>
 
+
+<!--post-ad-break-->
 
 <h3>Public Bins Are Scarce, and That Is Deliberate</h3>
 

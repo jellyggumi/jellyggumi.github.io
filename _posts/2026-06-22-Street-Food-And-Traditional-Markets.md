@@ -11,9 +11,20 @@ header-img: "img/postcover/pc104.jpg"
 comments: false
 tags: [Food, Seoul]
 categories: [Food & Dining]
-sitemap :
-  changefreq : monthly
-  priority : 0.8
+reviewed: "2026-08-29"
+lastmod: "2026-08-29"
+ai_assisted: true
+content_type: guide
+sources:
+  - label: "Korea Tourism Organization – Gwangjang Market"
+    publisher: "Korea Tourism Organization (VISITKOREA)"
+    url: "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=106345"
+  - label: "Korea Tourism Organization – Tongin Market"
+    publisher: "Korea Tourism Organization (VISITKOREA)"
+    url: "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=79811"
+  - label: "Korea Tourism Organization – Traditional Markets"
+    publisher: "Korea Tourism Organization (VISITKOREA)"
+    url: "https://english.visitkorea.or.kr/svc/sp/TraditionalMarkets"
 ---
 <p>A Korean 시장 (sijang) is not a tourist attraction that happens to sell food. It is working grocery infrastructure &mdash; the place a neighbourhood buys vegetables, fish and bedding &mdash; and the food stalls exist because the people shopping and the people running the stalls need lunch. Understanding that order of events explains almost everything about how a market behaves, including why the best food is rarely on the aisle with the English signage.</p>
 
@@ -59,6 +70,8 @@ sitemap :
 
 <p>Two of these have a habit worth copying. Twigim is dipped straight into the tteokbokki sauce rather than eaten dry, and sundae takes salt in Seoul but is dipped in seasoned powders or sauces elsewhere depending on the region, so watch what the person next to you does.</p>
 
+
+<!--post-ad-break-->
 
 <h3>What Is Available Depends on the Month</h3>
 

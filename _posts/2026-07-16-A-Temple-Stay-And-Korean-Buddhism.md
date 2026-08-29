@@ -11,16 +11,27 @@ header-img: "img/postcover/pc113.jpg"
 comments: false
 tags: [Tradition, K-Culture]
 categories: ["Travel & Transport"]
-sitemap :
-  changefreq : monthly
-  priority : 0.8
+reviewed: "2026-08-29"
+lastmod: "2026-08-29"
+ai_assisted: true
+content_type: guide
+sources:
+  - label: "Templestay Programs and Buddhist Culture"
+    publisher: "Cultural Corps of Korean Buddhism"
+    url: "https://www.templestay.com/en/MI000000000000000020/html/view.do"
+  - label: "Official Templestay Booking Portal"
+    publisher: "Jogye Order of Korean Buddhism"
+    url: "https://eng.templestay.com/"
+  - label: "UNESCO Intangible Heritage – Yeondeunghoe"
+    publisher: "UNESCO"
+    url: "https://ich.unesco.org/en/RL/yeondeunghoe-lantern-lighting-festival-in-the-republic-of-korea-00882"
 ---
 <p>A 템플스테이 (templestay) is an overnight stay inside a working Korean Buddhist temple, and it is one of the few cultural programmes in Korea designed from the start with outsiders in mind. You sleep in the guest quarters, eat what the community eats, and follow a schedule that would be running whether you were there or not.</p>
 
 
 <h3>What the Programme Actually Is</h3>
 
-<p>The programme began in 2002, when Korea co-hosted the football World Cup and ran short of accommodation. Temples opened their guest quarters, and the overflow measure became permanent. It is now coordinated on behalf of the Jogye Order, the largest Buddhist order in Korea, and runs at more than a hundred temples.</p>
+<p>Today the programmes are coordinated by the Cultural Corps of Korean Buddhism on behalf of the Jogye Order. The official portal groups them into one-day, experience-oriented and rest-oriented stays, with participating temples listed by region and by the languages they can support.</p>
 
 <p>The important thing is that it is explicitly open to non-Buddhists. Nobody asks what you believe, and Korean monastics do not proselytise as a matter of practice. You are shown how to bow, sit and eat, and take part in as much or as little as you wish.</p>
 
@@ -60,6 +71,8 @@ sitemap :
 
 <p>The food is 사찰음식 (sachal eumsik), temple cuisine, which uses no meat or fish and also excludes the five pungent vegetables &mdash; garlic, onion, spring onion, chives and leeks &mdash; on the grounds that they agitate the mind. If you know Korean food as garlic-forward and heavily seasoned, this tastes like a separate cuisine built on mountain vegetables and fermented pastes. Restaurant manners are covered in our <a href="/journal/Korean-Dining-Customs-Explained/">Korean dining customs</a> guide.</p>
 
+
+<!--post-ad-break-->
 
 <h3>108 Bows and What They Are For</h3>
 

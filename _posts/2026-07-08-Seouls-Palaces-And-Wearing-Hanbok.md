@@ -11,9 +11,23 @@ header-img: "img/postcover/pc110.jpg"
 comments: false
 tags: [Seoul, Tradition]
 categories: [Travel & Transport]
-sitemap :
-  changefreq : monthly
-  priority : 0.8
+reviewed: "2026-08-29"
+lastmod: "2026-08-29"
+ai_assisted: true
+content_type: guide
+sources:
+  - label: "Korea Heritage Service – Free Admission for Hanbok Wearers"
+    publisher: "Korea Heritage Service"
+    url: "https://royal.khs.go.kr/ENG/contents/E701000000.do"
+  - label: "Korea Heritage Service – Palace Admission Information"
+    publisher: "Korea Heritage Service"
+    url: "https://royal.khs.go.kr/ENG/contents/E702000000.do"
+  - label: "Korea Tourism Organization – Royal Guard Changing Ceremony"
+    publisher: "Korea Tourism Organization (VISITKOREA)"
+    url: "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=104589"
+  - label: "Changdeokgung Palace Complex – UNESCO World Heritage Status"
+    publisher: "Korea Heritage Service"
+    url: "https://royal.khs.go.kr/ENG/contents/E102030000.do"
 ---
 <p>Central Seoul holds five palaces from the Joseon dynasty, plus the royal shrine that belongs with them, and most are within walking distance of each other. They are easy to blur together, they do not all close on the same day, and the widely repeated rule about free entry in hanbok has conditions that catch people out.</p>
 
@@ -56,6 +70,8 @@ sitemap :
 
 <p>The explanation is chronological. Emperor Gojong used Deoksugung during the short-lived Korean Empire at the turn of the twentieth century, a period of deliberate and rather desperate modernisation, and the Western buildings date from that attempt. The palace has its own guard-changing ceremony at Daehanmun, its main gate, on a smaller scale than Gyeongbokgung's. The stone-wall road along the western side, Deoksugung-gil, is one of the better short walks in central Seoul.</p>
 
+
+<!--post-ad-break-->
 
 <h3>Jongmyo Is a Shrine, Not a Palace</h3>
 
