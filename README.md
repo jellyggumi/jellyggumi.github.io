@@ -1,4 +1,4 @@
-# JellyGGumi Growth Diary
+# JellyGGumi Journal
 
 Source for **[jellyggumi.github.io](https://jellyggumi.github.io)** — a Jekyll site with two
 halves: first-hand guides to Korean culture, food and daily life written for visitors and
@@ -14,24 +14,25 @@ in places contradict this configuration.
 ## Layout
 
 ```
-_posts/             the 21 guides and diary entries
+_posts/             source-checked guides and dated family records
 _layouts/           default, page, post, home, journal_by_category, journal_by_tag
-_includes/          head, nav, footer, breadcrumbs, share, signoff, subgallery, …
-journal/            index, archive, and the category/ and tag/ stub pages
+_includes/          head, nav, shared post card, disclosures, ads, footer, …
+journal/            main, guide and family indexes, archive, and category/tag stubs
 gallery/            album index plus one page per album
 games/              games index; games/castle-war/ is a standalone canvas app
-img/postcover/      post cover images (pc*.jpg) and their .thumb.webp thumbnails
+img/postcover/      semantic post covers plus matching .thumb.webp thumbnails
+img/editorial/       labelled AI-generated still lifes for navigation and selected guide headers
 css/site.css        additions and corrections layered over the theme's main.css
 tools/make_covers.py  regenerates the generated post covers
 ```
 
 ## Local build
 
-There is no Gemfile; the site is built by GitHub Pages from the default branch. To preview
+There is no Gemfile; the site is published by GitHub Pages from the `gh-pages` source branch. To preview
 locally you need `jekyll` and `jekyll-paginate`:
 
 ```sh
-gem install jekyll jekyll-paginate jekyll-sitemap
+gem install jekyll jekyll-paginate
 jekyll serve            # http://localhost:4000
 ```
 
@@ -52,12 +53,20 @@ description: "A standalone sentence of roughly 120-155 characters. Required — 
 meta description, the Open Graph description and the search-result snippet."
 active: "journal"
 image:
-  feature: "pc101.jpg"
+  feature: "semantic-cover-name.jpg"
 date: "2026-06-06"
-header-img: "img/postcover/pc101.jpg"
+header-img: "img/postcover/semantic-cover-name.jpg"
 comments: false
 tags: [Food, Seoul]
 categories: [Food & Dining]
+reviewed: "2026-08-29"
+lastmod: "2026-08-29"
+ai_assisted: true
+content_type: guide
+sources:
+  - label: "Primary source title"
+    publisher: "Responsible organisation"
+    url: "https://example.gov/official-page"
 sitemap:
   changefreq: monthly
   priority: 0.8
@@ -81,14 +90,47 @@ Current categories: `Cultural Tips`, `Food & Dining`, `Travel & Transport`, `Dai
 
 ## Images
 
-Post covers live in `img/postcover/` as `pcNNN.jpg` at 1375×675, each with a generated
-`pcNNN.thumb.webp` used by the journal card grid. Gallery photographs are capped at 2048px on
-the long edge with a 700px `.thumb.webp` beside each one; grids load the thumbnail and the
-lightbox loads the full file.
+Post covers live in `img/postcover/`. New covers use semantic filenames and are normally
+1200×674 or larger; legacy `pcNNN.jpg` assets remain valid. Every `image.feature` file needs a
+matching basename ending in `.thumb.webp` for card grids. Gallery photographs are capped at
+2048px on the long edge with a 700px `.thumb.webp` beside each one; grids load the thumbnail
+and the lightbox loads the full file.
 
-`tools/make_covers.py` regenerates the generated covers. It is deterministic — seeded per
+`tools/make_covers.py` regenerates the legacy graphic covers. It is deterministic — seeded per
 filename — and asserts two things per cover: the headline region stays dark enough for white
-text (≥4.5:1) and the motif region stays bright enough to be visible.
+text (≥4.5:1) and the motif region stays bright enough to be visible. Editorial still lifes in
+`img/editorial/` are separate, visibly disclosed assets and must not be presented as family
+documentary photographs. When a post sets `card-img` to an editorial `.jpg`, keep a 700×394
+sibling named `.thumb.jpg`; listing cards load that smaller file while article headers and social
+metadata keep the full image.
+
+## Editorial agent harness
+
+The file-based Korea Desk harness lives under `.claude/`; `.agents/skills/` contains thin
+compatibility entries for other agent runtimes. `CLAUDE.md` is the canonical safety and
+publication contract, while `PERSONA.md` separates observed, explained and sourced prose.
+Scheduled automation may create and, only when every gate is green, publish one new `guide` package. It never invents or automates a family
+record.
+
+The live run is always `_workspace/current/`. Starting the next run first verifies every old
+SHA-256 archive manifest and separate read-only `_workspace/archive-seals/` anchor, then moves a closed prior current run to `_workspace/archive/<run-id>/`; no populated run
+is deleted. A `ready_for_review` run remains current and blocks the next scheduled start until a human resolves or explicitly archives it. Each current run has a `.run-lock.json` ownership marker; status commands must name the same run id, so a stale worker cannot mutate a newer run. The whole workspace is gitignored and excluded from Jekyll.
+
+```sh
+node tools/test-editorial-gates.mjs
+node tools/validate-harness.mjs
+node tools/verify-site-quality.mjs
+node tools/editorial-workspace.mjs start \
+  --run-id 20260831-0100-korea-desk \
+  --target-date 2026-08-31
+node tools/editorial-workspace.mjs verify-archives
+# Inside an active run:
+node tools/capture-google-trends.mjs
+# After the one approved commit has been pushed:
+node tools/verify-deployment.mjs
+```
+
+The active Aside cron routine `h78L2R0UJFRhjS9O` runs at 01:00 KST. It uses the official Korea Google Trends RSS feed only to discover candidates, then searches Korean institutions and operators for evidence. A run may publish zero or one validated `guide`: `publish-on-green` is authorized only when the matching `standing_publish_approval: true` key, pinned routine id, trend-value gate, G1-G11 and exact-path checks all pass. Draft-only mode and manual review remain supported fail-closed fallbacks. Every article is exactly three new paths, one commit and one push; never use `git add -A`.
 
 ## Notes for future changes
 

@@ -1,9 +1,13 @@
 ---
 layout: page
 title: "Journal"
-description: "Source-checked guides to Korean culture, food, transport and daily life, plus a first-hand family growth diary."
+description: "Warm, source-checked guides to Korean culture and daily life, with dated family records from Korea."
 active: journal
-header-img: "img/writing-bg.jpg"
+header-img: "img/editorial/journal-field-notes.jpg"
+header_alt: "Perilla leaves, a celadon cup, Korean stainless cutlery, hanji paper and a blank transit card arranged on a dark table"
+header_width: 1672
+header_height: 941
+header_ai: true
 sitemap:
   changefreq: weekly
   priority: 0.9
@@ -23,26 +27,31 @@ sitemap:
   .post-card in site.css.
 {% endcomment %}
 
-<div class="post-body">
-  <p>
-    Everything published here, newest first. Browse by
-    <a href="{{ '/journal/category/' | relative_url }}">category</a>,
-    <a href="{{ '/journal/tag/' | relative_url }}">tag</a> or the
-    <a href="{{ '/journal/archive/' | relative_url }}">full archive</a>,
-    or jump straight into a section below.
-  </p>
-  <p class="journal-cadence">
-    {{ site.posts.size }} posts so far. New guides are published when the research or a
-    new family story is ready; the <a href="{{ '/journal/archive/' | relative_url }}">archive</a>
-    keeps the complete date-ordered record.
-  </p>
-  <p class="journal-cadence">
-    <strong>Archive translation note:</strong> in August 2026, selected entries from our
-    2024 Korean family diary were translated and re-edited for this English journal.
-    Each adaptation names the original publication date, links the Korean source and
-    separates the historical experience from any rule or price that may have changed.
-  </p>
-</div>
+{% assign guide_posts = site.posts | where: "content_type", "guide" %}
+{% assign personal_posts = site.posts | where: "content_type", "personal" %}
+<section class="journal-lead" aria-labelledby="journal-lead-heading">
+  <div class="journal-lead__copy">
+    <p class="home-eyebrow">The complete journal</p>
+    <h2 id="journal-lead-heading">Come for an answer. Stay for the small family stories around it.</h2>
+    <p>Browse {{ site.posts.size }} field notes by mood or subject. The guides check the practical details; the family records keep their dates, their Korean originals and the little moments that made us write them down.</p>
+    <p class="journal-cadence">Use the <a href="{{ '/journal/archive/' | relative_url }}">date archive</a>, browse every <a href="{{ '/journal/category/' | relative_url }}">category</a>, or scan the <a href="{{ '/journal/tag/' | relative_url }}">topic index</a>.</p>
+  </div>
+  <div class="journal-mode-grid" aria-label="Browse by editorial mode">
+    <a id="guides" href="{{ '/journal/guides/' | relative_url }}">
+      <span class="journal-mode-grid__label">Practical guides</span>
+      <strong>{{ guide_posts.size }}</strong>
+      <small>Source-checked explainers for food, language, customs, transport and daily life.</small>
+    </a>
+    <a id="family-records" href="{{ '/journal/family-records/' | relative_url }}">
+      <span class="journal-mode-grid__label">Family records</span>
+      <strong>{{ personal_posts.size }}</strong>
+      <small>Dated stories from pregnancy, infancy, Korean family rituals and travel.</small>
+    </a>
+  </div>
+  <aside class="journal-translation-note" aria-label="Archive translation note">
+    <strong>About the translated archive.</strong> These English stories keep the warmth and useful detail of our 2024 and early-2025 Korean diary, while trimming private details and clearly separating an old family experience from a current rule or price.
+  </aside>
+</section>
 
 {% comment %}
   Category entry points with live counts. A reader landing here from search gets a
@@ -50,19 +59,32 @@ sitemap:
 {% endcomment %}
 {% assign all_categories = site.categories | sort %}
 {% if all_categories.size > 0 %}
-<ul class="section-index">
-  {% for cat in all_categories %}
-  <li>
-    <a href="{{ cat[0] | slugify | prepend: '/journal/category/' | append: '/' | relative_url }}">
-      <span class="section-index__name">{{ cat[0] | escape }}</span>
-      <span class="section-index__count">{{ cat[1].size }} post{% unless cat[1].size == 1 %}s{% endunless %}</span>
-    </a>
-  </li>
-  {% endfor %}
-</ul>
+<section class="journal-section" aria-labelledby="subjects-heading">
+  <div class="journal-section__heading">
+    <p class="home-eyebrow">Browse by subject</p>
+    <h2 id="subjects-heading">Choose a door and wander in.</h2>
+  </div>
+  <ul class="section-index">
+    {% for cat in all_categories %}
+    <li>
+      <a href="{{ cat[0] | slugify | prepend: '/journal/category/' | append: '/' | relative_url }}">
+        <span class="section-index__name">{{ cat[0] | escape }}</span>
+        <span class="section-index__count">{{ cat[1].size }} post{% unless cat[1].size == 1 %}s{% endunless %}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
 {% endif %}
 
-<section aria-label="All posts">
+<section class="journal-section" id="all-field-notes" aria-labelledby="all-posts-heading">
+  <div class="journal-section__heading journal-section__heading--row">
+    <div>
+      <p class="home-eyebrow">Newest first</p>
+      <h2 id="all-posts-heading">All field notes</h2>
+    </div>
+    <p>{{ site.posts.size }} notes and counting. A new one appears when the research is solid or a family day feels worth keeping.</p>
+  </div>
   {% comment %}
     Fall back to the full post list when `paginator` is nil. jekyll-paginate only
     defines it when the plugin is actually loaded, and a missing plugin previously
@@ -72,37 +94,7 @@ sitemap:
 
   <ul class="post-cards">
     {% for post in post_list %}
-    <li class="post-card">
-      {% if post.image.feature %}
-      {% assign card_thumb = post.image.feature | replace: '.jpg', '.thumb.webp' | replace: '.png', '.thumb.webp' | prepend: '/img/postcover/' %}
-      <a class="post-card__thumb" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
-        {% comment %}
-          Decorative here: the adjacent title link carries the accessible name, so an
-          empty alt plus aria-hidden stops a screen reader announcing the same
-          destination twice. First two cards load eagerly as they are above the fold.
-        {% endcomment %}
-        <img src="{{ card_thumb | relative_url }}" alt=""
-             width="700" height="394" decoding="async"
-             loading="{% if forloop.index <= 2 %}eager{% else %}lazy{% endif %}">
-      </a>
-      {% endif %}
-      <div class="post-card__body">
-        <h2 class="post-card__title">
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        </h2>
-        {% if post.description %}
-        <p class="post-card__desc">{{ post.description | strip_html | truncate: 150 }}</p>
-        {% elsif post.subtitle %}
-        <p class="post-card__desc">{{ post.subtitle }}</p>
-        {% endif %}
-        <p class="post-card__meta">
-          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-          {% if post.categories.size > 0 %}
-            &middot; <a href="{{ post.categories | first | slugify | prepend: '/journal/category/' | append: '/' | relative_url }}">{{ post.categories | first | escape }}</a>
-          {% endif %}
-        </p>
-      </div>
-    </li>
+      {% include post-card.html post=post index=forloop.index heading='h3' %}
     {% endfor %}
   </ul>
 </section>

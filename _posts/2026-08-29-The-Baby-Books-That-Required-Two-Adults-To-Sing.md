@@ -2,7 +2,7 @@
 layout: "post"
 title: "The Baby Books That Required Two Adults to Sing"
 subtitle: "A boxed set of English picture books arrived before our daughter did, and the catch was in the description"
-description: "We bought our baby's first books during the last week of pregnancy, on one recommendation. The surprise was that the set needed the parents more than the baby."
+description: "We bought the baby's first books on one trusted recommendation. The cheerful surprise was how much singing they expected from the parents."
 active: "journal"
 image:
   feature: "first-baby-books.jpg"
@@ -12,7 +12,7 @@ comments: false
 tags: [Family, Practical]
 categories: [Family Diary]
 reviewed: "2026-08-29"
-lastmod: "2026-08-29"
+lastmod: "2026-08-30"
 ai_assisted: true
 content_type: personal
 sources:
@@ -23,6 +23,8 @@ sources:
     publisher: "JY Books"
     url: "https://www.jybooks.com/"
 ---
+
+<p>I bought the baby's first books days before she arrived, based mostly on another mother's recommendation and the cheerful idea that two adults could sing their way through them.</p>
 
 <p><strong>Field note:</strong> adapted from a Korean diary entry published on 31 May 2024, days before our daughter arrived. We paid for the set ourselves — the original post is labelled <em>naedon-naesan</em> (내돈내산), "my money, my purchase," the phrase Korean bloggers use to mark that nothing was supplied or sponsored. The entry was a single paragraph. I have not added events to it.</p>
 

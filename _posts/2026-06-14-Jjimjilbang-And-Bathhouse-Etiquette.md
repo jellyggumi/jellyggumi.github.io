@@ -26,7 +26,7 @@ sources:
     publisher: "Korea Tourism Organization (VISITKOREA)"
     url: "https://english.visitkorea.or.kr/svc/contents/infoHtmlView.do?vcontsId=193081"
 ---
-<p>A Korean bathhouse is one of the few places where a visitor's uncertainty is entirely about procedure rather than language. The rules are firm, but there are not many of them, and nobody in the building is paying you the attention you fear. What follows is the order things happen in, from the shoe locker to the checkout desk. The broader everyday conventions sit in <a href="/journal/Amazing-Korean-Cultural-Tips/">Amazing Korean cultural tips</a>; these are specific to the bath.</p>
+<p>A Korean bathhouse is one of the few places where a visitor's uncertainty is entirely about procedure rather than language. The rules are firm, but there are not many of them, and nobody in the building is paying you the attention you fear. What follows is the order things happen in, from the shoe locker to the checkout desk. The broader everyday conventions sit in <a href="/journal/Amazing-Korean-Cultural-Tips/">everyday Korean habits guide</a>; these are specific to the bath.</p>
 
 
 <h3>A 목욕탕 and a 찜질방 Are Not the Same Building</h3>

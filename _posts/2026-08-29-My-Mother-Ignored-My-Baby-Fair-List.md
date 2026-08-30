@@ -2,7 +2,7 @@
 layout: "post"
 title: "My Mother Ignored My Baby-Fair List"
 subtitle: "I returned to COEX prepared; the grandmother beside me had a different shopping plan"
-description: "Our self-funded second Korean baby fair in April 2024: a prepared list, one grandmother drawn to tiny clothes, a bath fitting that did not fit, and what 346,000 won bought."
+description: "I brought a careful list to our second baby fair. My mother brought enthusiasm for tiny clothes, and her plan was much more persuasive."
 active: "journal"
 image:
   feature: "cobe-baby-fair.jpg"
@@ -12,7 +12,7 @@ comments: false
 tags: [Family, Practical, Shopping]
 categories: [Family Diary]
 reviewed: "2026-08-29"
-lastmod: "2026-08-29"
+lastmod: "2026-08-30"
 ai_assisted: true
 content_type: personal
 sources:
@@ -23,6 +23,8 @@ sources:
     publisher: "COBE Baby Fair"
     url: "https://cobe.co.kr/__coex.php"
 ---
+
+<p>I had a neat list for our second baby fair. My mother had a better one: tiny clothes, a soft carrier and anything that looked adorable in her hands. Her list won.</p>
 
 <p><strong>Field note:</strong> adapted from the Korean diary entry I published on 27 April 2024, about our self-funded visit two days earlier. Entry, coupons, exhibitors and prices change between editions; the organiser's current COEX page is linked below rather than reconstructed from my old receipt.</p>
 

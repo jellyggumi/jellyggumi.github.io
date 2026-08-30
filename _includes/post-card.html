@@ -1,0 +1,47 @@
+{% comment %}
+  Shared editorial card used by the home, journal, category and tag listings.
+  `include.heading` is h2 by default and h3 inside titled sections. The thumbnail is
+  decorative because the adjacent title names the destination. A `card-img`
+  points at the full editorial JPEG; a sibling `.thumb.jpg` carries the grid crop.
+{% endcomment %}
+{% assign card_post = include.post %}
+{% assign card_index = include.index | default: 99 %}
+<li class="post-card post-card--{{ card_post.content_type | default: 'guide' | escape }}">
+  {% if card_post.card-img or card_post.image.feature %}
+  {% if card_post.card-img %}
+    {% assign card_thumb = card_post.card-img | replace: '.jpg', '.thumb.jpg' | prepend: '/' %}
+    {% assign card_thumb_width = 700 %}
+    {% assign card_thumb_height = 394 %}
+  {% else %}
+    {% assign card_thumb = card_post.image.feature | replace: '.jpg', '.thumb.webp' | replace: '.png', '.thumb.webp' | prepend: '/img/postcover/' %}
+    {% assign card_thumb_width = 700 %}
+    {% assign card_thumb_height = 394 %}
+  {% endif %}
+  <div class="post-card__thumb" aria-hidden="true">
+    <img src="{{ card_thumb | relative_url }}" alt=""
+         width="{{ card_thumb_width }}" height="{{ card_thumb_height }}" decoding="async"
+         loading="{% if card_index <= 2 %}eager{% else %}lazy{% endif %}">
+  </div>
+  {% endif %}
+  <div class="post-card__body">
+    <p class="post-card__type">
+      {% if card_post.content_type == 'personal' %}Family record{% else %}Guide{% endif %}
+    </p>
+    {% if include.heading == 'h3' %}
+    <h3 class="post-card__title"><a href="{{ card_post.url | relative_url }}">{{ card_post.title | escape }}</a></h3>
+    {% else %}
+    <h2 class="post-card__title"><a href="{{ card_post.url | relative_url }}">{{ card_post.title | escape }}</a></h2>
+    {% endif %}
+    {% if card_post.description %}
+    <p class="post-card__desc">{{ card_post.description | strip_html | strip_newlines | truncate: 150 | escape }}</p>
+    {% elsif card_post.subtitle %}
+    <p class="post-card__desc">{{ card_post.subtitle | strip_html | strip_newlines | truncate: 150 | escape }}</p>
+    {% endif %}
+    <p class="post-card__meta">
+      <time datetime="{{ card_post.date | date_to_xmlschema }}">{{ card_post.date | date: "%b %-d, %Y" }}</time>
+      {% if card_post.categories.size > 0 %}
+        &middot; <a href="{{ card_post.categories | first | slugify | prepend: '/journal/category/' | append: '/' | relative_url }}">{{ card_post.categories | first | escape }}</a>
+      {% endif %}
+    </p>
+  </div>
+</li>

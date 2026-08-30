@@ -1,0 +1,71 @@
+# Source-level editorial guard for the legacy gh-pages branch.
+# This validates article, taxonomy, image and harness contracts. It does not replace
+# GitHub Pages' legacy build and cannot stop a direct push from being deployed, so
+# CLAUDE.md's pre-push gate remains mandatory.
+name: Editorial quality guard
+
+on:
+  push:
+    branches: [gh-pages]
+    paths:
+      - "_posts/**"
+      - "img/editorial/**"
+      - "journal/**"
+      - "_includes/**"
+      - "_layouts/**"
+      - "_config.yml"
+      - "CLAUDE.md"
+      - "AGENTS.md"
+      - "PERSONA.md"
+      - ".claude/**"
+      - ".agents/**"
+      - "tools/**"
+      - ".github/workflows/editorial-quality-guard.yml"
+  pull_request:
+    paths:
+      - "_posts/**"
+      - "img/editorial/**"
+      - "journal/**"
+      - "_includes/**"
+      - "_layouts/**"
+      - "_config.yml"
+      - "CLAUDE.md"
+      - "AGENTS.md"
+      - "PERSONA.md"
+      - ".claude/**"
+      - ".agents/**"
+      - "tools/**"
+      - ".github/workflows/editorial-quality-guard.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+      - name: Check harness tool syntax
+        run: |
+          node --check tools/editorial-workspace.mjs
+          node --check tools/capture-google-trends.mjs
+          node --check tools/apply-editorial-package.mjs
+          node --check tools/verify-publication-scope.mjs
+          node --check tools/verify-deployment.mjs
+          node --check tools/test-editorial-gates.mjs
+          node --check tools/validate-harness.mjs
+          node --check tools/verify-site-quality.mjs
+          node --check tools/validate-editorial-package.mjs
+      - name: Run editorial gate regression tests
+        run: node tools/test-editorial-gates.mjs
+      - name: Validate harness structure
+        run: node tools/validate-harness.mjs
+      - name: Verify current site quality
+        run: node tools/verify-site-quality.mjs
+      - name: Check patch whitespace
+        run: git show --check --format= HEAD

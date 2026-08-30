@@ -2,7 +2,12 @@
 layout: default
 title: ""
 subtitle: "Jelly GGumi"
-description: "Source-checked guides to Korean culture, food and daily life, alongside a first-hand family growth diary from Seoul."
+description: "Warm, source-checked guides to Korean culture and daily life, alongside one family's first-hand records from Korea."
+header-img: "img/editorial/home-seoul-table.jpg"
+header_alt: "A quiet Seoul table with Korean porcelain, banchan, stainless cutlery, bojagi cloth and hanji in morning light"
+header_ai: true
+header_width: 1672
+header_height: 941
 sitemap:
   changefreq: weekly
   priority: 0.8
@@ -11,68 +16,91 @@ sitemap:
 <main id="main" class="home-main">
   <section class="home-hero" aria-labelledby="home-title">
     <img class="home-hero__image"
-         src="{{ '/img/slider/home01.jpg' | relative_url }}"
-         alt="A family moment from the JellyGGumi photo diary"
-         width="1600" height="1067" fetchpriority="high" decoding="async">
+         src="{{ page.header-img | relative_url }}"
+         alt="{{ page.header_alt | escape }}"
+         width="1672" height="941" fetchpriority="high" decoding="async">
     <div class="home-hero__shade"></div>
     <div class="home-hero__content">
-      <p class="home-eyebrow">Korea, lived from the inside</p>
-      <h1 id="home-title">{{ site.title }}</h1>
-      <p class="home-hero__lede">A Korea-based family publication about the routines that guidebooks skip: how a meal is structured, why a transit transfer works, what a Korean first birthday means, and what daily life looks like with a growing child.</p>
+      <p class="home-eyebrow">Hello from Korea</p>
+      <h1 id="home-title">Everyday Korea,<br><span>warmly observed.</span></h1>
+      <p class="home-hero__lede">Come along for the Korea our family actually uses every day: the banchan, bus transfers, first birthdays and small routines that make a place feel familiar.</p>
       <div class="home-actions">
-        <a class="home-action home-action--primary" href="{{ '/journal/' | relative_url }}">Read the guides</a>
-        <a class="home-action" href="{{ '/about/' | relative_url }}">About the author</a>
+        <a class="home-action home-action--primary" href="{{ '/journal/guides/' | relative_url }}">Find a useful guide</a>
+        <a class="home-action" href="{{ '/journal/family-records/' | relative_url }}">Read the family stories</a>
       </div>
     </div>
+    <p class="home-hero__media-note">AI-generated editorial still life &middot; <a href="{{ '/editorial-policy/' | relative_url }}">method</a></p>
   </section>
 
-  <section class="home-section" aria-labelledby="latest-heading">
-    <div class="home-section__heading">
-      <p class="home-eyebrow">Latest writing</p>
-      <h2 id="latest-heading">Practical guides and family stories</h2>
-      <p>Each guide answers one concrete question in full, keeps Korean terms in Hangul where that helps, and points readers toward the related background instead of repeating the same introduction on every page.</p>
+  <section class="home-section home-section--routes" aria-labelledby="routes-heading">
+    <div class="home-section__heading home-section__heading--split">
+      <div>
+        <p class="home-eyebrow">Pick a path</p>
+        <h2 id="routes-heading">What sounds useful today?</h2>
+      </div>
+      <p>Start with a meal, a journey, a custom, an everyday errand or one of our family milestones. Each path keeps the practical answer close to the life around it.</p>
     </div>
+    <ul class="home-route-grid">
+      <li><a href="{{ '/journal/category/food-dining/' | relative_url }}"><span>Eat</span><small>Food &amp; Dining</small></a></li>
+      <li><a href="{{ '/journal/category/travel-transport/' | relative_url }}"><span>Move</span><small>Travel &amp; Transport</small></a></li>
+      <li><a href="{{ '/journal/category/cultural-tips/' | relative_url }}"><span>Understand</span><small>Cultural Tips</small></a></li>
+      <li><a href="{{ '/journal/category/daily-life/' | relative_url }}"><span>Live</span><small>Daily Life</small></a></li>
+      <li><a href="{{ '/journal/family-records/' | relative_url }}"><span>Grow</span><small>Family records</small></a></li>
+    </ul>
+  </section>
 
+  {% assign guide_posts = site.posts | where: "content_type", "guide" %}
+  <section class="home-section" id="guides" aria-labelledby="guides-heading">
+    <div class="home-section__heading">
+      <p class="home-eyebrow">A good place to start</p>
+      <h2 id="guides-heading">Practical answers, with the human bits left in.</h2>
+      <p>Each guide begins with one real question, keeps useful Korean words in Hangul, and makes it clear what we observed, what an official source says and what may change.</p>
+    </div>
     <ul class="post-cards home-post-cards">
-      {% for post in site.posts limit: 6 %}
-      <li class="post-card">
-        {% if post.image.feature %}
-        {% assign thumb = post.image.feature | prepend: '/img/postcover/' | replace: '.jpg', '.thumb.webp' %}
-        <a class="post-card__thumb" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
-          <img src="{{ thumb | relative_url }}" alt="" loading="{% if forloop.index <= 2 %}eager{% else %}lazy{% endif %}" decoding="async" width="480" height="270">
-        </a>
-        {% endif %}
-        <div class="post-card__body">
-          <h3 class="post-card__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-          <p class="post-card__desc">{{ post.description }}</p>
-          <p class="post-card__meta">
-            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-            {% if post.categories.size > 0 %} &middot; {{ post.categories | first | escape }}{% endif %}
-          </p>
-        </div>
-      </li>
+      {% for post in guide_posts limit: 3 %}
+        {% include post-card.html post=post index=forloop.index heading='h3' %}
       {% endfor %}
     </ul>
-    <p class="home-all-posts"><a href="{{ '/journal/' | relative_url }}">Browse all {{ site.posts.size }} articles &rarr;</a></p>
+    <p class="home-all-posts"><a href="{{ '/journal/guides/' | relative_url }}">Browse all {{ guide_posts.size }} guides &rarr;</a></p>
+  </section>
+
+  {% assign personal_posts = site.posts | where: "content_type", "personal" %}
+  <section class="home-section home-diary" aria-labelledby="diary-heading">
+    <div class="home-section__heading home-section__heading--split">
+      <div>
+        <p class="home-eyebrow">From our family album</p>
+        <h2 id="diary-heading">Small family days, worth keeping.</h2>
+      </div>
+      <p>These are not instructions for every family. They are our dated records from Korea: rainy outings, tiny milestones, plans that worked and a few that cheerfully did not.</p>
+    </div>
+    <ul class="post-cards home-post-cards home-post-cards--diary">
+      {% for post in personal_posts limit: 3 %}
+        {% include post-card.html post=post index=forloop.index heading='h3' %}
+      {% endfor %}
+    </ul>
+    <p class="home-all-posts"><a href="{{ '/journal/family-records/' | relative_url }}">Browse all {{ personal_posts.size }} family records &rarr;</a></p>
   </section>
 
   <section class="home-section home-values" aria-labelledby="value-heading">
     <div class="home-section__heading">
-      <p class="home-eyebrow">Why this site exists</p>
-      <h2 id="value-heading">Useful context, not a tourism checklist</h2>
+      <p class="home-eyebrow">How the journal works</p>
+      <h2 id="value-heading">Useful context, warmly told.</h2>
     </div>
     <div class="home-value-grid">
       <article>
-        <h3>Everyday Korean context</h3>
-        <p>The journal explains the unwritten part of a routine: when to tap a transport card, how a barbecue table divides the work, or why a Korean word on a sign matters more than its romanisation.</p>
+        <p class="home-value-grid__number">01</p>
+        <h3>The little things that help</h3>
+        <p>We explain the unwritten part of a routine: when to tap a transport card, how a barbecue table divides the work, or why the Korean word on a sign can help more than its romanisation.</p>
       </article>
       <article>
-        <h3>A real family record</h3>
-        <p>The diary and albums document INa's milestones and family travel. The linked Korean-language Naver archive contains the longer day-to-day record behind this English site.</p>
+        <p class="home-value-grid__number">02</p>
+        <h3>Our real family record</h3>
+        <p>The diary and albums hold INa's milestones, family trips and ordinary in-between days. The linked Korean Naver archive carries the longer, chattier record behind this English site.</p>
       </article>
       <article>
+        <p class="home-value-grid__number">03</p>
         <h3>Transparent editing</h3>
-        <p>AI may assist research and drafting, but it is not treated as a source. The <a href="{{ '/editorial-policy/' | relative_url }}">editorial policy</a> explains the workflow, correction standard and what readers should verify before relying on a changing detail.</p>
+        <p>AI may assist research, drafting and editorial imagery, but it is not treated as a source or disguised as documentary evidence. The <a href="{{ '/editorial-policy/' | relative_url }}">editorial policy</a> explains the workflow and correction standard.</p>
       </article>
     </div>
   </section>
@@ -80,11 +108,20 @@ sitemap:
   <section class="home-section home-about" aria-labelledby="about-heading">
     <div>
       <p class="home-eyebrow">Behind JellyGGumi</p>
-      <h2 id="about-heading">Written from a home in Korea</h2>
+      <h2 id="about-heading">Written from a busy family home in Korea</h2>
     </div>
     <div class="home-about__copy">
-      <p>JellyGGumi is maintained by INa's parent, living in Korea. It is a personal publication rather than a travel agency or official authority. That boundary matters: lived observations are labelled as such, changing rules should be checked against the linked official source, and corrections are welcomed.</p>
+      <p>I am INa's parent, writing down the parts of Korean life our family keeps noticing. This is a personal journal rather than a travel agency or official authority, so lived moments stay labelled, changing rules point to the operator, and kind corrections are always welcome.</p>
       <p><a href="{{ '/about/' | relative_url }}">Read the full background</a> or <a href="{{ '/contact/' | relative_url }}">send a correction</a>.</p>
     </div>
   </section>
 </main>
+
+{% comment %}
+  The home page uses the bare default layout rather than page.html, so it supplies
+  the shared scripts here. Bootstrap powers the mobile navigation collapse, and
+  jQuery must exist before default.html emits the scroll-to-top control.
+{% endcomment %}
+<script src="https://code.jquery.com/jquery-2.1.3.min.js" integrity="sha256-ivk71nXhz9nsyFDoYoGf2sbjrR9ddh+XDkCcfZxjvcM=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="{{ '/js/main.min.js' | relative_url }}"></script>

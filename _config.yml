@@ -1,11 +1,11 @@
 # Site settings
-title: JellyGGumi Growth Diary
+title: JellyGGumi Journal
 email: "banggujin@gmail.com"
 # Used as the fallback meta description and in the WebSite structured data, so it
-# has to describe the site to a stranger. "Photo is memory" told a search user
+# has to describe the site to a stranger. The previous tagline told a search user
 # nothing about what they would find here.
-description: "Source-checked guides to Korean culture, food and daily life, alongside a first-hand family growth diary from Seoul."
-tagline: "Photo is memory"
+description: "Warm, source-checked guides to Korean culture and daily life, alongside one family's first-hand records from Korea."
+tagline: "Everyday Korea, warmly observed."
 url: "https://jellyggumi.github.io"
 timezone: Asia/Seoul
 # Empty, not "/". The site is served from the domain root, and a bare "/" made
@@ -23,14 +23,17 @@ github_username: "jellyggumi"
 # duplicating the real setting under `comments.disqus.short_name` below. Removed.
 # deviantart_username and flickr_username were also removed: both were empty and both
 # only ever guarded commented-out markup in the footer.
-share: true
+# This static site has no authenticated reader profile. Anonymous Facebook/X/Threads
+# share icons therefore stay closed; verified owner profile links remain in the footer.
+authenticated_reader_context: false
+share: false
 
 # Owner/author information
 owner:
   name: jelly_ggumi
   avatar: INA.png
   favicon: favicon.ico
-  info: Jelly GGumi Blog
+  info: Warm field notes on Korean culture, family life and the practical details between them
 
 # Comments. `short_name` is empty, so disqus_comments.html renders nothing — the include
 # now requires a non-empty shortname rather than falling through to the vendor's
@@ -48,7 +51,6 @@ comments:
 nav:
   - JOURNAL: "/journal/"
   - GALLERY: "/gallery/"
-  - GAMES: "/games/"
   - NAVER: "/naver/"
 
 # Secondary navigation, rendered in the footer.
@@ -86,14 +88,10 @@ google_analytics:
 # build if they disagree, because a mismatch is exactly the state AdSense reports
 # as "ads.txt missing" while ad serving stays switched off.
 #
-# Status checked 2026-08-29 in the AdSense dashboard (banggujin@gmail.com):
-# jellyggumi.github.io is registered under this account and its ads.txt reads as
-# "승인됨" (authorised). The site currently reads "주의 필요 / 가치가 별로 없는
-# 콘텐츠"; the local changes in this branch prepare a re-review, but no new review
-# has been requested. Auto ads are enabled account-side; the units below are the
-# manual placements that sit alongside them. Nothing serves until review passes.
-# Privacy & messaging also shows one published European regulations consent
-# message covering jellyggumi.github.io (English plus 31 additional languages).
+# Account review, Auto ads and consent-message states are deliberately not copied
+# into this public repository because they change independently of a deploy. Verify
+# them in the AdSense dashboard before acting; the values below only describe the
+# source-controlled manual placements.
 google_ad_client: ca-pub-6960738425944933
 
 # Ad unit slot IDs, created in the AdSense dashboard under Ads > By ad unit.
@@ -128,15 +126,20 @@ exclude:
   - LICENSE
   - resize.py
   - tools
+  - _workspace
+  - .claude
+  - .agents
+  - CLAUDE.md
+  - AGENTS.md
+  - PERSONA.md
 
 # The `sitemap:` block below is not read by anything.
 #
 # sitemap.xml in this repo is a hand-written Liquid template that reads each page's own
 # `sitemap:` front matter (changefreq / priority / exclude) and decides inclusion itself.
-# These keys are the configuration surface of the third-party `jekyll-sitemap-plugin`
-# gem, which is not installed and is not in `plugins:` above — and the `jekyll-sitemap`
-# gem that *is* listed takes no configuration at all and does not overwrite an existing
-# sitemap.xml.
+# These keys belonged to third-party sitemap plugins that are neither installed nor
+# listed in `plugins:` above. They do not configure this repository's hand-written
+# sitemap.xml template.
 #
 # Kept only as a pointer to where sitemap behaviour actually lives, since deleting it
 # outright would leave no trace of why the keys were once here.

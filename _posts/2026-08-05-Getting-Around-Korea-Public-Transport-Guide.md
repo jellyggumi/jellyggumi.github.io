@@ -1,18 +1,23 @@
 ---
 layout: "post"
 title: "Getting Around Korea: A Public Transport Guide"
-subtitle: "Cards, subways, buses and transfers explained"
-description: "How Korea's subway, buses, trains and taxis actually work, from T-money cards and transfers to KTX tickets and late-night options."
+subtitle: "One card, two taps and a calmer first journey"
+description: "A friendly guide to Korea's subways, buses, trains and taxis, from transit cards and transfers to KTX tickets and the last train home."
 active: "journal"
 image:
   feature: "pc008.jpg"
+card-img: "img/editorial/transit-card.jpg"
 date: "2026-08-05"
-header-img: "img/postcover/pc008.jpg"
+header-img: "img/editorial/transit-card.jpg"
+header_alt: "A Korean field-note table with a blank transit card, spoon, chopsticks and paper"
+header_ai: true
+header_width: 1672
+header_height: 941
 comments: false
 tags: [Transport, Practical]
 categories: [Travel & Transport]
 reviewed: "2026-08-29"
-lastmod: "2026-08-29"
+lastmod: "2026-08-30"
 ai_assisted: true
 content_type: guide
 sources:
@@ -27,7 +32,7 @@ sources:
     url: "https://english.seoul.go.kr/policy/transportation/climate-card/"
 ---
 
-<p>Korea is easy to move around without a car, not because the network is enormous but because it is coherent. One card covers nearly everything, a bus leg followed by a subway leg is priced as one journey, and live arrival information is standard. Most of what catches visitors out reduces to two habits.</p>
+<p>Good news first: you do not need a car to have an easy day in Korea. One card covers nearly everything, a bus followed by a subway can count as one journey, and the next arrival is usually right there on a screen. Most first-day confusion comes down to just two tapping habits.</p>
 
 
 <h3>Start With a Transit Card</h3>

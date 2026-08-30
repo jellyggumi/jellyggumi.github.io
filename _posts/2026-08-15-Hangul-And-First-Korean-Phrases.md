@@ -1,18 +1,23 @@
 ---
 layout: "post"
 title: "Hangul and Your First Korean Phrases"
-subtitle: "Why the alphabet is easier than it looks"
-description: "Why Hangul takes about an hour to learn, how syllable blocks assemble, and the handful of Korean phrases visitors genuinely use."
+subtitle: "The alphabet is friendlier than it looks"
+description: "A friendly first hour with Hangul: how syllable blocks fit together and which Korean phrases are genuinely useful."
 active: "journal"
 image:
   feature: "pc007.jpg"
+card-img: "img/editorial/culture-notes.jpg"
 date: "2026-08-15"
-header-img: "img/postcover/pc007.jpg"
+header-img: "img/editorial/culture-notes.jpg"
+header_alt: "An editorial Korean field-note table with paper, tableware and a decorative knot"
+header_ai: true
+header_width: 1672
+header_height: 941
 comments: false
 tags: [Language, K-Culture]
 categories: [Cultural Tips]
 reviewed: "2026-08-29"
-lastmod: "2026-08-29"
+lastmod: "2026-08-30"
 ai_assisted: true
 content_type: guide
 sources:
@@ -26,7 +31,7 @@ sources:
     publisher: "Korean National Commission for UNESCO"
     url: "https://unesco.or.kr/eng/mow/"
 ---
-<p>Korean is often called a hard language, and the writing system gets caught up in that reputation unfairly. The alphabet is the easy part, and it was built that way deliberately by someone who wanted it to be learnable.</p>
+<p>Good news: the part of Korean that looks most intimidating is the part designed to be learned. Hangul is the friendly part of the language, a small set of letters that begins turning signs into sounds much sooner than most visitors expect.</p>
 
 
 <h3>Hangul Is an Alphabet, Not a Character Set</h3>

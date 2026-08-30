@@ -2,7 +2,7 @@
 layout: "post"
 title: "We Booked a First-Birthday Venue at Two Months"
 subtitle: "One small doljanchi room, a fixed holiday birthday, and another family asking for the same date"
-description: "Our self-funded 2024 search for a small Korean doljanchi room: the criteria we wrote down, what the consultation covered, and why we fixed the date the next day."
+description: "The baby was only two months old, but the first-birthday date was already disappearing. This is how one quiet venue visit made the plan real."
 active: "journal"
 image:
   feature: "first-birthday-venue.jpg"
@@ -12,7 +12,7 @@ comments: false
 tags: [Family, Tradition]
 categories: [Family Diary]
 reviewed: "2026-08-29"
-lastmod: "2026-08-29"
+lastmod: "2026-08-30"
 ai_assisted: true
 content_type: personal
 sources:
@@ -23,6 +23,8 @@ sources:
     publisher: "Encyclopedia of Korean Culture"
     url: "https://encykorea.aks.ac.kr/Article/E0016110"
 ---
+
+<p>The baby was two months old when we booked her first-birthday venue. It felt wildly early right up until another family asked for the same date that evening.</p>
 
 <p><strong>Field note:</strong> adapted from our Korean write-up of an August 2024 visit. We received no benefit for the booking or this article. Capacity, timings and partner suppliers change, and the venue had only just opened; this is the decision record we kept, not a current listing.</p>
 

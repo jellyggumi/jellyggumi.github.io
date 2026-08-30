@@ -2,7 +2,7 @@
 layout: "post"
 title: "We Arrived Late, and She Refused to Sleep"
 subtitle: "The newborn session we booked before birth began at the next feed and depended on two patient people"
-description: "Our self-funded newborn photo session on postpartum-care-centre discharge day in 2024: we arrived late, the baby would not sleep, and two patient people kept working."
+description: "We arrived late, the baby chose feeding over sleeping, and two patient photographers gently found the newborn pictures anyway."
 active: "journal"
 image:
   feature: "newborn-photo-session.jpg"
@@ -12,7 +12,7 @@ comments: false
 tags: [Family, Practical]
 categories: [Family Diary]
 reviewed: "2026-08-29"
-lastmod: "2026-08-29"
+lastmod: "2026-08-30"
 ai_assisted: true
 content_type: personal
 sources:
@@ -26,6 +26,8 @@ sources:
     publisher: "Banggujin Naver Blog"
     url: "https://blog.naver.com/banggujin/223589949936"
 ---
+
+<p>We arrived late, the baby chose feeding over sleeping and the neat newborn-photo plan disappeared almost immediately. The photographers simply worked with the baby who had shown up.</p>
 
 <p><strong>Field note:</strong> adapted from my Korean diary of 15 July 2024, with the date checked against the care-centre and first-month entries linked below. We paid for the session ourselves. I did not record a price, and nothing here describes a current package.</p>
 

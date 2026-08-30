@@ -2,7 +2,7 @@
 layout: "post"
 title: "A Hundred-Day Celebration We Held at Home, Twice"
 subtitle: "Renting a baek-il table, ordering custom rice cakes, and the balloon I nearly skipped"
-description: "A first-hand account of hosting a Korean baek-il hundred-day celebration at home: renting the table, ordering custom rice cakes, and running the same party twice in a weekend."
+description: "Two families, two meals and one rented table: the warm, slightly exhausting weekend we celebrated our baby's first hundred days twice."
 active: "journal"
 image:
   feature: "korean-100-day-celebration.jpg"
@@ -12,7 +12,7 @@ comments: false
 tags: [Family, Tradition]
 categories: [Family Diary]
 reviewed: "2026-08-29"
-lastmod: "2026-08-29"
+lastmod: "2026-08-30"
 ai_assisted: true
 content_type: personal
 sources:
@@ -20,6 +20,8 @@ sources:
     publisher: "Naver Blog (banggujin)"
     url: "https://blog.naver.com/banggujin/223589162699"
 ---
+
+<p>By day 101, one small celebration had become two family parties, two meals and a living room full of carefully borrowed props. It was tiring, lovely and exactly the sort of plan our family would make twice.</p>
 
 <p><strong>Field note:</strong> adapted from our Korean write-up of a September 2024 celebration. We paid for the rentals, rice cakes, balloon and meals ourselves. The figures show our 2024 scale, not current quotes. I have left the small businesses unnamed because the packages are dated and one restaurant mistake does not deserve a permanent search result.</p>
 

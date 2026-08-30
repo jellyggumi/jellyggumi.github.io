@@ -1,0 +1,39 @@
+---
+layout: page
+title: "Family Records from Korea"
+description: "Warm, dated and privacy-edited family records from Korea, linked to their original context where adapted."
+active: journal
+header-img: "img/editorial/family-table.jpg"
+header_alt: "A quiet Korean family table with porcelain, banchan, bojagi cloth and hanji paper"
+header_width: 1672
+header_height: 941
+header_ai: true
+sitemap:
+  changefreq: weekly
+  priority: 0.8
+---
+
+{% assign personal_posts = site.posts | where: "content_type", "personal" %}
+<section class="journal-lead journal-lead--compact" aria-labelledby="family-index-heading">
+  <div class="journal-lead__copy">
+    <p class="home-eyebrow">Family records</p>
+    <h2 id="family-index-heading">Small days, honestly remembered.</h2>
+    <p>These {{ personal_posts.size }} entries keep the weather, the timing, the plans, the tiny victories and the mildly chaotic parts of our family life in Korea. Adapted stories keep their Korean source and date visible while private details stay private.</p>
+    <p class="journal-cadence">Need an answer rather than a diary entry? Open the <a href="{{ '/journal/guides/' | relative_url }}">practical guides</a>, or return to the <a href="{{ '/journal/' | relative_url }}">complete journal</a>.</p>
+  </div>
+</section>
+
+<section class="journal-section" aria-labelledby="family-list-heading">
+  <div class="journal-section__heading journal-section__heading--row">
+    <div>
+      <p class="home-eyebrow">Newest first</p>
+      <h2 id="family-list-heading">All the little records</h2>
+    </div>
+    <p>They are one family's memories, shared for company and context rather than turned into rules for everyone else.</p>
+  </div>
+  <ul class="post-cards">
+    {% for post in personal_posts %}
+      {% include post-card.html post=post index=forloop.index heading='h3' %}
+    {% endfor %}
+  </ul>
+</section>

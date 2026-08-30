@@ -2,7 +2,7 @@
 layout: "post"
 title: "Three Hours of Fire Without Sleeping Outdoors"
 subtitle: "A day-use barbecue gave us charcoal, a tent and bulmeong without the overnight part"
-description: "Our self-funded 2024 visit to a day-use Korean glamping barbecue: an autumn tent, a ready grill, one sleeping baby, a changing table and three hours beside a fire."
+description: "The glow of camping without the overnight: an autumn tent, a ready grill, one sleeping baby and three happy hours beside a fire."
 active: "journal"
 image:
   feature: "family-barbecue.jpg"
@@ -12,7 +12,7 @@ comments: false
 tags: [Family, Food]
 categories: [Food & Dining]
 reviewed: "2026-08-29"
-lastmod: "2026-08-29"
+lastmod: "2026-08-30"
 ai_assisted: true
 content_type: personal
 sources:
@@ -23,6 +23,8 @@ sources:
     publisher: "Kakao"
     url: "https://pf.kakao.com/_kjhVb"
 ---
+
+<p>We wanted the glow of camping without the packing, the overnight stay or the brave decisions required by a very small baby. Three hours beside someone else's fire turned out to be just right.</p>
 
 <p><strong>Field note:</strong> adapted from my Korean review of 20 October 2024. We paid for the visit ourselves. Every price, time and facility below is a dated observation, not a current listing; use the operator channel linked in the sources to check what exists now.</p>
 

@@ -1,0 +1,87 @@
+version: 1
+timezone: Asia/Seoul
+schedule_local: "01:00"
+scheduler: Aside cron
+routine_name: JellyGGumi Korea Desk
+routine_id: h78L2R0UJFRhjS9O
+language: en
+publication_mode: publish-on-green
+standing_publish_approval: true
+standing_publish_routine_id: h78L2R0UJFRhjS9O
+standing_publish_approval_granted_on: "2026-08-30"
+max_articles_per_run: 1
+max_revision_loops: 2
+minimum_primary_sources: 1
+minimum_material_claim_coverage: 1.0
+allow_empty_success: true
+allowed_content_types:
+  - guide
+content_pillars:
+  - korean-food-and-dining
+  - language-and-hangul
+  - customs-etiquette-and-holidays
+  - transport-and-city-systems
+  - daily-life-and-admin
+trend_research:
+  role: candidate-discovery-only
+  primary_feed: https://trends.google.com/trending/rss?geo=KR
+  verification_ui: https://trends.google.com/trending?geo=KR
+  geography: KR
+  intake_window: past-24-hours
+  context_window: past-7-days
+  max_signal_age_hours: 6
+  require_audience_fit: true
+  require_primary_source: true
+  require_durable_value_without_spike: true
+  forbid_keyword_stuffing: true
+  rejected_topic_families:
+    - celebrity-or-sports-only
+    - accident-or-crime-only
+    - partisan-politics
+    - medical-or-financial-advice
+    - product-rumour-or-speculation
+    - duplicate-or-query-variant
+
+voice_profile:
+  name: bright-naver-derived-field-journal
+  source_blog: https://blog.naver.com/banggujin
+  source_cutoff: "2024-12-02"
+  exclude_as_persona_evidence:
+    - "2026-08-24"
+    - "2026-08-25"
+  opening: concrete-scene-weather-day-count-or-practical-snag
+  rhythm: short-and-medium-sentences-with-generous-breaks
+  humour: gentle-self-aware-and-evidence-anchored
+  recommendations: warm-qualified-and-date-bounded
+  ending: gratitude-practical-note-or-forward-look
+  forbidden_translation_habits:
+    - copied-korean-misspellings
+    - stacked-punctuation
+    - emoji-dense-prose
+    - generic-engagement-cta
+    - invented-family-detail
+publication_scope:
+  allowed:
+    - "_posts/YYYY-MM-DD-Title-In-Kebab-Case.md"
+    - "img/editorial/<slug>.jpg"
+    - "img/editorial/<slug>.thumb.jpg"
+  forbidden:
+    - "_config.yml"
+    - "_includes/**"
+    - "_layouts/**"
+    - ".github/**"
+    - ".claude/**"
+    - ".agents/**"
+    - "tools/**"
+    - "ads.txt"
+    - "CLAUDE.md"
+    - "AGENTS.md"
+    - "PERSONA.md"
+standing_constraints:
+  - no-fabricated-first-hand-experience
+  - no-automated-family-records
+  - no-new-taxonomy-without-stub-page
+  - no-ai-image-without-disclosure
+  - no-sponsored-or-affiliate-drafts
+  - no-publish-without-green-gates
+  - no-publish-outside-standing-or-explicit-authority

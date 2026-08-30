@@ -2,7 +2,7 @@
 layout: "post"
 title: "A Pink Carrier and the High Chair We Left"
 subtitle: "Our first COEX baby fair, where touching the products helped and listening to every sales pitch did not"
-description: "Our self-funded first Korean baby fair in 2024: a crowded COEX hall, one useful carrier demonstration, the cloth ratio I got wrong, and the high chair we narrowly left behind."
+description: "I brought a list to our first Korean baby fair. My mother found a pink carrier, my husband found a high chair, and the list did its best."
 active: "journal"
 image:
   feature: "first-korean-baby-fair.jpg"
@@ -12,7 +12,7 @@ comments: false
 tags: [Family, Practical, Shopping]
 categories: [Family Diary]
 reviewed: "2026-08-29"
-lastmod: "2026-08-29"
+lastmod: "2026-08-30"
 ai_assisted: true
 content_type: personal
 sources:
@@ -23,6 +23,8 @@ sources:
     publisher: "COEX"
     url: "https://www.coex.co.kr/guide/parking-information/fee"
 ---
+
+<p>I went to my first baby fair with a shopping list. My mother arrived with the much stronger conviction that tiny pink things were irresistible. You can probably guess which plan held up better.</p>
 
 <p><strong>Field note:</strong> adapted from the Korean diary entry I published on 23 March 2024, describing our first baby-fair visit earlier that year. We paid for every item ourselves. Organisers, layouts, parking arrangements and prices change, so the figures below describe 2024 only; COEX's current parking guide is linked in the sources.</p>
 

@@ -2,7 +2,7 @@
 layout: "post"
 title: "The Baby Passport Photo I Would Not Repeat"
 subtitle: "A provided app did the hard part in 2024, and that is exactly the part the current rules forbid"
-description: "A service-provided app made my baby's passport photo in 2024. Current Korean rules prohibit the retouching and background replacement that made the old workflow easy."
+description: "A home passport-photo shortcut looked wonderfully practical in 2024. Current Korean rules are exactly why I would not repeat it."
 active: "journal"
 image:
   feature: "baby-passport-photo.jpg"
@@ -12,7 +12,7 @@ comments: false
 tags: [Family, Practical]
 categories: [Daily Life]
 reviewed: "2026-08-29"
-lastmod: "2026-08-29"
+lastmod: "2026-08-30"
 ai_assisted: true
 content_type: personal
 sources:
@@ -27,7 +27,9 @@ sources:
     url: "https://www.nyj.go.kr/eng/contents.do?key=3440"
 ---
 
-<blockquote class="sponsorship-disclosure"><p><strong>Disclosure:</strong> the original Korean post was produced through a REVU campaign. The service was provided to me rather than paid for. I have removed its shortened tracking link and do not name or link the app here.</p></blockquote>
+<blockquote class="sponsorship-disclosure"><p><strong>Disclosure:</strong> the original Korean post was produced through a REVU campaign. The service was provided to me rather than paid for. I have removed its shortened tracking link and do not name or link the app here.</p>
+
+<p>In 2024, the shortcut sounded wonderfully practical: photograph the baby at home, let an app clean up the background and skip a studio trip. I would not take that shortcut again.</p></blockquote>
 
 <p><strong>Field note:</strong> this is an English adaptation of a Korean post from 19 November 2024, rewritten because I no longer agree with it. Passport photo rules are set by the issuing authority, not by an app, and I have checked mine against the Ministry of Foreign Affairs page linked above. Nothing here is official guidance. Check the current rules yourself before you photograph anything.</p>
 

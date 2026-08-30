@@ -1,0 +1,39 @@
+---
+layout: page
+title: "Korean Culture Guides"
+description: "Warm, source-checked guides to Korean food, language, customs, transport and daily life."
+active: journal
+header-img: "img/editorial/journal-field-notes.jpg"
+header_alt: "Perilla leaves, a celadon cup, Korean stainless cutlery, hanji paper and a blank transit card arranged on a dark table"
+header_width: 1672
+header_height: 941
+header_ai: true
+sitemap:
+  changefreq: weekly
+  priority: 0.9
+---
+
+{% assign guide_posts = site.posts | where: "content_type", "guide" %}
+<section class="journal-lead journal-lead--compact" aria-labelledby="guide-index-heading">
+  <div class="journal-lead__copy">
+    <p class="home-eyebrow">Practical guides</p>
+    <h2 id="guide-index-heading">Korea, one useful little question at a time.</h2>
+    <p>These {{ guide_posts.size }} guides start where a real day usually pauses: how to order, move, read a room, understand a ritual or make an ordinary errand easier. We label what we observed and point changing rules back to a checked source.</p>
+    <p class="journal-cadence">Looking for the personal archive instead? Open the <a href="{{ '/journal/family-records/' | relative_url }}">family records</a>, or return to the <a href="{{ '/journal/' | relative_url }}">complete journal</a>.</p>
+  </div>
+</section>
+
+<section class="journal-section" aria-labelledby="guide-list-heading">
+  <div class="journal-section__heading journal-section__heading--row">
+    <div>
+      <p class="home-eyebrow">All guides</p>
+      <h2 id="guide-list-heading">What would make today easier?</h2>
+    </div>
+    <p>Food, language, seasons, transport, etiquette, holidays and the systems behind daily life.</p>
+  </div>
+  <ul class="post-cards">
+    {% for post in guide_posts %}
+      {% include post-card.html post=post index=forloop.index heading='h3' %}
+    {% endfor %}
+  </ul>
+</section>

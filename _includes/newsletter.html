@@ -9,15 +9,18 @@
   the site's own RSS feed, and the Naver blog where the same author posts in Korean.
 {% endcomment %}
 
-<div class="row follow-strip">
-  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-    <p class="follow-strip__title"><strong>Follow new posts</strong></p>
-    <p class="follow-strip__body">
-      New guides are published when the research or a family story is ready. Subscribe by
-      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>, or read along on the
-      <a href="https://blog.naver.com/{{ site.naver_username }}" rel="noopener">Naver blog</a>.
-      Questions and corrections are welcome by
-      <a href="{{ '/contact/' | relative_url }}">email</a>.
-    </p>
+<aside class="follow-strip" aria-labelledby="follow-strip-title">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="follow-strip__title" id="follow-strip-title"><strong>Come back when the next story is ready</strong></p>
+        <p class="follow-strip__body">
+          New notes appear when the research is solid or a family day is worth keeping.
+          Follow by <a href="{{ '/feed.xml' | relative_url }}">RSS</a>, read the longer and
+          chattier Korean archive on <a href="{{ '/naver/' | relative_url }}">Naver</a>, or
+          send a question or correction by <a href="{{ '/contact/' | relative_url }}">email</a>.
+        </p>
+      </div>
+    </div>
   </div>
-</div>
+</aside>

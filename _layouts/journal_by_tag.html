@@ -18,28 +18,7 @@ layout: page
 
     <ul class="post-cards">
       {% for post in tag_posts %}
-      <li class="post-card">
-        {% if post.image.feature %}
-        {% assign card_thumb = post.image.feature | replace: '.jpg', '.thumb.webp' | replace: '.png', '.thumb.webp' | prepend: '/img/postcover/' %}
-        <a class="post-card__thumb" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
-          <img src="{{ card_thumb | relative_url }}" alt=""
-               width="700" height="394" decoding="async"
-               loading="{% if forloop.index <= 2 %}eager{% else %}lazy{% endif %}">
-        </a>
-        {% endif %}
-        <div class="post-card__body">
-          <h2 class="post-card__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-          {% if post.description %}
-          <p class="post-card__desc">{{ post.description | strip_html | truncate: 150 }}</p>
-          {% endif %}
-          <p class="post-card__meta">
-            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-            {% if post.categories.size > 0 %}
-              &middot; <a href="{{ post.categories | first | slugify | prepend: '/journal/category/' | append: '/' | relative_url }}">{{ post.categories | first | escape }}</a>
-            {% endif %}
-          </p>
-        </div>
-      </li>
+        {% include post-card.html post=post index=forloop.index %}
       {% endfor %}
     </ul>
   {% else %}

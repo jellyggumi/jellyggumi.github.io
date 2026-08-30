@@ -19,20 +19,14 @@
                 <span class="sr-only">Toggle navigation</span>
                 <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
             </button>
-            <a href="{{ '/' | relative_url }}" title="{{ site.title }} home">
-                {% comment %}
-                  Explicit width/height reserves the box before the image lands, so
-                  the masthead does not jump as it loads. The logo is above the fold
-                  on every page, so it must not be lazy-loaded.
-                {% endcomment %}
-                <img src="{{ '/logo.png' | relative_url }}" alt="{{ site.title }}"
-                     width="150" height="32" decoding="async"
-                     style="width:150px;height:auto;cursor:pointer;margin-top:15px;"/>
+            <a class="navbar-brand journal-brand" href="{{ '/' | relative_url }}" title="{{ site.title }} home">
+                <span class="journal-brand__name">JellyGGumi</span>
+                <span class="journal-brand__descriptor">Warm field notes from Korea</span>
             </a>
         </div>
 
         <div class="collapse navbar-collapse" id="main-nav-links">
-            <ul class="nav navbar-nav navbar-right" style="margin-right:1em; text-shadow: -.025em -.025em 0 rgba(0, 133, 161, 0.75), .025em -.025em 0 rgba(0, 133, 161, 0.75), -.025em .025em 0 rgba(0, 133, 161, 0.75), .025em .025em 0 rgba(0, 133, 161, 0.75);">
+            <ul class="nav navbar-nav navbar-right journal-nav">
                 {% for nav_hash in site.nav %}
                   {% for nav_item in nav_hash %}
                     {% assign lowercase_nav_item = nav_item[0] | downcase %}
@@ -46,7 +40,7 @@
                     {% if page.active == lowercase_nav_item %}{% assign is_active = true %}{% endif %}
                     {% if page.url contains nav_item[1] and nav_item[1] != "/" %}{% assign is_active = true %}{% endif %}
                     <li{% if is_active %} class="active"{% endif %}>
-                      <a href="{{ nav_item[1] | relative_url }}"{% if is_active %} aria-current="page"{% endif %}>{{ nav_item[0] }}</a>
+                      <a href="{{ nav_item[1] | relative_url }}"{% if page.url == nav_item[1] %} aria-current="page"{% elsif is_active %} aria-current="location"{% endif %}>{{ nav_item[0] }}</a>
                     </li>
                   {% endfor %}
                 {% endfor %}

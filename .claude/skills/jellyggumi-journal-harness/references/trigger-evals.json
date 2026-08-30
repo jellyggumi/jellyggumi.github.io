@@ -1,0 +1,28 @@
+{
+  "should_trigger": [
+    "Run tonight's JellyGGumi Korea Desk.",
+    "Research current Korean culture stories and prepare one English guide.",
+    "Start the 01:00 JellyGGumi editorial run.",
+    "Resume the current JellyGGumi article workspace.",
+    "Archive yesterday's current run and start a new one.",
+    "Use the 2026 influencer strategy to review this Korea guide.",
+    "Create a source-checked JellyGGumi article from this official Korean notice.",
+    "Generate the editorial still life and validate this guide package.",
+    "Check whether tonight should produce no draft.",
+    "Prepare the exact JellyGGumi draft for human publication review.",
+    "Research Korea Google Trends and publish one JellyGGumi guide if every gate is green.",
+    "Run the 01:00 JellyGGumi publish-on-green workflow and verify the live page."
+  ],
+  "should_not_trigger": [
+    "Write a fictional memory about my baby.",
+    "Replace our family photos with AI faces.",
+    "Fix only the home page CSS.",
+    "Update ads.txt and nothing else.",
+    "Translate this Naver post word for word.",
+    "Publish a sponsored product review automatically.",
+    "Create a Google Ads campaign and spend the budget.",
+    "Post this caption to Instagram.",
+    "Debug the castle-war game.",
+    "Change the AdSense account settings."
+  ]
+}

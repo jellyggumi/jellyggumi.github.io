@@ -2,7 +2,7 @@
 layout: "post"
 title: "Thirteen Checks of the Baby Monitor"
 subtitle: "An autumn picnic by the Han River, one blanket from bright afternoon to dark, and a phone I kept opening"
-description: "A short Korean parenting diary from October 2024: an afternoon off by the Han River while my husband stayed home with the baby, and the thirteen times I opened the monitor anyway."
+description: "One autumn afternoon off by the Han River, one baby safely at home and roughly thirteen checks of the monitor anyway."
 active: "journal"
 image:
   feature: "parent-picnic.jpg"
@@ -12,7 +12,7 @@ comments: false
 tags: [Family, Seasons]
 categories: [Family Diary]
 reviewed: "2026-08-29"
-lastmod: "2026-08-29"
+lastmod: "2026-08-30"
 ai_assisted: true
 content_type: personal
 sources:
@@ -20,6 +20,8 @@ sources:
     publisher: "banggujin Naver Blog"
     url: "https://blog.naver.com/banggujin/223621982727"
 ---
+
+<p>I had an afternoon to myself, good weather, good company and a baby monitor I opened roughly thirteen times. Freedom, apparently, can include a lot of checking.</p>
 
 <p><strong>Field note:</strong> adapted from a short Korean diary entry I wrote on 17 October 2024 about an afternoon on 12 October. The original ran to a few lines and a handful of photographs, and this is not much longer.</p>
 

@@ -2,7 +2,7 @@
 layout: "post"
 title: "Singapore Rain with a Six-Month-Old"
 subtitle: "A family field note about breakfast, naps, strollers and letting go of the itinerary"
-description: "A first-hand family travel diary from Singapore with a six-month-old: why hotel breakfast mattered, how rain changed the plan, and what we learned about pacing a day around a baby."
+description: "Rain, two naps and one flexible day in Singapore with a six-month-old: the family itinerary that improved when most of the plan disappeared."
 active: "journal"
 image:
   feature: "singapore-rainy-day.jpg"
@@ -12,7 +12,7 @@ comments: false
 tags: [Family, Practical]
 categories: [Family Diary]
 reviewed: "2026-08-29"
-lastmod: "2026-08-29"
+lastmod: "2026-08-30"
 ai_assisted: true
 content_type: personal
 sources:
@@ -20,6 +20,8 @@ sources:
     publisher: "JellyGGumi Naver Blog"
     url: "https://blog.naver.com/jelly_ggumi/223819294508"
 ---
+
+<p>The forecast offered rain, the baby offered two naps and Singapore offered far more than we could fit between them. We stopped trying to win the itinerary and let the day become smaller.</p>
 
 <p><strong>Field note:</strong> this is an English adaptation of our Korean diary entry published on 2 April 2025. The trip itself took place in December 2024, when INa was six months old. The point is not to prescribe the perfect Singapore itinerary. It is to record the day our itinerary mostly disappeared, and why that made the trip work better.</p>
 

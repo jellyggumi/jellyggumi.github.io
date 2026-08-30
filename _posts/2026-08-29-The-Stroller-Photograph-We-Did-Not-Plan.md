@@ -2,7 +2,7 @@
 layout: "post"
 title: "The Stroller Photograph We Did Not Plan"
 subtitle: "Just short of 150 days, the final unplanned frame beat every chair and prop in the room"
-description: "Our self-funded 2024 visit to an unstaffed Korean photo studio just before 150 days: five colour modes, one remote shutter, a tired baby and the accidental favourite."
+description: "One remote shutter, a tired baby and a stroller photograph we never planned: our warm little hour in a Korean self-photo studio."
 active: "journal"
 image:
   feature: "family-self-photo.jpg"
@@ -12,7 +12,7 @@ comments: false
 tags: [Family, Practical]
 categories: [Family Diary]
 reviewed: "2026-08-29"
-lastmod: "2026-08-29"
+lastmod: "2026-08-30"
 ai_assisted: true
 content_type: personal
 sources:
@@ -26,6 +26,8 @@ sources:
     publisher: "Naver Booking"
     url: "https://m.booking.naver.com/booking/13/bizes/845400"
 ---
+
+<p>We booked a studio session, arrived with a nearly five-month-old and a stroller, and still ended up loving the photograph we had not planned. Babies are excellent creative directors that way.</p>
 
 <p><strong>Field note:</strong> adapted from my Korean review of 4 November 2024. We paid for the session ourselves. INa was just short of 150 days, not exactly 150. The studio's current profile and booking page are linked below because prices, head-count rules and parking terms have changed since our visit.</p>
 

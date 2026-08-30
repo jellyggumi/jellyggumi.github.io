@@ -2,7 +2,7 @@
 layout: "post"
 title: "Inside a Korean Department-Store Baby Class"
 subtitle: "What our first culture-centre term taught me about choosing a class for a six-month-old"
-description: "A first-hand look inside a Korean department-store culture-centre class for babies: how registration works, what the class felt like, and why the instructor mattered most."
+description: "Our first Korean department-store baby class: funny photographs, a happily busy baby and the practical details that made the outing work."
 active: "journal"
 image:
   feature: "korean-culture-center-baby-class.jpg"
@@ -12,7 +12,7 @@ comments: false
 tags: [Family, Practical]
 categories: [Family Diary]
 reviewed: "2026-08-29"
-lastmod: "2026-08-29"
+lastmod: "2026-08-30"
 ai_assisted: true
 content_type: personal
 sources:
@@ -29,6 +29,8 @@ sources:
     publisher: "Hyundai Department Store"
     url: "https://www.ehyundai.com/newCulture/CT/CT050300_M.do"
 ---
+
+<p>Our first regular baby class gave us exactly what I had hoped for: funny photographs, a happily busy baby and one parent learning not to lead every activity.</p>
 
 <p><strong>Field note:</strong> this English article is adapted from the Korean review I published on 21 February 2025. We paid for the class ourselves. The specific instructor, timetable and course availability may have changed; the current Hyundai Culture Center pages linked below are the place to check before booking.</p>
 

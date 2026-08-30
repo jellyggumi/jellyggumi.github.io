@@ -2,7 +2,7 @@
 layout: "post"
 title: "Two Outfits in One Hour: A Maternity Shoot"
 subtitle: "We declined the affiliated package and photographed ourselves with five props and a remote shutter"
-description: "Our self-funded 2024 maternity photographs: why we declined an affiliated package, what the local self-service room included, and how two simple setups filled one hour."
+description: "One hour, two tops and a camera remote: the simple self-service maternity shoot that looked like us because nobody else directed it."
 active: "journal"
 image:
   feature: "maternity-photo-session.jpg"
@@ -12,7 +12,7 @@ comments: false
 tags: [Family, Practical]
 categories: [Family Diary]
 reviewed: "2026-08-29"
-lastmod: "2026-08-29"
+lastmod: "2026-08-30"
 ai_assisted: true
 content_type: personal
 sources:
@@ -20,6 +20,8 @@ sources:
     publisher: "Banggujin Naver Blog"
     url: "https://blog.naver.com/banggujin/223445448346"
 ---
+
+<p>We had one hour, two tops, a camera remote and no photographer telling us what to do. That was exactly the point.</p>
 
 <p><strong>Field note:</strong> adapted from my Korean diary entry of 15 May 2024. We paid for the studio and salon ourselves. Packages and rates change, so the figures below record our booking rather than advertise a current offer.</p>
 

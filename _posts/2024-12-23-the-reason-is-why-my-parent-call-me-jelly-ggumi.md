@@ -6,8 +6,13 @@ description: "How a Korean prenatal nickname becomes a name: what kkum means, wh
 active: "journal"
 image:
   feature: "pc003.jpg"
+card-img: "img/editorial/family-table.jpg"
 date: "2024-12-23"
-header-img: "img/postcover/pc003.jpg"
+header-img: "img/editorial/family-table.jpg"
+header_alt: "A quiet Korean family table with bojagi cloth and everyday dishes"
+header_ai: true
+header_width: 1672
+header_height: 941
 comments: false
 case1: 
   - image_path: /img/post/20241223/p01.jpg

@@ -1,18 +1,23 @@
 ---
 layout: "post"
 title: "Korean Dining Customs Explained"
-subtitle: "Banchan, seniority and how a Korean table actually works"
-description: "The table manners that matter in Korea: pouring etiquette, who eats first, shared dishes, banchan refills and paying the bill."
+subtitle: "Banchan, seniority and a table with fewer mysteries"
+description: "A warm guide to the Korean table: pouring etiquette, who begins, shared dishes, banchan refills and where to pay."
 active: "journal"
 image:
   feature: "pc005.jpg"
+card-img: "img/editorial/dining-table.jpg"
 date: "2026-08-08"
-header-img: "img/postcover/pc005.jpg"
+header-img: "img/editorial/dining-table.jpg"
+header_alt: "A quiet Korean table with rice, banchan, spoon and chopsticks"
+header_ai: true
+header_width: 1672
+header_height: 941
 comments: false
 tags: [Food, Etiquette]
 categories: [Food & Dining]
 reviewed: "2026-08-29"
-lastmod: "2026-08-29"
+lastmod: "2026-08-30"
 ai_assisted: true
 content_type: guide
 sources:
@@ -26,7 +31,7 @@ sources:
     publisher: "Korean Culture and Information Service"
     url: "https://www.korea.net/NewsFocus/Culture/view?articleId=117340"
 ---
-<p>A Korean table is organised by conventions nobody states out loud. Where you sit, who lifts a spoon first, which hand holds the bottle and who pays are all settled before the food arrives. Little of it is enforced on visitors, and none of it is complicated.</p>
+<p>The good news about a Korean table is that nobody expects a visitor to know every quiet rule. Where people sit, who lifts a spoon first, which hand holds the bottle and where the bill is paid all have a pattern, but the pattern becomes friendly once you can see it.</p>
 
 
 <h3>Banchan Is Structural, Not a Starter</h3>

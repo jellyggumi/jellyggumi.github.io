@@ -2,7 +2,7 @@
 layout: "post"
 title: "Eleven Days in a Korean Postpartum Care Centre"
 subtitle: "How we chose a joriwon, what the daily rhythm actually felt like, and the part nobody warned me about"
-description: "A first-hand account of eleven days in a Korean postpartum care centre: how we chose one, why we booked short and extended later, and what the daily rhythm was really like."
+description: "Everyone called the postpartum care centre heaven. Eleven days later, after booking short and extending, I finally understood why."
 active: "journal"
 image:
   feature: "postpartum-care-center.jpg"
@@ -12,7 +12,7 @@ comments: false
 tags: [Family, Practical]
 categories: [Family Diary]
 reviewed: "2026-08-29"
-lastmod: "2026-08-29"
+lastmod: "2026-08-30"
 ai_assisted: true
 content_type: personal
 sources:
@@ -26,6 +26,8 @@ sources:
     publisher: "Korea Public Data Portal"
     url: "https://www.data.go.kr/data/15004303/fileData.do"
 ---
+
+<p>Everyone called the postpartum care centre “heaven.” I did not understand the nickname until I left it, which feels like a very new-parent way to learn anything.</p>
 
 <p><strong>Field note:</strong> adapted from our Korean diary about a June 2024 stay. Every price and service detail belongs to one family, one centre and one year. One correction matters: the original implied that postpartum home-help workers are government-funded for everyone. They are not. Korea's maternal and newborn health voucher is generally means-tested, locally administered and only partly subsidises eligible care. Bokjiro is linked below; check the current programme and your local public-health centre. Nothing here is medical guidance.</p>
 

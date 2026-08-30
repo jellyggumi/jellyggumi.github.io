@@ -2,7 +2,7 @@
 layout: "post"
 title: "The Newborn Month I Had Already Forgotten"
 subtitle: "I began a monthly log at one hundred days because the first thirty were already becoming a blur"
-description: "A first-hand reflection on starting a baby growth log: why the newborn weeks vanished from memory so fast, and what a monthly record turned out to be for."
+description: "At one hundred days, the newborn month was already a blur. This is why an imperfect monthly growth log was still worth keeping."
 active: "journal"
 image:
   feature: "first-month-diary.jpg"
@@ -12,7 +12,7 @@ comments: false
 tags: [Family, Practical]
 categories: [Family Diary]
 reviewed: "2026-08-29"
-lastmod: "2026-08-29"
+lastmod: "2026-08-30"
 ai_assisted: true
 content_type: personal
 sources:
@@ -20,6 +20,8 @@ sources:
     publisher: "Naver Blog (banggujin)"
     url: "https://blog.naver.com/banggujin/223589949936"
 ---
+
+<p>At one hundred days, I sat down to write about the first month and discovered that most of it had already blurred. So much for the perfect daily baby diary.</p>
 
 <p><strong>Field note:</strong> adapted from the first entry of a Korean growth log I began in 2024. The public original included measurements, feeding amounts and product names. I have left those out of the English edition because they add exposure without helping another family. This is memory, not medical guidance.</p>
 

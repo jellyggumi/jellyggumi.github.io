@@ -14,9 +14,9 @@
     {% assign page_description = page.description | default: site.description | strip_html | strip_newlines | truncate: 300 %}
 
     {% comment %}
-      Canonical/OG URLs need an absolute origin. `site.url` carries it; `site.baseurl`
-      is "/" in this config, so prepending it verbatim would yield a doubled slash.
-      Strip a lone "/" to nothing and treat the leading slash of page.url as the join.
+      Canonical/OG URLs need an absolute origin. `site.url` carries it. `site.baseurl`
+      is blank for this root-hosted site, while a legacy config may still use "/".
+      Normalise a lone slash to blank and let page.url provide the join.
     {% endcomment %}
     {% assign base = site.baseurl | default: "" %}
     {% if base == "/" %}{% assign base = "" %}{% endif %}
@@ -24,21 +24,23 @@
     {% assign canonical_url = clean_url | prepend: base | prepend: site.url %}
 
     {% comment %}
-      Social preview image: the post's own cover if it has one, else the site logo.
-      Crawlers reject relative paths here, so it is always absolutised.
+      Social preview image: use the rendered header first so Open Graph, Twitter and
+      structured data describe the same visual a reader sees. Fall back to a post
+      cover, then the site logo. Crawlers reject relative paths, so absolutise it.
     {% endcomment %}
-    {% if page.image.feature %}
-      {% assign share_image = page.image.feature | prepend: '/img/postcover/' | prepend: base | prepend: site.url %}
-    {% elsif page.header-img %}
+    {% if page.header-img %}
       {% assign share_image = page.header-img | prepend: '/' | prepend: base | prepend: site.url %}
+    {% elsif page.image.feature %}
+      {% assign share_image = page.image.feature | prepend: '/img/postcover/' | prepend: base | prepend: site.url %}
     {% else %}
       {% assign share_image = '/logo.png' | prepend: base | prepend: site.url %}
     {% endif %}
+    {% assign share_image_alt = page.header_alt | default: page.title | default: site.description | strip_html | strip_newlines %}
 
     {% comment %}
       An empty string is truthy in Liquid, so a bare truthiness test on page.title was
       true for the home page's `title: ""` and produced the title
-      "- JellyGGumi Growth Diary". Comparing against a blank-stripped value is what
+      "- JellyGGumi Journal". Comparing against a blank-stripped value is what
       actually distinguishes "no title" from "a title".
     {% endcomment %}
     {% assign page_title = page.title | strip %}
@@ -57,21 +59,25 @@
     {% endif %}
 
     <title>{% if page_title != "" %}{{ page_title | escape }}{{ pag_suffix }} - {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-    <meta name="description" content="{{ page_description }}{% if pag_suffix != "" %} (page {{ paginator.page }} of {{ paginator.total_pages }}){% endif %}">
+    <meta name="description" content="{{ page_description | escape }}{% if pag_suffix != "" %} (page {{ paginator.page }} of {{ paginator.total_pages }}){% endif %}">
     {% assign page_robots = page.robots | default: "" %}
     {% assign resolved_canonical_url = canonical_url %}
     {% if pag_suffix != "" %}{% assign resolved_canonical_url = '/journal/' | absolute_url %}{% endif %}
     <link rel="canonical" href="{{ resolved_canonical_url }}">
     {% if pag_suffix != "" %}
     <meta name="robots" content="noindex, follow">
-    {% elsif page_robots != "" %}
+    {% elsif page_robots contains "noindex" %}
     <meta name="robots" content="{{ page_robots | escape }}">
+    {% elsif page_robots != "" %}
+    <meta name="robots" content="{{ page_robots | escape }}, max-image-preview:large">
+    {% else %}
+    <meta name="robots" content="index, follow, max-image-preview:large">
     {% endif %}
     {% if paginator.previous_page %}<link rel="prev" href="{{ paginator.previous_page_path | absolute_url }}">{% endif %}
     {% if paginator.next_page %}<link rel="next" href="{{ paginator.next_page_path | absolute_url }}">{% endif %}
 
     <link rel="icon" href="{{ base }}/favicon.ico" sizes="any">
-    <meta name="theme-color" content="#530720">
+    <meta name="theme-color" content="#0c0d0c">
 
     {% if site.google_site_verification %}
     <meta name="google-site-verification" content="{{ site.google_site_verification | escape }}">
@@ -81,21 +87,23 @@
     <meta property="og:site_name" content="{{ site.title | escape }}">
     <meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}">
     <meta property="og:title" content="{% if page_title != "" %}{{ page_title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
-    <meta property="og:description" content="{{ page_description }}">
+    <meta property="og:description" content="{{ page_description | escape }}">
     <meta property="og:url" content="{{ resolved_canonical_url }}">
     <meta property="og:image" content="{{ share_image }}">
+    <meta property="og:image:alt" content="{{ share_image_alt | escape }}">
     <meta property="og:locale" content="{% if page.lang == 'ko' %}ko_KR{% else %}en_US{% endif %}">
     {% if page.date %}
     <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
-    <meta property="article:author" content="{{ site.owner.name }}">
-    {% for tag in page.tags %}<meta property="article:tag" content="{{ tag }}">
+    <meta property="article:author" content="{{ site.owner.name | escape }}">
+    {% for tag in page.tags %}<meta property="article:tag" content="{{ tag | escape }}">
     {% endfor %}{% endif %}
 
     <!-- Twitter card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{% if page_title != "" %}{{ page_title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
-    <meta name="twitter:description" content="{{ page_description }}">
+    <meta name="twitter:description" content="{{ page_description | escape }}">
     <meta name="twitter:image" content="{{ share_image }}">
+    <meta name="twitter:image:alt" content="{{ share_image_alt | escape }}">
 
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ base }}/feed.xml">
 
@@ -156,7 +164,10 @@
       "@type": "BlogPosting",
       "headline": {{ page.title | jsonify }},
       "description": {{ page_description | jsonify }},
-      "image": {{ share_image | jsonify }},
+      "image": {
+        "@type": "ImageObject",
+        "url": {{ share_image | jsonify }}
+      },
       "datePublished": "{{ page.date | date_to_xmlschema }}",
       "dateModified": "{{ page.lastmod | default: page.date | date_to_xmlschema }}",
       "author": {
@@ -174,7 +185,11 @@
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": {{ canonical_url | jsonify }}
+        "@id": {{ canonical_url | jsonify }},
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": {{ share_image | jsonify }}
+        }
       }{% if page.categories.size > 0 %},
       "articleSection": {{ page.categories | first | jsonify }}{% endif %}{% if page.tags.size > 0 %},
       "keywords": {{ page.tags | join: ", " | jsonify }}{% endif %}

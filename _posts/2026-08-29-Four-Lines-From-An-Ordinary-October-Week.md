@@ -2,7 +2,7 @@
 layout: "post"
 title: "Four Lines From an Ordinary October Week"
 subtitle: "The shortest entry in our diary, annotated two years later"
-description: "A four-line Korean diary entry from the fourth month of parenting, translated and annotated: a third of October gone, two places to write, and going outside while the weather held."
+description: "Four lines from the fourth month of parenting: pleasant weather, a fast-growing baby and one tired parent trying to keep up."
 active: "journal"
 image:
   feature: "october-with-baby.jpg"
@@ -12,7 +12,7 @@ comments: false
 tags: [Family, Seasons]
 categories: [Family Diary]
 reviewed: "2026-08-29"
-lastmod: "2026-08-29"
+lastmod: "2026-08-30"
 ai_assisted: true
 content_type: personal
 sources:
@@ -20,6 +20,8 @@ sources:
     publisher: "Banggujin Naver Blog"
     url: "https://blog.naver.com/banggujin/223614941963"
 ---
+
+<p>The baby was about four months old, the weather had finally turned pleasant and I was trying to live something vaguely adjacent to a productive life. Four lines were all I managed. They were enough.</p>
 
 <p><strong>Field note:</strong> adapted from a Korean diary entry published on 11 October 2024, in the fourth month. It is one of the shortest things I have ever posted — four lines and three photographs. I have kept it short here too. A couple of lines about my own health have been left out; they were private, and nothing else depends on them.</p>
 

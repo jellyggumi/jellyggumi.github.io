@@ -12,17 +12,32 @@ extra_css:
   the layout contributes a fragment, and the article body sits in a real column.
 {% endcomment %}
 
+<main id="main">
 <article>
 
 <!-- Post Header -->
-<header class="intro-header"{% if page.header-img %} style="background-image: url('{{ page.header-img | relative_url }}')"{% endif %}>
+{% assign resolved_post_header = page.header-img %}
+{% unless resolved_post_header %}{% if page.image.feature %}{% assign resolved_post_header = page.image.feature | prepend: '/img/postcover/' %}{% endif %}{% endunless %}
+{% assign header_ai_enabled = false %}
+{% if page.header_ai == true or page.header_ai == 'true' %}{% assign header_ai_enabled = true %}{% endif %}
+{% assign article_ai_enabled = false %}
+{% if page.ai_assisted == true or page.ai_assisted == 'true' %}{% assign article_ai_enabled = true %}{% endif %}
+<header class="intro-header intro-header--post{% if header_ai_enabled %} intro-header--ai{% endif %}">
+    {% if resolved_post_header %}
+    <img class="intro-header__image" src="{{ resolved_post_header | relative_url }}"
+         alt="{{ page.header_alt | default: '' | escape }}"
+         width="{{ page.header_width | default: 1200 }}" height="{{ page.header_height | default: 674 }}"
+         fetchpriority="high" decoding="async">
+    <span class="intro-header__shade" aria-hidden="true"></span>
+    {% endif %}
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1 style="color: #acd578;">{{ page.title }}</h1>
+                    <p class="post-heading__type">{% if page.content_type == 'personal' %}Family record{% else %}Practical guide{% endif %} <span aria-hidden="true">/</span> JellyGGumi Journal</p>
+                    <h1 class="post-heading__title">{{ page.title | escape }}</h1>
                     {% if page.subtitle %}
-                    <h2 class="subheading">{{ page.subtitle }}</h2>
+                    <h2 class="subheading">{{ page.subtitle | escape }}</h2>
                     {% endif %}
 
                     {% comment %}
@@ -40,7 +55,7 @@ extra_css:
 
                     {% assign minutes = content | number_of_words | divided_by: 180 %}
                     {% if minutes == 0 %}{% assign minutes = 1 %}{% endif %}
-                    <span class="time-tag-categ" style="font-size:.7em;background-color: rgba(128, 128, 128, 0.45);">
+                    <span class="time-tag-categ">
                       <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;{{ minutes }} minute read
                       {% if page.categories.size > 0 %}
                         {% comment %}
@@ -58,6 +73,9 @@ extra_css:
             </div>
         </div>
     </div>
+    {% if header_ai_enabled %}
+    <p class="intro-header__media-note">AI-generated editorial still life &middot; <a href="{{ '/editorial-policy/' | relative_url }}">method</a></p>
+    {% endif %}
 </header>
 
 {% include breadcrumbs.html %}
@@ -65,7 +83,7 @@ extra_css:
 <!-- Post Content -->
 <div class="container">
     <div class="row">
-        <div class="post-body" id="main">
+        <div class="post-body">
             {% comment %}
               The body is rendered through post-content.html rather than emitted
               directly, because that include replaces one explicit top-level source
@@ -74,7 +92,7 @@ extra_css:
             {% endcomment %}
             {% include post-content.html content=content %}
 
-            {% if page.ai_assisted == true %}
+            {% if article_ai_enabled %}
             <aside class="editorial-disclosure" aria-label="Editorial disclosure">
               <p><strong>How this article was made:</strong>
               {% if page.content_type == 'personal' %}
@@ -112,7 +130,12 @@ extra_css:
             {% include signoff.html %}
 
             <hr class="small">
-            {% if site.share %}{% include share.html %}{% endif %}
+            {% comment %}
+              Social-network share icons require an authenticated reader identity.
+              This static site has no reader accounts, so anonymous SNS controls stay
+              closed. Verified owner profile links remain available in the footer.
+            {% endcomment %}
+            {% if site.share and site.authenticated_reader_context %}{% include share.html %}{% endif %}
             {% if site.comments %}{% include disqus_comments.html %}{% endif %}
         </div>
     </div>
@@ -175,6 +198,7 @@ extra_css:
 </div>
 
 </article>
+</main>
 
 {% comment %}
   The full tag and category clouds used to be rendered at the foot of every single

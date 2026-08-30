@@ -3,18 +3,31 @@ layout: default
 ---
 
 <!-- Page Header -->
-<header class="intro-header"{% if page.header-img %} style="background-image: url('{{ page.header-img | relative_url }}')"{% elsif site.header-img %} style="background-image: url('{{ site.header-img | relative_url }}')"{% endif %}>
+{% assign resolved_header_image = page.header-img | default: site.header-img %}
+<header class="intro-header{% if page.header_ai == true %} intro-header--ai{% endif %}">
+    {% if resolved_header_image %}
+    <img class="intro-header__image" src="{{ resolved_header_image | relative_url }}"
+         alt="{{ page.header_alt | default: '' | escape }}"
+         width="{{ page.header_width | default: 2048 }}"
+         height="{{ page.header_height | default: 930 }}"
+         fetchpriority="high" decoding="async">
+    <span class="intro-header__shade" aria-hidden="true"></span>
+    {% endif %}
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading">
-                    <h1>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</h1>
+                    {% assign resolved_page_title = page.title | default: '' | strip %}
+                    <h1>{% if resolved_page_title != '' %}{{ resolved_page_title | escape }}{% else %}{{ site.title | escape }}{% endif %}</h1>
                     <hr class="small">
-                    <span class="subheading">{{ page.description }}</span>
+                    <span class="subheading">{{ page.description | escape }}</span>
                 </div>
             </div>
         </div>
     </div>
+    {% if page.header_ai == true %}
+    <p class="intro-header__media-note">AI-generated editorial still life &middot; <a href="{{ '/editorial-policy/' | relative_url }}">method</a></p>
+    {% endif %}
 </header>
 
 {% comment %}
@@ -23,11 +36,11 @@ layout: default
 {% unless page.url == "/" %}{% include breadcrumbs.html %}{% endunless %}
 
 <!-- Main Content -->
-<div class="container">
-	<div class="row" id="main">
+<main class="container" id="main">
+	<div class="row">
 					{{ content }}
 	</div>
-</div>
+</main>
 
 {% comment %}
   jQuery is loaded from one origin across every layout. post.html and gallery pages
