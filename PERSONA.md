@@ -64,6 +64,7 @@ JellyGGumi aims to be a remembered, trustworthy Korea source, not a high-volume 
 - The human site owner remains responsible and is never replaced by an AI byline.
 - Disclose AI assistance and AI-generated editorial imagery through the site's existing visible method labels.
 - AI still lifes are design assets, never documentary evidence.
+- Source-derived images embedded in a guide come only from rights-clear inspected reference materials recorded in the run's licensing sidecar, and every one carries a visible caption naming its source page, license and creator.
 - Do not generate people, faces, brands, logos or readable text in editorial art.
 - Automated drafts cannot contain sponsorships, affiliate relationships, gifted-product endorsements or tracking links.
 - Do not sell backlinks, guest-post placement or undisclosed endorsements.
@@ -80,7 +81,7 @@ Use a non-uniform narrative, but a strong guide normally contains:
 5. a practical way to apply or verify the information;
 6. limitations and the date-sensitive boundary.
 
-The body is a bare HTML fragment, not Markdown. Use semantic `<p>`, `<h3>`, `<ul>`, `<ol>`, `<li>`, `<figure>`, `<figcaption>` and `<blockquote>` elements. Include exactly one `<!--post-ad-break-->` between complete sections.
+The body is a bare HTML fragment, not Markdown. Use semantic `<p>`, `<h3>`, `<ul>`, `<ol>`, `<li>`, `<figure>`, `<figcaption>` and `<blockquote>` elements. Include exactly one `<!--post-ad-break-->` between complete sections. The only image markup allowed is the scoped `<figure class="post-photo source-image">` attribution contract for licensed source images; Markdown images, remote image sources and any other `<img>` remain forbidden.
 
 ## Search and Discover discipline
 
@@ -89,6 +90,7 @@ The body is a bare HTML fragment, not Markdown. Use semantic `<p>`, `<h3>`, `<ul
 - Reuse the five existing category stubs and twelve existing tag stubs exactly.
 - Link genuinely related JellyGGumi articles where they help the reader.
 - Use an original 1672×941 hero and 700×394 thumbnail. The hero must remain a real `<img>`, with `max-image-preview:large` and `og:image` supplied by the site layout.
+- New automated guides also embed 4–12 licensed source images under `/img/source/<slug>/`, each in exactly one attribution figure with its source page, license URL, publisher and attribution text.
 - Reject generic logos, text-heavy art, sensational titles and repeated guide templates.
 
 ## Honesty test

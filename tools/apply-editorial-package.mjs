@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
+import { derivePackagePaths, isSafePackagePath } from './lib/source-images.mjs';
 
 const argv = process.argv.slice(2);
 let rootValue = process.cwd();
@@ -129,8 +130,10 @@ const validatedAt = Date.parse(validatedRaw);
 if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\+09:00$/.test(approvedRaw) || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{3})?Z$/.test(validatedRaw) || !Number.isFinite(approvedAt) || !Number.isFinite(validatedAt) || validatedAt < approvedAt) throw new Error('Final validation must be regenerated after approval');
 
 const paths = regularFile(scopePath) ? fs.readFileSync(scopePath, 'utf8').split('\n').map((line) => line.trim()).filter(Boolean).sort() : [];
-const expected = [manifest.article_path, ...(Array.isArray(manifest.asset_paths) ? manifest.asset_paths : [])].filter(Boolean).sort();
-if (paths.length !== 3 || JSON.stringify(paths) !== JSON.stringify(expected)) throw new Error('Publication scope is missing, stale or not exactly three paths');
+const derived = derivePackagePaths(manifest);
+if (derived.errors.length) throw new Error(`Manifest package paths are invalid: ${derived.errors[0]}`);
+const expected = derived.all;
+if (!paths.length || JSON.stringify(paths) !== JSON.stringify(expected)) throw new Error('Publication scope is missing, stale or does not exactly match the derived package');
 const packageSha = combinedDigest(paths);
 const render = renderContextDigest();
 const currentHead = git(['rev-parse', 'HEAD']);
@@ -161,7 +164,7 @@ const worktreeDirty = git(['status', '--porcelain=v1', '--untracked-files=all'])
 if (worktreeDirty.status !== 0 || worktreeDirty.stdout.trim() !== '') throw new Error('The repository worktree and index must be fully clean before package application');
 
 for (const relative of paths) {
-  if (!/^(_posts\/\d{4}-\d{2}-\d{2}-[A-Za-z0-9][A-Za-z0-9-]*\.md|img\/editorial\/[a-z0-9][a-z0-9.-]*\.jpg)$/.test(relative)) throw new Error(`Unsafe publication path: ${relative}`);
+  if (!isSafePackagePath(relative)) throw new Error(`Unsafe publication path: ${relative}`);
   if (fs.existsSync(path.join(root, relative))) throw new Error(`Publication target already exists on disk: ${relative}`);
   if (git(['cat-file', '-e', `HEAD:${relative}`]).status === 0) throw new Error(`Publication target already exists in HEAD: ${relative}`);
 }

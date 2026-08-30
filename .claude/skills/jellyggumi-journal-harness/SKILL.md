@@ -31,7 +31,7 @@ prepare/archive
   -> writer FIX loop, maximum two
   -> ready_for_review | rejected | blocked
   -> exact manual approval OR pinned standing routine authority
-  -> apply three paths -> verify -> one commit/push -> live proof
+  -> apply derived package paths -> verify -> one commit/push -> live proof
 ```
 
 A no-article run is successful when no candidate clears relevance, novelty, evidence and honesty gates.
@@ -116,6 +116,8 @@ node tools/editorial-workspace.mjs safe-date
 
 The writer outputs a bare-HTML guide, claim map and exactly two editorial JPEGs below `_workspace/current/draft/`. Use `.claude/skills/editorial-image-kit/SKILL.md` for god-tibo-imagen generation, deterministic crop, metadata strip, dimensions and provenance.
 
+Before the writer starts, the director downloads the auditor's rights-clear source images — 4–12 distinct raster files from inspected reference pages — into `draft/img/source/<slug>/`, records `manifest.reference_image_paths`, and writes the licensing sidecar `draft/source-image-manifest.json` (allowed license bases only: public-domain, cc0, cc-by, cc-by-sa, kogl-type-1, repo-license-covers-assets with a pinned ref, official-press-kit; a 40+ character license quote; an evidence-pack source page; unique paths, hashes and download URLs; non-empty `.png`/`.jpg`/`.jpeg`/`.webp` files no larger than 5 MiB with valid raster structure, EXIF/XMP/text metadata stripped, a >=32 px short side, >=16,384 pixels and no more than 20 MiB combined). Fewer than four or more than twelve rights-clear images blocks the package. The writer then embeds each source image in exactly one `<figure class="post-photo source-image">` attribution figure using only sidecar data.
+
 The writer has no web access. If the evidence pack cannot support a sentence, omit it or stop.
 
 ## Phase 4: Independent producer-reviewer loop
@@ -174,10 +176,10 @@ node tools/editorial-workspace.mjs set-status \
 3. Approval deletes the earlier final report and scope. Run `node tools/verify-publication-scope.mjs`, then `node tools/validate-editorial-package.mjs --stage final` to regenerate both after approval.
 4. Fetch origin and require local `gh-pages` to equal its upstream exactly.
 5. Require `_config.yml`, layouts, includes, CSS and JS to be clean/committed, then run `node tools/apply-editorial-package.mjs`; it rechecks authority, refuses existing targets and copies with no-overwrite semantics.
-6. Stage only the three paths it reports. Never use `git add -A`.
+6. Stage only the derived paths it reports. Never use `git add -A`.
 7. Run `node tools/verify-publication-scope.mjs --staged`.
 8. Commit once and push once. Never amend, retry with a second commit, auto-rebase or force-push.
-9. Run `node tools/verify-deployment.mjs`. It independently fetches the pushed SHA, matching successful Pages run, anonymous permalink/title/body and both exact JPEG bytes, then writes `validation/deployment-proof.json` once with no-overwrite semantics.
+9. Run `node tools/verify-deployment.mjs`. It independently fetches the pushed SHA, matching successful Pages run, anonymous permalink/title/body and every exact AI-cover and source-image byte sequence, then writes `validation/deployment-proof.json` once with no-overwrite semantics.
 10. Mark `published`, update the summary and notify only after that verifier passes.
 
 Any change to title, body, image, paths, git base or visible render context changes the digest and invalidates authority for that artifact. Any failure becomes blocked with the package and deployment evidence preserved.
@@ -194,6 +196,7 @@ Any change to title, body, image, paths, git base or visible render context chan
 | Reviewer disagreement | Direct evidence wins; unresolved means block |
 | Revision limit reached | Reject or block; never manufacture filler |
 | Image or metadata gate fails | Fix image or block |
+| Fewer than four or more than twelve rights-clear source images | Block; never publish with unverified or unlicensed imagery |
 | Dirty/colliding target | Preserve package, do not overwrite |
 | Origin changed | Do not auto-rebase; block |
 | Pages or permalink verification fails | Block; do not call it published |

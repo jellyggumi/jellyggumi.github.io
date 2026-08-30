@@ -16,8 +16,10 @@ evidence/source-map.md
 draft/_posts/YYYY-MM-DD-Title-In-Kebab-Case.md
 draft/img/editorial/<slug>.jpg
 draft/img/editorial/<slug>.thumb.jpg
+draft/img/source/<slug>/<reference-image>.(png|jpg|jpeg|webp)   # 4–12
 draft/claim-map.json
 draft/image-provenance.json
+draft/source-image-manifest.json
 review/editorial-review.json
 validation/draft-validation.json
 validation/validation.json
@@ -49,7 +51,8 @@ Required fields:
 - `category`
 - `tags`
 - `article_path`
-- `asset_paths`: exact full and thumbnail paths
+- `asset_paths`: exact AI full and thumbnail cover paths (always two elements)
+- `reference_image_paths`: 4–12 unique `img/source/<slug>/` raster paths, separate from `asset_paths`
 - `revision_loops`: integer 0..2
 - `publication_requires_confirmation`: `true` only in `draft-only`; `false` only in the pinned `publish-on-green` mode
 - `standing_publish_routine_id`: `h78L2R0UJFRhjS9O` in `publish-on-green`, otherwise null
@@ -107,6 +110,12 @@ Required keys:
 
 Scheduled drafts must use `layout: post`, `active: journal`, `header_ai: true`, `comments: false`, `ai_assisted: true`, and `content_type: guide`.
 
+## Source image sidecar
+
+`draft/source-image-manifest.json` records `schema_version: 1`, the `run_id` and an `images[]` array with 4–12 entries. Every entry requires `local_path` (slug-bound `img/source/<slug>/` path), `source_page_url` (must be an evidence-pack `source_url`), `download_url`, `publisher_or_creator`, `license_basis`, `license_url`, `license_quote` (≥ 40 characters), `retrieved_at`, `sha256`, `transformation`, `transformation_note`, `alt`, `attribution_text`, `commercial_use_allowed: true` and `redistribution_allowed: true`.
+
+Allowed `license_basis` values fail closed: `public-domain`, `cc0`, `cc-by`, `cc-by-sa`, `kogl-type-1`, `repo-license-covers-assets` (requires `pinned_ref`) and `official-press-kit`. Local paths, hashes and download URLs are unique; files are non-empty regular `.png`/`.jpg`/`.jpeg`/`.webp` no larger than 5 MiB with valid raster structure, EXIF/XMP/text metadata stripped, a ≥32 px short side, ≥16,384 pixels and no more than 20 MiB combined; sidecar entries and `reference_image_paths` match exactly and the packaged source directory has no orphans. Each image appears in exactly one `<figure class="post-photo source-image">` whose caption contains the exact source page URL, license URL, publisher/creator and attribution text.
+
 ## Image provenance
 
 `draft/image-provenance.json` records:
@@ -127,8 +136,8 @@ Scheduled drafts must use `layout: post`, `active: journal`, `header_ai: true`, 
 
 ## Publication scope
 
-`validation/path-scope.txt` is derived by code and contains exactly three lines: one post, one 1672×941 hero, one 700×394 thumbnail. It is never hand-authored.
+`validation/path-scope.txt` is derived by code from the manifest and lists the full derived package: one post, one 1672×941 hero, one 700×394 thumbnail and every validated source image (4–12). It is never hand-authored.
 
-`validation/validation.json` records a SHA-256 for each of those files. Approval binds the package paths/bytes plus the current git base and approval context (`.claude/editorial-policy.yml`, `_config.yml`, `_layouts/`, `_includes/`, `css/`, `js/`). Approval deletes the pre-approval final report and scope so both must be regenerated; render-context files must be clean/committed; `apply-editorial-package.mjs` refuses existing live targets; and staged verification requires three newly added `100644` files on an upstream-synchronised `gh-pages` branch.
+`validation/validation.json` records a SHA-256 for each of those files. Approval binds the package paths/bytes plus the current git base and approval context (`.claude/editorial-policy.yml`, `_config.yml`, `_layouts/`, `_includes/`, `css/`, `js/`). Approval deletes the pre-approval final report and scope so both must be regenerated; render-context files must be clean/committed; `apply-editorial-package.mjs` refuses existing live targets; and staged verification requires every derived package path to be a newly added `100644` file on an upstream-synchronised `gh-pages` branch.
 
-After deployment, only `tools/verify-deployment.mjs` creates `validation/deployment-proof.json` with no overwrite. It records the verifier path/hash, run id, approved artifact SHA-256, 40-character pushed/remote/workflow SHA, exact JellyGGumi GitHub Pages workflow URL and success conclusion, anonymous expected permalink URL/status/content type, expected title and body probe checks, two exact anonymous image URLs/statuses/content types/byte hashes and UTC verification timestamp. The `published` transition also requires local `gh-pages` HEAD to equal that SHA, the HEAD commit to add exactly the three approved paths, and live working-tree bytes to equal the package.
+After deployment, only `tools/verify-deployment.mjs` creates `validation/deployment-proof.json` with no overwrite. It records the verifier path/hash, run id, approved artifact SHA-256, 40-character pushed/remote/workflow SHA, exact JellyGGumi GitHub Pages workflow URL and success conclusion, anonymous expected permalink URL/status/content type, expected title and body probe checks, every exact anonymous cover and source image URL/status/content type/byte hash and UTC verification timestamp. The `published` transition also requires local `gh-pages` HEAD to equal that SHA, the HEAD commit to add exactly the approved derived package paths, and live working-tree bytes to equal the package.

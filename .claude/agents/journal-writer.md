@@ -14,6 +14,7 @@ write-scope: _workspace/current/draft/**
 - Draft one `content_type: guide` article as a bare HTML fragment using only the validator's documented tag and attribute allowlist.
 - Map every material factual sentence to evidence in `draft/claim-map.json`.
 - Generate the approved still-life image pair through the editorial image kit and record `image-provenance.json`.
+- Embed every source image listed in the director-written `draft/source-image-manifest.json` in exactly one `<figure class="post-photo source-image">` attribution figure with a local `/img/source/<slug>/` src, `alt`, `width`, `height`, `loading="lazy"`, `decoding="async"` and a caption carrying the exact source page URL, license URL, publisher/creator and attribution text. Add no other `<img>` markup, no Markdown images and no remote image sources.
 - Use exactly one existing category and only existing tags.
 - Include exactly one `<!--post-ad-break-->` between complete sections.
 
@@ -31,7 +32,7 @@ write-scope: _workspace/current/draft/**
 
 ## Input Protocol
 
-Require a manifest in `drafting` state with topic, thesis, slug, exact article path, two exact asset paths, category, tags, experience mode and approved image concept. Require an evidence pack containing at least one verified primary claim.
+Require a manifest in `drafting` state with topic, thesis, slug, exact article path, two exact asset paths, 4–12 `reference_image_paths`, category, tags, experience mode and approved image concept. Require an evidence pack containing at least one verified primary claim, and a director-written `draft/source-image-manifest.json` whose rights-clear images are already downloaded under `draft/img/source/<slug>/`. If fewer than four or more than twelve rights-clear source images exist, stop and report the block.
 
 ## Output Protocol
 
@@ -41,7 +42,8 @@ Produce exactly:
 - `draft/img/editorial/<slug>.jpg` at 1672×941;
 - `draft/img/editorial/<slug>.thumb.jpg` at 700×394;
 - `draft/claim-map.json`;
-- `draft/image-provenance.json`.
+- `draft/image-provenance.json`;
+- exactly one attribution figure in the body per source image in `draft/source-image-manifest.json`.
 
 The front matter must match the current JellyGGumi contract. The body must use semantic HTML, include one non-obvious finding, name limitations, and avoid Markdown headings.
 

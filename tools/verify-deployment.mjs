@@ -4,6 +4,13 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
+import {
+  MIN_REFERENCE_IMAGES,
+  derivePackagePaths,
+  extractSourceFigures,
+  imageContentTypePattern,
+  rasterSignatureMatches
+} from './lib/source-images.mjs';
 
 const argv = process.argv.slice(2);
 let rootValue = process.cwd();
@@ -148,10 +155,11 @@ if (!/^[a-f0-9]{40}$/.test(headSha) || headSha !== upstreamSha || headSha !== re
 if (parentSha !== manifest.approval_base_sha) throw new Error('Published commit parent does not match the authorized base SHA');
 if (clean !== '') throw new Error('Worktree must be clean before deployment verification');
 
-const expectedPaths = [manifest.article_path, ...(Array.isArray(manifest.asset_paths) ? manifest.asset_paths : [])].sort();
-if (expectedPaths.length !== 3) throw new Error('Deployment verification requires exactly three package paths');
+const derivedPackage = derivePackagePaths(manifest);
+if (derivedPackage.errors.length) throw new Error(`Approved manifest package paths are invalid: ${derivedPackage.errors[0]}`);
+const expectedPaths = derivedPackage.all;
 const diff = gitText(['diff-tree', '--root', '--no-commit-id', '--name-status', '-r', 'HEAD']).split('\n').filter(Boolean).map((line) => line.split(/\s+/)).sort((a, b) => a[1].localeCompare(b[1]));
-if (diff.length !== 3 || !diff.every(([status, relative], index) => status === 'A' && relative === expectedPaths[index])) throw new Error('HEAD must add exactly the authorized three paths');
+if (diff.length !== expectedPaths.length || !diff.every(([status, relative], index) => status === 'A' && relative === expectedPaths[index])) throw new Error('HEAD must add exactly the authorized derived package paths');
 
 const articleFile = path.join(root, manifest.article_path);
 const packagedArticle = path.join(current, 'draft', manifest.article_path);
@@ -161,10 +169,14 @@ const { frontMatter, body } = splitDocument(articleText);
 const expectedTitle = frontMatterScalar(frontMatter, 'title');
 const paragraphTexts = [...body.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)].map((match) => normalizeText(match[1])).filter((text) => text.length >= 80);
 const bodyProbe = paragraphTexts[0]?.slice(0, 120) || '';
+const sourceExtraction = extractSourceFigures(body);
+if (sourceExtraction.errors.length) throw new Error(`Authorized article source figures are invalid: ${sourceExtraction.errors[0]}`);
+const expectedSourceFigures = sourceExtraction.figures;
 if (!expectedTitle || bodyProbe.length < 60) throw new Error('Authorized article lacks a stable title or body probe');
+if (expectedSourceFigures.length < MIN_REFERENCE_IMAGES) throw new Error(`Authorized article lacks ${MIN_REFERENCE_IMAGES} source-image attribution figures`);
 const stem = path.basename(manifest.article_path, '.md').replace(/^\d{4}-\d{2}-\d{2}-/, '');
 const permalink = `${siteOrigin}/journal/${stem}/`;
-const imageUrls = manifest.asset_paths.map((relative) => `${siteOrigin}/${relative}`).sort();
+const imageUrls = [...derivedPackage.assetPaths, ...derivedPackage.referenceImagePaths].map((relative) => `${siteOrigin}/${relative}`).sort();
 
 const deadline = Date.now() + waitSeconds * 1000;
 const pagesRun = await waitForPagesRun(headSha, deadline);
@@ -178,8 +190,9 @@ while (true) {
     const liveText = normalizeText(html);
     const titleCheck = liveText.includes(normalizeText(expectedTitle));
     const bodyCheck = liveText.includes(bodyProbe);
-    if (pageResponse.status !== 200 || finalPageUrl.origin !== siteOrigin || !/^text\/html\b/i.test(pageResponse.headers.get('content-type') || '') || !titleCheck || !bodyCheck) throw new Error(`Page not ready: status=${pageResponse.status} title=${titleCheck} body=${bodyCheck}`);
-    pageEvidence = { status: pageResponse.status, content_type: pageResponse.headers.get('content-type') || '', title_check: titleCheck, body_check: bodyCheck };
+    const sourceCreditsCheck = expectedSourceFigures.every((figure) => html.includes(figure.src) && liveText.includes(normalizeText(figure.captionHtml)));
+    if (pageResponse.status !== 200 || finalPageUrl.origin !== siteOrigin || !/^text\/html\b/i.test(pageResponse.headers.get('content-type') || '') || !titleCheck || !bodyCheck || !sourceCreditsCheck) throw new Error(`Page not ready: status=${pageResponse.status} title=${titleCheck} body=${bodyCheck} source_credits=${sourceCreditsCheck}`);
+    pageEvidence = { status: pageResponse.status, content_type: pageResponse.headers.get('content-type') || '', title_check: titleCheck, body_check: bodyCheck, source_credits_check: sourceCreditsCheck, source_credit_count: expectedSourceFigures.length };
 
     const checkedImages = [];
     for (const url of imageUrls) {
@@ -190,7 +203,8 @@ while (true) {
       const expectedBytes = fs.readFileSync(path.join(current, 'draft', relative));
       const sha256 = createHash('sha256').update(bytes).digest('hex');
       const expectedSha256 = createHash('sha256').update(expectedBytes).digest('hex');
-      if (response.status !== 200 || finalUrl.origin !== siteOrigin || !/^image\/jpeg\b/i.test(response.headers.get('content-type') || '') || sha256 !== expectedSha256) throw new Error(`Image not ready or mismatched: ${url}`);
+      const typePattern = imageContentTypePattern(relative);
+      if (response.status !== 200 || finalUrl.origin !== siteOrigin || !typePattern || !typePattern.test(response.headers.get('content-type') || '') || sha256 !== expectedSha256 || !rasterSignatureMatches(relative, bytes)) throw new Error(`Image not ready or mismatched: ${url}`);
       checkedImages.push({ url, status: response.status, content_type: response.headers.get('content-type') || '', sha256 });
     }
     imageEvidence = checkedImages;
@@ -219,6 +233,8 @@ const proof = {
   title_check: pageEvidence.title_check,
   body_probe: bodyProbe,
   body_check: pageEvidence.body_check,
+  source_credits_check: pageEvidence.source_credits_check,
+  source_credit_count: pageEvidence.source_credit_count,
   image_urls: imageEvidence,
   verified_at: new Date().toISOString()
 };

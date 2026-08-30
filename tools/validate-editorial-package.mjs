@@ -3,6 +3,14 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
+import {
+  MIN_REFERENCE_IMAGES,
+  derivePackagePaths,
+  validateSourceImageManifest,
+  extractSourceFigures,
+  bindFiguresToImages,
+  inspectRasterImage
+} from './lib/source-images.mjs';
 
 const argv = process.argv.slice(2);
 let repoRootValue = process.cwd();
@@ -277,7 +285,7 @@ const manifestFile = path.join(current, 'manifest.json');
 const manifest = fs.existsSync(manifestFile) ? readJson(manifestFile) : null;
 pass(Boolean(manifest), 'manifest.json is missing or invalid');
 if (manifest) {
-  for (const key of ['schema_version', 'run_id', 'started_at_kst', 'target_date', 'mode', 'status', 'topic', 'slug', 'thesis', 'content_type', 'experience_mode', 'category', 'tags', 'article_path', 'asset_paths', 'revision_loops', 'publication_requires_confirmation', 'gates']) {
+  for (const key of ['schema_version', 'run_id', 'started_at_kst', 'target_date', 'mode', 'status', 'topic', 'slug', 'thesis', 'content_type', 'experience_mode', 'category', 'tags', 'article_path', 'asset_paths', 'reference_image_paths', 'revision_loops', 'publication_requires_confirmation', 'gates']) {
     pass(manifest[key] !== undefined && manifest[key] !== null, `Manifest field is missing: ${key}`);
   }
   pass(manifest.schema_version === 1, `Unsupported manifest schema_version: ${manifest.schema_version}`);
@@ -295,12 +303,17 @@ if (manifest) {
   pass(/^[a-z0-9][a-z0-9-]*$/.test(manifest.slug || ''), `Manifest slug is unsafe: ${manifest.slug}`);
   pass(Array.isArray(manifest.tags) && manifest.tags.length >= 1, 'Manifest tags are missing');
   pass(Array.isArray(manifest.asset_paths) && manifest.asset_paths.length === 2, 'Manifest must declare exactly two asset paths');
+  pass(Array.isArray(manifest.reference_image_paths) && manifest.reference_image_paths.length >= MIN_REFERENCE_IMAGES, `Manifest must declare at least ${MIN_REFERENCE_IMAGES} source-derived reference image paths`);
   if (manifest.experience_mode === 'anchored-observation') {
     pass(manifest.observation_anchor && isHttpUrl(manifest.observation_anchor.source_url), 'Anchored observation requires observation_anchor.source_url');
     pass(nonempty(manifest.observation_anchor?.note, 10), 'Anchored observation requires a scoped note');
   }
   if (stage === 'draft') pass(['drafting', 'reviewing'].includes(manifest.status), `Draft validation requires drafting/reviewing status, found ${manifest.status}`);
 }
+const derivedPackage = manifest
+  ? derivePackagePaths(manifest)
+  : { errors: [], all: [], referenceImagePaths: [] };
+for (const issue of derivedPackage.errors) pass(false, `Package paths: ${issue}`);
 
 const tasksFile = path.join(current, 'tasks.json');
 const tasks = fs.existsSync(tasksFile) ? readJson(tasksFile) : null;
@@ -399,6 +412,15 @@ if (draftPath) {
   pass(Boolean(frontMatter), 'Draft has no valid YAML front matter');
 }
 
+// Source-derived attribution figures are the only allowed <img> markup. They are
+// extracted and validated separately; the stripped body (captions preserved)
+// keeps the existing tight HTML allowlist, so any stray <img>, remote src or
+// non-canonical source-image markup still fails closed.
+const sourceFigureExtraction = extractSourceFigures(body);
+const sourceFigures = sourceFigureExtraction.figures;
+const safetyBody = sourceFigureExtraction.strippedBody;
+for (const issue of sourceFigureExtraction.errors) failures.push(`Source figure: ${issue}`);
+
 const title = scalar(frontMatter, 'title');
 const subtitle = scalar(frontMatter, 'subtitle');
 const description = scalar(frontMatter, 'description');
@@ -481,9 +503,9 @@ pass(!/^[ \t]{0,3}(?:```|~~~|[-*+][ \t]+|\d+\.[ \t]+|>[ \t]*|(?:-{3,}|\*{3,}|_{3
 pass(!/<\/?(?:html|head|body)\b/i.test(body), 'Body must be an HTML fragment, not a full document');
 pass((body.match(/<p\b/gi) || []).length >= 8, 'Body needs at least eight paragraphs');
 pass((body.match(/<h3\b/gi) || []).length >= 4, 'Body needs at least four h3 sections');
-const balanceIssues = htmlBalance(body);
+const balanceIssues = htmlBalance(safetyBody);
 for (const issue of balanceIssues) failures.push(`HTML balance: ${issue}`);
-const safetyIssues = htmlSafety(body);
+const safetyIssues = htmlSafety(safetyBody);
 for (const issue of safetyIssues) failures.push(`HTML safety: ${issue}`);
 const plainBody = body.replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<style[\s\S]*?<\/style>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/&[a-zA-Z0-9#]+;/g, ' ');
 const wordCount = (plainBody.match(/\b[A-Za-z0-9][A-Za-z0-9'’-]*\b/g) || []).length;
@@ -530,6 +552,9 @@ for (const [label, file, width, height] of [['hero', packagedFull, 1672, 941], [
 }
 const packagedImages = walk(path.join(current, 'draft', 'img', 'editorial'), (file) => /\.jpe?g$/i.test(file));
 pass(packagedImages.length === 2, `Expected exactly two packaged editorial images, found ${packagedImages.length}`);
+if (manifest) {
+  for (const issue of derivePackagePaths(manifest).errors) failures.push(`Package paths: ${issue}`);
+}
 
 const provenanceFile = path.join(current, 'draft', 'image-provenance.json');
 const provenance = fs.existsSync(provenanceFile) ? readJson(provenanceFile) : null;
@@ -567,6 +592,41 @@ const sourceMapFile = path.join(current, 'evidence', 'source-map.md');
 pass(regularFile(sourceMapFile) && fs.readFileSync(sourceMapFile, 'utf8').trim().length >= 100, 'evidence/source-map.md is missing or too short');
 const sourceUrls = new Set(claims.map((claim) => claim.source_url));
 for (const source of sources) pass(sourceUrls.has(source.url), `Front-matter source is absent from evidence pack: ${source.url}`);
+
+// Source-image licensing sidecar: fail closed on any missing or unclear right.
+const referencePaths = derivedPackage.referenceImagePaths;
+const sourceImageManifestFile = path.join(current, 'draft', 'source-image-manifest.json');
+const sourceImageManifest = fs.existsSync(sourceImageManifestFile) ? readJson(sourceImageManifestFile) : null;
+pass(Boolean(sourceImageManifest), 'draft/source-image-manifest.json is missing or invalid');
+if (sourceImageManifest && manifest) {
+  const sidecarResult = validateSourceImageManifest(sourceImageManifest, {
+    manifest,
+    evidenceSourceUrls: sourceUrls,
+    referenceImagePaths: manifest.reference_image_paths,
+    fileInfo: (relative) => {
+      const file = path.join(current, 'draft', relative);
+      if (!regularFile(file)) return null;
+      const bytes = fs.readFileSync(file);
+      const raster = inspectRasterImage(relative, bytes);
+      return {
+        regular: true,
+        bytes: bytes.length,
+        sha256: createHash('sha256').update(bytes).digest('hex'),
+        validRaster: raster.valid,
+        width: raster.width,
+        height: raster.height,
+        metadataSegments: raster.metadataSegments
+      };
+    }
+  });
+  for (const issue of sidecarResult.errors) failures.push(`Source image manifest: ${issue}`);
+  const declaredSourcePaths = new Set(sidecarResult.images.map((image) => String(image?.local_path || '')));
+  for (const file of walk(path.join(current, 'draft', 'img', 'source'))) {
+    const relative = path.relative(path.join(current, 'draft'), file).split(path.sep).join('/');
+    pass(declaredSourcePaths.has(relative), `Packaged source image has no sidecar entry: ${relative}`);
+  }
+  for (const issue of bindFiguresToImages(sourceFigures, sidecarResult.images, sidecarResult.fileFacts)) failures.push(`Source figure: ${issue}`);
+}
 
 const claimMapFile = path.join(current, 'draft', 'claim-map.json');
 const claimMap = fs.existsSync(claimMapFile) ? readJson(claimMapFile) : null;
@@ -638,7 +698,10 @@ if (stage === 'final') {
   const draftValidation = fs.existsSync(draftValidationFile) ? readJson(draftValidationFile) : null;
   pass(draftValidation?.result === 'PASS', `Draft-stage validation is missing or not PASS: ${draftValidation?.result || 'missing'}`);
   const scopeFile = path.join(current, 'validation', 'path-scope.txt');
-  pass(regularFile(scopeFile) && fs.readFileSync(scopeFile, 'utf8').trim().split('\n').filter(Boolean).length === 3, 'path-scope.txt must contain exactly three paths');
+  const recordedScope = regularFile(scopeFile)
+    ? fs.readFileSync(scopeFile, 'utf8').split('\n').map((line) => line.trim()).filter(Boolean).sort()
+    : [];
+  pass(derivedPackage.all.length > 0 && JSON.stringify(recordedScope) === JSON.stringify(derivedPackage.all), `path-scope.txt must exactly match the derived package paths. Expected ${JSON.stringify(derivedPackage.all)}, got ${JSON.stringify(recordedScope)}`);
   if (manifest) {
     pass(['reviewing', 'ready_for_review', 'approved'].includes(manifest.status), `Final validation requires reviewing/ready_for_review/approved status, found ${manifest.status}`);
     const requiredGateKeys = [...(manifest.mode === 'publish-on-green' ? ['GT'] : []), ...Array.from({ length: 11 }, (_, index) => `G${index + 1}`)];
@@ -651,8 +714,9 @@ if (stage === 'final') {
 }
 
 const packageSha256 = {};
-for (const [relative, file] of [[manifest?.article_path, draftPath], [fullAsset, packagedFull], [thumbAsset, packagedThumb]]) {
-  if (relative && file && regularFile(file)) packageSha256[relative] = createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+for (const relative of derivedPackage.all) {
+  const file = path.join(current, 'draft', relative);
+  if (regularFile(file)) packageSha256[relative] = createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 }
 
 const report = {
@@ -668,6 +732,7 @@ const report = {
     sections: (body.match(/<h3\b/gi) || []).length,
     internal_links: internalLinks,
     sources: sources.length,
+    source_images: sourceFigures.length,
     evidence_claims: claims.length,
     mapped_claims: mappedClaims.length,
     nearest_existing: nearest

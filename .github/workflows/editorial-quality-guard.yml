@@ -10,6 +10,7 @@ on:
     paths:
       - "_posts/**"
       - "img/editorial/**"
+      - "img/source/**"
       - "journal/**"
       - "_includes/**"
       - "_layouts/**"
@@ -25,6 +26,7 @@ on:
     paths:
       - "_posts/**"
       - "img/editorial/**"
+      - "img/source/**"
       - "journal/**"
       - "_includes/**"
       - "_layouts/**"
@@ -55,6 +57,7 @@ jobs:
       - name: Check harness tool syntax
         run: |
           node --check tools/editorial-workspace.mjs
+          node --check tools/lib/source-images.mjs
           node --check tools/capture-google-trends.mjs
           node --check tools/apply-editorial-package.mjs
           node --check tools/verify-publication-scope.mjs

@@ -60,11 +60,39 @@ voice_profile:
     - emoji-dense-prose
     - generic-engagement-cta
     - invented-family-detail
+source_images:
+  effective_date: "2026-08-31"
+  minimum_count: 4
+  maximum_count: 12
+  directory: "img/source/<slug>/"
+  sidecar: "_workspace/current/draft/source-image-manifest.json"
+  allowed_extensions: [png, jpg, jpeg, webp]
+  min_bytes: 1
+  max_bytes: 5242880
+  max_total_bytes: 20971520
+  require_raster_signature: true
+  require_metadata_stripped: true
+  minimum_pixels: 16384
+  minimum_short_side: 32
+  allowed_license_bases:
+    - public-domain
+    - cc0
+    - cc-by
+    - cc-by-sa
+    - kogl-type-1
+    - repo-license-covers-assets
+    - official-press-kit
+  minimum_license_quote_chars: 40
+  source_page_must_be_evidence_url: true
+  require_unique_paths_hashes_download_urls: true
+  repo_license_requires_pinned_ref: true
+  fail_closed_on_unlisted_license: true
 publication_scope:
   allowed:
     - "_posts/YYYY-MM-DD-Title-In-Kebab-Case.md"
     - "img/editorial/<slug>.jpg"
     - "img/editorial/<slug>.thumb.jpg"
+    - "img/source/<slug>/<image>.(png|jpg|jpeg|webp)"
   forbidden:
     - "_config.yml"
     - "_includes/**"
@@ -82,6 +110,7 @@ standing_constraints:
   - no-automated-family-records
   - no-new-taxonomy-without-stub-page
   - no-ai-image-without-disclosure
+  - no-source-image-without-verified-license
   - no-sponsored-or-affiliate-drafts
   - no-publish-without-green-gates
   - no-publish-outside-standing-or-explicit-authority

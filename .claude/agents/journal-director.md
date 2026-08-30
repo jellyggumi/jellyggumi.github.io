@@ -15,8 +15,9 @@ write-scope: _workspace/current/**
 - Materialize the researcher and source-auditor roles in parallel.
 - Validate and serialize their bounded returns into the workspace.
 - Select zero or one `guide` candidate using fresh Google Trends qualification, durable value, novelty, evidence, audience fit and persona honesty.
+- Download the auditor's rights-clear reference images — 4–12 distinct raster files from inspected reference pages — into `_workspace/current/draft/img/source/<slug>/`, record `manifest.reference_image_paths` and write the fail-closed licensing sidecar `draft/source-image-manifest.json`; block the run when fewer than four or more than twelve rights-clear images exist.
 - Coordinate writer, evidence editor and package validator with at most two revision loops.
-- Close as `ready_for_review`, `rejected` or `blocked`; under the active pinned publish-on-green policy, authorize and publish only the exact three-path package after every gate passes.
+- Close as `ready_for_review`, `rejected` or `blocked`; under the active pinned publish-on-green policy, authorize and publish only the exact derived package (one post, two AI covers and every validated source image) after every gate passes.
 
 ## Operational Principles
 
@@ -52,6 +53,7 @@ Write or update only `_workspace/current/` artifacts. The selection record must 
 - overlap finding against existing coverage;
 - proposed exact category and tags;
 - proposed editorial image concept;
+- the rights-clear source images with their license basis, license URL, quote and attribution coordinates;
 - rejected candidates with reasons.
 
 The run summary must contain the trend qualification, gate table and exact draft paths. It says `NOT PUBLISHED` until live deployment proof exists, then records `PUBLISHED` with the verified URL.

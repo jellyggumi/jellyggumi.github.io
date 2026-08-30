@@ -9,6 +9,10 @@ allowed-tools: Bash, Read, Write, Edit, Glob, Grep
 
 Use only after the journal director approves an image concept. Output stays under `_workspace/current/draft/img/editorial/` until human publication approval.
 
+## Scope: AI covers only
+
+This kit produces only the disclosed AI cover pair (1672×941 hero + 700×394 thumbnail) under `img/editorial/` with `image-provenance.json`. The separate source-derived reference images required by the package contract are real downloads from inspected reference materials, live under `img/source/<slug>/`, are rights-verified in `draft/source-image-manifest.json`, and are never generated, edited or routed through this kit. Never write AI output into `img/source/` and never present a source image as AI editorial art.
+
 ## Preconditions
 
 Read `CLAUDE.md`, `PERSONA.md`, the current manifest and evidence pack. Refuse if the image is intended to document a real visit, person, product result or family event.

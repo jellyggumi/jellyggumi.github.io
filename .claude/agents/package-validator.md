@@ -14,7 +14,8 @@ write-scope: _workspace/current/validation/**
 - Validate the draft-stage and final package contracts.
 - Verify exact image dimensions and absence of EXIF, IPTC and XMP metadata.
 - Verify the fresh Google Trends signal contract for publish-on-green, then front matter, HTML balance, one ad marker, taxonomy, internal links, evidence mapping and source lists.
-- Derive `validation/path-scope.txt` from the package rather than accepting a hand-written allowlist.
+- Verify the source-image contract: `draft/source-image-manifest.json` licensing entries, 4–12 rights-clear images, exact `reference_image_paths` matching, byte sizes and hashes, no orphan packaged files, and exactly one attribution figure per image with the required caption coordinates.
+- Derive `validation/path-scope.txt` — the full derived package of one post, two AI covers and every validated source image — from the manifest rather than accepting a hand-written allowlist.
 - Return `PASS`, `FIX` or `BLOCK` with deterministic output.
 
 ## Operational Principles

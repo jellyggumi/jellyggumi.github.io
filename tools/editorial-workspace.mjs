@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createHash, randomBytes } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
+import { MIN_REFERENCE_IMAGES, derivePackagePaths, imageContentTypePattern } from './lib/source-images.mjs';
 
 const args = process.argv.slice(2);
 const command = args.shift() || 'status';
@@ -115,11 +116,13 @@ function git(args, encoding = 'utf8') {
 }
 
 function packageDigest(manifest) {
-  const paths = [manifest?.article_path, ...(Array.isArray(manifest?.asset_paths) ? manifest.asset_paths : [])].filter(Boolean).sort();
-  if (paths.length !== 3) throw new Error(`Approval digest requires exactly three package paths, found ${paths.length}`);
+  // The approval digest always covers the derived package: one post, the two
+  // AI cover files and every validated source-derived reference image.
+  const derived = derivePackagePaths(manifest);
+  if (derived.errors.length) throw new Error(`Approval digest package is invalid: ${derived.errors[0]}`);
+  const paths = derived.all;
   const digest = createHash('sha256');
   for (const relative of paths) {
-    if (!/^(_posts\/\d{4}-\d{2}-\d{2}-[A-Za-z0-9][A-Za-z0-9-]*\.md|img\/editorial\/[a-z0-9][a-z0-9.-]*\.jpg)$/.test(relative)) throw new Error(`Unsafe package path in approval digest: ${relative}`);
     const file = path.join(currentDir, 'draft', relative);
     if (!regularFile(file)) throw new Error(`Approval package file is missing or unsafe: ${relative}`);
     digest.update(relative);
@@ -197,7 +200,9 @@ function assertReadyEvidence(manifest) {
     throw new Error('Ready status requires a PASS independent review with claim_coverage 1.0');
   }
   const artifacts = approvalArtifacts(manifest);
-  const expectedPaths = [manifest.article_path, ...manifest.asset_paths].sort();
+  const derived = derivePackagePaths(manifest);
+  if (derived.errors.length) throw new Error(`Ready package paths are invalid: ${derived.errors[0]}`);
+  const expectedPaths = derived.all;
   if (JSON.stringify(Object.keys(validation.package_sha256 || {}).sort()) !== JSON.stringify(expectedPaths)) {
     throw new Error('Final validation hash set does not exactly match the package');
   }
@@ -384,6 +389,7 @@ function scaffoldCurrent(manifest) {
   for (const lane of lanes) fs.mkdirSync(path.join(currentDir, lane), { recursive: true });
   fs.mkdirSync(path.join(currentDir, 'draft', '_posts'), { recursive: true });
   fs.mkdirSync(path.join(currentDir, 'draft', 'img', 'editorial'), { recursive: true });
+  fs.mkdirSync(path.join(currentDir, 'draft', 'img', 'source'), { recursive: true });
   writeManifest(manifest);
   fs.writeFileSync(runLockPath, `${JSON.stringify({ schema_version: 1, run_id: manifest.run_id, lock_id: manifest.run_lock_id, state: 'active', created_at_kst: manifest.started_at_kst }, null, 2)}\n`, { flag: 'wx', mode: 0o600 });
   fs.writeFileSync(
@@ -458,6 +464,7 @@ function start() {
       tags: [],
       article_path: null,
       asset_paths: [],
+      reference_image_paths: [],
       revision_loops: 0,
       publication_requires_confirmation: publication.publicationRequiresConfirmation,
       standing_publish_routine_id: publication.mode === 'publish-on-green' ? standingPublishRoutineId : null,
@@ -538,10 +545,13 @@ function setStatus() {
     const proof = readJson(proofPath);
     const articleTitle = path.basename(manifest.article_path, '.md').replace(/^\d{4}-\d{2}-\d{2}-/, '');
     const expectedPermalink = `https://jellyggumi.github.io/journal/${articleTitle}/`;
-    const expectedImageUrls = manifest.asset_paths.map((item) => `https://jellyggumi.github.io/${item}`).sort();
-    const expectedImageDigests = new Map(manifest.asset_paths.map((item) => [`https://jellyggumi.github.io/${item}`, createHash('sha256').update(fs.readFileSync(path.join(currentDir, 'draft', item))).digest('hex')]));
+    const derived = derivePackagePaths(manifest);
+    if (derived.errors.length) throw new Error(`Published package paths are invalid: ${derived.errors[0]}`);
+    const expectedImagePaths = [...derived.assetPaths, ...derived.referenceImagePaths];
+    const expectedImageUrls = expectedImagePaths.map((item) => `https://jellyggumi.github.io/${item}`).sort();
+    const expectedImageDigests = new Map(expectedImagePaths.map((item) => [`https://jellyggumi.github.io/${item}`, createHash('sha256').update(fs.readFileSync(path.join(currentDir, 'draft', item))).digest('hex')]));
     const actualImageUrls = Array.isArray(proof.image_urls) ? proof.image_urls.map((item) => item?.url).sort() : [];
-    const validImages = Array.isArray(proof.image_urls) && proof.image_urls.length === 2 && proof.image_urls.every((item) => item?.status === 200 && /^image\/jpeg\b/i.test(item?.content_type || '') && item?.sha256 === expectedImageDigests.get(item?.url)) && JSON.stringify(actualImageUrls) === JSON.stringify(expectedImageUrls);
+    const validImages = Array.isArray(proof.image_urls) && proof.image_urls.length === expectedImagePaths.length && proof.image_urls.every((item) => item?.status === 200 && Boolean(imageContentTypePattern(item?.url)?.test(item?.content_type || '')) && item?.sha256 === expectedImageDigests.get(item?.url)) && JSON.stringify(actualImageUrls) === JSON.stringify(expectedImageUrls);
     const proofTime = Date.parse(proof.verified_at || '');
     const normalizedProofTime = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{3})?Z$/.test(proof.verified_at || '') && Number.isFinite(proofTime) && proofTime <= Date.now() + 10 * 60 * 1000 && Date.now() - proofTime <= 30 * 60 * 1000;
     const validShaBinding = /^[a-f0-9]{40}$/.test(proof.remote_sha || '') && proof.pushed_sha === proof.remote_sha && proof.workflow_sha === proof.remote_sha;
@@ -550,7 +560,15 @@ function setStatus() {
     const articleSource = fs.readFileSync(path.join(currentDir, 'draft', manifest.article_path), 'utf8');
     const frontMatter = articleSource.match(/^---\s*\n([\s\S]*?)\n---/)?.[1] || '';
     const expectedTitle = (frontMatter.match(/^title:\s*(.*)$/m)?.[1] || '').trim().replace(/^['"]|['"]$/g, '');
-    const validContentProof = proof.expected_title === expectedTitle && proof.title_check === true && proof.body_check === true && typeof proof.body_probe === 'string' && proof.body_probe.length >= 60 && normalizedHtmlText(articleSource).includes(proof.body_probe);
+    const validContentProof = proof.expected_title === expectedTitle
+      && proof.title_check === true
+      && proof.body_check === true
+      && proof.source_credits_check === true
+      && Number.isInteger(proof.source_credit_count)
+      && proof.source_credit_count >= MIN_REFERENCE_IMAGES
+      && typeof proof.body_probe === 'string'
+      && proof.body_probe.length >= 60
+      && normalizedHtmlText(articleSource).includes(proof.body_probe);
     if (proof.schema_version !== 1 || !validVerifier || proof.run_id !== manifest.run_id || proof.approval_artifact_sha256 !== manifest.approval_artifact_sha256 || !validShaBinding || !/^https:\/\/github\.com\/jellyggumi\/jellyggumi\.github\.io\/actions\/runs\/\d+$/.test(proof.workflow_url || '') || proof.workflow_conclusion !== 'success' || proof.permalink !== expectedPermalink || proof.permalink_status !== 200 || !/^text\/html\b/i.test(proof.permalink_content_type || '') || !validContentProof || !validImages || !normalizedProofTime) {
       throw new Error('deployment-proof.json is incomplete, invalid, or does not match the authorized package');
     }
@@ -564,11 +582,11 @@ function setStatus() {
     if (fetched.status !== 0 || branch.status !== 0 || branch.stdout.trim() !== 'gh-pages' || origin.status !== 0 || !/^(?:https:\/\/github\.com\/jellyggumi\/jellyggumi\.github\.io\.git|git@github\.com:jellyggumi\/jellyggumi\.github\.io\.git)$/.test(origin.stdout.trim()) || head.status !== 0 || head.stdout.trim() !== proof.remote_sha || upstream.status !== 0 || upstream.stdout.trim() !== proof.remote_sha || parent.status !== 0 || parent.stdout.trim() !== manifest.approval_base_sha || clean.status !== 0 || clean.stdout.trim() !== '') {
       throw new Error('Deployment proof does not match clean local/upstream gh-pages HEAD, authorized parent, and origin');
     }
-    const expectedPaths = [manifest.article_path, ...manifest.asset_paths].sort();
+    const expectedPaths = derived.all;
     const commitDiff = git(['diff-tree', '--root', '--no-commit-id', '--name-status', '-r', 'HEAD']);
     const committed = commitDiff.status === 0 ? commitDiff.stdout.trim().split('\n').filter(Boolean).map((line) => line.split(/\s+/)).sort((a, b) => a[1].localeCompare(b[1])) : [];
     if (committed.length !== expectedPaths.length || !committed.every(([status, relative], index) => status === 'A' && relative === expectedPaths[index])) {
-      throw new Error('Published commit must add exactly the approved post and two images');
+      throw new Error('Published commit must add exactly the approved derived package paths');
     }
     for (const relative of expectedPaths) {
       const liveFile = path.join(repoRoot, relative);
@@ -595,7 +613,9 @@ function approvalDigest() {
   if (!manifest || manifest.status !== 'ready_for_review') throw new Error('Approval digest requires a ready_for_review current run');
   assertRunOwnership(manifest);
   const { artifacts, validation } = assertReadyEvidence(manifest);
-  console.log(JSON.stringify({ run_id: manifest.run_id, artifact_sha256: artifacts.digest, package_sha256: artifacts.packageSha256, render_context_sha256: artifacts.renderSha256, base_sha: artifacts.baseSha, render_context_files: artifacts.renderFiles.length, validation_generated_at: validation.generated_at, paths: [manifest.article_path, ...manifest.asset_paths].sort() }, null, 2));
+  const derived = derivePackagePaths(manifest);
+  if (derived.errors.length) throw new Error(`Approval package paths are invalid: ${derived.errors[0]}`);
+  console.log(JSON.stringify({ run_id: manifest.run_id, artifact_sha256: artifacts.digest, package_sha256: artifacts.packageSha256, render_context_sha256: artifacts.renderSha256, base_sha: artifacts.baseSha, render_context_files: artifacts.renderFiles.length, validation_generated_at: validation.generated_at, paths: derived.all }, null, 2));
 }
 
 function status() {

@@ -14,13 +14,13 @@ Aside cron `h78L2R0UJFRhjS9O` wakes daily at 01:00 `Asia/Seoul` to research Goog
 01:07  qualify trend rows for audience fit and durable value; select zero to five research candidates
 01:10  parallel official-source discovery and primary-source audit
 01:25  director selects zero or one guide; no-candidate is valid
-01:30  writer drafts HTML and makes disclosed image pair
+01:30  director downloads 4–12 rights-clear source images + licensing sidecar; writer drafts HTML with attribution figures and makes disclosed AI cover pair
 01:50  evidence editor and package validator review in parallel
 02:00  bounded revision if needed, maximum two total
 02:10  close ready_for_review, rejected or blocked
-02:12  if green, bind standing approval digest; regenerate validation; apply and stage exactly three paths
+02:12  if green, bind standing approval digest; regenerate validation; apply and stage exactly the derived package paths
 02:15  verify staged scope; commit once; push once
-02:20  run tools/verify-deployment.mjs; independently verify matching Pages run, page/title/body and exact image bytes
+02:20  run tools/verify-deployment.mjs; independently verify matching Pages run, page/title/body and every exact cover/source image byte
 02:30  mark published from verifier proof; notify with run id, trend decision, gates and live URL
 STOP   no extra push, no account/settings/form changes, no family-record automation
 ```
@@ -59,6 +59,7 @@ Verify final landing URLs and publication dates before citing.
 - experience is essential but no honest owner anchor exists;
 - a changing fact cannot be reverified at the operator;
 - a Discover-compliant original image cannot be produced;
+- fewer than four or more than twelve distinct rights-clear source-derived images can be licensed from the inspected reference materials;
 - the worktree or target path conflicts with another session;
 - evidence review cannot reach complete material-claim coverage.
 
@@ -69,8 +70,8 @@ Record this as a successful empty run, not a failure.
 - The only automatic approval reference is `standing-routine:h78L2R0UJFRhjS9O`.
 - Re-read the policy before approval, before apply and before marking published. A revoked or mismatched key pair blocks the run.
 - Approval removes the pre-approval report/scope. Regenerate scope first, then final validation; apply and stage only the regenerated `validation/path-scope.txt`.
-- A publication is one new post plus two new JPEGs, one commit and one push. `git add -A`, amend, force-push, automatic rebase and a second retry push are forbidden.
-- Only `node tools/verify-deployment.mjs` may create `validation/deployment-proof.json`. It must bind its own tool hash, run id, approved artifact digest, pushed SHA, remote SHA, Pages run SHA/URL/conclusion, live URL, title/body probe, both image URLs/content types/byte hashes and verification UTC.
+- A publication is one new post, two new AI cover JPEGs and 4–12 new licensed source images, one commit and one push. `git add -A`, amend, force-push, automatic rebase and a second retry push are forbidden.
+- Only `node tools/verify-deployment.mjs` may create `validation/deployment-proof.json`. It must bind its own tool hash, run id, approved artifact digest, pushed SHA, remote SHA, Pages run SHA/URL/conclusion, live URL, title/body probe, every cover and source image URL/content type/byte hash and verification UTC.
 - A push with failed or missing live proof remains `[blocked]`; never report it as published or silently revert it.
 
 ## Routine memory
@@ -97,4 +98,4 @@ Report:
 - gate results;
 - draft and review paths when present;
 - `NOT PUBLISHED` until live proof, then `PUBLISHED` plus the verified live URL;
-- for a green publication: approval digest, commit SHA, matching Pages run URL, permalink status and both image statuses.
+- for a green publication: approval digest, commit SHA, matching Pages run URL, permalink status and every cover/source image status.

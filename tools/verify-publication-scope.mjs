@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
+import { derivePackagePaths } from './lib/source-images.mjs';
 
 const argv = process.argv.slice(2);
 let repoRootValue = process.cwd();
@@ -84,7 +85,7 @@ function git(args, encoding = 'utf8') {
 }
 
 function combinedPackageDigest(paths) {
-  if (paths.length !== 3) return null;
+  if (!paths.length) return null;
   const digest = createHash('sha256');
   for (const relative of [...paths].sort()) {
     const file = path.join(current, 'draft', relative);
@@ -136,24 +137,14 @@ function expectedPackagePaths({ checkCollisions = true } = {}) {
   if (!manifest) return [];
 
   check(manifest.content_type === 'guide', `Publication scope allows guide only, found ${manifest.content_type}`);
-  check(typeof manifest.article_path === 'string', 'Manifest article_path is missing');
-  check(Array.isArray(manifest.asset_paths), 'Manifest asset_paths must be an array');
 
-  const articlePath = String(manifest.article_path || '');
-  const assets = Array.isArray(manifest.asset_paths) ? [...manifest.asset_paths] : [];
-  const articleValid = /^_posts\/\d{4}-\d{2}-\d{2}-[A-Za-z0-9][A-Za-z0-9-]*\.md$/.test(articlePath);
-  check(articleValid, `Unsafe article path: ${articlePath}`);
-  check(assets.length === 2, `Expected exactly two asset paths, found ${assets.length}`);
+  // The publishable set is derived, never hand-authored: one post, the two AI
+  // cover files and at least four slug-bound source-derived reference images.
+  const derived = derivePackagePaths(manifest);
+  for (const issue of derived.errors) check(false, `Package paths: ${issue}`);
+  if (derived.errors.length) return [];
 
-  const slug = String(manifest.slug || '');
-  const slugValid = /^[a-z0-9][a-z0-9-]*$/.test(slug);
-  check(slugValid, `Unsafe manifest slug: ${slug}`);
-  const expectedAssets = slugValid ? [`img/editorial/${slug}.jpg`, `img/editorial/${slug}.thumb.jpg`].sort() : [];
-  const assetsValid = assets.length === 2 && JSON.stringify([...assets].sort()) === JSON.stringify(expectedAssets);
-  check(assetsValid, `Asset paths must exactly match slug. Expected ${JSON.stringify(expectedAssets)}, got ${JSON.stringify(assets)}`);
-  if (!articleValid || !slugValid || !assetsValid) return [];
-
-  const publishable = [articlePath, ...assets].sort();
+  const publishable = derived.all;
   for (const relative of publishable) {
     const packaged = path.join(current, 'draft', relative);
     check(isRegularFileWithoutSymlink(packaged), `Packaged publication file is missing or unsafe: ${relative}`);
@@ -224,7 +215,7 @@ if (stagedMode) {
   check(JSON.stringify(staged) === JSON.stringify(expected), `Staged paths do not exactly match validated scope. Expected ${JSON.stringify(expected)}, got ${JSON.stringify(staged)}`);
   const completeStatus = git(['status', '--porcelain=v1', '--untracked-files=all']);
   const statusLines = completeStatus.status === 0 ? completeStatus.stdout.split('\n').filter(Boolean) : [];
-  check(completeStatus.status === 0 && statusLines.length === expected.length && statusLines.every((line) => line.startsWith('A  ') && expected.includes(line.slice(3))), 'Repository contains changes outside the three staged publication paths');
+  check(completeStatus.status === 0 && statusLines.length === expected.length && statusLines.every((line) => line.startsWith('A  ') && expected.includes(line.slice(3))), 'Repository contains changes outside the staged publication paths');
 
   const statusesResult = git(['diff', '--cached', '--name-status', '--diff-filter=ACMRD']);
   const statuses = statusesResult.status === 0 ? statusesResult.stdout.trim().split('\n').filter(Boolean).map((line) => line.split(/\s+/)) : [];

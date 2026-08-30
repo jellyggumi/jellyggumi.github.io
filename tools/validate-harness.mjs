@@ -47,6 +47,7 @@ const required = [
   '.github/workflows/editorial-quality-guard.yml',
   '.github/workflows/third-party-tags-guard.yml',
   'tools/editorial-workspace.mjs',
+  'tools/lib/source-images.mjs',
   'tools/capture-google-trends.mjs',
   'tools/apply-editorial-package.mjs',
   'tools/verify-publication-scope.mjs',
@@ -82,7 +83,9 @@ if (exists('CLAUDE.md')) {
     'bright Naver-derived voice contract',
     'banggujin',
     '2 December 2024',
-    '24–25 August 2026'
+    '24–25 August 2026',
+    'source-image-manifest.json',
+    'img/source/'
   ]) check(text.includes(phrase), `CLAUDE.md is missing contract phrase: ${phrase}`);
 }
 
@@ -141,6 +144,21 @@ if (exists('.claude/editorial-policy.yml')) {
   exactNestedPolicyValue('intake_window', 'past-24-hours', 'Google Trends intake window must remain past 24 hours');
   exactNestedPolicyValue('context_window', 'past-7-days', 'Google Trends context window must remain past 7 days');
   exactNestedPolicyValue('max_signal_age_hours', '6', 'Google Trends signal freshness must remain six hours');
+  exactNestedPolicyValue('effective_date', '"2026-08-31"', 'Source-image contract effective date drifted');
+  exactNestedPolicyValue('minimum_count', '4', 'Source-image minimum must remain four');
+  exactNestedPolicyValue('maximum_count', '12', 'Source-image maximum count must remain twelve');
+  exactNestedPolicyValue('min_bytes', '1', 'Source images must be non-empty');
+  exactNestedPolicyValue('max_bytes', '5242880', 'Source-image per-file maximum must remain 5 MiB');
+  exactNestedPolicyValue('max_total_bytes', '20971520', 'Source-image aggregate maximum must remain 20 MiB');
+  exactNestedPolicyValue('require_raster_signature', 'true', 'Source-image raster structure check must remain enabled');
+  exactNestedPolicyValue('require_metadata_stripped', 'true', 'Source-image metadata stripping must remain enabled');
+  exactNestedPolicyValue('minimum_pixels', '16384', 'Source-image pixel floor must remain 16,384');
+  exactNestedPolicyValue('minimum_short_side', '32', 'Source-image short-side floor must remain 32 px');
+  exactNestedPolicyValue('minimum_license_quote_chars', '40', 'Source-image license quote minimum must remain 40 characters');
+  const expectedSourceLicenses = ['public-domain', 'cc0', 'cc-by', 'cc-by-sa', 'kogl-type-1', 'repo-license-covers-assets', 'official-press-kit'];
+  const sourceLicenseBlock = policy.match(/^  allowed_license_bases:\s*\n((?:    -\s*[^\n]+\n?)*)/m)?.[1] || '';
+  const policySourceLicenses = sourceLicenseBlock.split('\n').map((line) => line.match(/^\s+-\s*(.+)$/)?.[1]?.trim()).filter(Boolean);
+  check(JSON.stringify(policySourceLicenses) === JSON.stringify(expectedSourceLicenses), `Source-image policy license allowlist drifted: ${JSON.stringify(policySourceLicenses)}`);
   for (const key of ['require_audience_fit', 'require_primary_source', 'require_durable_value_without_spike', 'forbid_keyword_stuffing']) exactNestedPolicyValue(key, 'true', `Trend policy flag must remain true: ${key}`);
   const excludedVoiceDates = (policy.match(/^  exclude_as_persona_evidence:\s*\n((?:    -\s*[^\n]+\n?)*)/m)?.[1] || '')
     .split('\n').map((line) => line.match(/^\s+-\s*"?([^"\n]+)"?$/)?.[1]?.trim()).filter(Boolean);
@@ -152,8 +170,24 @@ if (exists('.claude/editorial-policy.yml')) {
   const allowedTypeBlock = policy.match(/^allowed_content_types:\s*\n((?:\s+-\s*[^\n]+\n?)*)/m)?.[1] || '';
   const allowedTypes = allowedTypeBlock.split('\n').map((line) => line.match(/^\s+-\s*(.+)$/)?.[1]?.trim()).filter(Boolean);
   check(allowedTypeHeaders.length === 1 && JSON.stringify(allowedTypes) === JSON.stringify(['guide']), `Only one guide-only content list may be automated, found headers=${allowedTypeHeaders.length} values=${JSON.stringify(allowedTypes)}`);
-  for (const phrase of ['no-automated-family-records', 'no-publish-outside-standing-or-explicit-authority', 'ads.txt', '_layouts/**']) {
+  for (const phrase of ['no-automated-family-records', 'no-publish-outside-standing-or-explicit-authority', 'ads.txt', '_layouts/**', 'img/source/', 'no-source-image-without-verified-license']) {
     check(policy.includes(phrase), `Policy is missing boundary: ${phrase}`);
+  }
+  if (exists('tools/lib/source-images.mjs')) {
+    const helper = read('tools/lib/source-images.mjs');
+    const helperConst = (name) => helper.match(new RegExp(`^export const ${name} = (.+);$`, 'm'))?.[1];
+    check(helperConst('SOURCE_IMAGE_CONTRACT_EFFECTIVE_DATE') === "'2026-08-31'", 'Source-image helper effective date drifted from policy');
+    check(helperConst('MIN_REFERENCE_IMAGES') === '4', 'Source-image helper minimum drifted from policy');
+    check(helperConst('MAX_REFERENCE_IMAGES') === '12', 'Source-image helper maximum count drifted from policy');
+    check(helperConst('MIN_SOURCE_IMAGE_BYTES') === '1', 'Source-image helper byte floor drifted from policy');
+    check(helperConst('MAX_SOURCE_IMAGE_BYTES') === '5 * 1024 * 1024', 'Source-image helper per-file maximum drifted from policy');
+    check(helperConst('MAX_SOURCE_IMAGE_TOTAL_BYTES') === '20 * 1024 * 1024', 'Source-image helper aggregate maximum drifted from policy');
+    check(helperConst('MIN_SOURCE_IMAGE_PIXELS') === '16_384', 'Source-image helper pixel floor drifted from policy');
+    check(helperConst('MIN_SOURCE_IMAGE_SHORT_SIDE') === '32', 'Source-image helper short-side floor drifted from policy');
+    const helperLicenseBlock = helper.match(/ALLOWED_LICENSE_BASES = Object\.freeze\(\[([\s\S]*?)\]\)/)?.[1] || '';
+    const helperLicenses = [...helperLicenseBlock.matchAll(/'([^']+)'/g)].map((match) => match[1]);
+    check(JSON.stringify(helperLicenses) === JSON.stringify(expectedSourceLicenses), `Source-image helper license allowlist drifted: ${JSON.stringify(helperLicenses)}`);
+    check(helper.includes('metadataSegments === 0'), 'Source-image helper no longer enforces metadata stripping');
   }
 }
 
@@ -207,7 +241,7 @@ if (exists('tools/capture-google-trends.mjs')) {
 
 if (exists('tools/verify-deployment.mjs')) {
   const verifier = read('tools/verify-deployment.mjs');
-  for (const phrase of ['pages build and deployment', 'dynamic/pages/pages-build-deployment', 'permalink_status', 'title_check', 'body_check', 'image_urls', "flag: 'wx'"]) check(verifier.includes(phrase), `Deployment verifier is missing evidence marker: ${phrase}`);
+  for (const phrase of ['pages build and deployment', 'dynamic/pages/pages-build-deployment', 'permalink_status', 'title_check', 'body_check', 'source_credits_check', 'source_credit_count', 'image_urls', "flag: 'wx'"]) check(verifier.includes(phrase), `Deployment verifier is missing evidence marker: ${phrase}`);
 }
 
 if (exists('.claude/skills/jellyggumi-journal-harness/SKILL.md')) {
@@ -217,6 +251,15 @@ if (exists('.claude/skills/jellyggumi-journal-harness/SKILL.md')) {
   check(skill.includes('producer-reviewer'), 'Harness must describe producer-reviewer architecture');
   check(skill.includes('Maximum two'), 'Harness must enforce two revision loops');
   check(skill.includes('Never use `git add -A`'), 'Harness lacks exact-staging rule');
+  check(skill.includes('source-image-manifest.json'), 'Harness must describe the source-image licensing sidecar');
+}
+
+if (exists('.claude/skills/editorial-image-kit/SKILL.md')) {
+  const kit = read('.claude/skills/editorial-image-kit/SKILL.md');
+  check(kit.includes('img/source'), 'Image kit must separate AI covers from source-derived reference images');
+}
+if (exists('.claude/agents/journal-director.md')) {
+  check(!read('.claude/agents/journal-director.md').includes('three-path package'), 'Journal director still describes the obsolete three-path package');
 }
 
 let triggerEvalCount = 0;
@@ -237,6 +280,7 @@ for (const workflow of ['.github/workflows/editorial-quality-guard.yml', '.githu
   check(/^permissions:\s*\n\s+contents:\s*read\s*$/m.test(text), `${workflow} must grant only contents: read`);
   check(!/^\s*-?\s*uses:\s*[^\s]+@v\d+/m.test(text), `${workflow} contains a mutable action tag`);
   check(text.includes('actions/checkout@11d5960a326750d5838078e36cf38b85af677262'), `${workflow} checkout action is not pinned to the approved SHA`);
+  if (workflow.endsWith('editorial-quality-guard.yml')) check(text.includes('"img/source/**"'), `${workflow} does not trigger on source-image changes`);
 }
 
 if (exists('.gitignore')) check(/^_workspace\/$/m.test(read('.gitignore')), '.gitignore does not ignore _workspace/');

@@ -8,13 +8,13 @@
 | G3 Claim coverage | Every material claim mapped; no unverified assertion in prose | fix, max two loops |
 | G4 Persona honesty | Experience mode obeyed; every first-person observation has an owner anchor | reject fabricated experience |
 | G5 Non-commodity value | At least one useful distinction, contradiction or decision beyond paraphrase | fix or reject |
-| G6 Assets | 1672×941 hero, 700×394 thumbnail, JPEG, no EXIF/IPTC/XMP, visible AI method disclosure | fix |
+| G6 Assets | 1672×941 hero, 700×394 thumbnail, JPEG, no EXIF/IPTC/XMP, visible AI method disclosure; plus 4–12 rights-clear source images validated against `source-image-manifest.json` and embedded in attribution figures | fix or block |
 | G7 Date safety | KST date-only midnight is safely in the past | block |
 | G8 Taxonomy | Exact category and tags have existing stub pages | fix |
 | G9 Package | Complete front matter, bare balanced HTML, one ad marker, sources, local assets and links resolve | fix or block |
 | G10 Independent review | Evidence editor PASS and deterministic package validation PASS | fix or reject |
-| G11 Diff scope | Exactly one post plus two matching images; approved manifest for staging | block |
-| G12 Deployment | Remote SHA, Pages success, anonymous article and images return 200 | not published |
+| G11 Diff scope | Exactly the derived package — one post, two matching AI covers and 4–12 validated source images; approved manifest for staging | block |
+| G12 Deployment | Remote SHA, Pages success, anonymous article returns 200 and every cover and source image returns 200 with the correct content type and exact bytes | not published |
 
 ## Trend qualification
 
@@ -47,9 +47,13 @@ The hero is 1672×941, wider than 1200 pixels, 16:9 and large enough for Discove
 
 The site-level validator also checks that post heroes are real `<img>` elements, `og:image` derives from `header-img`, and `max-image-preview:large` remains enabled.
 
+## Source image licensing gate
+
+Every new automated package embeds 4–12 distinct source-derived raster images downloaded from inspected reference materials into `img/source/<slug>/`; the AI cover pair does not count. Rights are verified fail-closed in `draft/source-image-manifest.json`: only `public-domain`, `cc0`, `cc-by`, `cc-by-sa`, `kogl-type-1`, `repo-license-covers-assets` (with a pinned ref) and `official-press-kit` are accepted, each with a license URL, a ≥ 40 character license quote, an evidence-pack source page, unique paths/hashes/download URLs, `commercial_use_allowed: true`, `redistribution_allowed: true` and a non-empty `.png`/`.jpg`/`.jpeg`/`.webp` regular file no larger than 5 MiB with valid raster structure, EXIF/XMP/text metadata stripped, a ≥32 px short side and ≥16,384 pixels; all source images combined stay no larger than 20 MiB. Each image appears in exactly one top-level, visibly rendered `<figure class="post-photo source-image">` whose caption carries the exact source page URL, license URL, publisher/creator and attribution text. Fewer than four or more than twelve rights-clear images blocks the package. Pre-cutover automated packages without source figures remain migration-exempt. A `content_type: guide` post with a disclosed `img/editorial/<slug>` cover dated 2026-08-31 or later must ship the complete slug-bound source directory and 4–12 credited figures; any source package also triggers the full figure/file bijection.
+
 ## Package gate
 
-The body is a bare HTML fragment. It must contain paragraphs and section headings, no Markdown headings, links, images, reference links, lists, blockquotes or code fences, and exactly one `<!--post-ad-break-->` between complete sections. The allowlist is `p`, `h3`, `ul`, `ol`, `li`, `figure`, `figcaption`, `blockquote`, `a`, `strong`, `em`, `span` and `br`; only conservative language/link attributes are allowed. Liquid, kramdown extension/IAL syntax, Markdown constructs, event/style attributes, executable/embed/form/media/document tags and non-HTTP(S)/root/fragment link targets are blocked. Supported structural tags must balance and nest.
+The body is a bare HTML fragment. It must contain paragraphs and section headings, no Markdown headings, links, images, reference links, lists, blockquotes or code fences, and exactly one `<!--post-ad-break-->` between complete sections. The allowlist is `p`, `h3`, `ul`, `ol`, `li`, `figure`, `figcaption`, `blockquote`, `a`, `strong`, `em`, `span` and `br`; only conservative language/link attributes are allowed. The single exception is the scoped source-image figure: a local `/img/source/<slug>/` `<img>` with exactly `src`, `alt`, `width`, `height`, `loading="lazy"` and `decoding="async"` inside `<figure class="post-photo source-image">`. All other `img` markup, remote sources, Markdown images and style/event attributes remain forbidden. Liquid, kramdown extension/IAL syntax, Markdown constructs, event/style attributes, executable/embed/form/media/document tags and non-HTTP(S)/root/fragment link targets are blocked. Supported structural tags must balance and nest.
 
 Front matter must identify the AI method, current review date, exact dimensions, source list and `content_type: guide`. The category and tags must match existing stubs. Every local image and internal `/journal/` link must resolve.
 
@@ -61,4 +65,4 @@ There is no Google-preferred word count. The validator catches skeletal packages
 
 ## Publication gate
 
-A ready draft is not yet authorized. The review includes a combined SHA-256 over the exact post and two image bytes, current git base and approval context, including the machine policy. Authority is either an exact manual confirmation reference or the active `standing-routine:h78L2R0UJFRhjS9O` reference under the matching two-key policy. After authority is bound, validation must be regenerated; any byte, base or render-context change invalidates the artifact digest. The no-overwrite apply tool refuses existing targets. Staged verification requires local `gh-pages` to equal its fetched upstream, all three paths to be newly added `100644` files, and staged blobs to byte-match the authority-bound package. A push remains unproven until `tools/verify-deployment.mjs` independently confirms the matching Pages run, anonymous title/body and exact image bytes and writes its hash-bound no-overwrite proof.
+A ready draft is not yet authorized. The review includes a combined SHA-256 over the exact post, both AI cover files and every validated source-image byte, plus the current git base and approval context, including the machine policy. Authority is either an exact manual confirmation reference or the active `standing-routine:h78L2R0UJFRhjS9O` reference under the matching two-key policy. After authority is bound, validation must be regenerated; any byte, base or render-context change invalidates the artifact digest. The no-overwrite apply tool refuses existing targets. Staged verification requires local `gh-pages` to equal its fetched upstream, every derived package path to be a newly added `100644` file, and staged blobs to byte-match the authority-bound package. A push remains unproven until `tools/verify-deployment.mjs` independently confirms the matching Pages run, anonymous title/body and exact image bytes and writes its hash-bound no-overwrite proof.

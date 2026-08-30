@@ -2,6 +2,16 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import {
+  MAX_SOURCE_IMAGE_BYTES,
+  MAX_SOURCE_IMAGE_TOTAL_BYTES,
+  MAX_REFERENCE_IMAGES,
+  MIN_REFERENCE_IMAGES,
+  extractSourceFigures,
+  inspectRasterImage,
+  sourceImageContractAppliesToArticlePath,
+  sourceImageSlugFromEditorialCover
+} from './lib/source-images.mjs';
 
 const argv = process.argv.slice(2);
 let rootValue = process.cwd();
@@ -25,7 +35,8 @@ function walk(dir, predicate = () => true) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
     if (entry.name === '.git' || entry.name === '_site' || entry.name === '_workspace') continue;
-    if (entry.isDirectory()) found.push(...walk(full, predicate));
+    if (entry.isSymbolicLink()) failures.push(`Repository contains a forbidden symlink: ${path.relative(root, full)}`);
+    else if (entry.isDirectory()) found.push(...walk(full, predicate));
     else if (entry.isFile() && predicate(full)) found.push(full);
   }
   return found;
@@ -122,6 +133,8 @@ for (const route of postRoutes) knownRoutes.add(route);
 let guideCount = 0;
 let personalCount = 0;
 let aiHeaderCount = 0;
+let sourceFigureCount = 0;
+const referencedSourceImages = new Map();
 for (const file of posts) {
   const relative = path.relative(root, file).split(path.sep).join('/');
   const text = fs.readFileSync(file, 'utf8');
@@ -187,6 +200,49 @@ for (const file of posts) {
     const href = match[1].endsWith('/') ? match[1] : `${match[1]}/`;
     check(knownRoutes.has(href), `${relative}: unresolved internal journal link ${match[1]}`);
   }
+
+  // Legacy guides have no body images. Once a guide has an img/source/<slug>/
+  // directory or a source figure, the complete >=4 canonical attribution
+  // contract applies. Every <img> in a guide must be one of those figures.
+  const sourceExtraction = extractSourceFigures(body);
+  for (const issue of sourceExtraction.errors) check(false, `${relative}: ${issue}`);
+  const bodyImageCount = (body.match(/<img\b/gi) || []).length;
+  if (type === 'guide') check(bodyImageCount === sourceExtraction.figures.length, `${relative}: every guide body img must be a canonical local source-image figure`);
+  else check(sourceExtraction.figures.length === 0, `${relative}: personal posts may not use automated source-image figures`);
+  const sourceSlug = sourceImageSlugFromEditorialCover(header, card);
+  const sourceDir = sourceSlug ? path.join(root, 'img', 'source', sourceSlug) : null;
+  const sourceDirExists = Boolean(sourceDir && fs.existsSync(sourceDir));
+  const sourceContractRequired = sourceImageContractAppliesToArticlePath(relative) && type === 'guide' && usesEditorialImage;
+  if (sourceContractRequired || sourceDirExists || sourceExtraction.figures.length > 0) {
+    check(type === 'guide', `${relative}: source-image packages are guide-only`);
+    check(Boolean(sourceSlug), `${relative}: source-image package must derive one lowercase slug from its editorial cover`);
+    if (sourceContractRequired) check(sourceDirExists, `${relative}: posts under the source-image contract must ship their slug-bound source directory`);
+    check(sourceExtraction.figures.length >= MIN_REFERENCE_IMAGES, `${relative}: source-image package must contain at least ${MIN_REFERENCE_IMAGES} credited figures`);
+    check(sourceExtraction.figures.length <= MAX_REFERENCE_IMAGES, `${relative}: source-image package may contain at most ${MAX_REFERENCE_IMAGES} credited figures`);
+  }
+  for (const figure of sourceExtraction.figures) {
+    const safeFigurePath = Boolean(sourceSlug) && figure.src.startsWith(`/img/source/${sourceSlug}/`) && /^\/img\/source\/[a-z0-9][a-z0-9-]*\/[A-Za-z0-9][A-Za-z0-9._-]*\.(?:png|jpe?g|webp)$/i.test(figure.src);
+    check(safeFigurePath, `${relative}: source figure must stay in its own slug directory: ${figure.src}`);
+    if (!safeFigurePath) continue;
+    const asset = figure.src.replace(/^\//, '');
+    const full = path.join(root, asset);
+    let regular = false;
+    try {
+      const stat = fs.lstatSync(full);
+      regular = stat.isFile() && !stat.isSymbolicLink();
+    } catch {}
+    check(regular, `${relative}: source figure image does not exist or is unsafe: ${figure.src}`);
+    if (regular) {
+      const raster = inspectRasterImage(asset, fs.readFileSync(full));
+      check(raster.metadataSegments === 0, `${relative}: source figure image must have EXIF/XMP/text metadata stripped: ${figure.src}`);
+      check(raster.valid, `${relative}: source figure is not a metadata-free plausible raster image: ${figure.src}`);
+      check(String(raster.width) === figure.width && String(raster.height) === figure.height, `${relative}: source figure width/height do not match the raster: ${figure.src}`);
+    }
+    const captionUrls = figure.captionText.match(/https?:\/\/\S+/g) || [];
+    check(captionUrls.length >= 2, `${relative}: source figure caption must cite its source page and license URLs: ${figure.src}`);
+    referencedSourceImages.set(figure.src, (referencedSourceImages.get(figure.src) || 0) + 1);
+  }
+  sourceFigureCount += sourceExtraction.figures.length;
 }
 
 const editorialDir = path.join(root, 'img', 'editorial');
@@ -199,6 +255,34 @@ for (const file of editorialImages) {
   check(info.jpeg, `${relative}: not a valid JPEG`);
   check(info.width === expected[0] && info.height === expected[1], `${relative}: expected ${expected[0]}x${expected[1]}, found ${info.width}x${info.height}`);
   check(info.app1 === 0 && info.app13 === 0, `${relative}: contains EXIF/XMP/IPTC metadata`);
+}
+
+const sourceImageFiles = walk(path.join(root, 'img', 'source'));
+const sourceBytesBySlug = new Map();
+const sourceCountBySlug = new Map();
+for (const file of sourceImageFiles) {
+  const relative = path.relative(root, file).split(path.sep).join('/');
+  const match = relative.match(/^img\/source\/([a-z0-9][a-z0-9-]*)\/[^/]+$/);
+  const bytes = fs.readFileSync(file);
+  check(Boolean(match), `${relative}: source image must be directly under img/source/<slug>/`);
+  check(/\.(?:png|jpe?g|webp)$/i.test(file), `${relative}: source images must be png/jpg/jpeg/webp`);
+  check(bytes.length > 0 && bytes.length <= MAX_SOURCE_IMAGE_BYTES, `${relative}: source image must be non-empty and no larger than ${MAX_SOURCE_IMAGE_BYTES} bytes`);
+  const raster = inspectRasterImage(relative, bytes);
+  check(raster.metadataSegments === 0, `${relative}: source image must have EXIF/XMP/text metadata stripped`);
+  check(raster.valid, `${relative}: bytes do not match a metadata-free plausible raster structure for the declared extension`);
+  const publicPath = `/${relative}`;
+  check(referencedSourceImages.get(publicPath) === 1, `${relative}: source image must appear in exactly one credited figure`);
+  if (match) {
+    sourceBytesBySlug.set(match[1], (sourceBytesBySlug.get(match[1]) || 0) + bytes.length);
+    sourceCountBySlug.set(match[1], (sourceCountBySlug.get(match[1]) || 0) + 1);
+  }
+}
+for (const publicPath of referencedSourceImages.keys()) {
+  check(sourceImageFiles.some((file) => `/${path.relative(root, file).split(path.sep).join('/')}` === publicPath), `Source figure has no matching img/source file: ${publicPath}`);
+}
+for (const [slug, bytes] of sourceBytesBySlug) {
+  check(bytes <= MAX_SOURCE_IMAGE_TOTAL_BYTES, `img/source/${slug}/ exceeds the ${MAX_SOURCE_IMAGE_TOTAL_BYTES}-byte aggregate limit`);
+  check(sourceCountBySlug.get(slug) <= MAX_REFERENCE_IMAGES, `img/source/${slug}/ exceeds the ${MAX_REFERENCE_IMAGES}-image count limit`);
 }
 
 const postLayout = fs.existsSync(path.join(root, '_layouts', 'post.html')) ? fs.readFileSync(path.join(root, '_layouts', 'post.html'), 'utf8') : '';
@@ -226,4 +310,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`Site quality verification passed: posts=${posts.length}, guides=${guideCount}, personal=${personalCount}, categories=${categoryValues.size}, tags=${tagValues.size}, ai_headers=${aiHeaderCount}, editorial_images=${editorialImages.length}.`);
+console.log(`Site quality verification passed: posts=${posts.length}, guides=${guideCount}, personal=${personalCount}, categories=${categoryValues.size}, tags=${tagValues.size}, ai_headers=${aiHeaderCount}, editorial_images=${editorialImages.length}, source_figures=${sourceFigureCount}, source_images=${sourceImageFiles.length}.`);

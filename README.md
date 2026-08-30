@@ -22,6 +22,7 @@ gallery/            album index plus one page per album
 games/              games index; games/castle-war/ is a standalone canvas app
 img/postcover/      semantic post covers plus matching .thumb.webp thumbnails
 img/editorial/       labelled AI-generated still lifes for navigation and selected guide headers
+img/source/         licensed source-derived reference images, one folder per guide slug
 css/site.css        additions and corrections layered over the theme's main.css
 tools/make_covers.py  regenerates the generated post covers
 ```
@@ -104,6 +105,14 @@ documentary photographs. When a post sets `card-img` to an editorial `.jpg`, kee
 sibling named `.thumb.jpg`; listing cards load that smaller file while article headers and social
 metadata keep the full image.
 
+New automated guides additionally embed 4–12 licensed source-derived reference images
+under `img/source/<slug>/` (`.png`, `.jpg`, `.jpeg` or `.webp`). Each is downloaded from an
+inspected reference page, rights-verified in the run's internal
+`_workspace/current/draft/source-image-manifest.json` sidecar, and rendered in exactly one
+`<figure class="post-photo source-image">` with a caption naming the source page, license URL,
+publisher and attribution. These are documentary reference images and are separate from the
+disclosed AI covers in `img/editorial/`.
+
 ## Editorial agent harness
 
 The file-based Korea Desk harness lives under `.claude/`; `.agents/skills/` contains thin
@@ -130,7 +139,7 @@ node tools/capture-google-trends.mjs
 node tools/verify-deployment.mjs
 ```
 
-The active Aside cron routine `h78L2R0UJFRhjS9O` runs at 01:00 KST. It uses the official Korea Google Trends RSS feed only to discover candidates, then searches Korean institutions and operators for evidence. A run may publish zero or one validated `guide`: `publish-on-green` is authorized only when the matching `standing_publish_approval: true` key, pinned routine id, trend-value gate, G1-G11 and exact-path checks all pass. Draft-only mode and manual review remain supported fail-closed fallbacks. Every article is exactly three new paths, one commit and one push; never use `git add -A`.
+The active Aside cron routine `h78L2R0UJFRhjS9O` runs at 01:00 KST. It uses the official Korea Google Trends RSS feed only to discover candidates, then searches Korean institutions and operators for evidence. A run may publish zero or one validated `guide`: `publish-on-green` is authorized only when the matching `standing_publish_approval: true` key, pinned routine id, trend-value gate, G1-G11 and exact-path checks all pass. Draft-only mode and manual review remain supported fail-closed fallbacks. Every article is a derived package of new paths — one post, its two AI cover files and 4–12 licensed source images — in one commit and one push; never use `git add -A`.
 
 ## Notes for future changes
 

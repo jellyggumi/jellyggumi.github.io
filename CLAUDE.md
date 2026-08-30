@@ -41,6 +41,7 @@ The site belongs to the JellyGGumi account boundary: `jellyggumi.github.io`, bra
 - Every guide needs a distinct thesis, primary evidence and at least one non-obvious or inconvenient finding.
 - Reuse existing category and tag stubs exactly. New taxonomy requires a deliberate page and human review outside the scheduled run.
 - Use original, non-text-heavy editorial imagery. Generated imagery must be visibly disclosed and cannot contain people, faces, brands, logos or readable text.
+- Every new automated guide also embeds 4–12 distinct source-derived reference images downloaded from inspected reference materials. The shipped-tree requirement applies to posts dated 2026-08-31 or later; older posts are migration-exempt. They live under `img/source/<slug>/` (never `img/editorial/`), are declared in `manifest.reference_image_paths` separately from the two-element `asset_paths`, and each carries verified redistribution rights in `draft/source-image-manifest.json`. Fewer than four or more than twelve rights-clear images blocks the package.
 - Automated drafts cannot contain sponsorship, gifted-product endorsement, affiliate links or campaign tracking parameters.
 - Advertising and audience growth never override manual curation, source quality or persona honesty.
 
@@ -93,8 +94,10 @@ _workspace/current/
   draft/_posts/YYYY-MM-DD-Title-In-Kebab-Case.md
   draft/img/editorial/<slug>.jpg
   draft/img/editorial/<slug>.thumb.jpg
+  draft/img/source/<slug>/<reference-image>.(png|jpg|jpeg|webp)   # 4–12
   draft/claim-map.json
   draft/image-provenance.json
+  draft/source-image-manifest.json
   review/editorial-review.json
   validation/draft-validation.json
   validation/validation.json
@@ -103,7 +106,11 @@ _workspace/current/
   run-summary.md
 ```
 
-The article must use the current JellyGGumi front-matter contract, a bare HTML body and exactly one `<!--post-ad-break-->`. Its images must be 1672×941 and 700×394 JPEG files with no EXIF, IPTC or XMP metadata.
+The article must use the current JellyGGumi front-matter contract, a bare HTML body and exactly one `<!--post-ad-break-->`. Its AI cover images must be 1672×941 and 700×394 JPEG files with no EXIF, IPTC or XMP metadata; that pair and `image-provenance.json` are unchanged and do not count toward the source-image minimum.
+
+Each source-derived reference image is a downloaded raster file (`.png`, `.jpg`, `.jpeg` or `.webp`, a non-empty regular file no larger than 5 MiB with valid raster structure, EXIF/XMP/text metadata stripped, a short side of at least 32 px and at least 16,384 pixels; all source images combined must stay no larger than 20 MiB) recorded in `draft/source-image-manifest.json` (`schema_version: 1`, `run_id`, `images[]`). Every entry requires `local_path`, `source_page_url` (which must be an evidence-pack `source_url`), `download_url`, `publisher_or_creator`, `license_basis`, `license_url`, a `license_quote` of at least 40 characters, `retrieved_at`, `sha256`, `transformation`, `transformation_note`, `alt`, `attribution_text`, `commercial_use_allowed: true` and `redistribution_allowed: true`; local paths, hashes and download URLs must be unique. The only accepted `license_basis` values are `public-domain`, `cc0`, `cc-by`, `cc-by-sa`, `kogl-type-1`, `repo-license-covers-assets` (with a `pinned_ref`) and `official-press-kit` — anything else fails closed. Sidecar entries and `reference_image_paths` must match exactly, and the packaged source directory may contain no orphan files.
+
+Each source image appears in exactly one bare-HTML `<figure class="post-photo source-image">` containing a local `/img/source/<slug>/` `<img>` with `alt`, `width`, `height`, `loading="lazy"` and `decoding="async"`, plus a `<figcaption>` naming the exact source page URL, license URL, publisher/creator and attribution text. This scoped figure is the only image markup allowed in an automated body; Markdown images, remote `img` src values, inline style or event attributes, SVG/media embeds and unsafe tags remain forbidden.
 
 ## Quality gates
 
@@ -115,13 +122,13 @@ A run may be `ready_for_review` only when all gates pass:
 3. **Claim coverage**: every material factual claim maps to verified evidence or is explicitly labelled as inference.
 4. **Persona honesty**: no fabricated first-hand experience; first-person prose has a real anchor.
 5. **Non-commodity value**: the guide adds a useful distinction, analysis or decision beyond restating sources.
-6. **Assets**: both required JPEGs exist, have exact dimensions, contain no EXIF/IPTC/XMP and follow the visible AI disclosure contract.
+6. **Assets**: both required JPEGs exist, have exact dimensions, contain no EXIF/IPTC/XMP and follow the visible AI disclosure contract; 4–12 rights-clear source images validate against `source-image-manifest.json` and their attribution figures.
 7. **Date safety**: the date-only stamp represents a KST midnight safely in the past.
 8. **Taxonomy**: categories and tags reuse existing exact stub values.
 9. **Package integrity**: front matter, HTML balance, ad marker, source list, internal links, local assets and credential scan pass.
 10. **Independent review**: evidence editor and package validator pass. Maximum two revision loops; then reject or block.
-11. **Publication scope**: only one post and its two matching editorial images may be copied or staged.
-12. **Deployment proof**: remote SHA, successful Pages build, anonymous permalink HTTP 200, correct title/body and both image URLs HTTP 200.
+11. **Publication scope**: only the derived package — one post, its two matching editorial images and its validated source images (4–12) — may be copied or staged.
+12. **Deployment proof**: remote SHA, successful Pages build, anonymous permalink HTTP 200, correct title/body, and every cover and source image URL HTTP 200 with the correct image content type and byte-exact SHA-256.
 
 A no-article run is successful when no candidate clears novelty, evidence, relevance or honesty gates. Never manufacture filler to satisfy the schedule.
 
@@ -133,7 +140,7 @@ The policy has two fail-closed key pairs: `draft-only` + `standing_publish_appro
 - The pinned scheduled routine may authorize its own exact green package only after the Google Trends value gate, G1-G11, independent review and all mechanical checks pass. A schedule alone is not approval for a red, incomplete, duplicate or low-value package.
 - Every run summary says `NOT PUBLISHED` until anonymous live verification succeeds. A no-article run closes successfully without a commit or push.
 - Every status mutation must pass the current `--run-id`; `.run-lock.json` prevents a stale or concurrent run from mutating its successor.
-- Obtain the approval digest with `node tools/editorial-workspace.mjs approval-digest --run-id <run-id>`. It binds the three package bytes, current git base and approval context (`.claude/editorial-policy.yml`, `_config.yml`, layouts, includes, CSS and JS).
+- Obtain the approval digest with `node tools/editorial-workspace.mjs approval-digest --run-id <run-id>`. It binds the derived package bytes (one post, two AI cover files and every validated source image), current git base and approval context (`.claude/editorial-policy.yml`, `_config.yml`, layouts, includes, CSS and JS).
 - Bind either the exact manual reference or the pinned standing reference to that digest:
 
 ```bash
@@ -146,10 +153,10 @@ node tools/editorial-workspace.mjs set-status \
 
 - Approval deletes the pre-approval final report and path scope. Regenerate scope with `node tools/verify-publication-scope.mjs`, then run `node tools/validate-editorial-package.mjs --stage final`; use the new `validation/path-scope.txt` as the only copy and stage allowlist.
 - Copy only through `node tools/apply-editorial-package.mjs`, which rechecks the active authority, requires the render context to be clean/committed, refuses existing targets and rolls back a partial copy.
-- Stage exactly the three reported paths. Never use `git add -A`.
+- Stage exactly the derived paths it reports. Never use `git add -A`.
 - `node tools/verify-publication-scope.mjs --staged` must prove the branch matches fetched upstream, every path is a new file, staged blobs match the approval-bound package, and validation was regenerated after approval.
 - One article means one commit and one push. Never reset, stash, clean, rebase, delete or force-push unrelated work.
-- A push is not publication. Run `node tools/verify-deployment.mjs`; only that no-overwrite verifier may write `validation/deployment-proof.json` after it independently confirms remote SHA, the matching successful Pages run, anonymous permalink HTTP 200, correct title/body and exact JPEG bytes. Only then mark `published` and change the summary to `PUBLISHED`.
+- A push is not publication. Run `node tools/verify-deployment.mjs`; only that no-overwrite verifier may write `validation/deployment-proof.json` after it independently confirms remote SHA, the matching successful Pages run, anonymous permalink HTTP 200, correct title/body and every exact AI-cover and source-image byte sequence. Only then mark `published` and change the summary to `PUBLISHED`.
 
 Any red gate, dirty target path, changed origin, future date, failed Pages build or 404 leaves the package intact and reports `[blocked]`. Never auto-revert, amend, retry a second push or hide a partial deployment; preserve evidence and notify the operator.
 
@@ -172,9 +179,9 @@ The active Aside cron routine `h78L2R0UJFRhjS9O` runs daily at 01:00 `Asia/Seoul
 4. Run `node tools/capture-google-trends.mjs` to fetch the official Korea Google Trends RSS feed without overwrite, preserve the raw XML, retrieval UTC, source timestamps and raw-feed SHA-256; a publishable signal must be no more than six hours old, then use Trending Now/Explore only to qualify audience fit and timing. Trends is not factual evidence.
 5. Cross-check zero to five candidates against current Korean authorities, operators and institutional data; inventory published and recently rejected coverage.
 6. Choose zero or one `guide` only if it would remain useful without the spike, has a distinct reader decision and maps every material fact to primary evidence.
-7. Produce the evidence pack, bare-HTML draft and disclosed editorial image pair. Run independent evidence and package review with no more than two revisions.
+7. Produce the evidence pack, bare-HTML draft, disclosed editorial image pair, and 4–12 rights-clear source-derived reference images with their licensing sidecar and attribution figures. Run independent evidence and package review with no more than two revisions.
 8. If any gate is red, close `rejected` or `blocked` and notify without touching git. Empty green research is a valid result.
-9. If all gates are green, close `ready_for_review`, compute the approval digest, bind `standing-routine:h78L2R0UJFRhjS9O`, regenerate final validation, apply with no-overwrite semantics, stage exactly three new paths and run the staged scope verifier.
-10. Commit once and push once. Run `node tools/verify-deployment.mjs` to wait for the matching GitHub Pages deployment and independently verify the anonymous permalink, title/body and both exact image bytes; then mark `published`, update the summary and notify with evidence.
+9. If all gates are green, close `ready_for_review`, compute the approval digest, bind `standing-routine:h78L2R0UJFRhjS9O`, regenerate final validation, apply with no-overwrite semantics, stage exactly the derived new paths and run the staged scope verifier.
+10. Commit once and push once. Run `node tools/verify-deployment.mjs` to wait for the matching GitHub Pages deployment and independently verify the anonymous permalink, title/body and every exact packaged image byte; then mark `published`, update the summary and notify with evidence.
 
 Do not force a same-night article. A high-quality empty result protects the journal and its AdSense review better than a low-value daily page.
