@@ -20,6 +20,11 @@ import {
   sourceImageContractAppliesToArticlePath,
   sourceImageSlugFromEditorialCover
 } from './lib/source-images.mjs';
+import {
+  ALLOWED_CONTRIBUTION_KINDS,
+  AUTHORITY_READOUT_AFTER_DAYS,
+  validateAuthorityBrief
+} from './lib/authority-brief.mjs';
 
 const sourceRoot = path.resolve(process.cwd());
 const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'jellyggumi-editorial-gates-'));
@@ -60,6 +65,82 @@ function start(root, runId) {
   return JSON.parse(fs.readFileSync(path.join(root, '_workspace/current/manifest.json'), 'utf8'));
 }
 
+const authorityRunId = '20260901-0100-authority-test';
+const authorityDisclosure = 'AI assisted source discovery and drafting; this guide was independently checked against the listed official sources.';
+const authorityNextPath = '/journal/Reading-Korean-Weather-Forecasts-Warnings-And-Disaster-Alerts/';
+
+function authorityFixture({ mutateBrief, mutateFixture } = {}) {
+  const brief = {
+    schema_version: 1,
+    run_id: authorityRunId,
+    selected_candidate_id: 'candidate-1',
+    site_mode: 'evergreen-korea-guide',
+    operating_mode: 'acquisition-content',
+    primary_lane: 'seo-and-content',
+    audience_segment: 'English-speaking residents navigating daily life in Korea',
+    reader_job: 'Understand the official system and choose the correct next step',
+    content_pillar: 'daily-life-and-admin',
+    authority_basis: {
+      type: 'official-source-translation',
+      summary: 'Current operator guidance is translated into a practical sequence with its limits preserved.',
+      evidence_claim_ids: ['claim-1']
+    },
+    original_contribution: {
+      kind: 'practical-translation',
+      summary: 'The guide connects separate official instructions into one reader-centered decision sequence.',
+      evidence_claim_ids: ['claim-1', 'claim-2']
+    },
+    ai_role: {
+      research_assistance: true,
+      draft_assistance: true,
+      editorial_judgment_owner: 'evidence-gated-editorial-harness',
+      human_review_status: 'standing-policy-approved',
+      first_hand_experience_claimed: false,
+      disclosure: authorityDisclosure
+    },
+    revenue_model: 'ads-supported-guide',
+    next_action: {
+      type: 'related-guide',
+      path: authorityNextPath,
+      reader_value: 'Continue with the existing guide to Korean weather warning terminology.'
+    },
+    measurement: {
+      primary_kpi: 'engaged-organic-sessions',
+      leading_signal: 'organic-search-clicks',
+      baseline_status: 'unmeasured',
+      baseline_value: null,
+      success_threshold_status: 'pending-baseline',
+      success_threshold: null,
+      readout_after_days: AUTHORITY_READOUT_AFTER_DAYS,
+      result_status: 'not-measured'
+    }
+  };
+  if (mutateBrief) mutateBrief(brief);
+  const fixtureValue = {
+    brief,
+    manifest: {
+      run_id: authorityRunId,
+      mode: 'publish-on-green',
+      experience_mode: 'sourced-only',
+      observation_anchor: null
+    },
+    selectedCandidate: { candidate_id: 'candidate-1', content_pillar: 'daily-life-and-admin' },
+    evidenceClaims: [
+      { claim_id: 'claim-1', verification: 'verified' },
+      { claim_id: 'claim-2', verification: 'inferred' },
+      { claim_id: 'claim-bad', verification: 'unverified' }
+    ],
+    articleBody: `<p><strong>Editorial method:</strong> ${authorityDisclosure}</p>\n<p>Continue with <a href="${authorityNextPath}">the related guide</a>.</p>`
+  };
+  if (mutateFixture) mutateFixture(fixtureValue);
+  return fixtureValue;
+}
+
+function authorityFails(mutateBrief, phrase, mutateFixture) {
+  const { errors } = validateAuthorityBrief(authorityFixture({ mutateBrief, mutateFixture }));
+  assert.ok(errors.some((issue) => issue.includes(phrase)), `Expected authority failure containing: ${phrase}\nGot: ${errors.join('\n')}`);
+}
+
 try {
   const positive = fixture('positive');
   const manifest = start(positive, '20260830-gate-positive');
@@ -79,6 +160,87 @@ try {
   const wrongGrant = fixture('wrong-grant', (policy) => policy.replace('standing_publish_approval_granted_on: "2026-08-30"', 'standing_publish_approval_granted_on: "2026-08-29"'));
   expectFailure('node', ['tools/editorial-workspace.mjs', 'start', '--root', wrongGrant, '--run-id', '20260830-wrong-grant', '--target-date', '2026-08-30'], wrongGrant, 'Standing publication approval must remain pinned to 2026-08-30');
   tests.push('standing authority grant date is pinned');
+
+  const goodAuthority = validateAuthorityBrief(authorityFixture());
+  assert.deepEqual(goodAuthority.errors, []);
+  assert.equal(goodAuthority.metrics.authority_evidence_claims, 1);
+  assert.equal(goodAuthority.metrics.contribution_evidence_claims, 2);
+  assert.equal(goodAuthority.metrics.disclosure_in_body, true);
+  assert.equal(goodAuthority.metrics.next_action_in_body, true);
+  tests.push('authority brief true positive binds evidence, disclosure and next action');
+
+  for (const kind of ALLOWED_CONTRIBUTION_KINDS) {
+    const result = validateAuthorityBrief(authorityFixture({ mutateBrief: (brief) => { brief.original_contribution.kind = kind; } }));
+    assert.deepEqual(result.errors, [], `Contribution kind should pass: ${kind}`);
+  }
+  tests.push('all allowlisted JellyGGumi contribution kinds pass');
+
+  authorityFails((brief) => { brief.run_id = 'wrong-run'; }, 'run_id must match');
+  authorityFails((brief) => { brief.selected_candidate_id = 'wrong-candidate'; }, 'selected_candidate_id must match');
+  authorityFails((brief) => { brief.site_mode = 'trend-feed'; }, 'site_mode must be evergreen-korea-guide');
+  authorityFails((brief) => { brief.content_pillar = 'celebrity-trends'; }, 'content_pillar is not an allowed policy pillar');
+  authorityFails((brief) => { brief.extra = true; }, 'unknown top-level keys');
+  tests.push('authority brief identity, mode, pillar and top-level schema drift fail closed');
+
+  authorityFails((brief) => { brief.authority_basis.evidence_claim_ids = ['claim-bad']; }, 'references unverified evidence claim');
+  authorityFails((brief) => { brief.authority_basis.evidence_claim_ids = ['missing']; }, 'references unknown evidence claim');
+  authorityFails((brief) => { brief.authority_basis.evidence_claim_ids = ['claim-1', 'claim-1']; }, 'contains duplicate id');
+  authorityFails((brief) => { brief.authority_basis.extra = true; }, 'authority_basis contains unknown field');
+  authorityFails((brief) => { brief.original_contribution.kind = 'generic-summary'; }, 'original_contribution.kind must be one of');
+  tests.push('authority and original contribution require known non-unverified evidence');
+
+  authorityFails((brief) => { brief.authority_basis.type = 'anchored-observation'; }, 'anchored-observation requires manifest');
+  const anchored = authorityFixture({
+    mutateBrief: (brief) => {
+      brief.authority_basis.type = 'anchored-observation';
+      brief.ai_role.first_hand_experience_claimed = true;
+    },
+    mutateFixture: (fixtureValue) => {
+      fixtureValue.manifest.experience_mode = 'anchored-observation';
+      fixtureValue.manifest.observation_anchor = { source: 'owner-supplied-note' };
+    }
+  });
+  assert.deepEqual(validateAuthorityBrief(anchored).errors, []);
+  tests.push('anchored observation passes only with the manifest anchor and honest experience flag');
+
+  authorityFails((brief) => { brief.ai_role.draft_assistance = false; }, 'draft_assistance must be true');
+  authorityFails((brief) => { brief.ai_role.human_review_status = 'human-reviewed'; }, 'human_review_status must be standing-policy-approved');
+  authorityFails((brief) => { brief.ai_role.disclosure = 'AI helped.'; }, 'one safe line of at least 40 characters');
+  authorityFails((brief) => { brief.ai_role.extra = true; }, 'ai_role contains unknown field');
+  tests.push('AI-role fields are explicit and cannot imply per-post human review');
+
+  const hiddenAuthority = authorityFixture({ mutateFixture: (fixtureValue) => {
+    fixtureValue.articleBody = `<!-- <p><strong>Editorial method:</strong> ${authorityDisclosure}</p><a href="${authorityNextPath}">hidden</a> -->`;
+  } });
+  const hiddenAuthorityErrors = validateAuthorityBrief(hiddenAuthority).errors;
+  assert.ok(hiddenAuthorityErrors.some((issue) => issue.includes('visible Editorial method paragraph')));
+  assert.ok(hiddenAuthorityErrors.some((issue) => issue.includes('visible HTML link')));
+  const inertAuthority = authorityFixture({ mutateFixture: (fixtureValue) => {
+    fixtureValue.articleBody = `<div aria-hidden="true"><p><strong>Editorial method:</strong> ${authorityDisclosure}</p><a href="${authorityNextPath}">hidden</a></div>`;
+  } });
+  const inertAuthorityErrors = validateAuthorityBrief(inertAuthority).errors;
+  assert.ok(inertAuthorityErrors.some((issue) => issue.includes('visible Editorial method paragraph')));
+  assert.ok(inertAuthorityErrors.some((issue) => issue.includes('visible HTML link')));
+  tests.push('hidden disclosure and internal link cannot satisfy the visible contract');
+
+  authorityFails((brief) => { brief.next_action.path = '/journal/guide/?utm_source=test'; }, 'clean /journal/<slug>/ path');
+  authorityFails((brief) => { brief.next_action.path = '/newsletter/'; }, 'clean /journal/<slug>/ path');
+  authorityFails((brief) => { brief.next_action.extra = true; }, 'next_action contains unknown field');
+  authorityFails((brief) => { brief.next_action.path = '/journal/Not-Linked/'; }, 'visible HTML link');
+  tests.push('next action is a clean, visible, related-guide link');
+
+  authorityFails((brief) => { brief.measurement.baseline_value = 12; }, 'baseline_value must be null');
+  authorityFails((brief) => { brief.measurement.success_threshold = 100; }, 'success_threshold must be null');
+  authorityFails((brief) => { brief.measurement.result_status = 'successful'; }, 'result_status must be not-measured');
+  authorityFails((brief) => { brief.measurement.extra = true; }, 'measurement contains unknown field');
+  tests.push('measurement plan rejects fabricated baselines, thresholds and outcomes');
+
+  const missingAuthority = authorityFixture({ mutateFixture: (fixtureValue) => { fixtureValue.brief = null; } });
+  assert.ok(validateAuthorityBrief(missingAuthority).errors.some((issue) => issue.includes('fails closed')));
+  for (const key of ['authority_basis', 'original_contribution', 'ai_role', 'next_action', 'measurement']) {
+    authorityFails((brief) => { brief[key] = null; }, `${key} must be an object`);
+  }
+  tests.push('missing authority artifacts and nested objects fail closed safely');
 
   const positiveManifestPath = path.join(positive, '_workspace/current/manifest.json');
   const ready = JSON.parse(fs.readFileSync(positiveManifestPath, 'utf8'));

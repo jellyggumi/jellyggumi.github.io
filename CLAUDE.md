@@ -12,9 +12,10 @@ Before article or automation work, read:
 
 1. `PERSONA.md` for voice, evidence registers and honesty boundaries.
 2. `.claude/skills/jellyggumi-journal-harness/SKILL.md` for the production workflow.
-3. `.claude/editorial-policy.yml` for machine-readable limits.
-4. `_workspace/current/manifest.json` when it exists. Resume or archive that run before starting another.
-5. `git status --short`, `git worktree list` and `git branch -vv`. Never assume this checkout is clean or unique.
+3. `.claude/skills/authority-led-monetization/SKILL.md` and its schema/policy references for every automated guide.
+4. `.claude/editorial-policy.yml` for machine-readable limits.
+5. `_workspace/current/manifest.json` when it exists. Resume or archive that run before starting another.
+6. `git status --short`, `git worktree list` and `git branch -vv`. Never assume this checkout is clean or unique.
 
 The site belongs to the JellyGGumi account boundary: `jellyggumi.github.io`, branch `gh-pages`, AdSense publisher `ca-pub-6960738425944933`, Analytics property `G-LZGE8E8VHZ`. Never substitute another site's account, branch or publisher.
 
@@ -44,6 +45,7 @@ The site belongs to the JellyGGumi account boundary: `jellyggumi.github.io`, bra
 - Every new automated guide also embeds 4–12 distinct source-derived reference images downloaded from inspected reference materials. The shipped-tree requirement applies to posts dated 2026-08-31 or later; older posts are migration-exempt. They live under `img/source/<slug>/` (never `img/editorial/`), are declared in `manifest.reference_image_paths` separately from the two-element `asset_paths`, and each carries verified redistribution rights in `draft/source-image-manifest.json`. Fewer than four or more than twelve rights-clear images blocks the package.
 - Automated drafts cannot contain sponsorship, gifted-product endorsement, affiliate links or campaign tracking parameters.
 - Advertising and audience growth never override manual curation, source quality or persona honesty.
+- Monetization is authority-led, never volume-led: every selected guide requires `research/authority-brief.json`, a verified authority basis and original contribution, a visible AI-method disclosure, one genuine related `/journal/` next action, and an honest publish-time `not-measured` result. No transcript rewrite, scaled-content automation, or unverified traffic/revenue/outcome claim may pass.
 
 ## Workspace lifecycle
 
@@ -89,6 +91,7 @@ _workspace/current/
   research/trend-signal.json
   research/candidate-set.json
   research/existing-coverage.json
+  research/authority-brief.json
   evidence/evidence-pack.json
   evidence/source-map.md
   draft/_posts/YYYY-MM-DD-Title-In-Kebab-Case.md
@@ -106,6 +109,8 @@ _workspace/current/
   run-summary.md
 ```
 
+Before drafting, the journal director writes `research/authority-brief.json` from `.claude/skills/authority-led-monetization/references/authority-brief-schema.md`. It binds the current run/selected candidate, one allowed pillar, official-source translation or a valid owner-supplied observation anchor, an evidence-backed original contribution, the honest AI role, one existing related-guide next action, the `ads-supported-guide` revenue path, and an unmeasured 28-day plan. `tools/lib/authority-brief.mjs` validates it fail-closed in both package stages. The exact disclosure appears in a visible `<p><strong>Editorial method:</strong> ...</p>` and the declared path appears in a visible HTML link. The independent review records every required authority finding.
+
 The article must use the current JellyGGumi front-matter contract, a bare HTML body and exactly one `<!--post-ad-break-->`. Its AI cover images must be 1672×941 and 700×394 JPEG files with no EXIF, IPTC or XMP metadata; that pair and `image-provenance.json` are unchanged and do not count toward the source-image minimum.
 
 Each source-derived reference image is a downloaded raster file (`.png`, `.jpg`, `.jpeg` or `.webp`, a non-empty regular file no larger than 5 MiB with valid raster structure, EXIF/XMP/text metadata stripped, a short side of at least 32 px and at least 16,384 pixels; all source images combined must stay no larger than 20 MiB) recorded in `draft/source-image-manifest.json` (`schema_version: 1`, `run_id`, `images[]`). Every entry requires `local_path`, `source_page_url` (which must be an evidence-pack `source_url`), `download_url`, `publisher_or_creator`, `license_basis`, `license_url`, a `license_quote` of at least 40 characters, `retrieved_at`, `sha256`, `transformation`, `transformation_note`, `alt`, `attribution_text`, `commercial_use_allowed: true` and `redistribution_allowed: true`; local paths, hashes and download URLs must be unique. The only accepted `license_basis` values are `public-domain`, `cc0`, `cc-by`, `cc-by-sa`, `kogl-type-1`, `repo-license-covers-assets` (with a `pinned_ref`) and `official-press-kit` — anything else fails closed. Sidecar entries and `reference_image_paths` must match exactly, and the packaged source directory may contain no orphan files.
@@ -122,6 +127,7 @@ A run may be `ready_for_review` only when all gates pass:
 3. **Claim coverage**: every material factual claim maps to verified evidence or is explicitly labelled as inference.
 4. **Persona honesty**: no fabricated first-hand experience; first-person prose has a real anchor.
 5. **Non-commodity value**: the guide adds a useful distinction, analysis or decision beyond restating sources.
+5b. **Authority-led monetization**: the authority brief validates; the disclosure and related-guide next action are visible; the review independently confirms authority fit, reader value, monetization/AI honesty and no scaled-content risk.
 6. **Assets**: both required JPEGs exist, have exact dimensions, contain no EXIF/IPTC/XMP and follow the visible AI disclosure contract; 4–12 rights-clear source images validate against `source-image-manifest.json` and their attribution figures.
 7. **Date safety**: the date-only stamp represents a KST midnight safely in the past.
 8. **Taxonomy**: categories and tags reuse existing exact stub values.
@@ -173,15 +179,16 @@ Any red gate, dirty target path, changed origin, future date, failed Pages build
 
 The active Aside cron routine `h78L2R0UJFRhjS9O` runs daily at 01:00 `Asia/Seoul`:
 
-1. Read this contract, `PERSONA.md`, policy and routine memory.
+1. Read this contract, `PERSONA.md`, policy, routine memory, and `.claude/skills/authority-led-monetization/SKILL.md` with its schema/policy references.
 2. Fetch `origin/gh-pages`; require this one worktree to be on `gh-pages`, equal to upstream, with an empty index and clean render context. Do not stash, rebase or absorb unrelated work.
 3. Start a run, which archives a closed prior `current` after seal verification. Pending human/manual work remains preserved.
 4. Run `node tools/capture-google-trends.mjs` to fetch the official Korea Google Trends RSS feed without overwrite, preserve the raw XML, retrieval UTC, source timestamps and raw-feed SHA-256; a publishable signal must be no more than six hours old, then use Trending Now/Explore only to qualify audience fit and timing. Trends is not factual evidence.
 5. Cross-check zero to five candidates against current Korean authorities, operators and institutional data; inventory published and recently rejected coverage.
 6. Choose zero or one `guide` only if it would remain useful without the spike, has a distinct reader decision and maps every material fact to primary evidence.
-7. Produce the evidence pack, bare-HTML draft, disclosed editorial image pair, and 4–12 rights-clear source-derived reference images with their licensing sidecar and attribution figures. Run independent evidence and package review with no more than two revisions.
-8. If any gate is red, close `rejected` or `blocked` and notify without touching git. Empty green research is a valid result.
-9. If all gates are green, close `ready_for_review`, compute the approval digest, bind `standing-routine:h78L2R0UJFRhjS9O`, regenerate final validation, apply with no-overwrite semantics, stage exactly the derived new paths and run the staged scope verifier.
-10. Commit once and push once. Run `node tools/verify-deployment.mjs` to wait for the matching GitHub Pages deployment and independently verify the anonymous permalink, title/body and every exact packaged image byte; then mark `published`, update the summary and notify with evidence.
+7. Before the writer starts, create and validate `research/authority-brief.json`. Reject transcript rewrites, scaled-content patterns, fabricated visits/purchases/family experience, and unverified outcome claims rather than manufacturing compliance.
+8. Produce the evidence pack, bare-HTML draft, disclosed editorial image pair, and 4–12 rights-clear source-derived reference images with their licensing sidecar and attribution figures. Run independent evidence and package review with no more than two revisions.
+9. If any gate is red, close `rejected` or `blocked` and notify without touching git. Empty green research is a valid result.
+10. If all gates are green, close `ready_for_review`, compute the approval digest, bind `standing-routine:h78L2R0UJFRhjS9O`, regenerate final validation, apply with no-overwrite semantics, stage exactly the derived new paths and run the staged scope verifier.
+11. Commit once and push once. Run `node tools/verify-deployment.mjs` to wait for the matching GitHub Pages deployment and independently verify the anonymous permalink, title/body and every exact packaged image byte; then mark `published`, update the summary and notify with evidence.
 
 Do not force a same-night article. A high-quality empty result protects the journal and its AdSense review better than a low-value daily page.

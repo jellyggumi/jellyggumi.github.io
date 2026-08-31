@@ -11,6 +11,7 @@ research/google-trends-kr.xml
 research/trend-signal.json
 research/candidate-set.json
 research/existing-coverage.json
+research/authority-brief.json
 evidence/evidence-pack.json
 evidence/source-map.md
 draft/_posts/YYYY-MM-DD-Title-In-Kebab-Case.md
@@ -86,6 +87,10 @@ Each candidate records id, exact trend query, allowed content pillar, entity, re
 
 Exactly one selected candidate is required only when an article package exists.
 
+## Authority-led monetization brief
+
+`research/authority-brief.json` is an internal, never-published artifact written by the journal director before drafting. It follows `.claude/skills/authority-led-monetization/references/authority-brief-schema.md`: current run and selected candidate binding; one allowed pillar; `official-source-translation` or a manifest-backed `anchored-observation`; evidence-bound original contribution; honest AI role with an exact visible Editorial method paragraph; one clean related `/journal/` next action present as a visible link; and a publish-time `not-measured` plan. `tools/lib/authority-brief.mjs` validates it fail-closed in both package stages.
+
 ## Evidence pack
 
 Every claim records:
@@ -132,7 +137,7 @@ Allowed `license_basis` values fail closed: `public-domain`, `cc0`, `cc-by`, `cc
 
 ## Review
 
-`review/editorial-review.json` requires verdict, full claim coverage, claim-level findings, persona honesty, originality, non-commodity finding, disclosure finding, source freshness and blocking reasons. In publish-on-green it also requires independent `trend_relevance`, `durable_value_without_spike`, `trend_not_thesis` booleans plus a concrete `trend_rationale`.
+`review/editorial-review.json` requires verdict, full claim coverage, claim-level findings, persona honesty, originality, non-commodity finding, disclosure finding, source freshness and blocking reasons. In publish-on-green it also requires independent `trend_relevance`, `durable_value_without_spike`, `trend_not_thesis` booleans plus a concrete `trend_rationale`. Every article package also requires `authority_fit`, `reader_value`, `monetization_honesty`, `ai_role_honesty`, and `next_action_verified` as `true`, `scaled_content_risk: false`, and an `authority_rationale` of at least 40 characters.
 
 ## Publication scope
 

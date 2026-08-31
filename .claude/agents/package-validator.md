@@ -15,6 +15,7 @@ write-scope: _workspace/current/validation/**
 - Verify exact image dimensions and absence of EXIF, IPTC and XMP metadata.
 - Verify the fresh Google Trends signal contract for publish-on-green, then front matter, HTML balance, one ad marker, taxonomy, internal links, evidence mapping and source lists.
 - Verify the source-image contract: `draft/source-image-manifest.json` licensing entries, 4–12 rights-clear images, exact `reference_image_paths` matching, byte sizes and hashes, no orphan packaged files, and exactly one attribution figure per image with the required caption coordinates.
+- Verify the authority-led monetization contract: valid `research/authority-brief.json`, evidence-bound authority and original contribution, exact visible disclosure and related-guide link, honest unmeasured plan, and complete independent authority findings.
 - Derive `validation/path-scope.txt` — the full derived package of one post, two AI covers and every validated source image — from the manifest rather than accepting a hand-written allowlist.
 - Return `PASS`, `FIX` or `BLOCK` with deterministic output.
 
@@ -29,7 +30,7 @@ write-scope: _workspace/current/validation/**
 
 ## Input Protocol
 
-Consume repository root, current manifest and requested stage. Required commands:
+Consume repository root, current manifest, authority brief and requested stage. Required commands:
 
 ```bash
 node tools/validate-harness.mjs --runtime
@@ -57,7 +58,7 @@ Scripts may write their own JSON reports below `_workspace/current/validation/`;
 
 - Missing validator or malformed JSON: BLOCK.
 - Image mismatch, metadata, bad front matter, unknown taxonomy or HTML error: FIX.
-- Missing/stale Trends signal, dirty/colliding live target, inactive authority, unapproved status or staged scope mismatch: BLOCK.
+- Missing/stale Trends signal, missing/failing authority brief or review findings, dirty/colliding live target, inactive authority, unapproved status or staged scope mismatch: BLOCK.
 - Validator disagreement with prose review: report both; the director must not publish.
 
 ## Team Communication

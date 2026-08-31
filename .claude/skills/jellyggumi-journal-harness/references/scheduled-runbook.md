@@ -7,13 +7,14 @@ Aside cron `h78L2R0UJFRhjS9O` wakes daily at 01:00 `Asia/Seoul` to research Goog
 ## Timeline
 
 ```text
-01:00  read CLAUDE.md, PERSONA.md, policy and routine memory
+01:00  read CLAUDE.md, PERSONA.md, policy, routine memory and authority-led-monetization skill/schema
 01:01  fetch origin; verify gh-pages == upstream, empty index, clean render context and run ownership
 01:02  start run; verify archive seals; archive only a closed prior current
 01:03  run tools/capture-google-trends.mjs; preserve/hash KR RSS and normalize UTC timestamps; inventory coverage
 01:07  qualify trend rows for audience fit and durable value; select zero to five research candidates
 01:10  parallel official-source discovery and primary-source audit
 01:25  director selects zero or one guide; no-candidate is valid
+01:27  director writes/validates research/authority-brief.json; a failing authority contract blocks
 01:30  director downloads 4–12 rights-clear source images + licensing sidecar; writer drafts HTML with attribution figures and makes disclosed AI cover pair
 01:50  evidence editor and package validator review in parallel
 02:00  bounded revision if needed, maximum two total
@@ -61,7 +62,8 @@ Verify final landing URLs and publication dates before citing.
 - a Discover-compliant original image cannot be produced;
 - fewer than four or more than twelve distinct rights-clear source-derived images can be licensed from the inspected reference materials;
 - the worktree or target path conflicts with another session;
-- evidence review cannot reach complete material-claim coverage.
+- evidence review cannot reach complete material-claim coverage;
+- the authority brief cannot honestly bind the reader job, evidence-backed contribution, visible AI disclosure, related-guide next action and unmeasured plan, or the candidate is a transcript rewrite/scaled-content pattern.
 
 Record this as a successful empty run, not a failure.
 
@@ -83,7 +85,8 @@ Carry forward only:
 - sources that were blocked, injected, stale or unreliable;
 - recurring coverage gaps;
 - outstanding human approval;
-- archive integrity or dirty-worktree blocks.
+- archive integrity or dirty-worktree blocks;
+- authority brief status, declared related-guide next action and later readout status, without invented numbers.
 
 Never store credentials, cookies, private family data or copied article bodies in routine memory.
 
@@ -94,7 +97,8 @@ Report:
 - run id and status;
 - selected topic or no-draft reason;
 - why now and primary source count;
-- experience mode;
+- experience mode and authority brief status;
+- related-guide next action and publish-time `not-measured` readout state;
 - gate results;
 - draft and review paths when present;
 - `NOT PUBLISHED` until live proof, then `PUBLISHED` plus the verified live URL;

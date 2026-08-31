@@ -1,0 +1,32 @@
+{
+  "should_trigger": [
+    "Write tonight's JellyGGumi guide under the authority-led monetization contract.",
+    "Draft the authority brief for the selected Korea Desk candidate.",
+    "Review whether this guide package satisfies the monetization contract.",
+    "Check the AI-role disclosure and next-action link before validation.",
+    "How should JellyGGumi grow AdSense revenue with content?",
+    "Validate research/authority-brief.json for the current run.",
+    "Does this candidate fit our evergreen-korea-guide operating mode?",
+    "Apply the lessons from the monetization video to tonight's run.",
+    "Confirm the original contribution and authority basis for this draft.",
+    "Set up the measurement plan fields for this guide package.",
+    "Explain why we reject scaled issue-chasing posts on this journal.",
+    "Audit the independent review booleans for the authority contract.",
+    "Reject this request to publish 20 trending posts tonight.",
+    "Can this YouTube transcript become a JellyGGumi article?",
+    "Check whether this draft invents AdSense earnings."
+  ],
+  "should_not_trigger": [
+    "Write a fictional memory about my baby.",
+    "Add affiliate links to the latest guide.",
+    "Change the AdSense ad units or ads.txt.",
+    "Sign up for the Blit tool with the referral code.",
+    "Fix only the home page CSS.",
+    "Post this caption to Instagram.",
+    "Translate this Naver post word for word.",
+    "Create a Google Ads campaign and spend the budget.",
+    "Repair this Jekyll Liquid syntax error.",
+    "Send an email to a tourism office.",
+    "Resize an existing family photograph."
+  ]
+}

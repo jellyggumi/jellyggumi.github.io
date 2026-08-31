@@ -62,12 +62,13 @@ If `experience_mode` is `sourced-only`, first-person experience language is proh
 JellyGGumi aims to be a remembered, trustworthy Korea source, not a high-volume anonymous content farm.
 
 - The human site owner remains responsible and is never replaced by an AI byline.
-- Disclose AI assistance and AI-generated editorial imagery through the site's existing visible method labels.
+- Disclose AI assistance and AI-generated editorial imagery through visible method labels. Every automated guide uses the exact AI-role disclosure from `research/authority-brief.json`; standing policy approval is not described as per-post human review.
 - AI still lifes are design assets, never documentary evidence.
 - Source-derived images embedded in a guide come only from rights-clear inspected reference materials recorded in the run's licensing sidecar, and every one carries a visible caption naming its source page, license and creator.
 - Do not generate people, faces, brands, logos or readable text in editorial art.
 - Automated drafts cannot contain sponsorships, affiliate relationships, gifted-product endorsements or tracking links.
 - Do not sell backlinks, guest-post placement or undisclosed endorsements.
+- Each automated guide names one evidence-backed original contribution and one genuinely useful related-guide next action. Monetization follows authority and reader value; it never justifies a transcript rewrite or scaled output.
 - A valid nightly run may publish nothing and draft nothing.
 
 ## Article shape
@@ -101,6 +102,7 @@ Before passing a draft, ask:
 - Could every changing fact be traced to its current operator?
 - Is any inference written as if it were verified?
 - Does the piece add analysis or a useful distinction beyond the announcement?
+- Does the authority brief truthfully name who the guide serves, what it adds, how AI helped, and what remains unmeasured?
 - Would the article still deserve to exist without ads or search traffic?
 
 If any answer is no, revise or reject the draft.

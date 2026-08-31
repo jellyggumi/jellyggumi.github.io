@@ -42,12 +42,18 @@ const required = [
   '.claude/skills/jellyggumi-journal-harness/references/injection-defense.md',
   '.claude/skills/jellyggumi-journal-harness/references/trigger-evals.json',
   '.claude/skills/editorial-image-kit/SKILL.md',
+  '.claude/skills/authority-led-monetization/SKILL.md',
+  '.claude/skills/authority-led-monetization/references/video-evidence-and-policy.md',
+  '.claude/skills/authority-led-monetization/references/authority-brief-schema.md',
+  '.claude/skills/authority-led-monetization/references/trigger-evals.json',
   '.agents/skills/jellyggumi-journal-harness/SKILL.md',
   '.agents/skills/editorial-image-kit/SKILL.md',
+  '.agents/skills/authority-led-monetization/SKILL.md',
   '.github/workflows/editorial-quality-guard.yml',
   '.github/workflows/third-party-tags-guard.yml',
   'tools/editorial-workspace.mjs',
   'tools/lib/source-images.mjs',
+  'tools/lib/authority-brief.mjs',
   'tools/capture-google-trends.mjs',
   'tools/apply-editorial-package.mjs',
   'tools/verify-publication-scope.mjs',
@@ -85,7 +91,8 @@ if (exists('CLAUDE.md')) {
     '2 December 2024',
     '24–25 August 2026',
     'source-image-manifest.json',
-    'img/source/'
+    'img/source/',
+    'authority-brief.json'
   ]) check(text.includes(phrase), `CLAUDE.md is missing contract phrase: ${phrase}`);
 }
 
@@ -165,6 +172,17 @@ if (exists('.claude/editorial-policy.yml')) {
   check(JSON.stringify(excludedVoiceDates) === JSON.stringify(['2026-08-24', '2026-08-25']), `Voice evidence exclusions must remain the two SEO-track dates, found ${JSON.stringify(excludedVoiceDates)}`);
   for (const phrase of ['copied-korean-misspellings', 'stacked-punctuation', 'emoji-dense-prose', 'generic-engagement-cta', 'invented-family-detail']) {
     check(policy.includes(`    - ${phrase}`), `Voice policy is missing forbidden translation habit: ${phrase}`);
+  }
+  exactPolicyValue('authority_contract_version', '1', 'Authority contract version must remain 1');
+  exactPolicyValue('authority_brief_path', '_workspace/current/research/authority-brief.json', 'Authority brief path drifted');
+  exactPolicyValue('authority_site_mode', 'evergreen-korea-guide', 'Authority site mode drifted');
+  exactPolicyValue('authority_operating_mode', 'acquisition-content', 'Authority operating mode drifted');
+  exactPolicyValue('authority_primary_lane', 'seo-and-content', 'Authority primary lane drifted');
+  exactPolicyValue('authority_revenue_model', 'ads-supported-guide', 'Authority revenue model drifted');
+  exactPolicyValue('authority_readout_after_days', '28', 'Authority readout window drifted');
+  exactPolicyValue('authority_result_status_at_publish', 'not-measured', 'Authority publish-time result status drifted');
+  for (const phrase of ['no-transcript-rewrite-articles', 'no-scaled-content-automation', 'no-unverified-outcome-claims']) {
+    check(policy.includes(`  - ${phrase}`), `Policy is missing authority constraint: ${phrase}`);
   }
   const allowedTypeHeaders = [...policy.matchAll(/^allowed_content_types:\s*$/gm)];
   const allowedTypeBlock = policy.match(/^allowed_content_types:\s*\n((?:\s+-\s*[^\n]+\n?)*)/m)?.[1] || '';
@@ -252,6 +270,57 @@ if (exists('.claude/skills/jellyggumi-journal-harness/SKILL.md')) {
   check(skill.includes('Maximum two'), 'Harness must enforce two revision loops');
   check(skill.includes('Never use `git add -A`'), 'Harness lacks exact-staging rule');
   check(skill.includes('source-image-manifest.json'), 'Harness must describe the source-image licensing sidecar');
+  check(skill.includes('authority-led-monetization'), 'Harness must require the authority-led monetization contract');
+  check(skill.includes('authority-brief.json'), 'Harness must require the authority brief artifact');
+}
+
+if (exists('.claude/skills/authority-led-monetization/SKILL.md')) {
+  const authoritySkill = read('.claude/skills/authority-led-monetization/SKILL.md');
+  check(/^name:\s*authority-led-monetization$/m.test(authoritySkill), 'Authority skill name is incorrect');
+  const authorityDescription = authoritySkill.match(/^description:\s*>-?\n((?:[ \t]+[^\n]*\n)+)/m)?.[1]?.replace(/\s+/g, ' ').trim() || '';
+  check(authorityDescription.length > 0 && authorityDescription.length <= 1024, `Authority skill description must be folded and <=1024 characters, found ${authorityDescription.length}`);
+  const authoritySections = authoritySkill.match(/^## /gm) || [];
+  check(authoritySections.length === 5, `Authority skill must have exactly five sections, found ${authoritySections.length}`);
+  check(authoritySkill.includes('authority-brief.json'), 'Authority skill must require the authority brief artifact');
+  check(authoritySkill.includes('3DEG6c3UeLE'), 'Authority skill must pin its analyzed video evidence');
+  try {
+    const authorityEvals = JSON.parse(read('.claude/skills/authority-led-monetization/references/trigger-evals.json'));
+    check(Array.isArray(authorityEvals.should_trigger) && authorityEvals.should_trigger.length >= 10, 'Authority trigger eval needs at least 10 positive queries');
+    check(Array.isArray(authorityEvals.should_not_trigger) && authorityEvals.should_not_trigger.length >= 10, 'Authority trigger eval needs at least 10 negative queries');
+  } catch (error) {
+    failures.push(`Authority trigger eval JSON is invalid: ${error.message}`);
+  }
+}
+
+if (exists('tools/lib/authority-brief.mjs')) {
+  const authorityHelper = read('tools/lib/authority-brief.mjs');
+  const authorityConst = (name) => authorityHelper.match(new RegExp(`^export const ${name} = (.+);$`, 'm'))?.[1];
+  const expectedAuthorityConstants = {
+    AUTHORITY_BRIEF_SCHEMA_VERSION: '1',
+    AUTHORITY_SITE_MODE: "'evergreen-korea-guide'",
+    AUTHORITY_OPERATING_MODE: "'acquisition-content'",
+    AUTHORITY_PRIMARY_LANE: "'seo-and-content'",
+    AUTHORITY_REVENUE_MODEL: "'ads-supported-guide'",
+    AUTHORITY_PRIMARY_KPI: "'engaged-organic-sessions'",
+    AUTHORITY_LEADING_SIGNAL: "'organic-search-clicks'",
+    AUTHORITY_READOUT_AFTER_DAYS: '28',
+    AUTHORITY_RESULT_STATUS_AT_PUBLISH: "'not-measured'"
+  };
+  for (const [name, expected] of Object.entries(expectedAuthorityConstants)) {
+    check(authorityConst(name) === expected, `Authority brief helper constant drifted: ${name}=${authorityConst(name)}`);
+  }
+}
+
+if (exists('tools/validate-editorial-package.mjs')) {
+  const packageValidator = read('tools/validate-editorial-package.mjs');
+  check(packageValidator.includes("from './lib/authority-brief.mjs'"), 'Package validator must import the authority brief helper');
+  check(packageValidator.includes('validateAuthorityBrief('), 'Package validator must call validateAuthorityBrief');
+  check(packageValidator.includes("'authority-brief.json'"), 'Package validator must read research/authority-brief.json');
+  check(packageValidator.includes('scaled_content_risk'), 'Package validator must enforce the independent scaled-content-risk finding');
+}
+
+if (exists('tools/test-editorial-gates.mjs')) {
+  check(read('tools/test-editorial-gates.mjs').includes('validateAuthorityBrief'), 'Gate regression tests must cover the authority brief validator');
 }
 
 if (exists('.claude/skills/editorial-image-kit/SKILL.md')) {

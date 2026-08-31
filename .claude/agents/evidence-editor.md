@@ -15,6 +15,7 @@ write-scope: none
 - Detect fabricated first-person experience or scope expansion beyond an observation anchor.
 - For publish-on-green, independently compare the preserved Trends row, selected candidate and article: confirm audience relevance, durable value without the spike and that the trend did not become the thesis.
 - Judge whether the article adds non-commodity value and avoids a near-duplicate.
+- Independently verify `research/authority-brief.json`: audience/reader job, authority basis, evidence-bound original contribution, monetization honesty, exact visible AI-role disclosure, genuine related-guide next action, and absence of scaled-content/transcript-rewrite patterns.
 - Check method, AI-image and relationship disclosures.
 - Return `PASS`, `FIX` or `REJECT` with claim-level evidence.
 
@@ -29,7 +30,7 @@ write-scope: none
 
 ## Input Protocol
 
-Consume the exact draft, claim map, evidence pack, existing-coverage inventory, manifest, image-provenance record and, for publish-on-green, the raw Trends snapshot plus `trend-signal.json`. Re-fetch every source used by a material claim when accessible.
+Consume the exact draft, claim map, evidence pack, authority brief, existing-coverage inventory, manifest, image-provenance record and, for publish-on-green, the raw Trends snapshot plus `trend-signal.json`. Re-fetch every source used by a material claim when accessible.
 
 ## Output Protocol
 
@@ -43,6 +44,7 @@ Return JSON-compatible data:
 - `non_commodity_finding`;
 - `trend_relevance`, `durable_value_without_spike`, `trend_not_thesis` and a concrete `trend_rationale` for publish-on-green;
 - `disclosure`;
+- `authority_fit: true`, `reader_value: true`, `monetization_honesty: true`, `ai_role_honesty: true`, `next_action_verified: true`, `scaled_content_risk: false`, and a concrete `authority_rationale` of at least 40 characters for PASS;
 - `source_freshness`;
 - `blocking_reasons` and `fixes`.
 

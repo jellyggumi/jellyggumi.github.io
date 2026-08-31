@@ -14,6 +14,14 @@ max_revision_loops: 2
 minimum_primary_sources: 1
 minimum_material_claim_coverage: 1.0
 allow_empty_success: true
+authority_contract_version: 1
+authority_brief_path: _workspace/current/research/authority-brief.json
+authority_site_mode: evergreen-korea-guide
+authority_operating_mode: acquisition-content
+authority_primary_lane: seo-and-content
+authority_revenue_model: ads-supported-guide
+authority_readout_after_days: 28
+authority_result_status_at_publish: not-measured
 allowed_content_types:
   - guide
 content_pillars:
@@ -114,3 +122,6 @@ standing_constraints:
   - no-sponsored-or-affiliate-drafts
   - no-publish-without-green-gates
   - no-publish-outside-standing-or-explicit-authority
+  - no-transcript-rewrite-articles
+  - no-scaled-content-automation
+  - no-unverified-outcome-claims

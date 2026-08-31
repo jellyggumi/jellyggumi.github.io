@@ -8,6 +8,7 @@
 | G3 Claim coverage | Every material claim mapped; no unverified assertion in prose | fix, max two loops |
 | G4 Persona honesty | Experience mode obeyed; every first-person observation has an owner anchor | reject fabricated experience |
 | G5 Non-commodity value | At least one useful distinction, contradiction or decision beyond paraphrase | fix or reject |
+| G5b Authority-led monetization | Valid evidence-bound `research/authority-brief.json`; visible AI-method paragraph; genuine related-guide next action; no scaled/transcript pattern or outcome claim; independent authority findings PASS | block |
 | G6 Assets | 1672×941 hero, 700×394 thumbnail, JPEG, no EXIF/IPTC/XMP, visible AI method disclosure; plus 4–12 rights-clear source images validated against `source-image-manifest.json` and embedded in attribution figures | fix or block |
 | G7 Date safety | KST date-only midnight is safely in the past | block |
 | G8 Taxonomy | Exact category and tags have existing stub pages | fix |
@@ -40,6 +41,10 @@ Policy and institutional statistics should normally be checked within 24 months.
 `experience_mode: sourced-only` forbids first-person experience claims. `anchored-observation` requires an exact published JellyGGumi URL or owner record in the evidence pack and may not expand beyond it.
 
 An unsupported `I`, `we`, `my` or `our` claim is a hard trust failure. It does not become acceptable through softer wording.
+
+## Authority-led monetization gate
+
+G5b fails closed for every automated guide. The director writes the brief before drafting; the writer receives only the validated brief and evidence pack; the evidence editor checks it independently. The exact disclosure and related-guide link must be visibly rendered, not hidden in a comment, code block or inert container. Publish-time baselines, thresholds and results remain unmeasured/null; traffic, search, AdSense and revenue outcomes require a later dated first-party readout.
 
 ## Image gate
 

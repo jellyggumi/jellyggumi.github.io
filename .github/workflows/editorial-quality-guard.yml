@@ -58,6 +58,7 @@ jobs:
         run: |
           node --check tools/editorial-workspace.mjs
           node --check tools/lib/source-images.mjs
+          node --check tools/lib/authority-brief.mjs
           node --check tools/capture-google-trends.mjs
           node --check tools/apply-editorial-package.mjs
           node --check tools/verify-publication-scope.mjs

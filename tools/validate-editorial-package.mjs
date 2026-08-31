@@ -11,6 +11,7 @@ import {
   bindFiguresToImages,
   inspectRasterImage
 } from './lib/source-images.mjs';
+import { validateAuthorityBrief } from './lib/authority-brief.mjs';
 
 const argv = process.argv.slice(2);
 let repoRootValue = process.cwd();
@@ -646,6 +647,19 @@ for (const [index, mapped] of mappedClaims.entries()) {
 const mappedEvidence = mappedClaims.map((mapped) => evidenceById.get(mapped.claim_id)).filter(Boolean);
 pass(mappedEvidence.some((claim) => claim.primary === true && claim.verification === 'verified'), 'No mapped claim uses verified primary evidence');
 
+// Authority-led monetization brief: fails closed for every article package.
+const authorityBriefFile = path.join(current, 'research', 'authority-brief.json');
+pass(regularFile(authorityBriefFile), 'research/authority-brief.json is missing; the authority-led monetization contract fails closed');
+const authorityBrief = regularFile(authorityBriefFile) ? readJson(authorityBriefFile) : null;
+const authorityResult = validateAuthorityBrief({
+  brief: authorityBrief,
+  manifest,
+  selectedCandidate,
+  evidenceClaims: claims,
+  articleBody: body
+});
+for (const issue of authorityResult.errors) failures.push(`Authority brief: ${issue}`);
+
 const existingGuideFiles = walk(path.join(repoRoot, '_posts'), (file) => file.endsWith('.md'));
 const draftSignal = tokens(`${title} ${(body.match(/<h3\b[^>]*>[\s\S]*?<\/h3>/gi) || []).join(' ')}`);
 let nearest = { score: 0, file: null };
@@ -688,6 +702,11 @@ if (stage === 'final') {
       pass(review.trend_not_thesis === true, 'Independent review did not confirm that the trend is not the thesis');
       pass(nonempty(review.trend_rationale, 40), 'Independent review lacks a concrete trend-value rationale');
     }
+    for (const key of ['authority_fit', 'reader_value', 'monetization_honesty', 'ai_role_honesty', 'next_action_verified']) {
+      pass(review[key] === true, `Independent review did not confirm ${key}`);
+    }
+    pass(review.scaled_content_risk === false, 'Independent review must record scaled_content_risk: false');
+    pass(nonempty(review.authority_rationale, 40), 'Independent review lacks a concrete authority rationale');
     const reviewClaims = Array.isArray(review.claims) ? review.claims : [];
     const mappedIds = [...new Set(mappedClaims.map((claim) => claim.claim_id))].sort();
     const reviewIds = [...new Set(reviewClaims.map((claim) => claim.claim_id))].sort();
@@ -735,6 +754,7 @@ const report = {
     source_images: sourceFigures.length,
     evidence_claims: claims.length,
     mapped_claims: mappedClaims.length,
+    authority_brief: authorityResult.metrics,
     nearest_existing: nearest
   },
   failures,

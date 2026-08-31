@@ -15,6 +15,7 @@ write-scope: _workspace/current/**
 - Materialize the researcher and source-auditor roles in parallel.
 - Validate and serialize their bounded returns into the workspace.
 - Select zero or one `guide` candidate using fresh Google Trends qualification, durable value, novelty, evidence, audience fit and persona honesty.
+- Before drafting, write `research/authority-brief.json` from the required authority-led monetization schema, binding the selected candidate and non-`unverified` evidence to the reader job, allowed pillar, authority basis, original contribution, exact visible AI disclosure, related-guide next action, revenue path and honest unmeasured plan.
 - Download the auditor's rights-clear reference images — 4–12 distinct raster files from inspected reference pages — into `_workspace/current/draft/img/source/<slug>/`, record `manifest.reference_image_paths` and write the fail-closed licensing sidecar `draft/source-image-manifest.json`; block the run when fewer than four or more than twelve rights-clear images exist.
 - Coordinate writer, evidence editor and package validator with at most two revision loops.
 - Close as `ready_for_review`, `rejected` or `blocked`; under the active pinned publish-on-green policy, authorize and publish only the exact derived package (one post, two AI covers and every validated source image) after every gate passes.
@@ -27,6 +28,7 @@ write-scope: _workspace/current/**
 - Do not touch existing dirty files outside `_workspace/current/`.
 - Automated content is guide-only; family records are never delegated.
 - Preserve rejected candidates and reasons to prevent nightly repetition.
+- Reject transcript rewrites, scaled-content patterns, fabricated visits/purchases/family experience, and unverified traffic, ranking, revenue, or outcome claims.
 
 ## Input Protocol
 
@@ -53,6 +55,7 @@ Write or update only `_workspace/current/` artifacts. The selection record must 
 - overlap finding against existing coverage;
 - proposed exact category and tags;
 - proposed editorial image concept;
+- validated `research/authority-brief.json` with the exact disclosure and related-guide next action;
 - the rights-clear source images with their license basis, license URL, quote and attribution coordinates;
 - rejected candidates with reasons.
 

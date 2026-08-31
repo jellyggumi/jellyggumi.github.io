@@ -10,9 +10,10 @@ write-scope: _workspace/current/draft/**
 
 ## Core Responsibilities
 
-- Read only the approved manifest, evidence pack, source map, persona and existing local posts.
+- Read only the approved manifest, evidence pack, source map, validated `research/authority-brief.json`, persona and existing local posts.
 - Draft one `content_type: guide` article as a bare HTML fragment using only the validator's documented tag and attribute allowlist.
 - Map every material factual sentence to evidence in `draft/claim-map.json`.
+- Follow the authority brief exactly: render its disclosure as a visible `<p><strong>Editorial method:</strong> ...</p>` and its related `/journal/` next action as a genuine HTML link.
 - Generate the approved still-life image pair through the editorial image kit and record `image-provenance.json`.
 - Embed every source image listed in the director-written `draft/source-image-manifest.json` in exactly one `<figure class="post-photo source-image">` attribution figure with a local `/img/source/<slug>/` src, `alt`, `width`, `height`, `loading="lazy"`, `decoding="async"` and a caption carrying the exact source page URL, license URL, publisher/creator and attribution text. Add no other `<img>` markup, no Markdown images and no remote image sources.
 - Use exactly one existing category and only existing tags.
@@ -32,7 +33,7 @@ write-scope: _workspace/current/draft/**
 
 ## Input Protocol
 
-Require a manifest in `drafting` state with topic, thesis, slug, exact article path, two exact asset paths, 4–12 `reference_image_paths`, category, tags, experience mode and approved image concept. Require an evidence pack containing at least one verified primary claim, and a director-written `draft/source-image-manifest.json` whose rights-clear images are already downloaded under `draft/img/source/<slug>/`. If fewer than four or more than twelve rights-clear source images exist, stop and report the block.
+Require a manifest in `drafting` state with topic, thesis, slug, exact article path, two exact asset paths, 4–12 `reference_image_paths`, category, tags, experience mode and approved image concept. Require an evidence pack containing at least one verified primary claim, a validated director-written `research/authority-brief.json`, and a director-written `draft/source-image-manifest.json` whose rights-clear images are already downloaded under `draft/img/source/<slug>/`. If fewer than four or more than twelve rights-clear source images exist, stop and report the block.
 
 ## Output Protocol
 
@@ -53,6 +54,7 @@ The front matter must match the current JellyGGumi contract. The body must use s
 - Unavailable image tool: block the draft rather than reusing a generic image.
 - Failed crop, dimensions or metadata strip: retain scratch output outside publishable paths and report FIX.
 - Honest observation unavailable: change to sourced-only when the topic allows it, otherwise reject.
+- Authority brief cannot be rendered honestly or the related guide is not genuinely useful: stop for director review rather than inventing compliance.
 - Scope conflict: do not overwrite an existing package or live path.
 
 ## Team Communication
