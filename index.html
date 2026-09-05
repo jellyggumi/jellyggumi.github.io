@@ -1,5 +1,14 @@
 ---
 layout: default
+# AdSense verifies ownership by fetching the site root and looking for the loader
+# snippet its console hands out. Every page already carries the ownership meta
+# tag, and ads.txt is approved, but the console still reported ownership as
+# unverified while the root was the one page without the snippet. The sibling
+# site akillness.github.io ships the loader on its home page and its ownership
+# check is green, which is the only difference between the two. This opts the
+# home page into the loader through the existing `adsense` switch in
+# _includes/adsense.html rather than widening the rule for every listing.
+adsense: true
 title: ""
 subtitle: "Jelly GGumi"
 description: "Warm, source-checked guides to Korean culture and daily life, alongside one family's first-hand records from Korea."
