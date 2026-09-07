@@ -12,7 +12,9 @@ comments: false
 tags: [Food, Seoul]
 categories: [Food & Dining]
 reviewed: "2026-08-29"
-lastmod: "2026-08-29"
+lastmod: "2026-09-07"
+correction_date: "2026-09-07"
+correction_note: "Replaced a nationwide availability claim with a market- and season-specific description."
 ai_assisted: true
 content_type: guide
 sources:
@@ -56,7 +58,7 @@ sources:
 
 <h3>The Street Foods to Know</h3>
 
-<p>A short list covers most of what you will actually meet. These are the canonical items, present in some form in nearly every market in the country.</p>
+<p>The following are common examples to look for, not a list available in every market. Selection depends on the market, stall and season.</p>
 
 <ul>
   <li><strong>떡볶이 (tteokbokki)</strong> &mdash; chewy rice cakes in a sweet-spicy red sauce, the default Korean street food</li>

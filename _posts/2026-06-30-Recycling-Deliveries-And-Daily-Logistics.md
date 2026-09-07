@@ -2,7 +2,7 @@
 layout: "post"
 title: "Recycling, Deliveries and Daily Logistics"
 subtitle: "The household rules nobody tells you until you get them wrong"
-description: "Korea's volume-based bin bags, separate food waste, paid stickers for large items and doorstep parcel culture, explained before you get them wrong."
+description: "How to check local waste bags, food-waste rules, bulky-item collection and parcel arrangements, using scoped Seoul examples rather than nationwide assumptions."
 active: "journal"
 image:
   feature: "pc107.jpg"
@@ -12,14 +12,16 @@ comments: false
 tags: [Practical]
 categories: [Daily Life]
 reviewed: "2026-08-29"
-lastmod: "2026-08-29"
+lastmod: "2026-09-07"
+correction_date: "2026-09-07"
+correction_note: "Scoped waste examples to the cited Seoul and district guidance, removed the animal-feed shortcut as a rule, and replaced blanket collection and delivery assurances with local checks."
 ai_assisted: true
 content_type: guide
 sources:
   - label: "RFID-Based Food Waste Management System"
     publisher: "Korea Environment Corporation"
     url: "https://keco.or.kr/en/lay1/S295T387C404/contents.do"
-  - label: "Food Waste Separation and Disposal Standard"
+  - label: "Seoul Food Waste Separation and Disposal Standard (recommendation dated 16 April 2020)"
     publisher: "Seoul Metropolitan Government"
     url: "https://english.seoul.go.kr/seoul-distributes-outline-of-food-waste-disposal-standard-in-ten-languages-for-foreign-residents/"
   - label: "Recycling and Trash Disposal"
@@ -29,81 +31,81 @@ sources:
     publisher: "Yangcheon-gu Office, Seoul"
     url: "https://www.yangcheon.go.kr/english/english/03/10302000000002016110903.jsp"
 ---
-<p>Korea runs on two everyday systems a short trip never exposes you to. Waste separation is stricter and more legally structured than most newcomers expect. Delivery is faster and more trusting than most newcomers expect. Both are learned informally &mdash; from a neighbour, a building manager, or the mild embarrassment of getting it wrong in front of the whole block.</p>
+<p>Waste and deliveries are easier to manage once you have the rules for your own address. The waste examples below draw on Seoul guidance, including a food-waste recommendation dated 16 April 2020 and pages from Jung-gu and Yangcheon-gu. They are not a current nationwide disposal schedule. Before putting anything out, check your district's current guide and your building's instructions for the bag, category, collection day and location.</p>
 
 
 <h3>Your Rubbish Bag Is How You Pay for Collection</h3>
 
-<p>General household waste cannot go out in whatever bag you happen to have. It must go out in an official volume-based bag, 종량제 봉투 (jongnyangje bongtu), sold in supermarkets and at any <a href="/journal/Korean-Convenience-Stores-A-Practical-Guide/">convenience store</a>. The price of the bag is the collection fee, so throwing away less genuinely costs less. That is the whole design intention.</p>
+<p>For ordinary household waste, local guidance specifies the approved volume-based bag, 종량제 봉투 (jongnyangje bongtu), and how to put it out. Bags are sold through participating local retailers, which can include supermarkets and <a href="/journal/Korean-Convenience-Stores-A-Practical-Guide/">convenience stores</a>. Ask for the bag accepted at your address rather than assuming any shop or bag will do.</p>
 
-<p>These bags are issued per local district and are not interchangeable. A bag bought in one 구 (gu, a city district) is generally not valid in the next, and bags left out in the wrong district may simply be passed over. The printed district name matters, not the colour or size. When you move, buy new bags locally.</p>
+<p>The printed municipality or district name matters. After moving, ask the new district whether previously purchased bags can be used or require a transfer arrangement; do not assume that neighbouring districts accept the same bags.</p>
 
 
-<h3>Food Waste Is a Separate Stream, and the Rule Is Biological</h3>
+<h3>Food Waste: Use the Local List, Not a Kitchen Shortcut</h3>
 
 <p>음식물 쓰레기 (eumsingmul sseuregi), food waste, is collected apart from general rubbish because it is processed rather than buried &mdash; into animal feed, compost or biogas. That end use is why the rules are strict: contamination makes a batch unusable.</p>
 
-<p>The practical test is whether a farm animal could eat it. Soft vegetable trimmings, rice, fruit flesh and the solids left in a stew all count. A number of ordinary kitchen items do not, and belong in the general waste bag instead:</p>
+<p>Seoul's 2020 recommendation lists items that must not enter its food-waste stream. Examples from that list include:</p>
 
 <ul>
-<li>Bones, and shells from crab, prawn or shellfish</li>
+<li>Bones, shellfish shells, and shells of crustaceans such as crabs and lobsters</li>
 <li>Eggshells</li>
-<li>Large fruit stones and seeds, such as peach, avocado or persimmon</li>
-<li>Tough onion, garlic and spring onion skins, and corn husks</li>
-<li>Tea bags and used coffee grounds</li>
+<li>Stones from fruit such as peaches, apricots and persimmons</li>
+<li>Onion and garlic skins, corn husks, and roots of green onions</li>
+<li>Tea grounds and medicinal-herb grounds</li>
 <li>Anything with packaging, cocktail sticks or cling film still attached</li>
 </ul>
 
-<p>District lists vary a little, but the animal-feed test usually gets the right answer. Disposal is either a small dedicated food-waste bag or, in many complexes, an RFID bin you open with a registered card. It weighs what you tip in and bills your household, so draining off liquid first cuts both the charge and the smell.</p>
+<p>The often-repeated question "could an animal eat it?" is not the disposal rule and can misclassify items. Use your district's current exclusion list. The local system may require a designated bag, container or RFID bin; follow the instructions for that system. Seoul's recommendation says to remove moisture and contaminants before disposal.</p>
 
 
-<h3>Recycling Is Sorted Differently in a Flat and in a House</h3>
+<h3>Find Your Building's Recycling Arrangement</h3>
 
-<p>Apartment complexes, where most Korean households live, have a shared recycling area with labelled bins and a fixed collection day. You carry your sorted materials down and tip each category into its bin. Paper, flattened cardboard, glass, cans, hard plastics, film and polystyrene each have their own place.</p>
+<p>A building may have a shared recycling area with labelled containers and particular collection days. Follow the labels and management notice: the categories and arrangements are not determined by the word "apartment" alone.</p>
 
-<p>Detached houses and low-rise villas work on a kerbside model. Recycling and general waste go out on set nights that differ by district, put out in the evening rather than left standing. If you are unsure which night applies, watch what your neighbours put out, and when.</p>
+<p>For a house or low-rise building using kerbside collection, confirm the permitted day, hours and pickup point with the district. Neighbours' habits may be a clue, but they are not a substitute for the published schedule.</p>
 
-<p>Two sorting habits matter more than the rest. Clear PET drink bottles are collected separately from other plastics, so take off the cap, peel the label and crush the bottle flat. And rinse anything that held food: a greasy container is downgraded to general waste, which defeats the point of sorting it.</p>
+<p>Empty containers and remove food residue before sorting them. For clear PET bottles, follow the local instructions for labels, caps and flattening; do not extend one building's procedure to every district or plastic type.</p>
 
 
-<h3>Oversized Items Need a Paid Sticker</h3>
+<h3>Register Oversized Waste Before Putting It Out</h3>
 
-<p>Furniture, mattresses, appliances and anything too large for a bag fall under 대형폐기물 (daehyeong pyegimul), large waste. You buy a disposal sticker &mdash; from the district office, its website, or often a nearby convenience store &mdash; write the item and date on it, fix it to the item and leave it at the designated point.</p>
+<p>Furniture and other bulky items need the district's large-waste procedure rather than an ordinary bag. Check which items are accepted, whether a fee applies, how to register them and whether a sticker, receipt or reference number must be displayed. Confirm the approved pickup place and date before moving the item outside.</p>
 
-<p>Without the sticker, nothing happens. The item sits there, and because illegal dumping is a fineable offence and communal areas are well covered by cameras, it tends to be traced back. The sticker is the instruction to the collection crew that this item has been paid for.</p>
+<p>Leaving an unregistered item in a communal area is not a disposal booking. Ask the district or building manager when an item or payment category is unclear.</p>
 
-<p>One shortcut is worth knowing before you book anything. When you buy a large appliance, the delivery team will normally take the old one away as part of the installation, which is simpler than arranging disposal yourself.</p>
+<p>When replacing a large appliance, ask the retailer whether removal of the old appliance is included and what conditions apply. Do not assume the delivery team will collect it without an arrangement.</p>
 
 
 <!--post-ad-break-->
 
-<h3>Public Bins Are Scarce, and That Is Deliberate</h3>
+<h3>Plan for Rubbish While You Are Out</h3>
 
-<p>Visitors often remark that Korean streets are clean while street bins are almost impossible to find. The two facts are connected. When volume-based charging came in, households began carrying rubbish out to public bins to avoid paying for bags. Councils removed most of the bins, and the streets stayed clean anyway.</p>
+<p>Do not rely on finding a public bin at every stop. Keep a small bag for rubbish until you reach a permitted disposal point, and do not put household waste in a street or business bin to avoid the local collection system.</p>
 
-<p>Expect to carry your rubbish for a while. Bins exist reliably at subway station entrances, inside convenience stores, in cafés and at bus terminals. The working convention is that you use the bin belonging to the place you bought the thing from, so leaving a finished coffee cup in that café's bin is normal rather than cheeky.</p>
+<p>Use customer bins only where the business provides them and follow the sorting labels. A station, convenience store or cafe is not a guaranteed disposal point for waste brought from elsewhere.</p>
 
 
-<h3>Parcels Are Left at the Door, and Nobody Worries</h3>
+<h3>Check the Parcel Delivery Instructions for Your Address</h3>
 
-<p>택배 (taekbae), parcel delivery, is fast, inexpensive relative to distance, and built around unattended drop-off. The courier leaves the box at your door, photographs it and pushes the photo through the app. There is no signature and no second attempt, because the assumption is that a box left in a residential corridor will still be there when you get home.</p>
+<p>For 택배 (taekbae), parcel delivery, check the courier's available options and your building's access rules. Unattended drop-off may be offered, but signatures, photographs, redelivery and liability depend on the service. Do not treat a residential corridor as a guaranteed secure storage area.</p>
 
 <p>Address entry is where newcomers reliably struggle. Korean addresses run from the largest unit down to the smallest, and the road-name system is the current standard. The fields that decide whether your parcel arrives are the building number and the unit number, so check both and add a working mobile number.</p>
 
-<p>In an apartment complex, the security desk, 경비실 (gyeongbisil), doubles as a parcel hub. Couriers leave items there when access is restricted, staff hold registered post needing a signature, and they usually know the collection nights and which bag your district uses. Greeting them properly is worth more than any amount of searching, which is the principle set out in our <a href="/journal/Amazing-Korean-Cultural-Tips/">general etiquette guide</a>.</p>
+<p>If your building has a security or management desk, ask whether it accepts parcels and what collection arrangements apply. Do not assume that staff will receive registered post or hold a delivery without prior agreement. A short, polite question is more useful than applying a generalisation from another building.</p>
 
 
-<h3>Groceries Arrive Overnight and Meals Arrive Fast</h3>
+<h3>Check Grocery and Meal Delivery Before Ordering</h3>
 
-<p>새벽배송 (saebyeok baesong), dawn delivery, is the part of Korean logistics that most surprises new arrivals. Order groceries late in the evening and they are outside your door before breakfast, packed in an insulated box with ice packs. Chilled and frozen goods are routine rather than a premium service. The same courier network carries everything else you order, including the kind of shopping covered in our <a href="/journal/Skincare-And-Beauty-Shopping-In-Korea/">skincare and beauty guide</a>.</p>
+<p>For 새벽배송 (saebyeok baesong), dawn delivery, check address coverage, the order cutoff and the promised arrival window before paying. Also check how chilled goods are packed and whether containers or cooling materials must be returned. An overnight option shown for one address or retailer does not guarantee the same service elsewhere.</p>
 
-<p>배달 (baedal), food delivery, is a separate ecosystem and equally normalised. Almost everything delivers, including single portions, and a delivery fee that varies with distance is standard. Ordering apps tend to default to including disposable cutlery, so untick that box &mdash; a small habit that reduces the plastic you then have to sort.</p>
+<p>For 배달 (baedal), prepared-food delivery, compare the total shown at checkout, including delivery charges and any minimum order. Check the cutlery option rather than assuming its default, and request only what you need.</p>
 
-<p>Reusable containers survive in one traditional corner of this. Korean-Chinese restaurants and some Korean restaurants still deliver in lacquered or metal dishes, and the convention is that you leave the empties outside your door for collection. Rinse them, stack them, put them out. Nobody will ring to remind you.</p>
+<p>If an order uses returnable dishes or containers, follow that service's washing and collection instructions. Do not leave containers in a corridor without checking the pickup arrangement and building rules.</p>
 
 
 <h3>Getting It Wrong Is the Normal Way to Learn It</h3>
 
-<p>None of this is written down in one place in English, and district rules genuinely differ, so an early mistake is close to inevitable. A bag left out on the wrong night is simply left behind. A food-waste bin with a prawn shell in it may come back with a note on the lid. That is correction, not hostility.</p>
+<p>English-language guidance exists, including the district pages cited below, but coverage and procedures differ. If an item is left uncollected, first check the current instructions and ask the responsible office or building manager what needs correcting.</p>
 
-<p>Two habits shortcut most of the learning. Watch what your building actually does, and on which day, then copy it exactly. When a rule is unclear, ask the building manager rather than guessing &mdash; they answer this constantly and would rather explain once than sort it out afterwards. Pair that with the seasonal rhythms in our <a href="/journal/Four-Seasons-In-Korea-What-To-Expect/">guide to the four seasons</a>, because food waste in August and food waste in January are not the same problem.</p>
+<p>Keep the current district guide and the building's collection notice together. When they appear inconsistent, ask which instruction applies to your address rather than copying a neighbour by default. Seasonal storage also matters, especially for food waste; the <a href="/journal/Four-Seasons-In-Korea-What-To-Expect/">four seasons guide</a> gives the broader weather context.</p>

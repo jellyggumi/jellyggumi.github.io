@@ -12,7 +12,9 @@ comments: false
 tags: [Practical, Food]
 categories: [Daily Life]
 reviewed: "2026-08-29"
-lastmod: "2026-08-29"
+lastmod: "2026-09-07"
+correction_date: "2026-09-07"
+correction_note: "Removed every-branch service guarantees and unsupported price and legal assurances; added branch-specific checks for transit cards, facilities and parcels."
 ai_assisted: true
 content_type: guide
 sources:
@@ -41,11 +43,11 @@ sources:
 
 <h3>The Main Chains and How They Differ</h3>
 
-<p>Four names cover most of what you will see: CU, GS25, 7-Eleven and Emart24. The signage is distinctive enough that you will start recognising them from a distance within a day, and their core services overlap almost completely. Any of them will heat your food, top up your transit card and hold a parcel for you.</p>
+<p>CU, GS25, 7-Eleven and Emart24 are familiar chain names, but a chain sign is not a guarantee of every counter service. Food-heating facilities, transit-card services, parcel collection and seating depend on the branch. Check the operator's store or service locator, then confirm with the shop before making a special trip.</p>
 
 <p>Where they differ is own-brand food and tie-ins. Each chain develops its own ready meals and runs collaborations with celebrities, dramas and snack brands that come and go, so a particular sandwich may only exist at one of them. Membership discounts are chain-specific and tied to a Korean phone number, which most short-term visitors will not have &mdash; our post on <a href="/journal/Staying-Connected-In-Korea-SIM-Wifi-And-Apps/">staying connected in Korea</a> explains why that keeps coming up.</p>
 
-<p>The more useful distinction is branch, not brand. A store beside a university or an office block will have a long hot counter, a wide chilled meal section and proper seating. A small residential branch may have one microwave on a shelf and nowhere at all to sit.</p>
+<p>The more useful distinction is branch, not brand. Check the actual meal selection, microwave and seating available rather than assuming that an office, campus or residential location has a particular layout.</p>
 
 
 <h3>The Hot Counter by the Till</h3>
@@ -70,14 +72,14 @@ sources:
 
 <p>Buying a cup of 라면 (ramyeon) and eating it standing at the window is not a sign of desperation. It is an entirely ordinary thing to do, and the shop is furnished for it.</p>
 
-<p>The reason is the hot water. Every branch has a dispenser, 온수기 (onsugi), holding water at the right temperature for instant noodles, with disposable chopsticks beside it and a bin for the lids. Some larger branches have an automatic noodle machine that times the steeping for you. Doing the same at home means boiling a kettle and washing a bowl; doing it here takes three minutes and leaves nothing behind.</p>
+<p>Where a branch provides a hot-water dispenser, 온수기 (onsugi), follow the noodle packaging and the shop's instructions. Some branches instead offer a dedicated noodle-cooking machine. Check the facilities before buying a meal to eat there, and clear the packaging afterwards.</p>
 
-<p>It is also the cheapest hot meal available anywhere in the country, which is why you will see students, delivery riders and office workers doing exactly that in the middle of the day.</p>
+<p>Cup noodles can be a simple meal stop. Compare the shelf price and available facilities rather than assuming one branch or meal is always the cheapest option.</p>
 
 
 <h3>Topping Up a Transit Card</h3>
 
-<p>The single most useful counter service for a visitor is topping up a T-money card. You hand the card over with cash, say the amount, and the staff member puts it on the reader. Every branch of every chain does this, all day, constantly. It is routine enough that no explanation is needed on either side.</p>
+<p>A useful service for visitors is topping up a T-money card. VISITKOREA lists convenience stores as purchase and reload locations, but that nationwide description does not guarantee service at every branch. Confirm that the shop handles your card, then tell the staff how much you want to add.</p>
 
 <p>Two practical points. Top-ups are handled in cash rather than by card at most branches, so keep some notes aside for it. And you can buy the card itself here as well, which is usually simpler than working out a station machine on your first morning. What the card then covers is set out in our <a href="/journal/Getting-Around-Korea-Public-Transport-Guide/">guide to getting around Korea</a>.</p>
 
@@ -86,16 +88,16 @@ sources:
 
 <p>Most branches have a cash machine, but not every machine accepts a foreign-issued card, and this catches people out. Many convenience store ATMs are domestic-network units intended for Korean bank cards, and a foreign card is simply rejected without a useful explanation of why.</p>
 
-<p>What you are looking for is a machine marked <strong>Global</strong> or <strong>Global ATM</strong>, or one carrying the logos of the international card networks. Bank-branded machines inside or beside a store are generally a safer bet than the small standalone units. Every screen has a language button, and withdrawals carry a machine fee on top of whatever your own bank charges.</p>
+<p>What you are looking for is a machine marked <strong>Global</strong> or <strong>Global ATM</strong>, or one carrying the logos of the international card networks. Bank-branded machines inside or beside a store are generally a safer bet than the small standalone units. Check the machine's language options, supported networks and displayed fees before proceeding; your own bank may charge separately.</p>
 
 <p>If the first machine refuses your card, try the next store along. Given how close together branches are, that is a realistic strategy rather than a joke.</p>
 
 
 <h3>Parcels, Bills and the Other Counter Services</h3>
 
-<p>The till does a surprising amount of administrative work. The 택배 (taekbae) courier network uses convenience stores as drop-off and collection points, so you can send a domestic parcel from one, and you can have an online order delivered to a branch instead of to an address where nobody will be home.</p>
+<p>Participating convenience stores serve as 택배 (taekbae) parcel drop-off or pickup points. These are service-specific arrangements, not permission to address any online order to any branch. Check the courier or retailer's supported pickup locations, booking requirements and collection deadline before choosing a store.</p>
 
-<p>Beyond parcels, the counter handles a set of ordinary errands:</p>
+<p>Depending on the operator and branch, other counter services may include the following. Confirm support for the particular bill, account or order first:</p>
 
 <ul>
 <li>Paying utility and household bills from a printed slip</li>
@@ -112,6 +114,6 @@ sources:
 
 <p>Many branches have seating, whether a window bar with stools or a few tables outside. Using it is expected if you bought something there, and the etiquette is short: clear your own table, and sort your rubbish into the labelled bins by the door rather than leaving it behind. Waste separation is taken seriously here and the bins are marked accordingly.</p>
 
-<p>Drinking a beer or a bottle of 소주 (soju) at an outdoor convenience store table is legal and common, particularly in summer. It is one of the more relaxed corners of a culture that is otherwise fairly precise about where and how you eat, which is worth reading against our notes on <a href="/journal/Korean-Dining-Customs-Explained/">Korean dining customs</a>.</p>
+<p>Do not assume an outdoor convenience-store table is a permitted drinking area. Follow the shop's rules and any local restrictions, and ask if the rules are unclear. For the conventions around a sit-down meal, see <a href="/journal/Korean-Dining-Customs-Explained/">Korean dining customs</a>.</p>
 
 <p>Opening hours are the last thing to check rather than assume. A great many branches genuinely run around the clock, especially in commercial districts, and a lit convenience store is a reasonable thing to walk towards late at night. Quieter residential and campus branches do close, though, and their hours are posted on the door in Hangul.</p>

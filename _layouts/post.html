@@ -90,6 +90,12 @@ extra_css:
               marker with the in-article ad unit. With ads off it returns the body
               untouched (the marker remains an invisible HTML comment).
             {% endcomment %}
+            {% if page.correction_date and page.correction_note %}
+            <aside class="editorial-disclosure article-correction" aria-label="Article correction">
+              <p><strong>Correction, <time datetime="{{ page.correction_date | date: '%Y-%m-%d' }}">{{ page.correction_date | date: '%-d %B %Y' }}</time>:</strong> {{ page.correction_note | escape }}</p>
+              <p>This is a scoped correction, not a new publication or a full re-review of every source.</p>
+            </aside>
+            {% endif %}
             {% include post-content.html content=content %}
 
             {% if article_ai_enabled %}
@@ -98,7 +104,7 @@ extra_css:
               {% if page.content_type == 'personal' %}
                 This story comes from the family's own record. AI assisted the English editing, structure and contextual sections; it did not supply the personal events or photographs. Contextual claims were checked against the references where listed.
               {% else %}
-                AI assisted research, organisation and drafting. It is not treated as a source; factual claims were checked against the references below.
+                AI assisted research, organisation and drafting. It is not treated as a source. The references used for this guide are listed below; they do not endorse this site's interpretation.
               {% endif %}
               <a href="{{ '/editorial-policy/' | relative_url }}">Read the editorial policy.</a></p>
             </aside>

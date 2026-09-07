@@ -12,6 +12,13 @@ on:
       - "img/editorial/**"
       - "img/source/**"
       - "journal/**"
+      - "index.html"
+      - "css/**"
+      - "js/**"
+      - "about/**"
+      - "privacy/**"
+      - "editorial-policy/**"
+      - "naver/**"
       - "_includes/**"
       - "_layouts/**"
       - "_config.yml"
@@ -28,6 +35,13 @@ on:
       - "img/editorial/**"
       - "img/source/**"
       - "journal/**"
+      - "index.html"
+      - "css/**"
+      - "js/**"
+      - "about/**"
+      - "privacy/**"
+      - "editorial-policy/**"
+      - "naver/**"
       - "_includes/**"
       - "_layouts/**"
       - "_config.yml"
@@ -64,11 +78,21 @@ jobs:
           node --check tools/verify-publication-scope.mjs
           node --check tools/verify-deployment.mjs
           node --check tools/test-editorial-gates.mjs
+          node --check tools/test-search-ui.mjs
+          node --check tools/test-ad-boundaries.mjs
           node --check tools/validate-harness.mjs
           node --check tools/verify-site-quality.mjs
           node --check tools/validate-editorial-package.mjs
       - name: Run editorial gate regression tests
         run: node tools/test-editorial-gates.mjs
+      - name: Verify search states
+        run: node tools/test-search-ui.mjs
+      - name: Render actual advertising boundaries
+        run: |
+          mkdir -p "$RUNNER_TEMP/jelly-template-tests"
+          cp tools/template-test-deps/package*.json "$RUNNER_TEMP/jelly-template-tests/"
+          npm ci --prefix "$RUNNER_TEMP/jelly-template-tests" --ignore-scripts --no-audit --no-fund
+          TEST_NODE_MODULES="$RUNNER_TEMP/jelly-template-tests/node_modules" node tools/test-ad-boundaries.mjs
       - name: Validate harness structure
         run: node tools/validate-harness.mjs
       - name: Verify current site quality

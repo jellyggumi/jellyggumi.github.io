@@ -81,12 +81,23 @@ MIT Licensed
 .is-active .super-search__input {
 	transform: translateY(0);
 }
+.super-search__status {
+	margin: 16px 14px 0;
+	padding: 0;
+	color: #e6e6e6;
+	font-size: 1.05rem;
+	line-height: 1.4;
+	text-align: center;
+	/* Reserve the line so results do not jump when a message appears or clears. */
+	min-height: 1.4em;
+}
 .super-search__results {
 	text-align: center;
 	list-style: none;
 	padding: 0;
 	overflow-x: hidden;
-	height: calc(100% - 110px);
+	/* 110px of chrome plus the reserved status line. */
+	height: calc(100% - 160px);
 	transition: 0.2s ease;
 }
 .super-search__results.is-hidden {

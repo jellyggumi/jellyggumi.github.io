@@ -12,7 +12,9 @@ comments: false
 tags: [Family, Tradition]
 categories: [Family Diary]
 reviewed: "2026-08-29"
-lastmod: "2026-08-30"
+lastmod: "2026-09-07"
+correction_date: "2026-09-07"
+correction_note: "Merged two repeated closing paragraphs; the original booking account and publication date are unchanged."
 ai_assisted: true
 content_type: personal
 sources:
@@ -101,6 +103,4 @@ sources:
 
 <p>We contracted in August 2024 for a date in early June the following year, and I left saying we would confirm the morning or afternoon slot shortly. Her birthday is a public holiday and fell on a Friday, so the question was whether to use the day itself or move the party to the weekend.</p>
 
-<p>That same evening the owner messaged: somebody else was asking about the date. We settled it by the following day and took the afternoon slot.</p>
-
-<p>That same evening another family asked about the date. We chose the afternoon by the following day. The baby was two months old; the first-birthday slot was already real.</p>
+<p>That same evening the owner messaged: somebody else was asking about the date. We settled it by the following day and took the afternoon slot. The baby was two months old; the first-birthday slot was already real.</p>

@@ -3,8 +3,8 @@
 
   The ownership meta tag is safe on every production page and gives AdSense a
   stable way to associate the site with its publisher. The ad loader is much
-  narrower: it appears only on full editorial posts (or a page that explicitly
-  opts in with `adsense: true`). This prevents account-level Auto ads from being
+  narrower: it appears only on full editorial posts. Navigation pages cannot opt in
+  through a front-matter override. This prevents account-level Auto ads from being
   placed on the home page, taxonomy/archive listings, galleries, games, search,
   legal pages or other screens whose job is navigation rather than reading.
 
@@ -12,7 +12,7 @@
   Local previews remain entirely disconnected from AdSense.
 {%- endcomment -%}
 {%- assign ads_page = false -%}
-{%- if page.layout == 'post' or page.adsense == true -%}
+{%- if page.layout == 'post' -%}
   {%- assign ads_page = true -%}
 {%- endif -%}
 {%- if page.robots contains 'noindex' or page.ads == false -%}

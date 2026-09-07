@@ -6,19 +6,26 @@
 <span class="fa fa-close" aria-hidden="true" style="font-size:48px;"></span>
 </button>
 <label class="sr-only" for="js-super-search__input">Search articles</label>
-<input type="search" placeholder="Type here to search" class="super-search__input" id="js-super-search__input" autocomplete="off">
-<ul class="super-search__results" id="js-super-search__results"></ul>
+<input type="search" placeholder="Type here to search" class="super-search__input" id="js-super-search__input" autocomplete="off" aria-describedby="js-super-search__status">
+<!--
+  role="status" with aria-live="polite" so the loading, no-results and error states are
+  announced. Without it the overlay answered a nonsense query with an empty list and no
+  message, which reads as a broken search rather than an honest zero.
+-->
+<p class="super-search__status" id="js-super-search__status" role="status" aria-live="polite"></p>
+<ul class="super-search__results" id="js-super-search__results" aria-busy="false"></ul>
 </div>
 
 
 
- <script src="{{ site.baseurl }}/js/super-search.js"></script>
+ <script src="{{ site.baseurl }}/js/super-search.js?v=20260907-quality"></script>
 
 <script>
 superSearch({
     searchFile: '{{ site.baseurl }}/feed.xml',
     searchSelector: '#js-super-search', // CSS Selector for search container element.
     inputSelector: '#js-super-search__input', // CSS selector for <input>
-    resultsSelector: '#js-super-search__results' // CSS selector for results container
+    resultsSelector: '#js-super-search__results', // CSS selector for results container
+    statusSelector: '#js-super-search__status' // CSS selector for the live status region
 });
 </script>

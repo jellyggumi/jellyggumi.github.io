@@ -17,7 +17,9 @@ comments: false
 tags: [Practical, Family]
 categories: [Daily Life]
 reviewed: "2026-09-02"
-lastmod: "2026-09-02"
+lastmod: "2026-09-07"
+correction_date: "2026-09-07"
+correction_note: "Removed an unverified report of a new online filing route and scoped document guidance to the official overseas-study example."
 ai_assisted: true
 content_type: guide
 sources:
@@ -94,11 +96,11 @@ sources:
 
 <h3>Where to File, and What to Bring</h3>
 
-<p>On 2 September 2026 Korean outlets reported that the Service had opened an online route for reporting a suspension before departure, replacing a branch visit or a fax. That report could not be matched to a notice on a National Health Insurance Service page while this article was being prepared, so it is repeated here as press reporting rather than as confirmed procedure. Anyone relying on it should check the Service's own site first.</p>
+<p>Start with the National Health Insurance Service rather than an unverified report of a new filing channel. The Ministry of Government Legislation's EasyLaw guide describes applying to the nearest NHIS branch with supporting documents in its overseas-study example. Confirm the current submission method and the evidence required for your own subscriber category with NHIS.</p>
 
-<p>The documentary practice behind the filing is better established. Filing before departure has required a copy of the ticket and passport, while filing afterwards has required an entry and exit certificate, and suspension is processed from the day after departure. That asymmetry is the reason the pre-departure route is worth the effort: afterwards, the paperwork grows.</p>
+<p>For that overseas-study example, EasyLaw lists flight-ticket and passport copies before departure, and evidence such as an entry and exit certificate or passport and ticket copies after departure. It describes suspension being processed from the day after departure for the qualifying stay. These examples are not a universal document checklist for every overseas work or residence case.</p>
 
-<p>The Service lists a domestic number, 1577-1000, and a separate overseas line, +82-33-811-2001, both staffed on weekdays from 09:00 to 18:00. The Service publishes the second number specifically for use from overseas. The same site lists a mobile app, The건강보험. If mobile access is part of the plan, the guide to <a href="/journal/Staying-Connected-In-Korea-SIM-Wifi-And-Apps/">SIM cards, wifi and Korean apps</a> is a useful companion, and <a href="/journal/Recycling-Deliveries-And-Daily-Logistics/">daily logistics in Korea</a> covers the neighbourhood offices where in-person civil paperwork is usually handled.</p>
+<p>The Service lists a domestic number, 1577-1000, and a separate overseas line, +82-33-811-2001, both staffed on weekdays from 09:00 to 18:00. The Service publishes the second number specifically for use from overseas. The same site lists a mobile app, The건강보험. If mobile access is part of the plan, the guide to <a href="/journal/Staying-Connected-In-Korea-SIM-Wifi-And-Apps/">SIM cards, wifi and Korean apps</a> is a useful companion, and <a href="/journal/Recycling-Deliveries-And-Daily-Logistics/">daily logistics in Korea</a> covers separate household tasks such as waste collection and parcel arrangements.</p>
 
 <figure class="post-photo source-image"><img src="/img/source/korea-health-insurance-going-abroad/gyeongpo-community-service-center.jpg" alt="A neighbourhood community service centre with a street sign and an unmanned civil-document kiosk beside the entrance" width="1600" height="1067" loading="lazy" decoding="async">
 <figcaption>A neighbourhood community service centre with an unmanned civil-document kiosk. Civil certificates in Korea are issued through offices, kiosks and portals of this kind. Source: https://commons.wikimedia.org/wiki/File:Gyeongpo-dong_Community_service_center_20220501_001.jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0/ &middot; Mobius6 &middot; Photo: Mobius6, CC BY-SA 4.0, via Wikimedia Commons</figcaption></figure>
@@ -112,4 +114,4 @@ sources:
 <figure class="post-photo source-image"><img src="/img/source/korea-health-insurance-going-abroad/korean-passport-cover.jpg" alt="The cover of a Republic of Korea biometric passport showing the national emblem" width="1600" height="2185" loading="lazy" decoding="async">
 <figcaption>A Republic of Korea passport. For foreign residents, residence status rather than nationality decides how enrolment works. Source: https://commons.wikimedia.org/wiki/File:Passport_of_South_Korea.jpg &middot; License: https://creativecommons.org/licenses/by/2.0/kr/deed.en &middot; revi &middot; Photo: revi, CC BY 2.0 KR, via Wikimedia Commons</figcaption></figure>
 
-<p><strong>Editorial method:</strong> AI assisted the research and drafting of this guide inside an evidence-gated editorial pipeline; every material claim is bound to a statutory coordinate, the reference photographs are credited third-party works under open licences, and the cover image is an AI-generated editorial still life.</p>
+<p><strong>Editorial method:</strong> AI assisted the research and drafting of this guide inside an evidence-gated editorial pipeline; the legal summary draws on the cited statutes and the filing examples on EasyLaw, the reference photographs are credited third-party works under open licences, and the cover image is an AI-generated editorial still life.</p>

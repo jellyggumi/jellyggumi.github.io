@@ -1,14 +1,8 @@
 ---
 layout: default
-# AdSense verifies ownership by fetching the site root and looking for the loader
-# snippet its console hands out. Every page already carries the ownership meta
-# tag, and ads.txt is approved, but the console still reported ownership as
-# unverified while the root was the one page without the snippet. The sibling
-# site akillness.github.io ships the loader on its home page and its ownership
-# check is green, which is the only difference between the two. This opts the
-# home page into the loader through the existing `adsense` switch in
-# _includes/adsense.html rather than widening the rule for every listing.
-adsense: true
+# Ownership is declared by the account meta tag and ads.txt, not ad requests.
+ads: false
+lastmod: "2026-09-07"
 title: ""
 subtitle: "Jelly GGumi"
 description: "Warm, source-checked guides to Korean culture and daily life, alongside one family's first-hand records from Korea."
@@ -58,10 +52,44 @@ sitemap:
     </ul>
   </section>
 
+  <section class="home-section home-starts" aria-labelledby="starts-heading">
+    <div class="home-section__heading">
+      <p class="home-eyebrow">Start with your question</p>
+      <h2 id="starts-heading">Find the answer you came for.</h2>
+      <p>A first visit, a move or a family invitation needs a different starting point. These reading paths connect an explanation to the decision it can help with.</p>
+    </div>
+    <div class="home-value-grid">
+      <article>
+        <h3>Visiting Korea?</h3>
+        <p>Plan for the season, then work out the small errands. Store services vary by branch; check before relying on one for a parcel or transport card.</p>
+        <ul>
+          <li><a href="{{ '/journal/Four-Seasons-In-Korea-What-To-Expect/' | relative_url }}">What should I expect from the weather?</a></li>
+          <li><a href="{{ '/journal/Korean-Convenience-Stores-A-Practical-Guide/' | relative_url }}">What can a convenience store help with?</a></li>
+        </ul>
+      </article>
+      <article>
+        <h3>Settling into daily life?</h3>
+        <p>Start with the rules that depend on your address or status. A local disposal notice and an insurer's decision matter more than a general guide.</p>
+        <ul>
+          <li><a href="{{ '/journal/Recycling-Deliveries-And-Daily-Logistics/' | relative_url }}">How do I sort rubbish at my building?</a></li>
+          <li><a href="{{ '/journal/Leaving-Korea-For-A-While-Your-Health-Insurance/' | relative_url }}">What should I check before going abroad?</a></li>
+        </ul>
+      </article>
+      <article>
+        <h3>Invited to a first birthday?</h3>
+        <p>Read the cultural guide for the ritual, then a dated family booking record for the practical decisions. One family's plan is not a rule for everyone.</p>
+        <ul>
+          <li><a href="{{ '/journal/Doljanchi-A-Korean-First-Birthday/' | relative_url }}">What is doljanchi, and how should I prepare?</a></li>
+          <li><a href="{{ '/journal/We-Booked-A-First-Birthday-Venue-At-Two-Months/' | relative_url }}">Why did one family book a venue so early?</a></li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
   {% assign guide_posts = site.posts | where: "content_type", "guide" %}
   <section class="home-section" id="guides" aria-labelledby="guides-heading">
     <div class="home-section__heading">
-      <p class="home-eyebrow">A good place to start</p>
+      <p class="home-eyebrow">Latest guides</p>
       <h2 id="guides-heading">Practical answers, with the human bits left in.</h2>
       <p>Each guide begins with one real question, keeps useful Korean words in Hangul, and makes it clear what we observed, what an official source says and what may change.</p>
     </div>
@@ -70,7 +98,7 @@ sitemap:
         {% include post-card.html post=post index=forloop.index heading='h3' %}
       {% endfor %}
     </ul>
-    <p class="home-all-posts"><a href="{{ '/journal/guides/' | relative_url }}">Browse all {{ guide_posts.size }} guides &rarr;</a></p>
+    <p class="home-all-posts"><a href="{{ '/journal/guides/' | relative_url }}">Browse all {{ guide_posts.size }} practical guides &rarr;</a></p>
   </section>
 
   {% assign personal_posts = site.posts | where: "content_type", "personal" %}
@@ -87,7 +115,7 @@ sitemap:
         {% include post-card.html post=post index=forloop.index heading='h3' %}
       {% endfor %}
     </ul>
-    <p class="home-all-posts"><a href="{{ '/journal/family-records/' | relative_url }}">Browse all {{ personal_posts.size }} family records &rarr;</a></p>
+    <p class="home-all-posts"><a href="{{ '/journal/family-records/' | relative_url }}">Browse all {{ personal_posts.size }} personal family records &rarr;</a></p>
   </section>
 
   <section class="home-section home-values" aria-labelledby="value-heading">

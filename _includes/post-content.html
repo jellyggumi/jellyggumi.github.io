@@ -24,6 +24,7 @@
     and site.google_ad_slots.post_in_article != empty
     and site.google_ad_slots.post_in_article
     and page.ads != false
+    and page.layout == 'post'
   -%}
     {%- assign ads_on = true -%}
   {%- endif -%}

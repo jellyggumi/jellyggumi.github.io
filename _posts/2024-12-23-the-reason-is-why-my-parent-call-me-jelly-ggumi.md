@@ -28,7 +28,9 @@ case1:
 tags: [Family, JellyGGumi]
 categories: [Family Diary]
 reviewed: "2026-08-29"
-lastmod: "2026-08-29"
+lastmod: "2026-09-07"
+correction_date: "2026-09-07"
+correction_note: "Removed the child's full legal-name identification and clarified that the first-birthday link is a cultural guide, not a family event report."
 ai_assisted: true
 content_type: personal
 sources:
@@ -90,7 +92,7 @@ sources:
 
 <h3>The Name on the Family Register</h3>
 
-<p>My legal name is INa Jeong. In Korean order that is 정 (Jeong), the family name, first, followed by the given name &mdash; the reverse of the English convention, which is why Korean names appear in two different orders depending on where they are written. 정 is one of the more common Korean surnames.</p>
+<p>Korean names conventionally put the family name first, followed by the given name. In English-language contexts the order may be reversed, which is why the same name can appear in two different orders. For this family story, the affectionate nickname is the name that matters.</p>
 
 <p>Korean given names are usually two syllables. Traditionally each syllable is tied to a Chinese character chosen for its meaning, and families sometimes share one character across every cousin in a generation, so the written name records where you sit in the family. Formal naming can go further still, with a 작명소 (jakmyeongso), a naming service, consulted for a combination considered auspicious.</p>
 
@@ -103,7 +105,7 @@ sources:
 
 <p>The second is that we kept answering the same questions. Friends and relatives outside Korea would ask about something that is completely ordinary here &mdash; why the baby had a name before she was born, why the first birthday is such a large occasion, why nobody worries about a parcel left in a hallway &mdash; and the honest answer usually needed a paragraph rather than a sentence. Most writing about Korea is either a tourist itinerary or an academic paper, and there is not much in between explaining how ordinary life actually works.</p>
 
-<p>So the blog does both jobs. It is INa's diary, and it is the long-form answer to the questions we keep being asked. Her first birthday, which is the biggest occasion in a Korean child's early life, has <a href="/journal/Doljanchi-A-Korean-First-Birthday/">its own post</a>, and the general etiquette questions are collected in our <a href="/journal/Amazing-Korean-Cultural-Tips/">overview of Korean cultural tips</a>.</p>
+<p>So the blog does both jobs. It is INa's diary, and it is the long-form answer to the questions we keep being asked. The traditions around a Korean first birthday have <a href="/journal/Doljanchi-A-Korean-First-Birthday/">their own cultural guide</a>, and the general etiquette questions are collected in our <a href="/journal/Amazing-Korean-Cultural-Tips/">overview of Korean cultural tips</a>.</p>
 
 
 <h3>Still GGumi</h3>
