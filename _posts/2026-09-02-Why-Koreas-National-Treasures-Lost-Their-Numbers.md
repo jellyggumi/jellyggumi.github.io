@@ -85,7 +85,7 @@ sources:
 <figure class="post-photo source-image"><img src="/img/source/korea-heritage-treasure-labels/hunminjeongeum-haerye.jpg" alt="Museum display copy of the Hunminjeongeum Haerye, an open hanja-and-hangul book shown as two facing pages" width="1600" height="1200" loading="lazy" decoding="async">
 <figcaption>A display copy of the Hunminjeongeum Haerye, the fifteenth-century manual explaining Hangul, and the work campaigners wanted as No. 1. Source: https://commons.wikimedia.org/wiki/File:Hunminjeongeumhaerye.jpg &middot; License: https://commons.wikimedia.org/wiki/Template:PD-user &middot; Kbarends (English Wikipedia) &middot; Photo: Kbarends, public domain, via Wikimedia Commons</figcaption></figure>
 
-<p>The Hunminjeongeum Haerye, the manuscript that explains how Hangul works, sat at the centre of the old No. 1 debate; campaigners argued the alphabet manual deserved the symbolic top spot more than a rebuilt gate. Removing the numbers dissolved the argument rather than settling it. Readers curious about the manuscript itself can start with the journal's guide to <a href="/journal/Hangul-And-First-Korean-Phrases/">Hangul and first Korean phrases</a>.</p>
+<p>The Hunminjeongeum Haerye, the manuscript that explains how Hangul works, sat at the centre of the old No. 1 debate; campaigners argued the alphabet manual deserved the symbolic top spot more than a rebuilt gate. Removing the numbers dissolved the argument rather than settling it.</p>
 
 <h3>From Cultural Properties to National Heritage</h3>
 

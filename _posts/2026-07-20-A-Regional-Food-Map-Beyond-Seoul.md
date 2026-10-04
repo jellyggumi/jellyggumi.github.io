@@ -1,4 +1,5 @@
 ---
+published: false
 layout: "post"
 title: "A Regional Food Map Beyond Seoul"
 subtitle: "What each part of Korea is actually known for eating"

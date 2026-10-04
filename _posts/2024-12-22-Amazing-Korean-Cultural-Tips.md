@@ -73,7 +73,7 @@ sources:
 
 <p>The no-tipping convention is the one visitors worry about most, and the reassurance is simple: service is priced into the bill and staff are paid a wage rather than topped up by customers. Leaving money on the table is not generous in Korea so much as confusing, and staff will often try to return it. Water works the same way &mdash; it is treated as table equipment rather than a product, which is why it arrives in a jug or comes from a dispenser you help yourself from.</p>
 
-<p>Two practical habits follow. You call staff over rather than waiting to be checked on, using 저기요 (jeogiyo), and it is not considered rude. And you usually pay at the counter on the way out rather than asking for the bill at the table. Both make sense once you notice that the arrangement assumes the customer will say what they need. We have written up the table conventions in our <a href="/journal/Korean-Dining-Customs-Explained/">guide to Korean dining customs</a>.</p>
+<p>Two practical habits follow. You call staff over rather than waiting to be checked on, using 저기요 (jeogiyo), and it is not considered rude. And you usually pay at the counter on the way out rather than asking for the bill at the table. Both make sense once you notice that the arrangement assumes the customer will say what they need.</p>
 
 
 <h3>Why Everyday Service Feels So Fast</h3>
@@ -98,7 +98,7 @@ sources:
 
 <p>The reason is that English is a core school subject tied directly to university admission and then to hiring, so most Koreans under about forty have studied it for years. What that produces is strong reading and writing and much more hesitant speaking, because the study was aimed at examinations rather than conversation. The person you are talking to often understands you perfectly well and is simply reluctant to answer out loud.</p>
 
-<p>So the misconception to correct is not that Koreans speak little English, but that hesitation means incomprehension. Writing a word down, showing a map on your phone, or using a translation app usually resolves the exchange immediately. Learning to read Hangul removes most remaining friction, and we have covered that in our <a href="/journal/Hangul-And-First-Korean-Phrases/">introduction to Hangul and first phrases</a>.</p>
+<p>So the misconception to correct is not that Koreans speak little English, but that hesitation means incomprehension. Writing a word down, showing a map on your phone, or using a translation app usually resolves the exchange immediately. Learning to read Hangul removes most remaining friction.</p>
 
 <h3>Why Banchan Belongs to the Meal</h3>
 
@@ -115,7 +115,7 @@ sources:
 
 <p>What makes it work is that the discount is built into the fare structure rather than sold as a separate ticket. You tap a single rechargeable card on entry and again on exit, and the system reads the whole journey as one trip, so moving between a bus and the subway costs little or nothing extra. Tapping out matters, and it is the step visitors most often skip.</p>
 
-<p>That seamless integration between modes is what makes travel here feel so convenient. Our <a href="/journal/Getting-Around-Korea-Public-Transport-Guide/">public transport guide</a> covers the card itself and how to use it.</p>
+<p>That seamless integration between modes is what makes travel here feel so convenient.</p>
 <br>
 
 <!-- Gallery __-->
@@ -129,4 +129,4 @@ sources:
 
 <p>These habits look like six separate quirks and are closer to one. Korea is dense, heavily apartment-based, and runs on shared infrastructure most people are already enrolled in: one transport card, one delivery account, one payment method. Density makes fast service viable, apartment living makes doorstep delivery safe, and a single identity layer keeps fares, orders and refunds simple.</p>
 
-<p>The one variable it ignores is weather, which changes daily habits here more than visitors expect. Overnight delivery is a different proposition in a humid August than a dry January, and so is waiting for a bus. Our post on <a href="/journal/Four-Seasons-In-Korea-What-To-Expect/">the four seasons in Korea</a> covers what to plan for.</p>
+<p>The one variable it ignores is weather, which changes daily habits here more than visitors expect. Overnight delivery is a different proposition in a humid August than a dry January, and so is waiting for a bus. The journal's note on <a href="/journal/Reading-Korean-Weather-Forecasts-Warnings-And-Disaster-Alerts/">reading Korean weather forecasts and alerts</a> covers what to watch for.</p>

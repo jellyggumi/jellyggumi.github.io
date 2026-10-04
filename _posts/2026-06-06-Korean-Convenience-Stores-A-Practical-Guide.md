@@ -1,4 +1,5 @@
 ---
+published: false
 layout: "post"
 title: "Korean Convenience Stores: A Practical Guide"
 subtitle: "What a 편의점 actually does beyond selling snacks"

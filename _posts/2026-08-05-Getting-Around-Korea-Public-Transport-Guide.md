@@ -1,4 +1,5 @@
 ---
+published: false
 layout: "post"
 title: "Getting Around Korea: A Public Transport Guide"
 subtitle: "One card, two taps and a calmer first journey"

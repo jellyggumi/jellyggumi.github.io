@@ -51,7 +51,7 @@ sources:
 
 <p>꿈 (kkum) is the Korean word for dream. It covers both senses the English word does: the thing that happens while you are asleep, and the thing you spend years working towards. It comes from the verb 꾸다 (kkuda), which is what you do to a dream &mdash; Korean does not "have" a dream, it "dreams" one, using a separate verb for the act.</p>
 
-<p>When 꿈 is followed by 이, it is written 꿈이 and pronounced <em>kkumi</em>: the final ㅁ carries into the next spoken syllable. Our family turned that sound into the playful spelling 꾸미 for the prenatal nickname. That family spelling is the reason this site uses “GGumi” rather than claiming it as the official romanisation of 꿈. We have written more about syllable blocks in our <a href="/journal/Hangul-And-First-Korean-Phrases/">introduction to Hangul</a>.</p>
+<p>When 꿈 is followed by 이, it is written 꿈이 and pronounced <em>kkumi</em>: the final ㅁ carries into the next spoken syllable. Our family turned that sound into the playful spelling 꾸미 for the prenatal nickname. That family spelling is the reason this site uses “GGumi” rather than claiming it as the official romanisation of 꿈.</p>
 
 <p>Put the loanword 젤리 (jelli) in front and our nickname becomes 젤리꾸미 &mdash; Jelly GGumi. My mom thought the sound suited a cuddly little bear, so GGumi stayed.</p>
 
@@ -105,7 +105,7 @@ sources:
 
 <p>The second is that we kept answering the same questions. Friends and relatives outside Korea would ask about something that is completely ordinary here &mdash; why the baby had a name before she was born, why the first birthday is such a large occasion, why nobody worries about a parcel left in a hallway &mdash; and the honest answer usually needed a paragraph rather than a sentence. Most writing about Korea is either a tourist itinerary or an academic paper, and there is not much in between explaining how ordinary life actually works.</p>
 
-<p>So the blog does both jobs. It is INa's diary, and it is the long-form answer to the questions we keep being asked. The traditions around a Korean first birthday have <a href="/journal/Doljanchi-A-Korean-First-Birthday/">their own cultural guide</a>, and the general etiquette questions are collected in our <a href="/journal/Amazing-Korean-Cultural-Tips/">overview of Korean cultural tips</a>.</p>
+<p>So the blog does both jobs. It is INa's diary, and it is the long-form answer to the questions we keep being asked. Our own first-birthday planning has <a href="/journal/We-Booked-A-First-Birthday-Venue-At-Two-Months/">its own dated record</a>, and the general etiquette questions are collected in our <a href="/journal/Amazing-Korean-Cultural-Tips/">overview of Korean cultural tips</a>.</p>
 
 
 <h3>Still GGumi</h3>

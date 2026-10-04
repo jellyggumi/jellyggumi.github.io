@@ -1,4 +1,5 @@
 ---
+published: false
 layout: "post"
 title: "A Temple Stay and Korean Buddhism"
 subtitle: "What a night inside a working monastery actually involves"

@@ -102,7 +102,7 @@ sources:
 
 <p>For a newcomer, the practical residue of all this law is short. The tour costs nothing, whatever it is called. The fee has a published ceiling that depends on the deal type and price band, and the statute frames the final number as an agreement, which means it can be discussed before the contract is signed rather than after. Monthly rent converts through the deposit-plus-hundred-times formula, with the seventy-times fallback for small totals. Extras beyond the fee need receipts and a legal basis; VAT rides on top; and the fee is due when the money moves, not when the door opens.</p>
 
-<p>One aside for the listing-reading stage: the addresses taped to that office window follow Korea's own street-and-parcel logic, which the guide to <a href="/journal/Korean-Age-Names-And-How-Addresses-Work/">Korean age, names and how addresses work</a> unpacks.</p>
+<p>One aside for the listing-reading stage: the addresses taped to that office window follow Korea's own street-and-parcel logic.</p>
 
 <p>The next task after the lease is usually the bank, and Korean banking has its own newcomer surprise. For why a brand-new account often starts with a one-million-won daily transfer ceiling and how the limits loosen, see the guide to <a href="/journal/Why-New-Korean-Bank-Accounts-Start-With-Tiny-Limits/">why new Korean bank accounts start with tiny limits</a>.</p>
 

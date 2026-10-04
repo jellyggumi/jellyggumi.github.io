@@ -1,4 +1,5 @@
 ---
+published: false
 layout: "post"
 title: "Doljanchi: A Korean First Birthday"
 subtitle: "The table, clothes and choosing ritual of a Korean first birthday"

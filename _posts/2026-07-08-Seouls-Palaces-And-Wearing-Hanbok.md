@@ -1,4 +1,5 @@
 ---
+published: false
 layout: "post"
 title: "Seoul's Palaces and Wearing Hanbok"
 subtitle: "Five royal compounds, one free-entry rule, and how to walk them in a day"

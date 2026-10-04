@@ -1,4 +1,5 @@
 ---
+published: false
 layout: "post"
 title: "Four Seasons in Korea and What to Expect"
 subtitle: "What each season actually feels like, and what to pack"

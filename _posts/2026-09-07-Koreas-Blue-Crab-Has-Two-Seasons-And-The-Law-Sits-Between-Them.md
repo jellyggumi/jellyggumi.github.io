@@ -76,7 +76,7 @@ sources:
 
 <p>Sexing a crab at the market is easier than it sounds. The food-information service describes the female as rounded in outline with a dark brown shell, while the male runs pointed and triangular, in a greenish dark brown. Flipped over or compared side by side, the difference shows at a glance, and in season the sex is half the price tag.</p>
 
-<p>The dish tells you which crab to want. Ganjang-gejang — raw crab marinated in soy sauce — is the preparation that makes spring females an object of devotion, because the marinade seasons the roe as much as the meat. Autumn is for steaming: kkotge-jjim puts the fattened males' meat at the centre, and crab added to a soup base makes the classic kkotge-tang. Either way the crab lands on a shared table with its own rules, covered in the guide to <a href="/journal/Korean-Dining-Customs-Explained/">Korean dining customs</a>.</p>
+<p>The dish tells you which crab to want. Ganjang-gejang — raw crab marinated in soy sauce — is the preparation that makes spring females an object of devotion, because the marinade seasons the roe as much as the meat. Autumn is for steaming: kkotge-jjim puts the fattened males' meat at the centre, and crab added to a soup base makes the classic kkotge-tang. Either way the crab lands on a shared table with its own rules.</p>
 
 <figure class="post-photo source-image"><img src="/img/source/korea-blue-crab-seasons/ganjang-gejang.jpg" alt="Ganjang-gejang: halved raw crabs glossy with soy marinade arranged in a dark bowl, roe visible in the shells" width="4032" height="3024" loading="lazy" decoding="async">
 <figcaption>Ganjang-gejang, raw crab marinated in soy sauce — the dish that makes spring females famous. Source: https://commons.wikimedia.org/wiki/File:Ganjang-gejang_1.jpg &middot; License: https://creativecommons.org/licenses/by/2.0/ &middot; Photo: lazy fri13th, CC BY 2.0, via Wikimedia Commons</figcaption></figure>
@@ -101,6 +101,6 @@ sources:
 
 <p>The dates here are the ones published in the ministry's current documents — the 2026 annex postings and the 2025 species guide — and closed seasons are, as the 2024 island change shows, adjustable. At the time of writing the general window remains 21 June to 20 August; a reader planning around the margins of the season in a future year should check the ministry's current notice rather than trust any article's snapshot, this one included.</p>
 
-<p>A crab bought with its season is one of the easiest good meals in Korea. For how the rest of the market works around that tank — the stalls, the haggling, the etiquette — see the guide to <a href="/journal/Street-Food-And-Traditional-Markets/">street food and traditional markets</a>.</p>
+<p>A crab bought with its season is one of the easiest good meals in Korea.</p>
 
 <p><strong>Editorial method:</strong> AI assisted the research and drafting of this guide inside an evidence-gated editorial pipeline; every material claim is bound to a named Korean ministry, institute or service coordinate, the reference photographs are credited third-party works under open licences, and the cover image is an AI-generated editorial still life.</p>

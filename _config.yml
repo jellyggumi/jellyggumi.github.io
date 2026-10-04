@@ -123,6 +123,7 @@ plugins:
 exclude:
   - node_modules
   - README.md
+  - img/editorial/README.md
   - LICENSE
   - resize.py
   - tools
