@@ -38,7 +38,7 @@ sources:
     url: "https://www.kasi.re.kr/kor/publication/post/newsMaterial/32031"
 ---
 
-<p>The songpyeon starts appearing in shop windows about two weeks out, which in 2026 means right about now. Chuseok falls on Friday 25 September, and the holiday block runs Thursday, Friday, Saturday.</p>
+<p>The songpyeon starts appearing in shop windows about two weeks before Chuseok. In 2026, Chuseok falls on Friday 25 September, and the holiday block runs Thursday, Friday, Saturday.</p>
 
 <p>Look at that Saturday and a reasonable assumption forms: Korea gives a substitute holiday when a public holiday collides with a weekend, so Monday 28 September should be off too. It is not. Monday is a normal working day, and the reason is one clause of one decree that treats Chuseok differently from almost every other holiday in the year.</p>
 
@@ -121,4 +121,4 @@ sources:
 
 <p>The asymmetry, though, is not a quirk of 2026. It is a standing choice in the decree, and it will produce the same result every time Chuseok's third day lands on a Saturday.</p>
 
-<p><strong>Editorial method:</strong> This guide was researched and drafted with AI assistance inside an evidence-gated editorial harness, and every date, clause and figure was checked against the Korean authority that publishes it before release.</p>
+<p><strong>Editorial method:</strong> AI assisted with the research and drafting of this guide. The 2026 dates and the published holiday totals come from the 2026 calendar standard announced by the Korea Astronomy and Space Science Institute and the Korea AeroSpace Administration on 30 June 2025; the substitute-holiday clauses from the Presidential Decree on public-office holidays and the Act on Public Holidays, both as in force from 11 May 2026; and the private-workplace rules from the Labor Standards Act and its Enforcement Decree, all read on the National Law Information Center. The guide deliberately does not recompute the outdated totals. The songpyeon, charye-table and building photographs are Wikimedia Commons files, each credited in its caption; the three paper squares on the cover are an AI-generated still life.</p>

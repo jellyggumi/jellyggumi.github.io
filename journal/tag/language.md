@@ -2,7 +2,7 @@
 layout: "journal_by_tag"
 tag: "Language"
 title: "Tagged: Language"
-description: "Hangul, useful phrases, names and forms of address."
+description: "Korean language notes. No published post carries this tag at the moment."
 permalink: "/journal/tag/language/"
 active: journal
 header-img: "img/archive-bg.jpg"

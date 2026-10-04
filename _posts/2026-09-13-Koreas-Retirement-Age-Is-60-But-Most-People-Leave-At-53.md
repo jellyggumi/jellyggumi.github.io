@@ -38,9 +38,9 @@ sources:
     url: "https://www.kostat.go.kr/board.es?mid=a10301010000&bid=210&list_no=446335&act=view"
 ---
 
-<p>One of the phrases Koreans searched hardest this weekend was simply 퇴직 (toejik, leaving a job). The reporting behind it carried a particular ache: people describing how they wanted to keep working into their seventies, and how they had been eased out of their main job in their early fifties instead.</p>
+<p>Ask when a Korean career ends and the official answer is 60, the retirement age written into law. Ask the people who have lived it and the answer arrives years earlier. In the national statistics agency's May 2026 survey of 55-to-79-year-olds, people who had left their longest-held job had left it, on average, at 53 — while most people in that age group told the same survey they wanted to keep working, and hoped on average to carry on into their seventies.</p>
 
-<p>That is not a mood. It is a measurable gap, and it sits between three official numbers that almost never appear on the same page.</p>
+<p>That is a measurable gap, and it sits between three official numbers that almost never appear on the same page.</p>
 
 <figure class="post-photo source-image"><img src="/img/source/korea-retirement-age-gap/seoul-cbd-jongno.jpg" alt="Office towers along Jongno in central Seoul on a clear winter day" width="1600" height="1099" loading="lazy" decoding="async">
 <figcaption>Office towers in Seoul's central business district. Most Korean working lives end well before the statutory retirement age that protects jobs in buildings like these. Source: https://commons.wikimedia.org/wiki/File:Seoul_CBD_along_Jongro_near_Gwanghwamun_post_office.jpg &middot; License: http://creativecommons.org/publicdomain/zero/1.0/deed.en &middot; Photo: DtSeoul, Wikimedia Commons contributor, CC0</figcaption></figure>
@@ -145,4 +145,4 @@ sources:
 
 <p>If you are weighing what happens to your Korean contributions when you leave, the parallel question is health cover, which runs on a completely different timetable: <a href="/journal/Leaving-Korea-For-A-While-Your-Health-Insurance/">Leaving Korea for a while, and what happens to your health insurance</a>.</p>
 
-<p><strong>Editorial method:</strong> This guide was researched and drafted with AI assistance inside an evidence-gated editorial harness, and every rule, age and figure was checked against the Korean authority that publishes it before release.</p>
+<p><strong>Editorial method:</strong> This guide was researched and drafted with AI assistance, and each number is taken from the body that publishes it. The retirement-age floor is read from Article 19 of the Act on Prohibition of Age Discrimination in Employment and Elderly Employment Promotion on the National Law Information Center; the pension ages, the early and deferred rates and the refund rules from the National Pension Service's Korean benefit pages and its English agreements overview, whose differing country counts are reported rather than reconciled; and every leaving-age and survey figure from the national statistics agency's May 2026 supplementary survey of older workers, posted on 5 August 2026. The office-district, government-complex and airport photographs are credited Wikimedia Commons files, and the brass-rod cover is an AI-generated still life.</p>

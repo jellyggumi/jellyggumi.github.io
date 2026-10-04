@@ -2,7 +2,7 @@
 layout: "journal_by_tag"
 tag: "Seoul"
 title: "Tagged: Seoul"
-description: "Posts about Seoul specifically — its neighbourhoods, markets, palaces and riverside."
+description: "Posts that turn on Seoul specifically, such as the city's own brokerage-fee table."
 permalink: "/journal/tag/seoul/"
 active: journal
 header-img: "img/archive-bg.jpg"

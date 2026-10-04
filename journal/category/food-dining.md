@@ -2,7 +2,7 @@
 layout: "journal_by_category"
 category: "Food & Dining"
 title: "Food & Dining"
-description: "Korean food explained: what to order, how meals work, and the regional dishes worth travelling for."
+description: "Korean food through its seasons and the rules behind them, alongside the family's own dated outings."
 permalink: "/journal/category/food-dining/"
 active: journal
 header-img: "img/archive-bg.jpg"

@@ -51,7 +51,7 @@ sources:
 ---
 
 
-<p>The tournament name 삼성화재배 월드바둑마스터스 (Samsung Cup World Baduk Masters) appeared in Korea's official Trending Now RSS snapshot on 31 August 2026. The durable story is not the spike. Korea publishes a dedicated Go Promotion Act and designates 5 November as Baduk Day. The Korea Baduk Association publishes daily professional results and maintains league sections, Baduk TV and the monthly magazine 월간바둑. The language section below checks every board-word claim against the Standard Korean Dictionary rather than treating familiar metaphors as automatic baduk history.</p>
+<p>On 30 August 2026, Mok Jinseok came through the integrated preliminary of the 삼성화재배 월드바둑마스터스 (Samsung Cup World Baduk Masters) as the only Korean player to do so. Behind that one result sits an institution most visitors never notice. Korea publishes a dedicated Go Promotion Act and designates 5 November as Baduk Day. The Korea Baduk Association publishes daily professional results and maintains league sections, Baduk TV and the monthly magazine 월간바둑. The language section below checks every board-word claim against the Standard Korean Dictionary rather than treating familiar metaphors as automatic baduk history.</p>
 
 <p>This guide walks through that institution layer by layer — the statute, the professionals, the language — using the primary sources themselves: the law as published by the National Law Information Center, the Standard Korean Dictionary, and the live pages of the Korea Baduk Association.</p>
 
@@ -70,7 +70,7 @@ sources:
 
 <p>The working centre of Korean baduk is 한국기원 (Hanguk Kiwon, the Korea Baduk Association). Its front page reads less like a heritage site and more like a sports channel. The listed structure includes a Korean Baduk League, a women's league, a legends league and a challenge league, with team standings, MVP awards and championship finals.</p>
 
-<p>The trending tournament is part of the same machinery. On 30 August 2026, Mok Jinseok passed the 2026 Samsung Cup World Baduk Masters integrated preliminary as the only Korean player to do so. The association reports the qualification result in the same results-and-leagues system it uses for professional competition.</p>
+<p>The Samsung Cup preliminary is part of the same machinery. The association reports Mok Jinseok's qualification in the same results-and-leagues system it uses for professional competition.</p>
 
 <figure class="post-photo source-image"><img src="/img/source/baduk-korea-institution/lee-sedol-2016.jpg" alt="Portrait of professional baduk player Lee Sedol in 2016" width="367" height="550" loading="lazy" decoding="async">
 <figcaption>Lee Sedol in 2016, the year of the AlphaGo match. Source: https://commons.wikimedia.org/wiki/File:Lee_Se-Dol_-_2016_(cropped).jpg · License: https://creativecommons.org/licenses/by/2.0 · LG Electronics · Photo: LG Electronics, CC BY 2.0, via Wikimedia Commons</figcaption></figure>
@@ -112,4 +112,4 @@ sources:
 
 <p>If this angle on Korea — the way custom, play and family life braid together — is interesting, the natural next read is <a href="/journal/Why-Koreas-National-Treasures-Lost-Their-Numbers/">why Korea's national treasures lost their numbers</a>, where the same living-tradition thread runs through law and heritage.</p>
 
-<p><strong>Editorial method:</strong> AI assisted the research and drafting of this guide inside an evidence-gated editorial pipeline; every factual claim was checked against the listed statute, dictionary and operator sources, and the cover images are AI-generated editorial still lifes.</p>
+<p><strong>Editorial method:</strong> AI helped research and draft this guide; it is not a source for anything in it. The statute details come from the Go Promotion Act as published by the National Law Information Center, each word sense from its own Standard Korean Dictionary entry, the league and tournament details from the Korea Baduk Association, and the AlphaGo figures from DeepMind's project page, which is why they are attributed to DeepMind rather than stated as fact. The five photographs are Wikimedia Commons files credited in their captions; the cover is an AI-generated still life, not a photograph.</p>

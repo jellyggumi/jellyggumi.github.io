@@ -38,7 +38,7 @@ sources:
     url: "https://data.kma.go.kr/climate/rainySeason/selectRainySeasonList.do"
 ---
 
-<p>It usually starts with a sound. A phone on a café table goes off at full volume with a tone that does not belong to any messaging app, every screen nearby lights up with a wall of Korean text, and half the room glances at the window to check whether the sky has an opinion. On a weekend when a stationary front is parked over the peninsula and 일기예보 (ilgi yebo, the weather forecast) is among the country's trending searches, that sound gets a lot of practice.</p>
+<p>It usually starts with a sound. A phone on a café table goes off at full volume with a tone that does not belong to any messaging app, every screen nearby lights up with a wall of Korean text, and half the room glances at the window to check whether the sky has an opinion. On a weekend when a stationary front is parked over the peninsula and everyone is checking the 일기예보 (ilgi yebo, the weather forecast), that sound gets a lot of practice.</p>
 
 <p>For a visitor or a new resident, the frustrating part is not the rain. It is that the whole warning apparatus — the banner on the weather app, the two-syllable words at the end of every forecast sentence, the emergency text that cannot be silenced — runs on a vocabulary of about six terms that nobody translates on the spot. The good news: behind those terms sits a fixed administrative ladder with published numbers, and once the ladder is visible, a Korean weather alert turns from noise into information.</p>
 
