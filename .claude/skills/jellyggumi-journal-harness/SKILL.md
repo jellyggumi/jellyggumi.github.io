@@ -1,6 +1,6 @@
 ---
 name: jellyggumi-journal-harness
-description: Run JellyGGumi Journal's evidence-gated Korea Desk whenever a user asks for a Korean-culture guide, daily 01:00 Google Trends research, influencer/search strategy, editorial package, current/archive workspace management, or publication review. Coordinates official-source discovery, evidence auditing, persona-safe HTML writing, disclosed god-tibo-imagen art, independent review and exact-scope publish-on-green validation. Never automates family records.
+description: Run JellyGGumi Journal's evidence-gated Korea Desk whenever a user asks for a Korean-culture guide, scheduled Google Trends research, influencer/search strategy, editorial package, current/archive workspace management, or publication review. Coordinates official-source discovery, evidence auditing, persona-safe HTML writing, disclosed god-tibo-imagen art, independent review and exact-scope publish-on-green validation. Never automates family records.
 model: opus
 allowed-tools: Bash, Read, Write, Edit, Glob, Grep, Agent, TeamCreate, TaskCreate, TaskUpdate, SendMessage, WebFetch, WebSearch
 ---
@@ -57,6 +57,8 @@ node tools/editorial-workspace.mjs start \
   --run-id "$RUN_ID" \
   --target-date YYYY-MM-DD
 ```
+
+For explicitly owner-authorized manual work, add `--mode draft-only` to `start`; retain the valid scheduled policy. The manual manifest requires its own exact confirmation and all quality gates, but scheduled-only Trends qualification does not apply.
 
 5. Inventory existing titles, slugs, primary entities, categories, tags and recent rejected topics into `research/existing-coverage.json`.
 6. If a live target path or shared file is dirty, do not edit it. Scheduled work remains inside the workspace.

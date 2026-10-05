@@ -39,8 +39,10 @@
     {% endif %}
     <p class="post-card__meta">
       <time datetime="{{ card_post.date | date_to_xmlschema }}">{{ card_post.date | date: "%b %-d, %Y" }}</time>
-      {% if card_post.categories.size > 0 %}
-        &middot; <a href="{{ card_post.categories | first | slugify | prepend: '/journal/category/' | append: '/' | relative_url }}">{{ card_post.categories | first | escape }}</a>
+      {% comment %}Linked only past one live post — see the rule in _layouts/post.html.{% endcomment %}
+      {% assign card_category = card_post.categories | first %}
+      {% if card_category %}
+        &middot; {% if site.categories[card_category].size > 1 %}<a href="{{ card_category | slugify | prepend: '/journal/category/' | append: '/' | relative_url }}">{{ card_category | escape }}</a>{% else %}{{ card_category | escape }}{% endif %}
       {% endif %}
     </p>
   </div>

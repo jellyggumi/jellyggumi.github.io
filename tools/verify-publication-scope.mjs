@@ -55,8 +55,10 @@ function standingApprovalIsActive(manifest) {
   if (!isRegularFileWithoutSymlink(policyPath)) return false;
   const policy = fs.readFileSync(policyPath, 'utf8');
   const single = (key, expected) => {
-    const values = [...policy.matchAll(new RegExp(`^${key}:\\s*([^\\n#]+)`, 'gm'))].map((match) => match[1].trim());
-    return values.length === 1 && values[0] === expected;
+    const normalize = (value) => key === 'standing_publish_approval_granted_on'
+      ? value.match(/^(['"]?)(\d{4}-\d{2}-\d{2})\1$/)?.[2] : value;
+    const values = [...policy.matchAll(new RegExp(`^${key}:\\s*([^\\n#]+)`, 'gm'))].map((match) => normalize(match[1].trim()));
+    return values.length === 1 && values[0] === normalize(expected);
   };
   return single('publication_mode', 'publish-on-green')
     && single('standing_publish_approval', 'true')
@@ -70,10 +72,16 @@ function manualApprovalIsActive(manifest) {
   if (!isRegularFileWithoutSymlink(policyPath)) return false;
   const policy = fs.readFileSync(policyPath, 'utf8');
   const single = (key, expected) => {
-    const values = [...policy.matchAll(new RegExp(`^${key}:\\s*([^\\n#]+)`, 'gm'))].map((match) => match[1].trim());
-    return values.length === 1 && values[0] === expected;
+    const normalize = (value) => key === 'standing_publish_approval_granted_on'
+      ? value.match(/^(['"]?)(\d{4}-\d{2}-\d{2})\1$/)?.[2] : value;
+    const values = [...policy.matchAll(new RegExp(`^${key}:\\s*([^\\n#]+)`, 'gm'))].map((match) => normalize(match[1].trim()));
+    return values.length === 1 && values[0] === normalize(expected);
   };
-  return single('publication_mode', 'draft-only') && single('standing_publish_approval', 'false');
+  return (single('publication_mode', 'draft-only') && single('standing_publish_approval', 'false'))
+    || (single('publication_mode', 'publish-on-green')
+      && single('standing_publish_approval', 'true')
+      && single('standing_publish_routine_id', standingPublishRoutineId)
+      && single('standing_publish_approval_granted_on', standingApprovalGrantedOn));
 }
 
 function approvalRefIsValid(manifest) {

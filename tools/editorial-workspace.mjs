@@ -419,7 +419,7 @@ function publicationPolicy() {
   }
   if (mode === 'publish-on-green') {
     if (single('standing_publish_routine_id') !== standingPublishRoutineId) throw new Error(`publish-on-green is authorized only for routine ${standingPublishRoutineId}`);
-    const grantedOn = single('standing_publish_approval_granted_on').replace(/^['"]|['"]$/g, '');
+    const grantedOn = single('standing_publish_approval_granted_on').match(/^(['"]?)(\d{4}-\d{2}-\d{2})\1$/)?.[2];
     if (grantedOn !== standingApprovalGrantedOn) throw new Error(`Standing publication approval must remain pinned to ${standingApprovalGrantedOn}`);
   }
   if (single('max_articles_per_run') !== '1') throw new Error('Scheduled workspace permits at most one article per run');
@@ -432,7 +432,7 @@ function publicationPolicy() {
 }
 
 function approvalRefIsValid(manifest, approvalRef) {
-  if (manualApprovalRef.test(approvalRef)) return manifest.mode === 'draft-only' && manifest.publication_requires_confirmation === true && publicationPolicy().mode === 'draft-only';
+  if (manualApprovalRef.test(approvalRef)) return manifest.mode === 'draft-only' && manifest.publication_requires_confirmation === true && ['draft-only', 'publish-on-green'].includes(publicationPolicy().mode);
   if (approvalRef !== standingApprovalRef || manifest.mode !== 'publish-on-green' || manifest.publication_requires_confirmation !== false) return false;
   return publicationPolicy().mode === 'publish-on-green';
 }
@@ -445,6 +445,9 @@ function start() {
 
   return withLifecycleLock('start', () => {
     const publication = publicationPolicy();
+    const mode = String(options.get('mode') || publication.mode);
+    if (!['draft-only', 'publish-on-green'].includes(mode)) throw new Error('--mode must be draft-only or publish-on-green');
+    if (mode === 'publish-on-green' && publication.mode !== 'publish-on-green') throw new Error('--mode cannot elevate the publication policy');
     verifyArchives();
     const archived = archiveCurrent('superseded');
     const manifest = {
@@ -452,7 +455,7 @@ function start() {
       run_id: runId,
       started_at_kst: kstIso(),
       target_date: targetDate,
-      mode: publication.mode,
+      mode,
       status: 'researching',
       topic: null,
       slug: null,
@@ -466,8 +469,8 @@ function start() {
       asset_paths: [],
       reference_image_paths: [],
       revision_loops: 0,
-      publication_requires_confirmation: publication.publicationRequiresConfirmation,
-      standing_publish_routine_id: publication.mode === 'publish-on-green' ? standingPublishRoutineId : null,
+      publication_requires_confirmation: mode !== 'publish-on-green',
+      standing_publish_routine_id: mode === 'publish-on-green' ? standingPublishRoutineId : null,
       approval_ref: null,
       approval_artifact_sha256: null,
       approval_package_sha256: null,

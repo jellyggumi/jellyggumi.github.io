@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Aside cron `h78L2R0UJFRhjS9O` wakes daily at 01:00 `Asia/Seoul` to research Google Trends, build at most one evidence-backed guide and publish only when every gate is green. Its standing authority is valid only with the exact `publish-on-green`/`true` policy pair and pinned routine id. Account changes, submissions outside git publication and family-record automation remain prohibited.
+Aside cron `h78L2R0UJFRhjS9O` wakes Tuesday and Friday at 01:00 `Asia/Seoul` to research Google Trends, build at most one evidence-backed guide and publish only when every gate is green. Its standing authority is valid only with the exact `publish-on-green`/`true` policy pair and pinned routine id. Account changes, submissions outside git publication and family-record automation remain prohibited.
 
 ## Timeline
 

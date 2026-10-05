@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import vm from 'node:vm';
 import { spawnSync } from 'node:child_process';
 import {
   MAX_SOURCE_IMAGE_BYTES,
@@ -258,6 +259,59 @@ try {
   fs.writeFileSync(draftManifestPath, `${JSON.stringify(draftManifest, null, 2)}\n`);
   expectFailure('node', ['tools/editorial-workspace.mjs', 'set-status', '--root', draft, '--run-id', draftManifest.run_id, '--status', 'approved', '--approval-ref', 'human-review:manual123', '--artifact-digest', 'a'.repeat(64)], draft, 'Required gates are not PASS');
   tests.push('draft-only manual reference reaches evidence gates');
+
+  const manualStanding = fixture('manual-under-standing');
+  run('node', ['tools/editorial-workspace.mjs', 'start', '--root', manualStanding, '--run-id', '20261005-manual-standing', '--target-date', '2026-10-05', '--mode', 'draft-only'], manualStanding);
+  const manualStandingPath = path.join(manualStanding, '_workspace/current/manifest.json');
+  const manualStandingManifest = JSON.parse(fs.readFileSync(manualStandingPath, 'utf8'));
+  assert.equal(manualStandingManifest.mode, 'draft-only');
+  assert.equal(manualStandingManifest.publication_requires_confirmation, true);
+  assert.equal(manualStandingManifest.standing_publish_routine_id, null);
+  manualStandingManifest.status = 'ready_for_review';
+  fs.writeFileSync(manualStandingPath, `${JSON.stringify(manualStandingManifest, null, 2)}\n`);
+  expectFailure('node', ['tools/editorial-workspace.mjs', 'set-status', '--root', manualStanding, '--run-id', manualStandingManifest.run_id, '--status', 'approved', '--approval-ref', 'human-review:manual123', '--artifact-digest', 'a'.repeat(64)], manualStanding, 'Required gates are not PASS');
+  expectFailure('node', ['tools/editorial-workspace.mjs', 'set-status', '--root', manualStanding, '--run-id', manualStandingManifest.run_id, '--status', 'approved', '--approval-ref', 'standing-routine:h78L2R0UJFRhjS9O', '--artifact-digest', 'a'.repeat(64)], manualStanding, 'Approval requires a manual review reference');
+  tests.push('manual mode retains pinned scheduled policy but requires explicit approval and green evidence');
+
+  expectFailure('node', ['tools/editorial-workspace.mjs', 'start', '--root', draft, '--run-id', '20261005-no-elevation', '--target-date', '2026-10-05', '--mode', 'publish-on-green'], draft, '--mode cannot elevate the publication policy');
+  expectFailure('node', ['tools/editorial-workspace.mjs', 'start', '--root', manualStanding, '--run-id', '20261005-invalid-mode', '--target-date', '2026-10-05', '--mode', 'other'], manualStanding, '--mode must be draft-only or publish-on-green');
+  tests.push('mode override cannot elevate authority or select an unknown mode');
+
+  const invalidManualPolicy = fixture('manual-invalid-standing', (policy) => policy.replace('standing_publish_routine_id: h78L2R0UJFRhjS9O', 'standing_publish_routine_id: wrong-routine'));
+  const quotedDatePolicies = ["'2026-08-30'", '2026-08-30'].map((value, index) => {
+    const root = fixture(`manual-date-${index}`, (policy) => policy.replace('standing_publish_approval_granted_on: "2026-08-30"', `standing_publish_approval_granted_on: ${value}`));
+    assert.equal(fs.readFileSync(path.join(root, '.claude/editorial-policy.yml'), 'utf8').match(/^standing_publish_approval_granted_on:.*$/m)?.[0], `standing_publish_approval_granted_on: ${value}`);
+    run('node', ['tools/editorial-workspace.mjs', 'start', '--root', root, '--run-id', `20261005-date-${index}`, '--target-date', '2026-10-05', '--mode', 'draft-only'], root);
+    const file = path.join(root, '_workspace/current/manifest.json');
+    const manifest = JSON.parse(fs.readFileSync(file, 'utf8'));
+    manifest.status = 'ready_for_review';
+    fs.writeFileSync(file, `${JSON.stringify(manifest, null, 2)}\n`);
+    expectFailure('node', ['tools/editorial-workspace.mjs', 'set-status', '--root', root, '--run-id', manifest.run_id, '--status', 'approved', '--approval-ref', 'human-review:manual123', '--artifact-digest', 'a'.repeat(64)], root, 'Required gates are not PASS');
+    return root;
+  });
+  const invalidGrantPolicy = fixture('manual-invalid-date', (policy) => policy.replace('standing_publish_approval_granted_on: "2026-08-30"', 'standing_publish_approval_granted_on: "2026-08-30'));
+  expectFailure('node', ['tools/editorial-workspace.mjs', 'start', '--root', invalidGrantPolicy, '--run-id', '20261005-invalid-date', '--target-date', '2026-10-05', '--mode', 'draft-only'], invalidGrantPolicy, 'Standing publication approval must remain pinned');
+  for (const file of ['apply-editorial-package.mjs', 'verify-publication-scope.mjs']) {
+    const source = fs.readFileSync(path.join(sourceRoot, 'tools', file), 'utf8');
+    const helper = source.match(/function manualApprovalIsActive\(manifest\) \{[\s\S]*?\n\}/)?.[0];
+    assert.ok(helper, `Missing executable manual authority helper in ${file}`);
+    const base = { fs, path, root: manualStanding, repoRoot: manualStanding,
+      regularFile: () => true, isRegularFileWithoutSymlink: () => true,
+      manualApprovalRef: /^(?:aside-confirmation|human-review):[A-Za-z0-9._-]{6,}$/,
+      standingPublishRoutineId: 'h78L2R0UJFRhjS9O', standingApprovalGrantedOn: '"2026-08-30"',
+      manifest: { mode: 'draft-only', publication_requires_confirmation: true, approval_ref: 'human-review:manual123' } };
+    const accepts = (context) => vm.runInNewContext(`${helper}\nmanualApprovalIsActive(manifest)`, context, { timeout: 1000 });
+    assert.equal(accepts(base), true, `${file} must accept an explicit manual reference under valid standing policy`);
+    assert.equal(accepts({ ...base, root: draft, repoRoot: draft }), true);
+    assert.equal(accepts({ ...base, root: invalidManualPolicy, repoRoot: invalidManualPolicy }), false);
+    for (const root of quotedDatePolicies) assert.equal(accepts({ ...base, root, repoRoot: root }), true);
+    assert.equal(accepts({ ...base, root: invalidGrantPolicy, repoRoot: invalidGrantPolicy }), false);
+    assert.equal(accepts({ ...base, manifest: { ...base.manifest, mode: 'publish-on-green' } }), false);
+    assert.equal(accepts({ ...base, manifest: { ...base.manifest, publication_requires_confirmation: false } }), false);
+    assert.equal(accepts({ ...base, manifest: { ...base.manifest, approval_ref: 'standing-routine:h78L2R0UJFRhjS9O' } }), false);
+  }
+  tests.push('copy and staged scope enforce the same manual approval boundary with pinned-policy validation');
+  tests.push('approval, copy and staged scope normalize valid date quotes and reject malformed quotes');
 
   fs.mkdirSync(path.join(positive, '_workspace/current/research'), { recursive: true });
   fs.writeFileSync(path.join(positive, '_workspace/current/research/google-trends-kr.xml'), '<rss><channel/></rss>');

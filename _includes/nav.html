@@ -27,18 +27,35 @@
 
         <div class="collapse navbar-collapse" id="main-nav-links">
             <ul class="nav navbar-nav navbar-right journal-nav">
+                {% comment %}
+                  Exactly one link is "current": the nav URL that is the longest prefix
+                  of this page's URL. GUIDES (/journal/guides/) sits inside JOURNAL
+                  (/journal/), so a plain "URL contains" test lit both on the guides
+                  hub. A post, archive or paginated page still resolves to JOURNAL.
+                  Pages outside every nav URL fall back to their declared `active`.
+                {% endcomment %}
+                {% assign active_nav_url = "" %}
                 {% for nav_hash in site.nav %}
                   {% for nav_item in nav_hash %}
-                    {% assign lowercase_nav_item = nav_item[0] | downcase %}
-                    {% comment %}
-                      Two ways a link is "current": the page declares `active`, or the
-                      URL sits inside that section. The second test is what makes an
-                      individual post highlight JOURNAL, which the old `page.active`-only
-                      check missed for every archive and paginated page.
-                    {% endcomment %}
+                    {% assign nav_url_size = nav_item[1] | size %}
+                    {% assign page_url_prefix = page.url | slice: 0, nav_url_size %}
+                    {% if nav_item[1] != "/" and page_url_prefix == nav_item[1] and nav_url_size > active_nav_url.size %}
+                      {% assign active_nav_url = nav_item[1] %}
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+                {% if active_nav_url == "" and page.active %}
+                  {% for nav_hash in site.nav %}
+                    {% for nav_item in nav_hash %}
+                      {% assign lowercase_nav_item = nav_item[0] | downcase %}
+                      {% if page.active == lowercase_nav_item %}{% assign active_nav_url = nav_item[1] %}{% endif %}
+                    {% endfor %}
+                  {% endfor %}
+                {% endif %}
+                {% for nav_hash in site.nav %}
+                  {% for nav_item in nav_hash %}
                     {% assign is_active = false %}
-                    {% if page.active == lowercase_nav_item %}{% assign is_active = true %}{% endif %}
-                    {% if page.url contains nav_item[1] and nav_item[1] != "/" %}{% assign is_active = true %}{% endif %}
+                    {% if nav_item[1] == active_nav_url %}{% assign is_active = true %}{% endif %}
                     <li{% if is_active %} class="active"{% endif %}>
                       <a href="{{ nav_item[1] | relative_url }}"{% if page.url == nav_item[1] %} aria-current="page"{% elsif is_active %} aria-current="location"{% endif %}>{{ nav_item[0] }}</a>
                     </li>

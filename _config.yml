@@ -44,14 +44,17 @@ comments:
   disqus:
     short_name: ""
 
-# Main navigation — content sections only. About/Contact/Privacy live in the
-# footer so the header stays focused on things a reader actually browses.
+# Main navigation — the three indexable reading hubs. About/Contact/Privacy live in
+# the footer so the header stays focused on things a reader actually browses. The
+# photo albums are reached from the family-records hub and the Naver index from the
+# about page: both are noindex, non-article pages, and putting them in the header
+# pointed a first-time reader at a link list or a caption grid instead of the writing.
 # Relative paths: absolute URLs here broke the active-page highlight and made
 # local preview links jump to production.
 nav:
   - JOURNAL: "/journal/"
-  - GALLERY: "/gallery/"
-  - NAVER: "/naver/"
+  - GUIDES: "/journal/guides/"
+  - FAMILY: "/journal/family-records/"
 
 # Secondary navigation, rendered in the footer.
 footer_nav:

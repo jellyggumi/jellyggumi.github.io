@@ -62,11 +62,17 @@ extra_css:
                           `escape` on the title attribute and the link text: the
                           category "Food & Dining" contains a literal ampersand, which
                           is invalid unescaped in an attribute value and in text.
+
+                          A category or tag is linked only when its archive lists more
+                          than one live post. With one post the archive is this same
+                          article as a single card — a near-empty page — so the name
+                          stays as plain text until a second post shares it.
+                          post-card.html and breadcrumbs.html apply the same rule.
                         {% endcomment %}
-                        &sim; Filed in <i class="fa fa-briefcase" aria-hidden="true"></i>&nbsp;:&nbsp;{% for category in page.categories %}<a href="{{ category | slugify | prepend: '/journal/category/' | append: '/' | relative_url }}" title="Other posts filed in {{ category | escape }}" rel="tag">{{ category | escape }}</a>{% unless forloop.last %}&nbsp;&bull;&nbsp;{% endunless %}{% endfor %}
+                        &sim; Filed in <i class="fa fa-briefcase" aria-hidden="true"></i>&nbsp;:&nbsp;{% for category in page.categories %}{% if site.categories[category].size > 1 %}<a href="{{ category | slugify | prepend: '/journal/category/' | append: '/' | relative_url }}" title="Other posts filed in {{ category | escape }}" rel="tag">{{ category | escape }}</a>{% else %}{{ category | escape }}{% endif %}{% unless forloop.last %}&nbsp;&bull;&nbsp;{% endunless %}{% endfor %}
                       {% endif %}
                       {% if page.tags.size > 0 %}
-                        &sim; Tagged <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;:&nbsp;{% for tag in page.tags %}<a href="{{ tag | slugify | prepend: '/journal/tag/' | append: '/' | relative_url }}" title="Other posts tagged with {{ tag | escape }}" rel="tag">{{ tag | escape }}</a>{% unless forloop.last %}&nbsp;&bull;&nbsp;{% endunless %}{% endfor %}
+                        &sim; Tagged <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;:&nbsp;{% for tag in page.tags %}{% if site.tags[tag].size > 1 %}<a href="{{ tag | slugify | prepend: '/journal/tag/' | append: '/' | relative_url }}" title="Other posts tagged with {{ tag | escape }}" rel="tag">{{ tag | escape }}</a>{% else %}{{ tag | escape }}{% endif %}{% unless forloop.last %}&nbsp;&bull;&nbsp;{% endunless %}{% endfor %}
                       {% endif %}
                     </span>
                 </div>

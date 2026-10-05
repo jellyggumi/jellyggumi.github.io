@@ -9,7 +9,14 @@
   nothing and Google explicitly expects the current item to be unlinked.
 {% endcomment %}
 
+{% comment %}
+  The category crumb is kept only when that archive lists more than one live post
+  (the rule in _layouts/post.html). A one-post archive is this article again, so the
+  trail skips it — Home / Journal / <Title> — to avoid repeating that single-card
+  archive. This is a navigation choice, not a structured-data eligibility rule.
+{% endcomment %}
 {% assign crumb_category = page.categories | first %}
+{% if crumb_category and site.categories[crumb_category].size < 2 %}{% assign crumb_category = nil %}{% endif %}
 
 <nav class="breadcrumbs" aria-label="Breadcrumb">
   <ol>

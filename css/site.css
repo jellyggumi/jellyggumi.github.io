@@ -1601,9 +1601,6 @@ input:focus-visible {
   padding-right: 0;
   padding-left: 0;
 }
-.journal-section .section-index {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-}
 .journal-section .section-index li {
   border-radius: 2px;
   border-color: var(--journal-line);

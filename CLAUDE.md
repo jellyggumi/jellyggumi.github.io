@@ -142,7 +142,7 @@ A no-article run is successful when no candidate clears novelty, evidence, relev
 
 The policy has two fail-closed key pairs: `draft-only` + `standing_publish_approval: false`, or `publish-on-green` + `standing_publish_approval: true`. The current standing authority is pinned only to Aside routine `h78L2R0UJFRhjS9O`; its machine reference is `standing-routine:h78L2R0UJFRhjS9O`. Changing either key alone, changing the routine id, or revoking the policy stops publication.
 
-- Manual references (`aside-confirmation:<id>` or `human-review:<id>`) are valid only for a run created in `draft-only` mode. They cannot authorize or bypass a `publish-on-green` manifest.
+- Explicitly owner-authorized manual work starts with `--mode draft-only`, even while the valid pinned scheduled policy remains `publish-on-green`. Manual references (`aside-confirmation:<id>` or `human-review:<id>`) are valid only for this confirmation-required `draft-only` manifest. They cannot authorize or bypass a `publish-on-green` manifest; standing routine authority cannot authorize a manual manifest. Mode overrides may lower authority, never elevate it. All evidence, image-rights, review, digest, scope and deployment gates still apply.
 - The pinned scheduled routine may authorize its own exact green package only after the Google Trends value gate, G1-G11, independent review and all mechanical checks pass. A schedule alone is not approval for a red, incomplete, duplicate or low-value package.
 - Every run summary says `NOT PUBLISHED` until anonymous live verification succeeds. A no-article run closes successfully without a commit or push.
 - Every status mutation must pass the current `--run-id`; `.run-lock.json` prevents a stale or concurrent run from mutating its successor.
@@ -177,7 +177,7 @@ Any red gate, dirty target path, changed origin, future date, failed Pages build
 
 ## Scheduled 01:00 KST run
 
-The active Aside cron routine `h78L2R0UJFRhjS9O` runs daily at 01:00 `Asia/Seoul`:
+The active Aside cron routine `h78L2R0UJFRhjS9O` runs Tuesday and Friday at 01:00 `Asia/Seoul`. Execute each scheduled round; a separately authorized manual article or an article the prior day does not complete or cancel it. Preserve pending manual work and all quality gates, and report genuine blockers rather than fabricate filler:
 
 1. Read this contract, `PERSONA.md`, policy, routine memory, and `.claude/skills/authority-led-monetization/SKILL.md` with its schema/policy references.
 2. Fetch `origin/gh-pages`; require this one worktree to be on `gh-pages`, equal to upstream, with an empty index and clean render context. Do not stash, rebase or absorb unrelated work.
