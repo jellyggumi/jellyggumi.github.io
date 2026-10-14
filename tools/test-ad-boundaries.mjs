@@ -98,3 +98,23 @@ for (const [page, expected] of [[correctionPage, 1], [{ ...correctionPage, corre
   }
 }
 console.log('PASS: 4 actual post-layout correction states, including escaped scope text.');
+
+// Render the real guide hub against Jekyll's published collection. This catches
+// a withdrawal that still leaves a card, count or curated link on a public page.
+const livePosts = fs.readdirSync(path.join(root, '_posts')).filter(name => name.endsWith('.md')).flatMap(name => {
+  const raw = fs.readFileSync(path.join(root, '_posts', name), 'utf8');
+  const post = YAML.parse(raw.match(/^---\s*\n([\s\S]*?)\n---/)[1]);
+  return post.published === false ? [] : [{ ...post, url: `/journal/${name.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/\.md$/, '')}/` }];
+});
+const liveRoutes = new Set(livePosts.map(post => post.url));
+const hub = fs.readFileSync(path.join(root, 'journal/guides/index.html'), 'utf8').replace(/^---\s*\n[\s\S]*?\n---\s*\n?/, '');
+const hubHtml = await engine.parseAndRender(hub, { site: { ...config, posts: livePosts } });
+assert.equal(count(hubHtml, /class="post-card post-card--guide"/g), livePosts.filter(post => post.content_type === 'guide').length, 'guide cards use the public collection');
+assert.ok(!hubHtml.includes('/journal/Amazing-Korean-Cultural-Tips/'), 'withdrawn overview stays out of the guide hub');
+assert.match(hubHtml, /id="reading-paths"/, 'question-based reading paths are rendered');
+const curated = hubHtml.match(/<section[^>]+id="reading-paths"[\s\S]*?<\/section>/)[0];
+const readingLinks = [...curated.matchAll(/href="(\/journal\/[^"#]+\/)"/g)].map(match => match[1]);
+assert.ok(readingLinks.length >= 8, 'reading paths connect multiple concrete decisions');
+for (const route of readingLinks) assert.ok(liveRoutes.has(route), `curated link must target a public article: ${route}`);
+assert.equal(count(curated, /Where the final answer lives:/g), count(curated, /<article>/g), 'each reading path identifies the responsible institution');
+console.log(`PASS: actual guide hub renders ${livePosts.filter(post => post.content_type === 'guide').length} public guide cards and ${readingLinks.length} valid curated links; withdrawn article omitted.`);

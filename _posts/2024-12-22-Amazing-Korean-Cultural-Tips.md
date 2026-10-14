@@ -1,4 +1,5 @@
 ---
+published: false
 layout: "post"
 title: "Everyday Korean Habits Visitors May Misread"
 subtitle: "Parcels, banchan, transfers and the systems behind them"

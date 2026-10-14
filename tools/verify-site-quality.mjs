@@ -114,9 +114,12 @@ check(tagValues.size === 12, `Expected 12 tag stubs, found ${tagValues.size}`);
 const posts = walk(path.join(root, '_posts'), (file) => file.endsWith('.md')).sort();
 check(posts.length > 0, 'No posts found');
 const postRoutes = new Set();
+const withdrawnRoutes = new Set();
 for (const file of posts) {
   const stem = path.basename(file, '.md').replace(/^\d{4}-\d{2}-\d{2}-/, '');
-  postRoutes.add(`/journal/${stem}/`);
+  const { frontMatter } = splitDocument(fs.readFileSync(file, 'utf8'));
+  const routes = scalar(frontMatter, 'published') === 'false' ? withdrawnRoutes : postRoutes;
+  routes.add(`/journal/${stem}/`);
 }
 const knownRoutes = new Set([
   '/', '/journal/', '/journal/guides/', '/journal/family-records/', '/journal/archive/', '/journal/category/', '/journal/tag/',
@@ -132,6 +135,8 @@ for (const route of postRoutes) knownRoutes.add(route);
 
 let guideCount = 0;
 let personalCount = 0;
+let liveGuideCount = 0;
+let livePersonalCount = 0;
 let aiHeaderCount = 0;
 let sourceFigureCount = 0;
 const referencedSourceImages = new Map();
@@ -144,9 +149,12 @@ for (const file of posts) {
   const duplicateKeys = [...new Set(topLevelKeys.filter((key, index) => topLevelKeys.indexOf(key) !== index))];
   check(duplicateKeys.length === 0, `${relative}: duplicate top-level front matter keys: ${duplicateKeys.join(', ')}`);
   const type = scalar(frontMatter, 'content_type');
+  const published = scalar(frontMatter, 'published') !== 'false';
   check(['guide', 'personal'].includes(type), `${relative}: invalid content_type ${type || '(missing)'}`);
   if (type === 'guide') guideCount += 1;
   if (type === 'personal') personalCount += 1;
+  if (published && type === 'guide') liveGuideCount += 1;
+  if (published && type === 'personal') livePersonalCount += 1;
   check(countOccurrences(body, '<!--post-ad-break-->') === 1, `${relative}: expected exactly one post-ad-break marker`);
 
   const categories = arrayValue(frontMatter, 'categories');
@@ -198,7 +206,7 @@ for (const file of posts) {
 
   for (const match of body.matchAll(/href=["'](\/journal\/[^"'#?]+\/?)["']/g)) {
     const href = match[1].endsWith('/') ? match[1] : `${match[1]}/`;
-    check(knownRoutes.has(href), `${relative}: unresolved internal journal link ${match[1]}`);
+    if (published) check(knownRoutes.has(href) && !withdrawnRoutes.has(href), `${relative}: unresolved or withdrawn internal journal link ${match[1]}`);
   }
 
   // Legacy guides have no body images. Once a guide has an img/source/<slug>/
@@ -295,6 +303,15 @@ const postContent = fs.existsSync(path.join(root, '_includes', 'post-content.htm
 check(postContent.includes("assign AD_BREAK = '<!--post-ad-break-->'") && postContent.includes('split: AD_BREAK') && postContent.includes('ad_parts.size == 2'), 'Post content include lacks exact one-marker rendering contract');
 
 const config = fs.readFileSync(path.join(root, '_config.yml'), 'utf8');
+// Check literal routes in public indexes as well as article bodies. A file in
+// _posts is not a valid public target when Jekyll's published flag closes it.
+for (const file of walk(path.join(root, 'journal'), (candidate) => /\.(md|html)$/.test(candidate)).concat(path.join(root, 'index.html'))) {
+  const text = fs.readFileSync(file, 'utf8');
+  for (const match of text.matchAll(/["'](\/journal\/[^"'#?]*\/?)(?:#[^"']*)?["']/g)) {
+    const href = match[1].endsWith('/') ? match[1] : `${match[1]}/`;
+    check(knownRoutes.has(href) && !withdrawnRoutes.has(href), `${path.relative(root, file)}: unresolved or withdrawn reading link ${href}`);
+  }
+}
 check(/^authenticated_reader_context:\s*false\s*$/m.test(config), 'Anonymous reader context must remain explicitly unauthenticated');
 check(/^share:\s*false\s*$/m.test(config), 'Anonymous SNS share icons must remain closed');
 check(postLayout.includes('site.share and site.authenticated_reader_context'), 'Post layout must gate SNS share icons on authenticated reader context');
@@ -310,4 +327,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`Site quality verification passed: posts=${posts.length}, guides=${guideCount}, personal=${personalCount}, categories=${categoryValues.size}, tags=${tagValues.size}, ai_headers=${aiHeaderCount}, editorial_images=${editorialImages.length}, source_figures=${sourceFigureCount}, source_images=${sourceImageFiles.length}.`);
+console.log(`Site quality verification passed: posts=${posts.length}, guides=${guideCount}, personal=${personalCount}, live_guides=${liveGuideCount}, live_personal=${livePersonalCount}, withdrawn=${withdrawnRoutes.size}, categories=${categoryValues.size}, tags=${tagValues.size}, ai_headers=${aiHeaderCount}, editorial_images=${editorialImages.length}, source_figures=${sourceFigureCount}, source_images=${sourceImageFiles.length}.`);

@@ -105,7 +105,7 @@ sources:
 
 <p>The second is that we kept answering the same questions. Friends and relatives outside Korea would ask about something that is completely ordinary here &mdash; why the baby had a name before she was born, why the first birthday is such a large occasion, why nobody worries about a parcel left in a hallway &mdash; and the honest answer usually needed a paragraph rather than a sentence. Most writing about Korea is either a tourist itinerary or an academic paper, and there is not much in between explaining how ordinary life actually works.</p>
 
-<p>So the blog does both jobs. It is INa's diary, and it is the long-form answer to the questions we keep being asked. Our own first-birthday planning has <a href="/journal/We-Booked-A-First-Birthday-Venue-At-Two-Months/">its own dated record</a>, and the general etiquette questions are collected in our <a href="/journal/Amazing-Korean-Cultural-Tips/">overview of Korean cultural tips</a>.</p>
+<p>So the blog does both jobs. It is INa's diary, and it is the long-form answer to the questions we keep being asked. Our own first-birthday planning has <a href="/journal/We-Booked-A-First-Birthday-Venue-At-Two-Months/">its own dated record</a>, and questions about everyday rules and culture have a separate starting point in our <a href="/journal/guides/">source-checked guide reading paths</a>.</p>
 
 
 <h3>Still GGumi</h3>

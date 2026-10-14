@@ -1,7 +1,7 @@
 # JellyGGumi Journal
 
 Source for **[jellyggumi.github.io](https://jellyggumi.github.io)** — a Jekyll site with two
-halves: first-hand guides to Korean culture, food and daily life written for visitors and
+halves: source-checked guides to Korean culture, food and daily life written for visitors and
 newcomers, and a family growth diary for INa (Jelly GGumi), born in South Korea on 6 June 2024.
 
 Built on the [photorama](https://github.com/sunbliss/photorama) Jekyll theme, which is in turn
@@ -143,6 +143,12 @@ The active Aside cron routine `h78L2R0UJFRhjS9O` runs at 01:00 KST. It uses the 
 
 ## Notes for future changes
 
+- Guide navigation includes annotated reading paths by reader decision, with the responsible
+  institution to check before acting. `published: false` withdraws an article from the public
+  site while preserving its source; `noindex` alone does not remove it from reading lists.
+  The site-quality gate checks literal article-body and journal-index links against live routes and reports public and
+  withdrawn counts separately. These checks prove package integrity, not AdSense approval
+  or sustained reader interest.
 - `baseurl` is `""`, not `"/"`. A bare `"/"` makes every `| prepend: site.baseurl` produce a
   doubled slash, and `//css/main.css` is a protocol-relative URL pointing at a host named `css`.
 - Use `| relative_url` rather than prepending `site.baseurl` by hand.
