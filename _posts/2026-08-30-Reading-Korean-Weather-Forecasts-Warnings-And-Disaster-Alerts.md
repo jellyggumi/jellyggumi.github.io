@@ -17,7 +17,9 @@ comments: false
 tags: [Practical, Seasons]
 categories: [Daily Life]
 reviewed: "2026-08-30"
-lastmod: "2026-08-30"
+lastmod: "2026-11-02"
+correction_date: "2026-11-02"
+correction_note: "Corrected the typhoon warning criteria to clarify that one qualifying condition is sufficient, and clarified that the extreme-heat thresholds must be forecast to persist for at least one day after the observed two-day prerequisite."
 ai_assisted: true
 content_type: guide
 sources:
@@ -52,7 +54,7 @@ sources:
 
 <p>What makes the system readable is that the rungs are not editorial judgement. They are published numeric criteria. The Korea Meteorological Administration issues a heavy-rain advisory when 60 mm of rain is expected within three hours or 110 mm within twelve hours, and a heavy-rain warning when those figures reach 90 mm in three hours or 180 mm in twelve. The criteria are worded around expected rainfall, not measured rainfall, which is why an advisory can appear under a sky that is merely grey.</p>
 
-<p>Typhoon criteria stack on top of the same logic: a 태풍경보 (taepung gyeongbo, typhoon warning) is issued when strong wind, high seas or storm surge are expected to reach their own warning thresholds, or when total rainfall of 200 mm or more is expected. So a typhoon warning is less a single fact about the storm and more a statement that several other warnings are about to be true at once.</p>
+<p>Typhoon criteria stack on top of the same logic: a 태풍경보 (taepung gyeongbo, typhoon warning) may be issued when a typhoon is expected to bring strong wind, high seas or storm surge reaching the relevant warning criterion, or when total rainfall of 200 mm or more is expected. Any one of these conditions can qualify; several do not have to occur together.</p>
 
 <p>One caveat keeps the ladder honest: it does not always have exactly two rungs. Heat has a third, higher tier, and yellow dust skips the advisory rung entirely and goes straight to warnings. The two-rung picture covers most days; it is a simplification, not the regulation.</p>
 
@@ -60,7 +62,7 @@ sources:
 
 <p>Summer alerts run on a subtler number than the thermometer reading. Heat-wave reports key on 체감온도 (chegam ondo), the perceived or feels-like temperature, which folds humidity into the figure. A heat-wave advisory arrives when the daily maximum perceived temperature is expected to stay at 33°C or above for two days or more, and a warning at 35°C or above on the same two-day test. The consequence follows directly from that definition: on a muggy day an advisory can be issued even though the air temperature never touches 33°C, while on a dry day the same thermometer reading can pass without one.</p>
 
-<p>Above the warning sits 중대경보 (jungdae gyeongbo), a serious-warning tier for extreme events. It applies only in an area that has already logged perceived temperatures of 35°C or above for two days, and then requires a perceived temperature of 38°C — or a plain air temperature of 39°C, a reminder that the old thermometer never fully left the rulebook. There is also a tropical-night report for nights that refuse to cool down, the 열대야 (yeoldaeya) phenomenon familiar to anyone who has spent an August in a Korean city.</p>
+<p>Above the warning sits 중대경보 (jungdae gyeongbo), a serious-warning tier for extreme events. It applies in an area where daily maximum perceived temperatures of 35°C or above have already been observed for at least two days. There, either a daily maximum perceived temperature of 38°C or above, or a daily maximum air temperature of 39°C or above, must also be expected to persist for at least one day. There is also a tropical-night report for nights that refuse to cool down, the 열대야 (yeoldaeya) phenomenon familiar to anyone who has spent an August in a Korean city.</p>
 
 <!--post-ad-break-->
 
