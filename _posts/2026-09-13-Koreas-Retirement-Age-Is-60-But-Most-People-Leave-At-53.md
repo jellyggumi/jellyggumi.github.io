@@ -1,8 +1,8 @@
 ---
 layout: "post"
-title: "Korea's Retirement Age Is 60, But Most People Leave At 53"
-subtitle: "Korea fixes a retirement floor at 60 and starts its pension at 63 to 65, but the average worker leaves their longest job at 53"
-description: "Korea's statutory retirement age is 60 and the National Pension starts at 63 to 65, but the average worker leaves their longest job at 53."
+title: "Korea's Retirement Age Is 60: What a Survey's Age-53 Figure Really Measures"
+subtitle: "A retirement-age floor, pension eligibility and the age older survey respondents left their longest-held job measure different things"
+description: "How Korea's retirement-age floor and pension schedule compare with a survey of older adults who left their longest-held job."
 active: "journal"
 image:
   feature: ""
@@ -17,7 +17,7 @@ comments: false
 tags: [Practical, K-Culture]
 categories: [Daily Life]
 reviewed: "2026-09-13"
-lastmod: "2026-09-13"
+lastmod: "2026-11-03"
 ai_assisted: true
 content_type: guide
 sources:
@@ -38,12 +38,14 @@ sources:
     url: "https://www.kostat.go.kr/board.es?mid=a10301010000&bid=210&list_no=446335&act=view"
 ---
 
-<p>Ask when a Korean career ends and the official answer is 60, the retirement age written into law. Ask the people who have lived it and the answer arrives years earlier. In the national statistics agency's May 2026 survey of 55-to-79-year-olds, people who had left their longest-held job had left it, on average, at 53 — while most people in that age group told the same survey they wanted to keep working, and hoped on average to carry on into their seventies.</p>
+<p>Korean law sets a floor of 60 when an employer sets a retirement age. A different measure comes from the national statistics agency's May 2026 survey: among 55-to-79-year-olds with work experience who had already left their longest-held job, the average leaving age was 53. That does not mean most people stopped working at 53; someone can leave that job and continue working elsewhere.</p>
+
+<p><strong>Correction, 3 November 2026:</strong> An earlier title and photo caption described the survey average as the age at which most people or working lives end. The survey measures departure from a longest-held job, not the end of all work. The early-pension section also now states the income threshold for suspension.</p>
 
 <p>That is a measurable gap, and it sits between three official numbers that almost never appear on the same page.</p>
 
 <figure class="post-photo source-image"><img src="/img/source/korea-retirement-age-gap/seoul-cbd-jongno.jpg" alt="Office towers along Jongno in central Seoul on a clear winter day" width="1600" height="1099" loading="lazy" decoding="async">
-<figcaption>Office towers in Seoul's central business district. Most Korean working lives end well before the statutory retirement age that protects jobs in buildings like these. Source: https://commons.wikimedia.org/wiki/File:Seoul_CBD_along_Jongro_near_Gwanghwamun_post_office.jpg &middot; License: http://creativecommons.org/publicdomain/zero/1.0/deed.en &middot; Photo: DtSeoul, Wikimedia Commons contributor, CC0</figcaption></figure>
+<figcaption>Office towers in Seoul's central business district. The survey's age-53 average concerns departure from a longest-held job, not the end of all work. Source: https://commons.wikimedia.org/wiki/File:Seoul_CBD_along_Jongro_near_Gwanghwamun_post_office.jpg &middot; License: http://creativecommons.org/publicdomain/zero/1.0/deed.en &middot; Photo: DtSeoul, Wikimedia Commons contributor, CC0</figcaption></figure>
 
 <h3>Three ages, one working life</h3>
 
@@ -51,8 +53,8 @@ sources:
 
 <ol>
 <li><strong>60</strong> — the earliest retirement age an employer is allowed to set, fixed by statute.</li>
-<li><strong>63 to 65</strong> — when the National Pension actually starts paying, depending on the year you were born.</li>
-<li><strong>53.0</strong> — the average age at which people who have left their longest-held job actually left it.</li>
+<li><strong>61 to 65</strong> — the normal National Pension starting ages shown below, depending on birth year and eligibility.</li>
+<li><strong>53.0</strong> — the average age at leaving the longest-held job among surveyed 55-to-79-year-olds with work experience who had already left it.</li>
 </ol>
 
 <p>Only the first two are rules. The third is what happens.</p>
@@ -72,7 +74,7 @@ sources:
 
 <p>In the May 2026 survey of 55-to-79-year-olds, the three most common reasons for leaving the longest-held job were business downturn, suspension or closure (24.9%), poor health (22.1%) and caring for family (15.2%). Reaching a mandatory retirement age does not appear among them in the summary at all.</p>
 
-<p>The same survey found that only 30.5% of people with work experience are still in the job they held longest, at an average current age of 62.6. The average tenure in that job was 17 years and 7.1 months — a real career, ended by something other than a birthday.</p>
+<p>The same survey found that only 30.5% of people with work experience are still in the job they held longest, at an average current age of 62.6. The survey reports average tenure in the longest-held job as 17 years and 7.1 months; the reasons for leaving vary.</p>
 
 <p>So 정년 60 is best read as a ceiling on how early an employer may <em>formally</em> retire you, not a promise that you will still be there at 59.</p>
 
@@ -92,7 +94,7 @@ sources:
 
 <p>There is also a floor underneath that: you need at least ten years of contributions before an old-age pension is payable at all. Fewer than ten years routes you to a lump-sum refund instead.</p>
 
-<p>Put the numbers together and the shape of the problem is obvious. Someone born in 1970 who follows the measured average leaves their main job at 53 and cannot draw a National Pension until 65. That is roughly a twelve-year stretch to cover from savings, severance, a second job, or family. For the group already living it, the average monthly pension reported was 880,000 won.</p>
+<p>Put the numbers together and the shape of the problem is obvious. For illustration, someone born in 1970 who leaves their longest-held job at 53 reaches the normal National Pension starting age at 65, a twelve-year gap. They may work elsewhere during that period, and early pension eligibility is a separate question described below. For the group already living it, the average monthly pension reported was 880,000 won.</p>
 
 <figure class="post-photo source-image"><img src="/img/source/korea-retirement-age-gap/government-complex-sejong.jpg" alt="Wide daytime view of the Government Complex Sejong with apartment blocks and hills behind it" width="1600" height="814" loading="lazy" decoding="async">
 <figcaption>Government Complex Sejong. The retirement-age statute and the pension schedule are run by different bodies, in different cities. Source: https://commons.wikimedia.org/wiki/File:Government_Complex_Sejong_(N).jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0 &middot; Photo: Minseong Kim, Wikimedia Commons contributor, CC BY-SA 4.0</figcaption></figure>
@@ -101,11 +103,11 @@ sources:
 
 <p>Korea gives you two ways to move the pension date, and both are permanent.</p>
 
-<p><strong>Claim early.</strong> The early old-age pension (조기노령연금, jogi noryeong yeongeum) can begin up to five years before your normal age. NPS's own worked example for someone born in 1966 shows the cost: claiming at 59 pays 70% of the base pension for life, rising six percentage points for each year you wait — 76% at 60, 82% at 61, and so on. Taking it five years early means keeping 70% forever, not for five years. It is also suspended for any period in which you return to income-earning work before your normal starting age.</p>
+<p><strong>Claim early.</strong> The early old-age pension (조기노령연금, jogi noryeong yeongeum) can begin up to five years before your normal age. NPS's own worked example for someone born in 1966 shows the cost: claiming at 59 pays 70% of the base pension for life, rising six percentage points for each year you wait — 76% at 60, 82% at 61, and so on. Taking it five years early means keeping 70% forever, not for five years. Before normal pension age, payment is suspended if the recipient engages in income-earning work as defined by NPS: average monthly business and employment income, after the relevant deductions, exceeds the annual A-value. NPS gives that value as 3,193,511 won for 2026; it can change, so check the current threshold and your circumstances with NPS.</p>
 
 <p><strong>Defer.</strong> Going the other way adds 7.2% per deferred year, up to five years. NPS notes on the same page that a larger pension can raise your pension income tax, health insurance premiums and basic pension calculation, so the gross increase is not the net increase.</p>
 
-<p>Meanwhile, 69.2% of the 55-to-79 group say they want to keep working, and the average age they hope to work until is 73.6 — twenty years past the age at which the average person's main career actually ended.</p>
+<p>Meanwhile, 69.2% of the 55-to-79 group say they want to keep working, and the average age they hope to work until is 73.6 — about twenty years after the surveyed average age of departure from a longest-held job. The two measures concern different groups and do not show when anyone's working life ended.</p>
 
 <h3>If you are not Korean</h3>
 
@@ -141,7 +143,7 @@ sources:
 
 <p>This is a map of the public schedule, not financial advice, and it deliberately stops short in several places. Severance and company retirement pensions (퇴직금 and 퇴직연금) are a separate system with their own rules. The basic pension for older residents on low incomes is separate again. Public-sector and military pensions run on their own statutes entirely. And every figure from the survey describes May 2026 — the ages are set by law and change slowly, but the behaviour they measure moves every year.</p>
 
-<p>The three-number gap, though, is not a statistical curiosity. It is the reason so many Korean careers have a second act that nobody planned.</p>
+<p>These three numbers describe different things. They can help frame a planning question, but the age-53 average alone cannot establish why a particular person left a job or whether a later job was planned.</p>
 
 <p>If you are weighing what happens to your Korean contributions when you leave, the parallel question is health cover, which runs on a completely different timetable: <a href="/journal/Leaving-Korea-For-A-While-Your-Health-Insurance/">Leaving Korea for a while, and what happens to your health insurance</a>.</p>
 

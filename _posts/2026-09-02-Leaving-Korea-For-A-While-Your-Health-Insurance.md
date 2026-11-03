@@ -17,9 +17,9 @@ comments: false
 tags: [Practical, Family]
 categories: [Daily Life]
 reviewed: "2026-09-02"
-lastmod: "2026-09-07"
-correction_date: "2026-09-07"
-correction_note: "Removed an unverified report of a new online filing route and scoped document guidance to the official overseas-study example."
+lastmod: "2026-11-03"
+correction_date: "2026-11-03"
+correction_note: "Corrected the regional premium calculation to distinguish monthly income amount from property assessment points. A September correction removed an unverified online filing route and scoped document guidance to the overseas-study example."
 ai_assisted: true
 content_type: guide
 sources:
@@ -66,12 +66,14 @@ sources:
 
 <p>Here is a provision that changes the outcome whenever a dependant remains in Korea, and it is a proviso rather than a headline. An employee subscriber's premium is exempted only when no dependant resides in Korea. A worker who takes an overseas posting while a spouse, a child or a parent remains in Korea as a registered dependant does not get the exemption. The household keeps its coverage in Korea, and it keeps the bill.</p>
 
-<p>The regional side of the scheme works differently again, and the vocabulary matters. For a regional subscriber the Act does not exempt anyone; it removes that member's income and property points from the household's premium calculation. Nobody is excused; the arithmetic simply loses one contributor. A single-person household and a five-person household therefore experience the same departure very differently.</p>
+<p><strong>Correction, 3 November 2026:</strong> The regional calculation excludes the member's monthly income amount and property-premium assessment points, not two kinds of points.</p>
+
+<p>The regional side of the scheme works differently again, and the vocabulary matters. For a regional subscriber the Act does not exempt anyone; it removes that member's monthly income amount and property-premium assessment points from the household's premium calculation. Nobody is excused; the arithmetic simply loses one contributor. A single-person household and a five-person household therefore experience the same departure very differently.</p>
 
 <ul>
 <li><strong>Employee subscriber, nobody left behind:</strong> the premium is exempted.</li>
 <li><strong>Employee subscriber with a dependant in Korea:</strong> no exemption at all, because the proviso in Article 74(1) withdraws the relief.</li>
-<li><strong>Regional subscriber:</strong> nothing is exempted; the household premium is recalculated with that member’s income and property points removed.</li>
+<li><strong>Regional subscriber:</strong> nothing is exempted; the household premium is recalculated with that member’s monthly income amount and property-premium assessment points removed.</li>
 </ul>
 
 <!--post-ad-break-->

@@ -17,7 +17,7 @@ comments: false
 tags: [Seasons, Practical]
 categories: [Travel & Transport]
 reviewed: "2026-09-05"
-lastmod: "2026-09-05"
+lastmod: "2026-11-03"
 ai_assisted: true
 content_type: guide
 sources:
@@ -45,7 +45,7 @@ sources:
 
 <p>The weather service measures whole mountains. Its own observation documentation is blunt about the arithmetic: for the designated famous mountains, the start date is when roughly 20 percent of the mountain has coloured, counted downward from the summit, and the peak date is when about 80 percent of the whole mountain has turned. A second, separate rule covers the standard trees kept at observation stations, where one designated tree is judged at the same 20 and 80 percent marks.</p>
 
-<p>The forest service measures species instead. Its annual Forest Foliage Prediction Map defines peak as the moment each tree species is at least 50 percent coloured, then publishes an average date per species rather than per mountain. In the 2025 map, released on 1 October that year, those species averages were 28 October for ginkgo, 31 October for oaks and 1 November for maples.</p>
+<p>The forest service measures species instead. Its annual Forest Foliage Prediction Map defines peak as the moment each tree species is at least 50 percent coloured, and publishes both species averages and site-specific predictions. In the 2025 map, released on 1 October that year, those species averages were 28 October for ginkgo, 31 October for oaks and 1 November for maples.</p>
 
 <p>One agency is asking how much of a mountain has changed. The other is asking how far along a particular kind of tree is. Both answers are correct, they are answers to different questions, and there is no reason for them to land on the same day.</p>
 
@@ -56,25 +56,27 @@ sources:
 
 <h3>The detail the forecasts rarely mention</h3>
 
-<p>The weather service keeps 21 designated famous-mountain observation points, and its published table holds a detail that almost never survives into the news summaries: on each mountain, first foliage and peak foliage are not judged from the same place.</p>
+<p><strong>Correction, 3 November 2026:</strong> An earlier version confused the elevations used as foliage reference points with the observer's location, and described predicted peak dates as the start of foliage. The official table separates the observation location from the landscape reference points.</p>
 
-<p>Take Seoraksan. The summit stands at 1,708 metres. First foliage is observed at 1,394 metres, at the midpoint between the mountain's automatic weather station and the upper end of the Gongnyong ridge. Peak foliage is observed at 454 metres, on the lower slope beneath Gwongeumseong. The two readings are taken 940 metres apart in elevation.</p>
+<p>The weather service's table lists 21 famous-mountain sites, with an observation location and separate landscape reference points for first foliage and peak foliage.</p>
 
-<p>It is not a Seoraksan quirk. Every one of the 21 points follows the same shape, with the first-foliage vantage high and the peak vantage far lower down. Bukhansan reads first colour at 696 metres and peak at 273. Naejangsan reads 654 and 328. Hallasan reads 1,676 and 854. The narrowest gap in the entire table is Juwangsan at 271 metres; the widest is Seoraksan's 940.</p>
+<p>Take Seoraksan. The table lists the observation location near the Sogongwon ticket office. It identifies a 1,394-metre landscape reference point for first foliage and a 454-metre point below Gwongeumseong for peak foliage. These are points on the mountain used to judge colour progression, not two places from which observers necessarily take readings.</p>
 
-<p>Once that is clear, the calendar makes more sense. First foliage is a statement about the top of a mountain. Peak is a statement about its lower slopes. They describe the same autumn arriving in two places weeks apart, and the announced dates follow the observers as much as the trees.</p>
+<p>Other mountains have their own reference points. For example, the table lists 696 metres and 273 metres for Bukhansan's first and peak foliage respectively. The different heights describe the landscape being assessed, not a change in where the observer stands.</p>
+
+<p>The distinction helps explain the calendar: first foliage and peak use different thresholds for the mountain's visible colour. Neither date promises that every trail or every tree looks the same.</p>
 
 <figure class="post-photo source-image"><img src="/img/source/korea-two-peak-foliage-dates/seoraksan-daecheongbong-summit-marker.jpg" alt="Stone summit marker on a bare rocky ridge under a pale blue sky with cloud below, standing among loose granite blocks" width="1600" height="1200" loading="lazy" decoding="async">
-<figcaption>Daecheongbong, the 1,708-metre summit of Seoraksan. Colour arrives here first, but the weather service reads its first-foliage date lower down, at 1,394 metres. Source: https://commons.wikimedia.org/wiki/File:%EC%84%A4%EC%95%85%EC%82%B0_%EB%8C%80%EC%B2%AD%EB%B4%89_%EC%A0%95%EC%83%81%EC%84%9D.jpg &middot; License: http://creativecommons.org/publicdomain/zero/1.0/deed.en &middot; Wikifairy2 &middot; Photo: Wikifairy2, CC0 1.0, via Wikimedia Commons</figcaption></figure>
+<figcaption>Daecheongbong, the 1,708-metre summit of Seoraksan. The weather service's table identifies a first-foliage reference point at 1,394 metres, distinct from its observation location. Source: https://commons.wikimedia.org/wiki/File:%EC%84%A4%EC%95%85%EC%82%B0_%EB%8C%80%EC%B2%AD%EB%B4%89_%EC%A0%95%EC%83%81%EC%84%9D.jpg &middot; License: http://creativecommons.org/publicdomain/zero/1.0/deed.en &middot; Wikifairy2 &middot; Photo: Wikifairy2, CC0 1.0, via Wikimedia Commons</figcaption></figure>
 
 <figure class="post-photo source-image"><img src="/img/source/korea-two-peak-foliage-dates/seoraksan-gwongeumseong-ridge.jpg" alt="Wide view of granite peaks and ridgelines in Seoraksan National Park seen from a bare rock shoulder, with forested slopes filling the valleys" width="1600" height="542" loading="lazy" decoding="async">
-<figcaption>The Gwongeumseong side of Seoraksan. Peak foliage for the whole mountain is judged from the slope below here, at 454 metres. Source: https://commons.wikimedia.org/wiki/File:Korea-Seoraksan-Mount_Gwongeumseong-01.jpg &middot; License: https://creativecommons.org/licenses/by-sa/3.0 &middot; Steve46814 &middot; Photo: Steve46814, CC BY-SA 3.0, via Wikimedia Commons</figcaption></figure>
+<figcaption>The Gwongeumseong side of Seoraksan. The weather service identifies a peak-foliage reference point below Gwongeumseong at 454 metres. Source: https://commons.wikimedia.org/wiki/File:Korea-Seoraksan-Mount_Gwongeumseong-01.jpg &middot; License: https://creativecommons.org/licenses/by-sa/3.0 &middot; Steve46814 &middot; Photo: Steve46814, CC BY-SA 3.0, via Wikimedia Commons</figcaption></figure>
 
 <h3>What the forest service map is for</h3>
 
 <p>The prediction map is a different instrument, and it helps to read it as one. It is produced by the Korea National Arboretum together with nine regional public arboretums and the National Institute of Forest Science, drawing on long-term plant phenology records and mountain weather data.</p>
 
-<p>Because it works by species, it can say things the whole-mountain method cannot. The 2025 edition noted that maple colour would begin around 25 October at Seoraksan, 27 October at Songnisan and as late as 11 November at Gayasan. It also carried a slower, more consequential finding: peak timing has drifted roughly 4 to 5.2 days later than the average of the previous ten years, moving about 0.43 days later per year for maples, 0.50 for ginkgo and 0.52 for oaks.</p>
+<p>Because it works by species, it can say things the whole-mountain method cannot. The 2025 maple map marked predicted peak dates of 25 October for Seoraksan's Gwongeumseong and 27 October for Songnisan. The dates are peak predictions, not the start of colour; the release and map differ on the Gayasan date, so this guide does not resolve it. It also carried a slower, more consequential finding: peak timing has drifted roughly 4 to 5.2 days later than the average of the previous ten years, moving about 0.43 days later per year for maples, 0.50 for ginkgo and 0.52 for oaks.</p>
 
 <p>That drift is the practical reason old advice ages badly. A guide that tells you late October is reliable was written for a slightly earlier Korea.</p>
 
@@ -85,7 +87,7 @@ sources:
 
 <p>Start by deciding which question you are actually asking. If you want a mountain that reads as autumn from a distance, the weather service peak date is the closer match, because it describes the mountain as a whole. If you want one particular thing, a ginkgo avenue or a maple valley, the forest service species dates are the better guide.</p>
 
-<p>Then adjust for height. If you are heading for a summit or a high ridge, you want the first-foliage window, not the peak window, because by the time a peak date is announced the top has often already gone bare. If you are walking a valley trail, a temple approach or a lakeside path, the peak date is aimed much closer to where you will be standing.</p>
+<p>Then check the actual trail and elevation with the park or local observations. A mountain-wide threshold is not a route-specific forecast, and neither the observation point nor the reference height guarantees conditions at your destination.</p>
 
 <p>Finally, treat both dates as a centre rather than an appointment. Neither agency is promising a single perfect day, and the same mountain can hold three seasons at once: bare branches high up, full colour in the middle, and green at the bottom.</p>
 
@@ -97,12 +99,12 @@ sources:
 
 <h3>Where 2026 stands</h3>
 
-<p>As of 5 September 2026, the forest service's prediction map for this year had not yet appeared on its press-release board. The 2025 map came out on 1 October, so the wait is normal rather than a sign that anything has changed. Until then, the weather service's mountain observations are the live signal, and they are what the Seoraksan office was measured against on 31 August.</p>
+<p>At the original review on 5 September 2026, that year's forest-service prediction map had not yet appeared on the press-release board. This is a historical observation, not a current status; check the forest service for the latest map and the weather service for current mountain observations.</p>
 
 <p>For reference, Seoraksan's normal first-foliage date is 28 September, and in 2025 it arrived on 2 October. Colour on Daecheongbong in late August is early for the eye and, by the official rule, still not autumn.</p>
 
 <figure class="post-photo source-image"><img src="/img/source/korea-two-peak-foliage-dates/bukhansan-autumn.jpg" alt="Bare branching tree silhouetted against a pale evening sky with a rocky mountain ridge behind and two birds in flight" width="1600" height="1200" loading="lazy" decoding="async">
-<figcaption>Bukhansan on 11 November, with the foreground branches already bare. Korea’s official peak reading for this mountain is taken far lower, at 273 metres. Source: https://commons.wikimedia.org/wiki/File:Bukhansan_National_Park_in_autumn.jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0 &middot; Raphael Duprat &middot; Photo: Raphael Duprat, CC BY-SA 4.0, via Wikimedia Commons</figcaption></figure>
+<figcaption>Bukhansan on 11 November, with the foreground branches already bare. The weather service lists 273 metres as Bukhansan's peak-foliage reference height, not the observer's position. Source: https://commons.wikimedia.org/wiki/File:Bukhansan_National_Park_in_autumn.jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0 &middot; Raphael Duprat &middot; Photo: Raphael Duprat, CC BY-SA 4.0, via Wikimedia Commons</figcaption></figure>
 
 <p>Two agencies, two definitions, and a mountain that never turns all at once. Once the arithmetic is visible, the disagreement stops looking like a mistake and starts looking like what it is: two honest answers to two different questions, both of them worth reading before booking anything.</p>
 

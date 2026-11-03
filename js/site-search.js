@@ -17,7 +17,7 @@
   if (!input || !results) { return; }
 
   var index = null;
-  var pending = null;
+  var indexFailed = false;
   var indexUrl = results.getAttribute('data-index') || '/search.json';
 
   function escapeHtml(s) {
@@ -58,7 +58,10 @@
   // Pull a window of body text around the first match so the reader can see why the
   // result matched, rather than always showing the same opening sentence.
   function excerpt(entry, phrase) {
-    var source = entry.desc || entry.content || '';
+    var description = entry.desc || '';
+    var body = entry.content || '';
+    var source = description.toLowerCase().indexOf(phrase) !== -1 ? description :
+                 (body.toLowerCase().indexOf(phrase) !== -1 ? body : (description || body));
     var lower = source.toLowerCase();
     var at = lower.indexOf(phrase);
     if (at === -1) { return source.slice(0, 160); }
@@ -105,7 +108,12 @@
       status.textContent = query.length ? 'Keep typing\u2026' : '';
       return;
     }
-    if (!index) { pending = query; status.textContent = 'Loading\u2026'; return; }
+    if (indexFailed) {
+      results.innerHTML = '';
+      status.textContent = 'Search is unavailable right now. Please browse the journal instead.';
+      return;
+    }
+    if (!index) { status.textContent = 'Loading\u2026'; return; }
 
     var phrase = query.toLowerCase();
     var terms = phrase.split(/\s+/);
@@ -131,7 +139,9 @@
   // in the site's SearchAction structured data.
   function initialQuery() {
     var m = /[?&]q=([^&]+)/.exec(window.location.search);
-    return m ? decodeURIComponent(m[1].replace(/\+/g, ' ')) : '';
+    if (!m) { return ''; }
+    try { return decodeURIComponent(m[1].replace(/\+/g, ' ')); }
+    catch (e) { return ''; }
   }
 
   var xhr = new XMLHttpRequest();
@@ -139,18 +149,19 @@
   xhr.onreadystatechange = function () {
     if (xhr.readyState !== 4) { return; }
     if (xhr.status !== 200 && xhr.status !== 304) {
+      indexFailed = true;
       status.textContent = 'Search is unavailable right now. Please browse the journal instead.';
       return;
     }
     try {
       index = JSON.parse(xhr.responseText);
     } catch (e) {
+      indexFailed = true;
       status.textContent = 'Search is unavailable right now. Please browse the journal instead.';
       return;
     }
-    var q = pending || initialQuery();
-    if (q) { input.value = q; run(q); }
-    pending = null;
+    var q = input.value;
+    if (q) { run(q); }
   };
   xhr.send();
 

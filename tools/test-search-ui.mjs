@@ -14,6 +14,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
+import vm from 'node:vm';
 import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 
@@ -488,6 +489,69 @@ test('Tab wraps within the overlay with and without dynamic results', () => {
     ui.fireWindow('keydown', { key: 'Tab', preventDefault() { throw new Error('closed overlay trapped focus'); } });
     assert.equal(document.activeElement, ui.button);
   } finally { ui.restore(); }
+});
+
+/* ------------------------------------------ standalone /search/ integration */
+
+function mountStandalone(search = '') {
+  const input = makeElement('input');
+  const results = makeElement('ul');
+  const status = makeElement('p');
+  const elements = { 'search-input': input, 'results-container': results, 'search-status': status };
+  let xhr;
+  let timer;
+  const context = {
+    document: { getElementById: (id) => elements[id] || null },
+    window: { location: { search } },
+    setTimeout: (fn) => { timer = fn; return 1; },
+    clearTimeout: () => { timer = null; },
+    XMLHttpRequest: function () {
+      xhr = this;
+      this.open = () => {};
+      this.send = () => {};
+    }
+  };
+  vm.runInNewContext(fs.readFileSync(path.join(repoRoot, 'js', 'site-search.js'), 'utf8'), context);
+  return {
+    input, results, status,
+    type(value) { input.value = value; input.dispatch('input'); if (timer) { const fn = timer; timer = null; fn(); } },
+    deliver(code, payload) { xhr.readyState = 4; xhr.status = code; xhr.responseText = payload; xhr.onreadystatechange(); }
+  };
+}
+
+test('standalone index retains full article content', () => {
+  const source = fs.readFileSync(path.join(repoRoot, 'search.json'), 'utf8');
+  assert.match(source, /item\.content\s*\|\s*strip_html\s*\|\s*normalize_whitespace\s*\|\s*jsonify/);
+});
+
+test('standalone search finds and displays a late body match', () => {
+  const ui = mountStandalone();
+  ui.deliver(200, JSON.stringify([{ title: 'Bank guide', url: '/bank/', desc: 'Account basics', content: 'x'.repeat(1300) + ' withholding certificate details' }]));
+  ui.type('withholding');
+  assert.match(ui.status.textContent, /^1 result/);
+  assert.match(ui.results.innerHTML, /<mark>withholding<\/mark> certificate details/);
+});
+
+test('standalone search retains failure state when the user keeps typing', () => {
+  const ui = mountStandalone();
+  ui.deliver(500, '');
+  ui.type('bank');
+  assert.match(ui.status.textContent, /Search is unavailable/);
+});
+
+test('cleared query is not restored when the index arrives', () => {
+  const ui = mountStandalone('?q=bank');
+  ui.type('');
+  ui.deliver(200, JSON.stringify([{ title: 'Bank', url: '/bank/' }]));
+  assert.equal(ui.input.value, '');
+  assert.equal(ui.results.innerHTML, '');
+});
+
+test('malformed query encoding does not disable the search page', () => {
+  const ui = mountStandalone('?q=%E0%A4%A');
+  ui.deliver(200, JSON.stringify([{ title: 'Bank', url: '/bank/' }]));
+  ui.type('bank');
+  assert.match(ui.status.textContent, /^1 result/);
 });
 
 /* -------------------------------------------------------------- runner */

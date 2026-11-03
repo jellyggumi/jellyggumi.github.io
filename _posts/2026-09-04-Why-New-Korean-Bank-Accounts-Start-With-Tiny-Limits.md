@@ -17,11 +17,11 @@ comments: false
 tags: [Practical, K-Culture]
 categories: [Daily Life]
 reviewed: "2026-09-04"
-lastmod: "2026-09-04"
+lastmod: "2026-11-03"
 ai_assisted: true
 content_type: guide
 sources:
-  - label: "한도제한계좌의 이체·ATM 거래한도가 30만원에서 100만원으로 상향됩니다 (2024-05-02 press release: definition and current limits)"
+  - label: "한도제한계좌의 이체·ATM 거래한도가 30만원에서 100만원으로 상향됩니다 (2024-05-02 press release: definition and limits announced in 2024)"
     publisher: "금융위원회 (Financial Services Commission)"
     url: "https://www.fsc.go.kr/no010101/82205"
   - label: "규제심판부, 신규계좌 이체·출금 제한 합리적 개선 권고 (2023-08-08 regulatory review board record)"
@@ -53,27 +53,29 @@ sources:
     url: "https://m.kakaobank.com/FaqSearch;q=%EC%99%B8%EA%B5%AD%EC%9D%B8"
 ---
 
-<p>The first Korean bank account usually goes wrong on a Tuesday. The account itself opens fine: the branch visit works, the card arrives, the app logs in. Then the first real payment comes due, a deposit or a month of rent, and the transfer stops at one million won with a message that reads like a mistake. It is not a mistake. It is the default.</p>
+<p>A rent or deposit payment can expose an unexpected limit on a new Korean bank account. The amount is not universal: KB Kookmin describes a 1,000,000 won daily electronic-transfer limit for its newer limited accounts, while Toss's guide gives a 300,000 won daily transfer limit for a foreigner's new account. Check your own bank and account before a large payment.</p>
 
-<p>Korea calls it a 한도제한계좌 (hando jehan gyejwa), a limited transaction account, and newcomers routinely meet one before anyone explains it. The system has exact numbers, a documented history and a paper trail out. All three are worth knowing before the Tuesday arrives.</p>
+<p><strong>Correction, 3 November 2026:</strong> An earlier version presented 1,000,000 won as the default for every new account. Limits depend on the bank and account; the examples below are not a promise that an account will open or a limit will be lifted.</p>
 
-<h3>The Cap Is the Default, Not a Penalty</h3>
+<p>Korea calls it a 한도제한계좌 (hando jehan gyejwa), a limited transaction account. The rules have a documented history and possible paths to release, but the documents and decision depend on the bank.</p>
+
+<h3>Why an Account May Be Limited</h3>
 
 <p>When a Korean bank opens an ordinary demand-deposit account, it asks what the account is for, and it wants evidence rather than an answer. The Financial Services Commission describes the limited account as the account type introduced in 2016 for customers who could not submit objective documents proving their purpose of financial transactions, layered on top of a purpose-confirmation practice the banks have run since 2012 to stamp out fraud accounts, the infamous 대포통장 (daepo tongjang).</p>
 
-<p>Since 28 August 2024 the purpose check is no longer just practice. KB Kookmin's customer notice explains that an amendment to the special act on telecommunications-based financial fraud made confirming the purpose a statutory duty, covering new account openings, limit releases, reactivation of suspended accounts and even passbook reissues on long-dormant accounts. No convincing documents, and the account still opens; it simply opens capped.</p>
+<p>Since 28 August 2024 the purpose check is no longer just practice. KB Kookmin's customer notice explains that an amendment to the special act on telecommunications-based financial fraud made confirming the purpose a statutory duty, covering new account openings, limit releases, reactivation of suspended accounts and even passbook reissues on long-dormant accounts. If the required purpose documents are unavailable, ask the bank whether it can open a limited account; opening is not guaranteed.</p>
 
 <figure class="post-photo source-image"><img src="/img/source/korea-limited-bank-accounts/kb-kookmin-branch.jpg" alt="Street-level KB Kookmin Bank branch with a dark signboard and yellow trim at a city intersection, with bicycles and a scooter parked outside" width="1600" height="1200" loading="lazy" decoding="async">
 <figcaption>A KB Kookmin Bank branch at a city intersection; the account-opening interview, and the document check that decides the limits, happens at counters like these. Source: https://commons.wikimedia.org/wiki/File:Kookmin_Bank_Sanbon_Intersection_Branch_20240722.jpg &middot; License: https://creativecommons.org/publicdomain/zero/1.0/ &middot; LandAndTree &middot; Photo: LandAndTree, CC0 1.0, via Wikimedia Commons</figcaption></figure>
 
-<h3>The Numbers, as of Now</h3>
+<h3>What the Published Limits Actually Cover</h3>
 
-<p>The current caps date from 2 May 2024, and by the FSC's own account the daily limits had not moved between the system's 2016 introduction and that raise. A limited account now allows, per day, up to 1,000,000 won by internet or mobile banking, 1,000,000 won at ATMs, and 3,000,000 won over the counter. The raise applied automatically to existing limited accounts, with NH Nonghyup, Hana and Busan Bank following a week later, on 10 May.</p>
+<p>In its 2 May 2024 announcement, the Financial Services Commission (FSC) described daily limits of 1,000,000 won for electronic banking and ATM transactions and 3,000,000 won for counter transactions. It said the increase would apply automatically to existing limited accounts, with NH Nonghyup, Hana and Busan Bank following on 10 May; customers could ask to retain the earlier limit. KB Kookmin's guidance, dated 7 September 2026, describes these amounts for its accounts opened on or after 2 March 2016, subject to that opt-out. These are published examples, not a universal current cap.</p>
 
-<p>Two footnotes matter. The same FSC release notes that internet-only banks kept their own limited-account caps, in the range of 1,000,000 to 2,000,000 won per day for ATM and electronic transactions depending on the bank. And KB Kookmin's guidance adds that accounts opened before 2 March 2016 sit outside the raise entirely and keep older, lower limits, such as 700,000 won at ATMs.</p>
+<p>Two qualifications matter. The 2024 FSC announcement said internet-only banks then retained their own ATM and electronic-transaction limits of 1,000,000 to 2,000,000 won. That historical range should not be treated as a guarantee for every customer today: Toss's separate guide for foreign residents describes a 300,000 won daily transfer limit. KB Kookmin also says its accounts opened before 2 March 2016 retain older limits, such as 700,000 won at ATMs.</p>
 
 <figure class="post-photo source-image"><img src="/img/source/korea-limited-bank-accounts/hyosung-atm-seoul.jpg" alt="Green self-service ATM booth in Seoul with a Hyosung machine, bilingual cash and cheque withdrawal signs and a courtesy phone on the wall" width="1600" height="2133" loading="lazy" decoding="async">
-<figcaption>A self-service ATM corner in Seoul. On a limited account, machines like this one stop at a million won a day. Source: https://commons.wikimedia.org/wiki/File:ATM_Hyosung_Seoul.jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0/ &middot; Lofor &middot; Photo: Lofor, CC BY-SA 4.0, via Wikimedia Commons</figcaption></figure>
+<figcaption>A self-service ATM corner in Seoul. The applicable limit depends on the account and bank. Source: https://commons.wikimedia.org/wiki/File:ATM_Hyosung_Seoul.jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0/ &middot; Lofor &middot; Photo: Lofor, CC BY-SA 4.0, via Wikimedia Commons</figcaption></figure>
 
 <!--post-ad-break-->
 
@@ -93,7 +95,7 @@ sources:
 <p>For foreign residents the identity layer comes first. Woori Bank's English guide asks for a passport or Alien Registration Card, and specifically warns that a customer who opened an account with a passport and later received an ARC must bring both to the counter. Banks may ask for supporting paperwork, proof of employment, pay notices, utility bills, depending on the task. KB's own statutory-duty notice lists the employee health-insurance qualification certificate among its salary-purpose examples. That certificate comes from the national insurer covered in the journal's guide to <a href="/journal/Leaving-Korea-For-A-While-Your-Health-Insurance/">what happens to Korean health insurance when you leave for a while</a>. Woori's same guide states plainly that lending a card or account to someone else is punishable under Korean law whether or not money changed hands, which is exactly the crime the whole system is built to prevent.</p>
 
 <figure class="post-photo source-image"><img src="/img/source/korea-limited-bank-accounts/ibk-bank-branch.jpg" alt="Ground-floor IBK Industrial Bank of Korea branch with a long blue self-service signboard, glass doors and low shrubs along the pavement" width="1600" height="1200" loading="lazy" decoding="async">
-<figcaption>A ground-floor IBK Industrial Bank of Korea branch; the release interview is ordinary counter business, and the deciding factor is which documents come along. Source: https://commons.wikimedia.org/wiki/File:2020-07-05_things_places_in_south_korea_IMG_2494.jpg &middot; License: https://creativecommons.org/publicdomain/zero/1.0/ &middot; Choikwangmo9 &middot; Photo: Choikwangmo9, CC0 1.0, via Wikimedia Commons</figcaption></figure>
+<figcaption>A ground-floor IBK Industrial Bank of Korea branch. Banks can request purpose documents and assess release applications individually. Source: https://commons.wikimedia.org/wiki/File:2020-07-05_things_places_in_south_korea_IMG_2494.jpg &middot; License: https://creativecommons.org/publicdomain/zero/1.0/ &middot; Choikwangmo9 &middot; Photo: Choikwangmo9, CC0 1.0, via Wikimedia Commons</figcaption></figure>
 
 <h3>The Twenty-Business-Day Clock</h3>
 
@@ -118,11 +120,11 @@ sources:
 <ul>
 <li><strong>Identification</strong> — passport or ARC; both if the account started on a passport alone.</li>
 <li><strong>Purpose documents</strong> — employment certificate, pay statement or withholding-tax receipt for a salary account; utility or maintenance receipts for a bills account; contracts and tax papers for business.</li>
-<li><strong>Patience with the default</strong> — expect 1,000,000 won per day by app or ATM and 3,000,000 won at the counter until the documents land.</li>
+<li><strong>Check the actual limit</strong> — ask the bank about your account's app, ATM and counter limits before making a large payment. The KB and Toss examples above differ, and submitting documents does not guarantee release.</li>
 <li><strong>A plan for the clock</strong> — one new account per 20 business days, across all banks, and closing an account may not reset it.</li>
 <li><strong>The right bank for your status</strong> — foreign residents can check Toss Bank's in-app route; KakaoBank says no; K bank gave no public answer this guide could find.</li>
 </ul>
 
-<p>The system is annoying in a way that is at least legible: the caps are real, published numbers; the reason is fraud prevention the government has debated in public; and the exit is a folder of paperwork most people already have. The account works the day it opens. It just works small until the documents catch up.</p>
+<p>The system is annoying in a way that is at least legible: the caps are real, published numbers; the reason is fraud prevention the government has debated in public; and banks assess requests to remove limits against their own requirements. If an account opens with restrictions, confirm its actual limits and the bank's release process before you rely on it for a large payment.</p>
 
 <p><strong>Editorial method:</strong> Drafted with AI assistance, with each claim tied to a regulator, government or bank source. The caps, their history and the planned foreigner-account measures come from Financial Services Commission releases and the 2023 regulatory-review record; the 20-business-day practice from the Korea Federation of Banks; the release documents and foreigner routes from KB Kookmin, Woori, Toss and KakaoBank's own pages. Where no public answer could be found — K bank — the guide says so instead of filling the gap. Photographs are Wikimedia Commons files credited in their captions, and the cover image is AI-generated.</p>
