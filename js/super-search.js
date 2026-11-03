@@ -17,6 +17,7 @@ they can be exercised outside a browser.
 		searchInputEl,
 		searchResultsEl,
 		searchStatusEl,
+		focusTimer,
 		currentInputValue = '',
 		lastSearchResultHash,
 		indexState = 'loading',
@@ -121,7 +122,10 @@ they can be exercised outside a browser.
 	function resultDate(post) {
 		var d = new Date(post.pubDate);
 		if (isNaN(d.getTime())) { return ''; }
-		return d.toUTCString().replace(/.*(\d{2})\s+(\w{3})\s+(\d{4}).*/, '$2 $1, $3');
+		// Match the site's Asia/Seoul publication day, not UTC or the reader's zone.
+		return d.toLocaleDateString('en-US', {
+			timeZone: 'Asia/Seoul', month: 'short', day: '2-digit', year: 'numeric'
+		});
 	}
 
 	function resultsMarkup(matches) {
@@ -165,6 +169,7 @@ they can be exercised outside a browser.
 	}
 
 	function toggleSearch() {
+		clearTimeout(focusTimer);
 		searchEl.classList.toggle('is-active');
 		var isOpen = searchEl.classList.contains('is-active');
 		searchEl.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
@@ -175,7 +180,9 @@ they can be exercised outside a browser.
 			currentInputValue = '';
 			// The box is empty again, so a stale message and stale results go with it.
 			renderSearchState(computeSearchState('', posts, indexState), currentElements());
-			setTimeout(function () { searchInputEl.focus(); }, 210);
+			focusTimer = setTimeout(function () {
+				if (searchEl.classList.contains('is-active')) { searchInputEl.focus(); }
+			}, 210);
 		} else {
 			// while closing
 			renderSearchState(computeSearchState('', posts, indexState), currentElements());
@@ -229,6 +236,20 @@ they can be exercised outside a browser.
 			handleInput();
 		};
 		xmlhttp.send();
+
+		// Resolve the current links on each keypress: results change as the user types.
+		window.addEventListener('keydown', function (e) {
+			if (e.key !== 'Tab' || !searchEl.classList.contains('is-active')) { return; }
+			var focusable = searchEl.querySelectorAll('button:not([disabled]), input:not([disabled]), a[href]');
+			var first = focusable[0];
+			var last = focusable[focusable.length - 1];
+			if (!first) { return; }
+			var active = document.activeElement;
+			if (!searchEl.contains(active) || (e.shiftKey ? active === first : active === last)) {
+				e.preventDefault();
+				(e.shiftKey ? last : first).focus();
+			}
+		});
 
 		// Toggle on ESC key
 		window.addEventListener('keyup', function onKeyPress(e) {

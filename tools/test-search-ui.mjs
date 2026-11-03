@@ -61,7 +61,7 @@ function makeElement(tag) {
       listeners.get(type).push(fn);
     },
     dispatch(type, event) { (listeners.get(type) || []).forEach((fn) => fn(event || {})); },
-    focus() { this.focusCount += 1; }
+    focus() { this.focusCount += 1; if (globalThis.document) globalThis.document.activeElement = this; }
   };
 }
 
@@ -99,6 +99,10 @@ function mountOverlay({ status = 200, items = FEED_ITEMS, throwOnParse = false }
   const button = makeElement('button');
   const container = makeElement('div');
   const input = makeElement('input');
+  const close = makeElement('button');
+  const link = makeElement('a');
+  container.querySelectorAll = () => results.innerHTML ? [close, input, link] : [close, input];
+  container.contains = (el) => [close, input, link].includes(el);
   const results = makeElement('ul');
   const statusEl = makeElement('p');
   const bySelector = {
@@ -110,15 +114,21 @@ function mountOverlay({ status = 200, items = FEED_ITEMS, throwOnParse = false }
   };
 
   let xhr;
+  const timers = new Map();
+  let nextTimer = 0;
   const windowListeners = new Map();
 
   const previous = {
     document: globalThis.document,
     window: globalThis.window,
     XMLHttpRequest: globalThis.XMLHttpRequest,
-    DOMParser: globalThis.DOMParser
+    DOMParser: globalThis.DOMParser,
+    setTimeout: globalThis.setTimeout,
+    clearTimeout: globalThis.clearTimeout
   };
 
+  globalThis.setTimeout = (fn) => { timers.set(++nextTimer, fn); return nextTimer; };
+  globalThis.clearTimeout = (id) => timers.delete(id);
   globalThis.document = { querySelector: (sel) => bySelector[sel] || null };
   globalThis.window = {
     addEventListener(type, fn) {
@@ -150,8 +160,9 @@ function mountOverlay({ status = 200, items = FEED_ITEMS, throwOnParse = false }
   });
 
   const api = {
-    button, container, input, results, status: statusEl,
+    button, container, input, close, link, results, status: statusEl,
     type(value) { input.value = value; input.dispatch('input'); },
+    flushTimers() { const pending = [...timers.values()]; timers.clear(); pending.forEach((fn) => fn()); },
     fireWindow(type, event) { (windowListeners.get(type) || []).forEach((fn) => fn(event)); },
     deliverFeed() {
       xhr.readyState = 4;
@@ -428,6 +439,55 @@ test('shipped user-facing strings stay plain English', () => {
     assert.ok(!value.includes('\u2014'), `em dash in: ${value}`);
     assert.ok(!/\p{Extended_Pictographic}/u.test(value), `emoji in: ${value}`);
   }
+});
+
+test('KST midnight and UTC feed timestamps display the site calendar date', () => {
+  for (const pubDate of ['Tue, 03 Nov 2026 00:00:00 +0900', 'Mon, 02 Nov 2026 15:00:00 +0000']) {
+    const status = makeElement('p');
+    const results = makeElement('ul');
+    renderSearchState(computeSearchState('', [], 'ready'), { status, results });
+    renderSearchState(computeSearchState('roof', [{ title: 'Roof tiles', link: '/roof/', pubDate }], 'ready'), { status, results });
+    assert.ok(results.innerHTML.includes('Nov 03, 2026'), results.innerHTML);
+  }
+});
+
+test('delayed opening focus cannot move into a closed overlay', () => {
+  const ui = mountOverlay();
+  try {
+    superSearch.toggle();
+    ui.flushTimers();
+    assert.equal(document.activeElement, ui.input);
+    superSearch.toggle();
+    superSearch.toggle();
+    superSearch.toggle();
+    ui.flushTimers();
+    assert.equal(document.activeElement, ui.button);
+  } finally { ui.restore(); }
+});
+
+test('Tab wraps within the overlay with and without dynamic results', () => {
+  const ui = mountOverlay();
+  try {
+    superSearch.toggle();
+    for (const hasResults of [false, true, false]) {
+      if (hasResults) { ui.deliverFeed(); ui.type('subway'); }
+      else { ui.type(''); }
+      const last = hasResults ? ui.link : ui.input;
+      let prevented = 0;
+      last.focus();
+      ui.fireWindow('keydown', { key: 'Tab', shiftKey: false, preventDefault() { prevented++; } });
+      assert.equal(document.activeElement, ui.close, 'Tab from last wraps to close');
+      ui.fireWindow('keydown', { key: 'Tab', shiftKey: true, preventDefault() { prevented++; } });
+      assert.equal(document.activeElement, last, 'Shift+Tab from close wraps to last');
+      assert.equal(prevented, 2);
+    }
+    ui.button.focus();
+    ui.fireWindow('keydown', { key: 'Tab', preventDefault() {} });
+    assert.equal(document.activeElement, ui.close, 'escaped focus returns inside');
+    superSearch.toggle();
+    ui.fireWindow('keydown', { key: 'Tab', preventDefault() { throw new Error('closed overlay trapped focus'); } });
+    assert.equal(document.activeElement, ui.button);
+  } finally { ui.restore(); }
 });
 
 /* -------------------------------------------------------------- runner */
