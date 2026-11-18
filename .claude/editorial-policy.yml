@@ -22,6 +22,23 @@ authority_primary_lane: seo-and-content
 authority_revenue_model: ads-supported-guide
 authority_readout_after_days: 28
 authority_result_status_at_publish: not-measured
+typography_policy:
+  readability_first: true
+  letter_spacing:
+    korean_body: "-0.015em"
+    english_body: "-0.005em"
+    headings: "-0.025em"
+    code_blocks: "0.0em"
+  line_height:
+    body_minimum: 1.88
+    headings: 1.42
+  word_break:
+    korean: "keep-all"
+    general: "break-word"
+  paragraph_pacing:
+    max_sentences_per_paragraph: 4
+    require_section_breathers: true
+    vertical_margin: "18px"
 allowed_content_types:
   - guide
 content_pillars:
