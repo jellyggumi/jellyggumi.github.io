@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="840" height="400" rx="12" fill="url(#bgGrad)" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- Title & Badge -->
+  <rect x="36" y="24" width="165" height="26" rx="6" fill="#042f2e" stroke="#14b8a6" stroke-width="1"/>
+  <text x="46" y="42" font-family="-apple-system, system-ui, sans-serif" font-size="11" font-weight="700" fill="#5eead4" letter-spacing="0.05em">CELADON TECHNIQUES</text>
+  <text x="36" y="76" font-family="-apple-system, system-ui, sans-serif" font-size="20" font-weight="700" fill="#f8fafc">Four Korean Celadon Decorative Technique Labels</text>
+  <text x="36" y="96" font-family="-apple-system, system-ui, sans-serif" font-size="13" fill="#94a3b8">How museum exhibition labels distinguish inlay, incised carving, iron pigment and copper underglaze</text>
+
+  <!-- 4 Cards -->
+  <!-- Card 1: Inlay (Sanggam) -->
+  <g transform="translate(36, 125)">
+    <rect width="170" height="240" rx="8" fill="url(#cardGrad)" stroke="#14b8a6" stroke-width="2"/>
+    <text x="16" y="30" font-family="-apple-system, system-ui, sans-serif" font-size="13" font-weight="700" fill="#2dd4bf">1. Inlay (상감)</text>
+    <text x="16" y="48" font-family="ui-monospace, monospace" font-size="10" fill="#5eead4">Sanggam Celadon</text>
+    <line x1="16" y1="58" x2="154" y2="58" stroke="#334155" stroke-width="1"/>
+    
+    <text x="16" y="80" font-family="-apple-system, system-ui, sans-serif" font-size="11" font-weight="600" fill="#f1f5f9">Method:</text>
+    <text x="16" y="98" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#94a3b8">Grooves cut into leather-</text>
+    <text x="16" y="112" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#94a3b8">hard clay; filled with</text>
+    <text x="16" y="126" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#94a3b8">white or black slip.</text>
+
+    <text x="16" y="156" font-family="-apple-system, system-ui, sans-serif" font-size="11" font-weight="600" fill="#f1f5f9">Visual Clue:</text>
+    <text x="16" y="174" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#cbd5e1">Crisp white cranes &amp;</text>
+    <text x="16" y="188" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#cbd5e1">black cloud outlines flush</text>
+    <text x="16" y="202" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#cbd5e1">with vessel surface.</text>
+  </g>
+
+  <!-- Card 2: Relief / Carving (Yanggak / Eumgak) -->
+  <g transform="translate(236, 125)">
+    <rect width="170" height="240" rx="8" fill="url(#cardGrad)" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="16" y="30" font-family="-apple-system, system-ui, sans-serif" font-size="13" font-weight="700" fill="#38bdf8">2. Carving (음·양각)</text>
+    <text x="16" y="48" font-family="ui-monospace, monospace" font-size="10" fill="#7dd3fc">Incised / Relief</text>
+    <line x1="16" y1="58" x2="154" y2="58" stroke="#334155" stroke-width="1"/>
+
+    <text x="16" y="80" font-family="-apple-system, system-ui, sans-serif" font-size="11" font-weight="600" fill="#f1f5f9">Method:</text>
+    <text x="16" y="98" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#94a3b8">Shallow scored lines</text>
+    <text x="16" y="112" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#94a3b8">(incised) or carved</text>
+    <text x="16" y="126" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#94a3b8">raised petals (relief).</text>
+
+    <text x="16" y="156" font-family="-apple-system, system-ui, sans-serif" font-size="11" font-weight="600" fill="#f1f5f9">Visual Clue:</text>
+    <text x="16" y="174" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#cbd5e1">Glaze pools darker in</text>
+    <text x="16" y="188" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#cbd5e1">crevices; raised areas</text>
+    <text x="16" y="202" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#cbd5e1">glow lighter jade green.</text>
+  </g>
+
+  <!-- Card 3: Iron-Painted (Cheolhwa) -->
+  <g transform="translate(436, 125)">
+    <rect width="170" height="240" rx="8" fill="url(#cardGrad)" stroke="#fbbf24" stroke-width="1.5"/>
+    <text x="16" y="30" font-family="-apple-system, system-ui, sans-serif" font-size="13" font-weight="700" fill="#fbbf24">3. Iron Paint (철화)</text>
+    <text x="16" y="48" font-family="ui-monospace, monospace" font-size="10" fill="#fde68a">Cheolhwa Celadon</text>
+    <line x1="16" y1="58" x2="154" y2="58" stroke="#334155" stroke-width="1"/>
+
+    <text x="16" y="80" font-family="-apple-system, system-ui, sans-serif" font-size="11" font-weight="600" fill="#f1f5f9">Method:</text>
+    <text x="16" y="98" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#94a3b8">Iron-oxide pigment</text>
+    <text x="16" y="112" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#94a3b8">painted with a brush</text>
+    <text x="16" y="126" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#94a3b8">before celadon glaze.</text>
+
+    <text x="16" y="156" font-family="-apple-system, system-ui, sans-serif" font-size="11" font-weight="600" fill="#f1f5f9">Visual Clue:</text>
+    <text x="16" y="174" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#cbd5e1">Bold, dark brown-black</text>
+    <text x="16" y="188" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#cbd5e1">calligraphic strokes with</text>
+    <text x="16" y="202" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#cbd5e1">expressive dynamic edges.</text>
+  </g>
+
+  <!-- Card 4: Underglaze Copper (Donghwa) -->
+  <g transform="translate(636, 125)">
+    <rect width="170" height="240" rx="8" fill="url(#cardGrad)" stroke="#f43f5e" stroke-width="1.5"/>
+    <text x="16" y="30" font-family="-apple-system, system-ui, sans-serif" font-size="13" font-weight="700" fill="#fb7185">4. Copper (동화)</text>
+    <text x="16" y="48" font-family="ui-monospace, monospace" font-size="10" fill="#fda4af">Underglaze Copper</text>
+    <line x1="16" y1="58" x2="154" y2="58" stroke="#334155" stroke-width="1"/>
+
+    <text x="16" y="80" font-family="-apple-system, system-ui, sans-serif" font-size="11" font-weight="600" fill="#f1f5f9">Method:</text>
+    <text x="16" y="98" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#94a3b8">Rare copper pigment</text>
+    <text x="16" y="112" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#94a3b8">applied under glaze; fired</text>
+    <text x="16" y="126" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#94a3b8">in reduction atmosphere.</text>
+
+    <text x="16" y="156" font-family="-apple-system, system-ui, sans-serif" font-size="11" font-weight="600" fill="#f1f5f9">Visual Clue:</text>
+    <text x="16" y="174" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#cbd5e1">Subtle reddish-purple or</text>
+    <text x="16" y="188" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#cbd5e1">crimson dots/petals</text>
+    <text x="16" y="202" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#cbd5e1">contrasting jade green.</text>
+  </g>
+</svg>
