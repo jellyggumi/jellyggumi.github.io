@@ -39,6 +39,13 @@ typography_policy:
     max_sentences_per_paragraph: 4
     require_section_breathers: true
     vertical_margin: "18px"
+  platform_editor_invariants:
+    tistory_tinymce:
+      raw_svg_body_injection: sanitized-by-server-use-https-img-tags
+      data_uri_base64_in_body: sanitized-by-server-use-https-img-tags
+      verified_endpoint_policy: raw-githubusercontent-or-cdn
+      semantic_container_policy: figure-with-caption-and-explicit-width
+      minimum_rendered_images: 3
 allowed_content_types:
   - guide
 content_pillars:
