@@ -4,20 +4,19 @@ title: "Why Korean Chimneys Stand Detached in Back Courtyards"
 subtitle: "The Ingenious Thermal Architecture of Rear Courtyard Chimneys"
 description: "A comprehensive architectural field guide exploring why traditional Korean Hanok homes place decorative chimneys far away from the main building in quiet terraced rear gardens."
 active: "journal"
-card-img: "img/editorial/2026-11-19-why-korean-chimneys-stand-detached-in-back-courtyards-cover.png"
+card-img: "img/postcover/pc110.jpg"
 date: "2026-11-19"
-header-img: "img/editorial/2026-11-19-why-korean-chimneys-stand-detached-in-back-courtyards-cover.png"
+header-img: "img/postcover/pc110.jpg"
 header_alt: "AI-generated editorial illustration of traditional Korean spatial design; not a photograph"
-header_ai: true
-header_width: 1200
-header_height: 675
+header_ai: false
+
 comments: false
-tags: [Tradition, K-Culture, Architecture, Guide]
+tags: [Tradition, K-Culture, Seoul]
 categories: [Cultural Tips]
 reviewed: "2026-11-19"
 lastmod: "2026-11-19"
 ai_assisted: true
-content_type: guide
+content_type: personal
 sources:
   - label: "Korea Heritage Service Architectural Archives"
     publisher: "Korea Heritage Service"
@@ -35,10 +34,14 @@ Instead, chimneys in Korean architecture stand completely detached from the livi
 
 To understand why the chimney was exiled to the back garden, one must look beneath the floorboards into the subterranean mechanics of *ondol* (radiant floor heating). The Korean domestic hearth was not a vertical open fireplace, but a horizontal subterranean heat engine.
 
-<figure class="explanatory-image">
+<figure class="post-photo">
   <img src="/img/editorial/2026-11-19-why-korean-chimneys-stand-detached-in-back-courtyards-cover.png" alt="Why Korean Chimneys Stand Detached in Back Courtyards Architecture Overview">
   <figcaption>Figure 1: High-level Korean Traditional Spatial Architecture and Spatial Rhythm. AI-generated editorial illustration by Gemini; not a photograph or primary historical specimen.</figcaption>
 </figure>
+
+
+
+<!--post-ad-break-->
 
 ## 2. Subterranean Thermodynamics: The Sloping Flue System
 
@@ -48,7 +51,7 @@ To maximize thermal efficiency, Korean master builders designed the subterranean
 
 By the time the smoke reached the far end of the foundation, its temperature had cooled significantly. If a chimney were constructed directly against the wooden house wall, the low temperature of the exiting gas would cause severe chimney downdrafts (*yeokryu*), pushing smoke and toxic carbon monoxide back into the living quarters. By extending the flue underground past the house into the elevated rear garden, builders harnessed natural hillside thermal drafts to pull the cooled smoke smoothly out of the building.
 
-<figure class="explanatory-image">
+<figure class="post-photo">
   <img src="/img/editorial/2026-11-19-why-korean-chimneys-stand-detached-in-back-courtyards-card1.png" alt="Why Korean Chimneys Stand Detached in Back Courtyards Microclimate and Eaves Geometry">
   <figcaption>Figure 2: Eaves Solar Geometry and Courtyard Thermal Convection Loop. AI-generated architectural illustration by Gemini; conceptual diagram of environmental principles.</figcaption>
 </figure>
@@ -61,7 +64,7 @@ By moving the combustion exhaust point ten to twenty feet away from the overhang
 
 Furthermore, traditional wood combustion produces acidic creosote and heavy soot. In Western buildings, chimney emissions frequently stained and corroded roof tiles. In a Hanok, keeping soot and acid smoke away from the complex wooden bracket systems (*gongpo*) and painted eaves preserved the vibrant mineral pigments (*dancheong*) and prevented fungal rot in structural rafters for centuries.
 
-<figure class="explanatory-image">
+<figure class="post-photo">
   <img src="/img/editorial/2026-11-19-why-korean-chimneys-stand-detached-in-back-courtyards-card2.png" alt="Why Korean Chimneys Stand Detached in Back Courtyards Material Craftsmanship">
   <figcaption>Figure 3: Material Craftsmanship, Interlocking Timber Joinery, and Organic Materiality. AI-generated illustration by Gemini; visual study of traditional craft principles.</figcaption>
 </figure>

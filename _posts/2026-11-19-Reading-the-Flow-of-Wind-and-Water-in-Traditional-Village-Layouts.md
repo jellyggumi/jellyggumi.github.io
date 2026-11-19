@@ -4,20 +4,19 @@ title: "Reading the Flow of Wind and Water in Traditional Village Layouts"
 subtitle: "Practical Korean cultural insights and spatial design wisdom"
 description: "Reading the Flow of Wind and Water in Traditional Village Layouts explores traditional Korean aesthetic principles preserved in contemporary daily life."
 active: "journal"
-card-img: "img/editorial/2026-11-19-Reading-the-Flow-of-Wind-and-Water-in-Traditional-Village-Layouts-cover.png"
+card-img: "img/postcover/pc110.jpg"
 date: "2026-11-19"
-header-img: "img/editorial/2026-11-19-Reading-the-Flow-of-Wind-and-Water-in-Traditional-Village-Layouts-cover.png"
+header-img: "img/postcover/pc110.jpg"
 header_alt: "AI-generated editorial illustration of traditional Korean spatial design; not a photograph"
-header_ai: true
-header_width: 1200
-header_height: 675
+header_ai: false
+
 comments: false
-tags: [Tradition, K-Culture, Guide]
+tags: [Tradition, K-Culture, Seoul]
 categories: [Cultural Tips]
 reviewed: "2026-11-19"
 lastmod: "2026-11-19"
 ai_assisted: true
-content_type: guide
+content_type: personal
 sources:
   - label: "Korea Heritage Service Architectural Archives"
     publisher: "Korea Heritage Service"
@@ -33,12 +32,16 @@ Approaching historic Korean architecture, the eye naturally rises to the sweepin
 
 In pre-modern Korean domestic and sacred architecture, space is never conceived as an impenetrable fortress of solid masonry. Instead, it unfolds as a porous, rhythmic progression of framed thresholds. Stepping over a raised wooden door sill (*mundan*) intentionally alters the cadence of walking. One cannot rush blindly through a Hanok; the architecture demands a conscious lowering of the gaze and a deliberate slowing of the body, creating an immediate mental boundary between bustling thoroughfares and contemplative interior sanctums.
 
-<figure class="explanatory-image">
+<figure class="post-photo">
   <img src="/img/editorial/2026-11-19-Reading-the-Flow-of-Wind-and-Water-in-Traditional-Village-Layouts-cover.png" alt="Editorial illustration of Korean spatial rhythm">
   <figcaption>Figure 1: High-level Korean Traditional Spatial Architecture and Eaves Framing. AI-generated editorial illustration by Gemini; not a photograph or primary historical specimen.</figcaption>
 </figure>
 
 Central to this spatial orchestration is the *madang*—the open, unpaved courtyard at the core of the residential compound. Unlike Western manicured lawns or Chinese enclosed quadrangle gardens densely planted with decorative foliage, the Korean *madang* is intentionally left empty. This emptiness is not a void of neglect, but a vibrant canvas of atmospheric permeability. It functions as an environmental lung, an acoustic resonator, and a seasonal theater where shadow, breeze, and changing sunlight animate the unadorned timber surfaces throughout the day.
+
+
+
+<!--post-ad-break-->
 
 ## 2. Microclimate Engineering: Eaves Geometry and Courtyard Convection
 
@@ -46,7 +49,7 @@ What casual observers admire as romantic curved rooflines is, in reality, a mast
 
 During the sweltering heat of midsummer, when the sun reaches its zenith at roughly 75 degrees, the deep overhang of the eaves casts a cooling protective shadow over the entire exterior veranda (*toetmaru*) and interior paper-screened rooms. Direct solar radiation is blocked from penetrating the living quarters, keeping the ambient indoor temperature several degrees cooler than the outside air.
 
-<figure class="explanatory-image">
+<figure class="post-photo">
   <img src="/img/editorial/2026-11-19-Reading-the-Flow-of-Wind-and-Water-in-Traditional-Village-Layouts-card1.png" alt="Eaves and Courtyard Microclimate">
   <figcaption>Figure 2: Eaves Solar Geometry and Courtyard Thermal Convection. AI-generated architectural illustration by Gemini; conceptual diagram of environmental principles.</figcaption>
 </figure>
@@ -61,7 +64,7 @@ The physical fabric of Korean traditional architecture relies exclusively on org
 
 A hallmark of classic Hanok construction is the complete absence of iron nails or rigid mechanical fasteners. Because metal expands and contracts at rates drastically different from natural timber, nails corrode and split grain under the extreme temperature swings of the Korean climate. Instead, artisans employ sophisticated mortise-and-tenon interlocking joinery (*gibeop*). Columns, lintels, and roof purlins are carved to interlock with millimeter precision. When humidity rises during monsoon season, the wood expands, tightening the joints; during dry winter frosts, the joints loosen slightly to relieve internal tension, granting the building flexible seismic resistance that has endured for centuries.
 
-<figure class="explanatory-image">
+<figure class="post-photo">
   <img src="/img/editorial/2026-11-19-Reading-the-Flow-of-Wind-and-Water-in-Traditional-Village-Layouts-card2.png" alt="Materiality and Traditional Joinery">
   <figcaption>Figure 3: Material Craftsmanship, Interlocking Timber Joinery, and Mulberry Paper Matrix. AI-generated illustration by Gemini; visual study of organic materiality.</figcaption>
 </figure>

@@ -4,20 +4,19 @@ title: "How Korean Traditional Tea Houses Balance Architecture and Slow Rituals"
 subtitle: "The Architectural Rhythms of Darye: Sinking into Low Tables, Pine Beams, and Steamed Green Tea"
 description: "A field guide exploring how classical Korean tea spaces harmonize wooden timber architecture, courtyard gardens, and the deliberate mindfulness of traditional tea ceremonies."
 active: "journal"
-card-img: "img/editorial/2026-11-20-How-Korean-Traditional-Tea-Houses-Balance-Architecture-And-Slow-Rituals-cover.png"
+card-img: "img/postcover/pc110.jpg"
 date: "2026-11-20"
-header-img: "img/editorial/2026-11-20-How-Korean-Traditional-Tea-Houses-Balance-Architecture-And-Slow-Rituals-cover.png"
+header-img: "img/postcover/pc110.jpg"
 header_alt: "AI-generated editorial illustration of traditional Korean spatial design; not a photograph"
-header_ai: true
-header_width: 1200
-header_height: 675
+header_ai: false
+
 comments: false
-tags: [Tradition, K-Culture, Architecture, Guide]
+tags: [Tradition, K-Culture, Seoul]
 categories: [Cultural Tips]
 reviewed: "2026-11-20"
 lastmod: "2026-11-20"
 ai_assisted: true
-content_type: guide
+content_type: personal
 sources:
   - label: "Korea Heritage Service Architectural Archives"
     publisher: "Korea Heritage Service"
@@ -35,10 +34,14 @@ Entering a classical tea space is not merely a gastronomic choice; it is an imme
 
 In Korean culture, the practice of tea is known as *darye* (다례, 茶禮), literally 'tea etiquette' or 'tea ceremony.' Unlike the rigid, theatrical choreography of Japanese *chanoyu*, Korean *darye* is defined by effortless naturalness (*chayeon*), quiet hospitality, and unpretentious contemplation. This philosophical informality is mirrored directly in the architectural design of the tea pavilion.
 
-<figure class="explanatory-image">
+<figure class="post-photo">
   <img src="/img/editorial/2026-11-20-How-Korean-Traditional-Tea-Houses-Balance-Architecture-And-Slow-Rituals-cover.png" alt="How Korean Traditional Tea Houses Balance Architecture and Slow Rituals Architecture Overview">
   <figcaption>Figure 1: High-level Korean Traditional Spatial Architecture and Spatial Rhythm. AI-generated editorial illustration by Gemini; not a photograph or primary historical specimen.</figcaption>
 </figure>
+
+
+
+<!--post-ad-break-->
 
 ## 2. Microclimate and Acoustics: Wooden Eaves, Courtyards, and Ambient Sound
 
@@ -48,7 +51,7 @@ The central seating area opens directly toward a compact interior courtyard (*ma
 
 The gentle plink of water droplets echoing across the stone floor provides a rhythmic, meditative ambient baseline. During rainy summer afternoons, raindrops striking clay roof tiles (*giwa*) produce a deep, soothing white noise that drowns out the distant hum of the modern metropolis, creating a sanctuary of profound psychological stillness.
 
-<figure class="explanatory-image">
+<figure class="post-photo">
   <img src="/img/editorial/2026-11-20-How-Korean-Traditional-Tea-Houses-Balance-Architecture-And-Slow-Rituals-card1.png" alt="How Korean Traditional Tea Houses Balance Architecture and Slow Rituals Microclimate and Eaves Geometry">
   <figcaption>Figure 2: Eaves Solar Geometry and Courtyard Thermal Convection Loop. AI-generated architectural illustration by Gemini; conceptual diagram of environmental principles.</figcaption>
 </figure>
@@ -64,7 +67,7 @@ Tea is prepared upon low carved wooden tables (*dasan* or *soban*) crafted from 
 
 Holding a warm stoneware cup with both hands while seated upon a heated floor creates a complete sensorial circuit of physical relaxation that melts muscular tension within minutes.
 
-<figure class="explanatory-image">
+<figure class="post-photo">
   <img src="/img/editorial/2026-11-20-How-Korean-Traditional-Tea-Houses-Balance-Architecture-And-Slow-Rituals-card2.png" alt="How Korean Traditional Tea Houses Balance Architecture and Slow Rituals Material Craftsmanship">
   <figcaption>Figure 3: Material Craftsmanship, Interlocking Timber Joinery, and Organic Materiality. AI-generated illustration by Gemini; visual study of traditional craft principles.</figcaption>
 </figure>
