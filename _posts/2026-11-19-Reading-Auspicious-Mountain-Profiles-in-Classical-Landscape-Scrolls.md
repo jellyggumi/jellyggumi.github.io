@@ -15,6 +15,7 @@ categories: [Cultural Tips]
 reviewed: "2026-11-19"
 ai_assisted: true
 content_type: personal
+sources:
   - label: "Korea Heritage Service Architectural Archives"
     publisher: "Korea Heritage Service"
     url: "https://english.khs.go.kr/"
