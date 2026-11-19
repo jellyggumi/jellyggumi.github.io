@@ -4,10 +4,10 @@ title: "Reading Symbols on Korean Temple Eaves and Traditional Lanterns"
 subtitle: "What geometric lotuses and cloud carvings convey in everyday temple design"
 description: "Korean temple eaves and lanterns carry intentional symbolic motifs: lotus purity, cloud auspiciousness, and dragon protection."
 active: "journal"
-card-img: "img/editorial/2026-11-19-Reading-Symbols-On-Korean-Temple-Eaves-And-Traditional-Lanterns.png"
+card-img: "img/editorial/2026-11-19-Reading-Symbols-On-Korean-Temple-Eaves-And-Traditional-Lanterns-cover.png"
 date: "2026-11-19"
-header-img: "img/editorial/2026-11-19-Reading-Symbols-On-Korean-Temple-Eaves-And-Traditional-Lanterns.png"
-header_alt: "AI-generated editorial illustration of traditional Korean temple architectural symbols; not a photograph"
+header-img: "img/editorial/2026-11-19-Reading-Symbols-On-Korean-Temple-Eaves-And-Traditional-Lanterns-cover.png"
+header_alt: "AI-generated editorial illustration of traditional Korean spatial design; not a photograph"
 header_ai: true
 header_width: 1200
 header_height: 675
@@ -24,19 +24,29 @@ sources:
     url: "https://english.khs.go.kr/"
 ---
 
-## The Subtle Language of Temple Rooflines
+## The Subtle Language of Traditional Spaces
 
-Approaching a traditional Korean mountain temple, the eye naturally rises to the sweeping brackets beneath the multi-tiered eaves. Beyond their structural role in supporting heavy tile loads, these architectural junctions carry intentional iconographic motifs passed down through centuries of Buddhist and native craftsmanship.
+Approaching historic Korean architecture, the eye naturally rises to the sweeping brackets beneath the multi-tiered eaves. Beyond their structural role in supporting heavy tile loads, these architectural junctions carry intentional iconographic motifs passed down through centuries of craftsmanship.
 
 <figure class="explanatory-image">
-  <img src="/img/editorial/2026-11-19-Reading-Symbols-On-Korean-Temple-Eaves-And-Traditional-Lanterns.png" alt="Editorial illustration of traditional Korean temple eaves and lantern symbolism">
-  <figcaption>AI-generated editorial illustration interpreting Korean temple eaves and traditional lantern motifs.</figcaption>
+  <img src="/img/editorial/2026-11-19-Reading-Symbols-On-Korean-Temple-Eaves-And-Traditional-Lanterns-cover.png" alt="Editorial illustration of Korean spatial rhythm">
+  <figcaption>Figure 1: High-level Korean Traditional Spatial Architecture and Eaves Framing</figcaption>
 </figure>
 
 ## Key Motifs and Their Meanings
 
-1. **Lotus Flower Capitals (연화)**: Rising untainted from muddy water, carved lotus blossoms symbolize purity, resilience, and spiritual awakening.
-2. **Cloud Scrolls (운문)**: Interlocking stylized cloud patterns around bracket clusters represent celestial harmony and auspicious transitions.
-3. **Protective Dragon Eaves (용머리)**: Positioned at corner ridges and eaves joints, carved dragon heads serve as guardians defending the sacred precinct from fire and misfortune.
+1. **Threshold Dynamics**: Stepping over raised timber sills intentionally slows foot traffic, creating a mental transition from commute to quiet contemplation.
+2. **Timber Frame Acoustics**: Natural pine beams and unlacquered eaves soften urban reverb, producing an intimate indoor soundscape.
+3. **Seasonal Microclimates**: Deep roof overhangs shield against intense summer sunlight while capturing low winter warmth.
 
-Taking a quiet moment to observe these carvings transforms a temple visit into a rich, decipherable encounter with historic Korean design wisdom.
+<figure class="explanatory-image">
+  <img src="/img/editorial/2026-11-19-Reading-Symbols-On-Korean-Temple-Eaves-And-Traditional-Lanterns-card1.png" alt="Eaves and Courtyard Microclimate">
+  <figcaption>Figure 2: Courtyard Convection and Eaves Solar Geometry</figcaption>
+</figure>
+
+When visiting these historic spaces, take time to notice the deliberate transition from bustling avenue to still courtyard. It represents centuries of refined architectural wisdom in balancing nature with human dwelling.
+
+<figure class="explanatory-image">
+  <img src="/img/editorial/2026-11-19-Reading-Symbols-On-Korean-Temple-Eaves-And-Traditional-Lanterns-card2.png" alt="Materiality and Traditional Joinery">
+  <figcaption>Figure 3: Material Craftsmanship and Breathable Timber Matrix</figcaption>
+</figure>
