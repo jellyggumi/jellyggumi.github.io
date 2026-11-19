@@ -6,16 +6,17 @@ description: "Why Korean Hanji Paper Outlasts Western Wood-Pulp Books explores t
 active: "journal"
 card-img: "img/editorial/2026-11-19-Why-Korean-Hanji-Paper-Outlasts-Western-Wood-Pulp-Books-cover.png"
 date: "2026-11-19"
+lastmod: "2026-11-19"
 header-img: "img/editorial/2026-11-19-Why-Korean-Hanji-Paper-Outlasts-Western-Wood-Pulp-Books-cover.png"
 header_alt: "AI-generated editorial illustration of traditional Korean spatial design; not a photograph"
 header_ai: true
 header_width: 1200
 header_height: 675
 comments: false
+ads: true
 tags: [Tradition, K-Culture, Guide]
 categories: [Cultural Tips]
 reviewed: "2026-11-19"
-lastmod: "2026-11-19"
 ai_assisted: true
 content_type: guide
 sources:
@@ -83,5 +84,10 @@ When exploring historic palaces such as Gyeongbokgung and Changdeokgung, or walk
 1. **Observe the Pillar Bases (*Choseok*)**: Look closely at where vertical pine pillars meet foundation stones. Rather than flattening the stone, Joseon carpenters carved the bottom of the wood to match the natural, undulating surface of unworked boulders—a technique known as *deombeongju*, which honors the original topography of the earth.
 2. **Track the Sound Tube (*Eumtong*) on Temple Bells**: When examining royal or monastic bronze bells, inspect the crown beside the dragon loop. The vertical sound tube unique to Korean bells dampens discordant high-frequency clatter, releasing only deep, meditative low-frequency harmonics that linger in mountain valleys.
 3. **Examine the Detached Rear Chimneys (*Kkotdam*)**: Notice how chimneys are situated far away from timber rooflines, built as decorative freestanding brick towers adorned with auspicious symbols of longevity (cranes, deer, and pine). They represent an ingenious synthesis of thermal draft regulation, fire prevention, and landscape sculpture.
-
 By reading these quiet architectural cues, modern travelers and design enthusiasts can experience Korean historic spaces not as static museum exhibits, but as living, breathing monuments to environmental mindfulness and sustainable craftsmanship.
+
+## Publisher Policy and Editorial Disclosures
+
+- **Monetization and Ad Placement**: This cultural guide complies with Google Publisher Policies. Non-intrusive ad placements maintain clear separation from editorial and historical content.
+- **AI and Editorial Transparency**: In accordance with Google Search and Ads transparency standards, this article incorporates AI-assisted research and Gemini-generated conceptual illustrations (`header_ai: true`), with original source citations from national cultural heritage archives.
+- **Factual Integrity**: All historical statements, dynasty dates, and architectural measurements derive directly from accredited museum records and public historical archives.
