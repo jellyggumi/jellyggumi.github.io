@@ -5,14 +5,14 @@ subtitle: "Practical Korean cultural insights and spatial design wisdom"
 description: "The Quiet Mastery of Korean Mother-of-Pearl Inlay Furniture explores traditional Korean aesthetic principles preserved in contemporary daily life."
 active: "journal"
 card-img: "img/postcover/pc110.jpg"
-date: "2026-11-20"
-lastmod: "2026-11-20"
+date: "2026-11-21"
+lastmod: "2026-11-21"
 header-img: "img/postcover/pc110.jpg"
 comments: false
 ads: true
 tags: [Tradition, K-Culture, Seoul]
 categories: [Cultural Tips]
-reviewed: "2026-11-20"
+reviewed: "2026-11-21"
 ai_assisted: true
 content_type: personal
 sources:
