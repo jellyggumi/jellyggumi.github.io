@@ -31,7 +31,7 @@ Approaching historic Korean architecture, the eye naturally rises to the sweepin
 In pre-modern Korean domestic and sacred architecture, space is never conceived as an impenetrable fortress of solid masonry. Instead, it unfolds as a porous, rhythmic progression of framed thresholds. Stepping over a raised wooden door sill (*mundan*) intentionally alters the cadence of walking. One cannot rush blindly through a Hanok; the architecture demands a conscious lowering of the gaze and a deliberate slowing of the body, creating an immediate mental boundary between bustling thoroughfares and contemplative interior sanctums.
 
 <figure class="post-photo">
-  <img src="/img/editorial/2026-11-20-The-Natural-Acoustic-Damping-of-Korean-Hanok-Woodwork-cover.png" alt="Editorial illustration of Korean spatial rhythm">
+  <img src="https://jellyggumi.github.io/img/editorial/2026-11-20-The-Natural-Acoustic-Damping-of-Korean-Hanok-Woodwork-cover.png" alt="Editorial illustration of Korean spatial rhythm">
   <figcaption>Figure 1: High-level Korean Traditional Spatial Architecture and Eaves Framing. AI-generated editorial illustration by Gemini; not a photograph or primary historical specimen.</figcaption>
 </figure>
 
@@ -45,7 +45,7 @@ What casual observers admire as romantic curved rooflines is, in reality, a mast
 During the sweltering heat of midsummer, when the sun reaches its zenith at roughly 75 degrees, the deep overhang of the eaves casts a cooling protective shadow over the entire exterior veranda (*toetmaru*) and interior paper-screened rooms. Direct solar radiation is blocked from penetrating the living quarters, keeping the ambient indoor temperature several degrees cooler than the outside air.
 
 <figure class="post-photo">
-  <img src="/img/editorial/2026-11-20-The-Natural-Acoustic-Damping-of-Korean-Hanok-Woodwork-card1.png" alt="Eaves and Courtyard Microclimate">
+  <img src="https://jellyggumi.github.io/img/editorial/2026-11-20-The-Natural-Acoustic-Damping-of-Korean-Hanok-Woodwork-card1.png" alt="Eaves and Courtyard Microclimate">
   <figcaption>Figure 2: Eaves Solar Geometry and Courtyard Thermal Convection. AI-generated architectural illustration by Gemini; conceptual diagram of environmental principles.</figcaption>
 </figure>
 
@@ -60,7 +60,7 @@ The physical fabric of Korean traditional architecture relies exclusively on org
 A hallmark of classic Hanok construction is the complete absence of iron nails or rigid mechanical fasteners. Because metal expands and contracts at rates drastically different from natural timber, nails corrode and split grain under the extreme temperature swings of the Korean climate. Instead, artisans employ sophisticated mortise-and-tenon interlocking joinery (*gibeop*). Columns, lintels, and roof purlins are carved to interlock with millimeter precision. When humidity rises during monsoon season, the wood expands, tightening the joints; during dry winter frosts, the joints loosen slightly to relieve internal tension, granting the building flexible seismic resistance that has endured for centuries.
 
 <figure class="post-photo">
-  <img src="/img/editorial/2026-11-20-The-Natural-Acoustic-Damping-of-Korean-Hanok-Woodwork-card2.png" alt="Materiality and Traditional Joinery">
+  <img src="https://jellyggumi.github.io/img/editorial/2026-11-20-The-Natural-Acoustic-Damping-of-Korean-Hanok-Woodwork-card2.png" alt="Materiality and Traditional Joinery">
   <figcaption>Figure 3: Material Craftsmanship, Interlocking Timber Joinery, and Mulberry Paper Matrix. AI-generated illustration by Gemini; visual study of organic materiality.</figcaption>
 </figure>
 

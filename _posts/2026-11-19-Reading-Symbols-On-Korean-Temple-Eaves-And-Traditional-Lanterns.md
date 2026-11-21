@@ -35,7 +35,7 @@ Far from mere ornamentation, *dancheong* served two critical practical and philo
 Philosophically, *dancheong* transformed the wooden hall from an earthly building into a physical representation of the Buddhist Pure Land (*Sukhavati*). Each concentric circle (*geumdancheong*), lotus petal, and Sanskrit seed syllable painted beneath the eaves marked a sacred boundary, shielding the interior Dharma hall from malevolent cosmic forces while calming the restless minds of visiting pilgrims.
 
 <figure class="post-photo">
-  <img src="/img/editorial/2026-11-19-Reading-Symbols-On-Korean-Temple-Eaves-And-Traditional-Lanterns-cover.png" alt="Reading Symbols on Korean Temple Eaves and Traditional Lanterns Architecture Overview">
+  <img src="https://jellyggumi.github.io/img/editorial/2026-11-19-Reading-Symbols-On-Korean-Temple-Eaves-And-Traditional-Lanterns-cover.png" alt="Reading Symbols on Korean Temple Eaves and Traditional Lanterns Architecture Overview">
   <figcaption>Figure 1: High-level Korean Traditional Spatial Architecture and Spatial Rhythm. AI-generated editorial illustration by Gemini; not a photograph or primary historical specimen.</figcaption>
 </figure>
 
@@ -52,7 +52,7 @@ Suspended from the four corners of these sweeping eaves hang bronze wind chimes 
 The fish carries profound Buddhist symbolism: because fish never close their eyes even when resting, the fish clapper serves as a continuous reminder to monks and lay practitioners to maintain constant spiritual vigilance and mindfulness. When sudden mountain gusts catch the bronze fish, its deep resonant chime reverberates across the courtyard, dispersing mental lethargy and blending harmoniously with the rustling pine boughs.
 
 <figure class="post-photo">
-  <img src="/img/editorial/2026-11-19-Reading-Symbols-On-Korean-Temple-Eaves-And-Traditional-Lanterns-card1.png" alt="Reading Symbols on Korean Temple Eaves and Traditional Lanterns Microclimate and Eaves Geometry">
+  <img src="https://jellyggumi.github.io/img/editorial/2026-11-19-Reading-Symbols-On-Korean-Temple-Eaves-And-Traditional-Lanterns-card1.png" alt="Reading Symbols on Korean Temple Eaves and Traditional Lanterns Microclimate and Eaves Geometry">
   <figcaption>Figure 2: Eaves Solar Geometry and Courtyard Thermal Convection Loop. AI-generated architectural illustration by Gemini; conceptual diagram of environmental principles.</figcaption>
 </figure>
 
@@ -66,7 +66,7 @@ The classical Korean stone lantern follows an eight-sided cosmological architect
 3. **The Light Chamber (*Hwasag-seok*) and Roof Stone (*Okgae-seok*)**: The hollow chamber featuring four or eight open windows where vegetable oil lamps or beeswax candles burned through the night, protected by an octagonal roof stone whose edges curve upward in visual sympathy with the wooden temple eaves above.
 
 <figure class="post-photo">
-  <img src="/img/editorial/2026-11-19-Reading-Symbols-On-Korean-Temple-Eaves-And-Traditional-Lanterns-card2.png" alt="Reading Symbols on Korean Temple Eaves and Traditional Lanterns Material Craftsmanship">
+  <img src="https://jellyggumi.github.io/img/editorial/2026-11-19-Reading-Symbols-On-Korean-Temple-Eaves-And-Traditional-Lanterns-card2.png" alt="Reading Symbols on Korean Temple Eaves and Traditional Lanterns Material Craftsmanship">
   <figcaption>Figure 3: Material Craftsmanship, Interlocking Timber Joinery, and Organic Materiality. AI-generated illustration by Gemini; visual study of traditional craft principles.</figcaption>
 </figure>
 

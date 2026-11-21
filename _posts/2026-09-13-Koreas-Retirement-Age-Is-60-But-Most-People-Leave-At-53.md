@@ -44,7 +44,7 @@ sources:
 
 <p>That is a measurable gap, and it sits between three official numbers that almost never appear on the same page.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-retirement-age-gap/seoul-cbd-jongno.jpg" alt="Office towers along Jongno in central Seoul on a clear winter day" width="1600" height="1099" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-retirement-age-gap/seoul-cbd-jongno.jpg" alt="Office towers along Jongno in central Seoul on a clear winter day" width="1600" height="1099" loading="lazy" decoding="async">
 <figcaption>Office towers in Seoul's central business district. The survey's age-53 average concerns departure from a longest-held job, not the end of all work. Source: https://commons.wikimedia.org/wiki/File:Seoul_CBD_along_Jongro_near_Gwanghwamun_post_office.jpg &middot; License: http://creativecommons.org/publicdomain/zero/1.0/deed.en &middot; Photo: DtSeoul, Wikimedia Commons contributor, CC0</figcaption></figure>
 
 <h3>Three ages, one working life</h3>
@@ -65,7 +65,7 @@ sources:
 
 <p>The second clause is the interesting one. If an employer sets it lower anyway, the law does not fine them and leave the lower age standing; it simply deems the retirement age to be 60. The floor repairs itself.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-retirement-age-gap/ministry-employment-labor-sejong.jpg" alt="The Ministry of Employment and Labor building in the Government Complex Sejong, with its Korean name board on the facade" width="1600" height="743" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-retirement-age-gap/ministry-employment-labor-sejong.jpg" alt="The Ministry of Employment and Labor building in the Government Complex Sejong, with its Korean name board on the facade" width="1600" height="743" loading="lazy" decoding="async">
 <figcaption>The Ministry of Employment and Labor in Sejong, the department that administers the statutory retirement age. Source: https://commons.wikimedia.org/wiki/File:Ministry_of_Employment_%26_Labor_(South_Korea).JPG &middot; License: https://creativecommons.org/licenses/by-sa/4.0 &middot; Photo: Minseong Kim, Wikimedia Commons contributor, CC BY-SA 4.0</figcaption></figure>
 
 <h3>Why 60 protects fewer people than it sounds like</h3>
@@ -96,7 +96,7 @@ sources:
 
 <p>Put the numbers together and the shape of the problem is obvious. For illustration, someone born in 1970 who leaves their longest-held job at 53 reaches the normal National Pension starting age at 65, a twelve-year gap. They may work elsewhere during that period, and early pension eligibility is a separate question described below. For the group already living it, the average monthly pension reported was 880,000 won.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-retirement-age-gap/government-complex-sejong.jpg" alt="Wide daytime view of the Government Complex Sejong with apartment blocks and hills behind it" width="1600" height="814" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-retirement-age-gap/government-complex-sejong.jpg" alt="Wide daytime view of the Government Complex Sejong with apartment blocks and hills behind it" width="1600" height="814" loading="lazy" decoding="async">
 <figcaption>Government Complex Sejong. The retirement-age statute and the pension schedule are run by different bodies, in different cities. Source: https://commons.wikimedia.org/wiki/File:Government_Complex_Sejong_(N).jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0 &middot; Photo: Minseong Kim, Wikimedia Commons contributor, CC BY-SA 4.0</figcaption></figure>
 
 <h3>The two levers, and what each costs</h3>
@@ -123,7 +123,7 @@ sources:
 
 <p>If you do qualify and you are flying out of Incheon, there is a same-day service: eligible members can collect the refund in foreign currency at the airport on the day of departure. It depends on your former employer having filed the loss-of-coverage report by the day before you fly, and it does not run on weekends, public holidays or the last business day of December.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-retirement-age-gap/incheon-airport-departures.jpg" alt="The departure hall of Incheon International Airport Terminal 1 seen from an upper level, with its lattice roof and check-in counters" width="1600" height="840" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-retirement-age-gap/incheon-airport-departures.jpg" alt="The departure hall of Incheon International Airport Terminal 1 seen from an upper level, with its lattice roof and check-in counters" width="1600" height="840" loading="lazy" decoding="async">
 <figcaption>Incheon International Airport. Eligible departing members can collect a lump-sum refund in foreign currency on the day they fly. Source: https://commons.wikimedia.org/wiki/File:Incheon_International_Airport_departures.jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0 &middot; Photo: User:Pmsyyz, Wikimedia Commons contributor, CC BY-SA 4.0</figcaption></figure>
 
 <h3>How to check your own numbers</h3>
@@ -136,7 +136,7 @@ sources:
 <li>The <strong>population-level picture</strong> comes from the national statistics agency's supplementary survey on older workers, published each year from the May data.</li>
 </ul>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-retirement-age-gap/government-complex-daejeon.jpg" alt="Panoramic view of the Government Complex Daejeon across an open paved plaza" width="1600" height="369" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-retirement-age-gap/government-complex-daejeon.jpg" alt="Panoramic view of the Government Complex Daejeon across an open paved plaza" width="1600" height="369" loading="lazy" decoding="async">
 <figcaption>Government Complex Daejeon. The national statistics agency publishes the survey behind the age-53 figure. Source: https://commons.wikimedia.org/wiki/File:Daejeon_Government_Complex_-_panoramio_-_dokaspar.jpg &middot; License: https://creativecommons.org/licenses/by-sa/3.0 &middot; Photo: dokaspar, Wikimedia Commons contributor, CC BY-SA 3.0</figcaption></figure>
 
 <h3>What this guide does not cover</h3>

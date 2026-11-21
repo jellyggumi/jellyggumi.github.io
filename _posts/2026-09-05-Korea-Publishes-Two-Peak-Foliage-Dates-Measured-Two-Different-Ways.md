@@ -49,7 +49,7 @@ sources:
 
 <p>One agency is asking how much of a mountain has changed. The other is asking how far along a particular kind of tree is. Both answers are correct, they are answers to different questions, and there is no reason for them to land on the same day.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-two-peak-foliage-dates/seoraksan-autumn-foliage.jpg" alt="Seoraksan valley in autumn with a dry boulder-strewn streambed in front and a hillside behind carrying red, orange and still-green trees together" width="1600" height="1066" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-two-peak-foliage-dates/seoraksan-autumn-foliage.jpg" alt="Seoraksan valley in autumn with a dry boulder-strewn streambed in front and a hillside behind carrying red, orange and still-green trees together" width="1600" height="1066" loading="lazy" decoding="async">
 <figcaption>Seoraksan in October. Deciding whether this hillside is 20 percent coloured or 80 percent coloured is exactly the judgement Korea’s official foliage calendar rests on. Source: https://commons.wikimedia.org/wiki/File:Seoraksan_in_the_Fall_1-_%EC%84%A4%EC%95%85%EC%82%B0_%EB%8B%A8%ED%92%8D.jpg &middot; License: https://creativecommons.org/licenses/by-sa/3.0 &middot; Joycekim77 &middot; Photo: Joycekim77, CC BY-SA 3.0, via Wikimedia Commons</figcaption></figure>
 
 <!--post-ad-break-->
@@ -66,10 +66,10 @@ sources:
 
 <p>The distinction helps explain the calendar: first foliage and peak use different thresholds for the mountain's visible colour. Neither date promises that every trail or every tree looks the same.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-two-peak-foliage-dates/seoraksan-daecheongbong-summit-marker.jpg" alt="Stone summit marker on a bare rocky ridge under a pale blue sky with cloud below, standing among loose granite blocks" width="1600" height="1200" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-two-peak-foliage-dates/seoraksan-daecheongbong-summit-marker.jpg" alt="Stone summit marker on a bare rocky ridge under a pale blue sky with cloud below, standing among loose granite blocks" width="1600" height="1200" loading="lazy" decoding="async">
 <figcaption>Daecheongbong, the 1,708-metre summit of Seoraksan. The weather service's table identifies a first-foliage reference point at 1,394 metres, distinct from its observation location. Source: https://commons.wikimedia.org/wiki/File:%EC%84%A4%EC%95%85%EC%82%B0_%EB%8C%80%EC%B2%AD%EB%B4%89_%EC%A0%95%EC%83%81%EC%84%9D.jpg &middot; License: http://creativecommons.org/publicdomain/zero/1.0/deed.en &middot; Wikifairy2 &middot; Photo: Wikifairy2, CC0 1.0, via Wikimedia Commons</figcaption></figure>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-two-peak-foliage-dates/seoraksan-gwongeumseong-ridge.jpg" alt="Wide view of granite peaks and ridgelines in Seoraksan National Park seen from a bare rock shoulder, with forested slopes filling the valleys" width="1600" height="542" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-two-peak-foliage-dates/seoraksan-gwongeumseong-ridge.jpg" alt="Wide view of granite peaks and ridgelines in Seoraksan National Park seen from a bare rock shoulder, with forested slopes filling the valleys" width="1600" height="542" loading="lazy" decoding="async">
 <figcaption>The Gwongeumseong side of Seoraksan. The weather service identifies a peak-foliage reference point below Gwongeumseong at 454 metres. Source: https://commons.wikimedia.org/wiki/File:Korea-Seoraksan-Mount_Gwongeumseong-01.jpg &middot; License: https://creativecommons.org/licenses/by-sa/3.0 &middot; Steve46814 &middot; Photo: Steve46814, CC BY-SA 3.0, via Wikimedia Commons</figcaption></figure>
 
 <h3>What the forest service map is for</h3>
@@ -80,7 +80,7 @@ sources:
 
 <p>That drift is the practical reason old advice ages badly. A guide that tells you late October is reliable was written for a slightly earlier Korea.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-two-peak-foliage-dates/bukhansan-mixed-slope.jpg" alt="Forested mountain slope where orange, red and yellow crowns are mixed with large patches of still-green trees, with rocky peaks on the skyline" width="1600" height="1200" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-two-peak-foliage-dates/bukhansan-mixed-slope.jpg" alt="Forested mountain slope where orange, red and yellow crowns are mixed with large patches of still-green trees, with rocky peaks on the skyline" width="1600" height="1200" loading="lazy" decoding="async">
 <figcaption>A Bukhansan slope mid-turn, with colour and green intermixed. The species rule and the whole-mountain rule read a scene like this differently. Source: https://commons.wikimedia.org/wiki/File:Landscape_of_Bukhansan_with_colored_leaves_in_September_(from_southern_side).jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0 &middot; Ingu Kang &middot; Photo: Ingu Kang, CC BY-SA 4.0, via Wikimedia Commons</figcaption></figure>
 
 <h3>How to plan around it</h3>
@@ -91,10 +91,10 @@ sources:
 
 <p>Finally, treat both dates as a centre rather than an appointment. Neither agency is promising a single perfect day, and the same mountain can hold three seasons at once: bare branches high up, full colour in the middle, and green at the bottom.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-two-peak-foliage-dates/naejangsan-autumn.jpg" alt="Pavilion with a blue tiled roof on a small island in a still pond, framed by fully green foreground branches with reddening hillsides behind" width="1600" height="900" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-two-peak-foliage-dates/naejangsan-autumn.jpg" alt="Pavilion with a blue tiled roof on a small island in a still pond, framed by fully green foreground branches with reddening hillsides behind" width="1600" height="900" loading="lazy" decoding="async">
 <figcaption>Naejangsan in early November, with the foreground trees still entirely green while the hillside behind has turned. Source: https://commons.wikimedia.org/wiki/File:%EB%82%B4%EC%9E%A5%EC%82%B0_(Naejangsan).jpg &middot; License: https://creativecommons.org/licenses/by-sa/3.0 &middot; Marcella Astrid &middot; Photo: Marcella Astrid, CC BY-SA 3.0, via Wikimedia Commons</figcaption></figure>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-two-peak-foliage-dates/naejangsan-pavilion-peak.jpg" alt="The same style of island pavilion at Naejangsan seen across a pond, this time surrounded by hillsides fully coloured in red and orange" width="1600" height="1067" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-two-peak-foliage-dates/naejangsan-pavilion-peak.jpg" alt="The same style of island pavilion at Naejangsan seen across a pond, this time surrounded by hillsides fully coloured in red and orange" width="1600" height="1067" loading="lazy" decoding="async">
 <figcaption>The other end of the same window at Naejangsan, with the slopes fully turned. Source: https://commons.wikimedia.org/wiki/File:Naejangsan_Pavilion_3.jpg &middot; License: https://creativecommons.org/licenses/by-sa/3.0 &middot; Tung Thanh Dang &middot; Photo: Tung Thanh Dang, CC BY-SA 3.0, via Wikimedia Commons</figcaption></figure>
 
 <h3>Where 2026 stands</h3>
@@ -103,7 +103,7 @@ sources:
 
 <p>For reference, Seoraksan's normal first-foliage date is 28 September, and in 2025 it arrived on 2 October. Colour on Daecheongbong in late August is early for the eye and, by the official rule, still not autumn.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-two-peak-foliage-dates/bukhansan-autumn.jpg" alt="Bare branching tree silhouetted against a pale evening sky with a rocky mountain ridge behind and two birds in flight" width="1600" height="1200" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-two-peak-foliage-dates/bukhansan-autumn.jpg" alt="Bare branching tree silhouetted against a pale evening sky with a rocky mountain ridge behind and two birds in flight" width="1600" height="1200" loading="lazy" decoding="async">
 <figcaption>Bukhansan on 11 November, with the foreground branches already bare. The weather service lists 273 metres as Bukhansan's peak-foliage reference height, not the observer's position. Source: https://commons.wikimedia.org/wiki/File:Bukhansan_National_Park_in_autumn.jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0 &middot; Raphael Duprat &middot; Photo: Raphael Duprat, CC BY-SA 4.0, via Wikimedia Commons</figcaption></figure>
 
 <p>Two agencies, two definitions, and a mountain that never turns all at once. Once the arithmetic is visible, the disagreement stops looking like a mistake and starts looking like what it is: two honest answers to two different questions, both of them worth reading before booking anything.</p>

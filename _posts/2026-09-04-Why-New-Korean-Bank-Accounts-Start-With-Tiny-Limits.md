@@ -65,7 +65,7 @@ sources:
 
 <p>Since 28 August 2024 the purpose check is no longer just practice. KB Kookmin's customer notice explains that an amendment to the special act on telecommunications-based financial fraud made confirming the purpose a statutory duty, covering new account openings, limit releases, reactivation of suspended accounts and even passbook reissues on long-dormant accounts. If the required purpose documents are unavailable, ask the bank whether it can open a limited account; opening is not guaranteed.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-limited-bank-accounts/kb-kookmin-branch.jpg" alt="Street-level KB Kookmin Bank branch with a dark signboard and yellow trim at a city intersection, with bicycles and a scooter parked outside" width="1600" height="1200" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-limited-bank-accounts/kb-kookmin-branch.jpg" alt="Street-level KB Kookmin Bank branch with a dark signboard and yellow trim at a city intersection, with bicycles and a scooter parked outside" width="1600" height="1200" loading="lazy" decoding="async">
 <figcaption>A KB Kookmin Bank branch at a city intersection; the account-opening interview, and the document check that decides the limits, happens at counters like these. Source: https://commons.wikimedia.org/wiki/File:Kookmin_Bank_Sanbon_Intersection_Branch_20240722.jpg &middot; License: https://creativecommons.org/publicdomain/zero/1.0/ &middot; LandAndTree &middot; Photo: LandAndTree, CC0 1.0, via Wikimedia Commons</figcaption></figure>
 
 <h3>What the Published Limits Actually Cover</h3>
@@ -74,7 +74,7 @@ sources:
 
 <p>Two qualifications matter. The 2024 FSC announcement said internet-only banks then retained their own ATM and electronic-transaction limits of 1,000,000 to 2,000,000 won. That historical range should not be treated as a guarantee for every customer today: Toss's separate guide for foreign residents describes a 300,000 won daily transfer limit. KB Kookmin also says its accounts opened before 2 March 2016 retain older limits, such as 700,000 won at ATMs.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-limited-bank-accounts/hyosung-atm-seoul.jpg" alt="Green self-service ATM booth in Seoul with a Hyosung machine, bilingual cash and cheque withdrawal signs and a courtesy phone on the wall" width="1600" height="2133" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-limited-bank-accounts/hyosung-atm-seoul.jpg" alt="Green self-service ATM booth in Seoul with a Hyosung machine, bilingual cash and cheque withdrawal signs and a courtesy phone on the wall" width="1600" height="2133" loading="lazy" decoding="async">
 <figcaption>A self-service ATM corner in Seoul. The applicable limit depends on the account and bank. Source: https://commons.wikimedia.org/wiki/File:ATM_Hyosung_Seoul.jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0/ &middot; Lofor &middot; Photo: Lofor, CC BY-SA 4.0, via Wikimedia Commons</figcaption></figure>
 
 <!--post-ad-break-->
@@ -85,7 +85,7 @@ sources:
 
 <p>The less flattering part of the record is also official. In August 2023 the government's own regulatory review board wrote that the limited-account system had long been criticised as shadow regulation, restricting people's access to financial services without a legal basis, and recommended keeping it but making it reasonable. The 2024 changes, the higher caps, the standard document notices in branches and the legal footing that arrived that August, are the direct result of that review. It is a rare case of a government publicly conceding that an everyday annoyance had no statute behind it, then writing one.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-limited-bank-accounts/shinhan-bank-wonju.jpg" alt="Entrance of a small Shinhan Bank service branch inside Wonju City Hall, with a tall voice-phishing warning banner standing beside the glass doors" width="1600" height="1200" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-limited-bank-accounts/shinhan-bank-wonju.jpg" alt="Entrance of a small Shinhan Bank service branch inside Wonju City Hall, with a tall voice-phishing warning banner standing beside the glass doors" width="1600" height="1200" loading="lazy" decoding="async">
 <figcaption>A Shinhan Bank service point inside Wonju City Hall, with a voice-phishing warning banner at the door; the fraud the caps are aimed at is advertised right where accounts are opened. Source: https://commons.wikimedia.org/wiki/File:2020-04-09_17.07.50_Wonju_Cityhall_Shinhan_Bank.jpg &middot; License: https://creativecommons.org/publicdomain/zero/1.0/ &middot; Choikwangmo9 &middot; Photo: Choikwangmo9, CC0 1.0, via Wikimedia Commons</figcaption></figure>
 
 <h3>The Paper Trail Out</h3>
@@ -94,7 +94,7 @@ sources:
 
 <p>For foreign residents the identity layer comes first. Woori Bank's English guide asks for a passport or Alien Registration Card, and specifically warns that a customer who opened an account with a passport and later received an ARC must bring both to the counter. Banks may ask for supporting paperwork, proof of employment, pay notices, utility bills, depending on the task. KB's own statutory-duty notice lists the employee health-insurance qualification certificate among its salary-purpose examples. That certificate comes from the national insurer covered in the journal's guide to <a href="/journal/Leaving-Korea-For-A-While-Your-Health-Insurance/">what happens to Korean health insurance when you leave for a while</a>. Woori's same guide states plainly that lending a card or account to someone else is punishable under Korean law whether or not money changed hands, which is exactly the crime the whole system is built to prevent.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-limited-bank-accounts/ibk-bank-branch.jpg" alt="Ground-floor IBK Industrial Bank of Korea branch with a long blue self-service signboard, glass doors and low shrubs along the pavement" width="1600" height="1200" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-limited-bank-accounts/ibk-bank-branch.jpg" alt="Ground-floor IBK Industrial Bank of Korea branch with a long blue self-service signboard, glass doors and low shrubs along the pavement" width="1600" height="1200" loading="lazy" decoding="async">
 <figcaption>A ground-floor IBK Industrial Bank of Korea branch. Banks can request purpose documents and assess release applications individually. Source: https://commons.wikimedia.org/wiki/File:2020-07-05_things_places_in_south_korea_IMG_2494.jpg &middot; License: https://creativecommons.org/publicdomain/zero/1.0/ &middot; Choikwangmo9 &middot; Photo: Choikwangmo9, CC0 1.0, via Wikimedia Commons</figcaption></figure>
 
 <h3>The Twenty-Business-Day Clock</h3>
@@ -103,7 +103,7 @@ sources:
 
 <p>The practical translation: open the account that matters most first, and put the salary or purpose documents into that one. A second bank can wait a month.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-limited-bank-accounts/hana-bank-branch.jpg" alt="Aerial view of a stand-alone two-storey Hana Bank branch building on a wide multi-lane city street, photographed from a tall building across the road" width="1600" height="1200" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-limited-bank-accounts/hana-bank-branch.jpg" alt="Aerial view of a stand-alone two-storey Hana Bank branch building on a wide multi-lane city street, photographed from a tall building across the road" width="1600" height="1200" loading="lazy" decoding="async">
 <figcaption>A stand-alone Hana Bank branch on a wide city street. The 20-business-day restriction follows the customer across banks, not just within one. Source: https://commons.wikimedia.org/wiki/File:Hana_Bank_Skorea_2010.jpg &middot; License: https://creativecommons.org/licenses/by/2.0/ &middot; Bill Marmie &middot; Photo: Bill Marmie, CC BY 2.0, via Wikimedia Commons</figcaption></figure>
 
 <h3>Internet-Only Banks Are a Separate Map</h3>
@@ -112,7 +112,7 @@ sources:
 
 <p>None of this is a fossil. The regulator was still discussing the system in February 2026, where clearer guidance about its purpose, restrictions and release documents was raised as an improvement case. One caution for the future: in December 2025 the government said it would prepare stronger management measures for corporate and foreigner accounts as part of its anti-voice-phishing programme. That was announced direction, not an enacted rule, but it is a reason to expect the foreigner-facing details above to keep moving.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-limited-bank-accounts/incheon-subway-atms.jpg" alt="A blue shared-network ATM kiosk beside a wall of parcel lockers and a payphone in a tiled Incheon subway station corridor" width="1600" height="1200" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-limited-bank-accounts/incheon-subway-atms.jpg" alt="A blue shared-network ATM kiosk beside a wall of parcel lockers and a payphone in a tiled Incheon subway station corridor" width="1600" height="1200" loading="lazy" decoding="async">
 <figcaption>A shared-network ATM beside station lockers in the Incheon subway; internet-only banks live on machines and corners like this rather than branches. Source: https://commons.wikimedia.org/wiki/File:%EC%9D%B8%EC%B2%9C%EC%A7%80%ED%95%98%EC%B2%A0_%EA%B0%88%EC%82%B0%EC%97%AD_ATM%EA%B8%B0%EA%B8%B0_%EB%B0%8F_%EB%AC%BC%ED%92%88%EB%B3%B4%EA%B4%80%ED%95%A8_2025%EB%85%84_12%EC%9B%94%EA%B2%BD_06.jpg &middot; License: https://creativecommons.org/licenses/by/4.0/ &middot; Narubaru7 &middot; Photo: Narubaru7, CC BY 4.0, via Wikimedia Commons</figcaption></figure>
 
 <h3>What to Bring, in One List</h3>

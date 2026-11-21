@@ -50,7 +50,7 @@ sources:
 
 <p><strong>Correction, 3 November 2026:</strong> An earlier version incorrectly said that most places had already been decided before the exam and understated the exam's role in early admissions. The seat share is a planned allocation, not a count of offers made before test day.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-susi-admissions/test-site-gate-banner.jpg" alt="A school main gate with a large white banner marking the building as a College Scholastic Ability Test site, a few adults walking out on exam day" width="2656" height="1494" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-susi-admissions/test-site-gate-banner.jpg" alt="A school main gate with a large white banner marking the building as a College Scholastic Ability Test site, a few adults walking out on exam day" width="2656" height="1494" loading="lazy" decoding="async">
 <figcaption>A high school gate marked with its exam-site banner for the College Scholastic Ability Test. Source: https://commons.wikimedia.org/wiki/File:Puhung_High_School_main_gate_during_the_South_Korea_College_Scholastic_Ability_Test,_2018_(1).jpg &middot; License: https://creativecommons.org/licenses/by/4.0/ &middot; Photo: 고려 (Goryeo), Wikimedia Commons contributor, CC BY 4.0</figcaption></figure>
 
 <h3>Two rounds, one calendar</h3>
@@ -67,7 +67,7 @@ sources:
 
 <p>If you were in Korea in early September and noticed a spike of admissions talk, this window is what it was about. It recurs each year on a similar schedule, published well in advance in the council's joint plan and basic-rules documents.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-susi-admissions/snu-main-gate.jpg" alt="The angular concrete main gate sculpture of Seoul National University over the campus entrance road, with an autumn hillside and a green shuttle bus behind" width="2064" height="1548" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-susi-admissions/snu-main-gate.jpg" alt="The angular concrete main gate sculpture of Seoul National University over the campus entrance road, with an autumn hillside and a green shuttle bus behind" width="2064" height="1548" loading="lazy" decoding="async">
 <figcaption>The main gate of Seoul National University. Source: https://commons.wikimedia.org/wiki/File:Seoul_National_University_20171026_164458.jpg &middot; License: https://creativecommons.org/publicdomain/zero/1.0/ &middot; Photo: H. Y. Shin 000, Wikimedia Commons contributor, CC0 1.0</figcaption></figure>
 
 <h3>The six-envelope rule</h3>
@@ -78,7 +78,7 @@ sources:
 
 <p>The rule shapes September strategy the way a hand of six cards would: how the six are spread across reach, match and safety choices is the season's central decision.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-susi-admissions/korea-university-main-hall.jpg" alt="The granite Gothic-revival main hall of Korea University with its crenellated central tower, seen across a lawn plaza with a few small distant figures" width="2112" height="1431" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-susi-admissions/korea-university-main-hall.jpg" alt="The granite Gothic-revival main hall of Korea University with its crenellated central tower, seen across a lawn plaza with a few small distant figures" width="2112" height="1431" loading="lazy" decoding="async">
 <figcaption>The main hall of Korea University in Seoul. Source: https://commons.wikimedia.org/wiki/File:Korea_University_Main_Hall.jpg &middot; License: https://creativecommons.org/licenses/by-sa/3.0/ &middot; Photo: Ksiom, Wikimedia Commons contributor, CC BY-SA 3.0</figcaption></figure>
 
 <h3>The one-way door in the middle</h3>
@@ -95,17 +95,17 @@ sources:
 
 <p>That is the quiet arithmetic behind the famous exam-day theatre. The state machinery still mobilizes nationally: for the November 2025 exam, the government asked offices and businesses to push start times past 10 a.m., adjusted aircraft and helicopter movements, and halted artillery fire and tank movement during listening periods. The transport ministry's standing pattern grounds takeoffs nationwide and holds airborne aircraft above three kilometres during the English listening window — 13:05 to 13:40 on the 2025 exam day — covering everything from airliners to drones.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-susi-admissions/csat-exam-room.jpg" alt="An empty Korean high-school classroom arranged as an exam room, single desks in neat rows with seat-number slips and schedule charts posted on the green chalkboard" width="2656" height="1494" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-susi-admissions/csat-exam-room.jpg" alt="An empty Korean high-school classroom arranged as an exam room, single desks in neat rows with seat-number slips and schedule charts posted on the green chalkboard" width="2656" height="1494" loading="lazy" decoding="async">
 <figcaption>A high-school classroom arranged as a suneung exam room, with seat numbers and schedule charts posted. Source: https://commons.wikimedia.org/wiki/File:The_exam_location_(Puhung_High_School),_for_The_South_Korea_College_Scholastic_Ability_Test,_2018.jpg &middot; License: https://creativecommons.org/licenses/by/4.0/ &middot; Photo: 고려 (Goryeo), Wikimedia Commons contributor, CC BY 4.0</figcaption></figure>
 
 <p>The day before the exam has its own ritual, the preliminary call-up, when candidates report to their assigned test sites. The photograph below shows what that looks like from above.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-susi-admissions/preliminary-callup-aerial.jpg" alt="High-angle view of a school field crowded with hundreds of small distant figures gathering for the exam preliminary call-up, cars lining the street outside" width="2312" height="1734" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-susi-admissions/preliminary-callup-aerial.jpg" alt="High-angle view of a school field crowded with hundreds of small distant figures gathering for the exam preliminary call-up, cars lining the street outside" width="2312" height="1734" loading="lazy" decoding="async">
 <figcaption>A school field during the preliminary call-up on the day before the exam. Source: https://commons.wikimedia.org/wiki/File:Gwanyang_High_School_was_crowded_with_people_due_to_the_preliminary_call-up_of_the_2021_College_Scholastic_Ability_Test.jpg &middot; License: https://creativecommons.org/licenses/by/4.0/ &middot; Photo: 고려 (Goryeo), Wikimedia Commons contributor, CC BY 4.0</figcaption></figure>
 
 <p>Even the stationery is standardized: the computer-marking pen in the photograph below is printed for exam candidates, one of the small uniform objects of the day.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-susi-admissions/csat-issued-pen.jpg" alt="The official exam-issued black computer marking pen and a pink mechanical pencil lying together on a wooden desk" width="2656" height="1494" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-susi-admissions/csat-issued-pen.jpg" alt="The official exam-issued black computer marking pen and a pink mechanical pencil lying together on a wooden desk" width="2656" height="1494" loading="lazy" decoding="async">
 <figcaption>The exam-issued computer marking pen beside a mechanical pencil. Source: https://commons.wikimedia.org/wiki/File:A_scantron_pen_and_a_mechanical_pencil_for_The_South_Korea_College_Scholastic_Ability_Test,_2018.jpg &middot; License: https://creativecommons.org/licenses/by/4.0/ &middot; Photo: 고려 (Goryeo), Wikimedia Commons contributor, CC BY 4.0</figcaption></figure>
 
 <h3>Seats set aside on purpose</h3>

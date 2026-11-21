@@ -56,7 +56,7 @@ sources:
 
 <p>Whichever kind it is, the head of the school has to report the plan to the Minister of Education, and a closure has to be reported too. The enforcement decree sets the deadline at two weeks before the contract is signed, and two weeks before a planned closure. A school or a sponsor that breaks the rules can be barred from opening new contract departments for a period the minister sets, of up to three years.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-contract-departments/moe-building-sejong.jpg" alt="The long grey Ministry of Education building in the Government Complex Sejong, with bare winter trees and a light dusting of snow in front" width="1600" height="795" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-contract-departments/moe-building-sejong.jpg" alt="The long grey Ministry of Education building in the Government Complex Sejong, with bare winter trees and a light dusting of snow in front" width="1600" height="795" loading="lazy" decoding="async">
 <figcaption>The Ministry of Education's building in the Government Complex Sejong; contract departments are reported to the minister before they open. Source: https://commons.wikimedia.org/wiki/File:Ministry_of_Education_(South_Korea).JPG &middot; License: https://creativecommons.org/licenses/by-sa/4.0 &middot; Resized. Photo: Minseong Kim, Wikimedia Commons contributor, CC BY-SA 4.0</figcaption></figure>
 
 <h3>Seats that sit outside the usual count</h3>
@@ -75,12 +75,12 @@ sources:
 
 <p>The sponsor has to qualify, too. The ministry's notice requires a business sponsor to have at least five regular employees, unless public bodies cover at least half the operating costs, and it bars any company that violated labour laws such as the Labour Standards Act, the Minimum Wage Act or the Employment Security Act in the three years before the department's founding year.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-contract-departments/skku-campus-entrance-sign.jpg" alt="Large silver Korean lettering of Sungkyunkwan University's name on a stone wall at the Natural Sciences Campus entrance, with pine trees and azaleas behind" width="1600" height="758" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-contract-departments/skku-campus-entrance-sign.jpg" alt="Large silver Korean lettering of Sungkyunkwan University's name on a stone wall at the Natural Sciences Campus entrance, with pine trees and azaleas behind" width="1600" height="758" loading="lazy" decoding="async">
 <figcaption>The entrance sign of Sungkyunkwan University's Natural Sciences Campus. Source: https://commons.wikimedia.org/wiki/File:SKKU_NSC_Entrance_sign.jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0 &middot; Resized. Photo: Jpbarrass, Wikimedia Commons contributor, CC BY-SA 4.0</figcaption></figure>
 
 <p>At Sungkyunkwan University, the department of semiconductor systems engineering was set up jointly with Samsung Electronics in 2006. The department says its curriculum is set by an operating committee of Samsung executives and the department's full-time faculty.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-contract-departments/skku-natural-sciences-campus.jpg" alt="High view over Sungkyunkwan University's Natural Sciences Campus in spring, a green lawn and tree canopy between tall grey faculty buildings" width="1600" height="1117" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-contract-departments/skku-natural-sciences-campus.jpg" alt="High view over Sungkyunkwan University's Natural Sciences Campus in spring, a green lawn and tree canopy between tall grey faculty buildings" width="1600" height="1117" loading="lazy" decoding="async">
 <figcaption>Sungkyunkwan University's Natural Sciences Campus, seen from its Industry Cooperation Centre. Source: https://commons.wikimedia.org/wiki/File:SKKU_Natural_Sciences_Campus_from_Industry_Cooperation_Centre.jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0 &middot; Resized. Photo: Jpbarrass, Wikimedia Commons contributor, CC BY-SA 4.0</figcaption></figure>
 
 <!--post-ad-break-->
@@ -91,14 +91,14 @@ sources:
 
 <p>Yonsei University's graduate department of system semiconductor engineering, which describes itself as Korea's first Samsung Electronics graduate contract department, shows what the conditions look like in practice. It admits 30 master's and 10 doctoral students a year, Samsung covers admission fees and tuition, and the department says a job at Samsung Electronics after graduation is guaranteed once all of Samsung's conditions, such as grades, are met. Final admission requires passing both Samsung's track, which the department lists as the GSAT aptitude test and interviews, and Yonsei's own document review and oral examination.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-contract-departments/yonsei-campus-hall.jpg" alt="A stone Gothic-style hall with a central tower and flags on Yonsei University's Sinchon campus, a single distant figure walking away along a garden path" width="1600" height="900" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-contract-departments/yonsei-campus-hall.jpg" alt="A stone Gothic-style hall with a central tower and flags on Yonsei University's Sinchon campus, a single distant figure walking away along a garden path" width="1600" height="900" loading="lazy" decoding="async">
 <figcaption>Yonsei University's campus in Sinchon, Seoul. Source: https://commons.wikimedia.org/wiki/File:Yonsei_University_campus.jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0 &middot; Resized. Photo: Christian Bolz, Wikimedia Commons contributor, CC BY-SA 4.0</figcaption></figure>
 
 <p>The sponsor's hand in admissions is written into the national notice as well: for a hiring-conditional department the company may propose selection criteria by contract, and if it wishes, the school must guarantee its staff a place in the interviews.</p>
 
 <p>On the SK hynix side, a May 2020 article reposted on the publicity board of Korea University's department of semiconductor engineering describes it as a hiring-conditional contract department agreed with SK hynix, due to take its first students for the 2021 academic year.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-contract-departments/korea-university-anam-campus.jpg" alt="Korea University's granite main building and statue across an autumn lawn on the Anam campus, framed by a red maple, two tiny distant figures on the grass" width="1600" height="1067" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-contract-departments/korea-university-anam-campus.jpg" alt="Korea University's granite main building and statue across an autumn lawn on the Anam campus, framed by a red maple, two tiny distant figures on the grass" width="1600" height="1067" loading="lazy" decoding="async">
 <figcaption>Korea University's Anam campus in autumn. Source: https://commons.wikimedia.org/wiki/File:Korea_University_Anam_camps,_main_gate.jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0 &middot; Resized. Photo: Mannaa mohamed, Wikimedia Commons contributor, CC BY-SA 4.0</figcaption></figure>
 
 <h3>The guardrails for students</h3>

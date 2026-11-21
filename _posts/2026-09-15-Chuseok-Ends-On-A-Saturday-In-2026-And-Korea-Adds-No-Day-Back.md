@@ -42,7 +42,7 @@ sources:
 
 <p>Look at that Saturday and a reasonable assumption forms: Korea gives a substitute holiday when a public holiday collides with a weekend, so Monday 28 September should be off too. It is not. Monday is a normal working day, and the reason is one clause of one decree that treats Chuseok differently from almost every other holiday in the year.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/chuseok-saturday-substitute/songpyeon-chuseok-rice-cakes.jpg" alt="Rows of pink, white and green songpyeon rice cakes arranged in a red lacquered tray with pine needles laid across them" width="1600" height="1294" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/chuseok-saturday-substitute/songpyeon-chuseok-rice-cakes.jpg" alt="Rows of pink, white and green songpyeon rice cakes arranged in a red lacquered tray with pine needles laid across them" width="1600" height="1294" loading="lazy" decoding="async">
 <figcaption>Songpyeon, the rice cakes that mark the Chuseok season. The festival's date is fixed by the lunar calendar; the days off around it are fixed by a Presidential Decree. Source: https://commons.wikimedia.org/wiki/File:Songpyeon.jpg &middot; License: http://creativecommons.org/publicdomain/zero/1.0/deed.en &middot; Photo: wizdata, Wikimedia Commons contributor, CC0</figcaption></figure>
 
 <h3>The three days, and where they come from</h3>
@@ -53,7 +53,7 @@ sources:
 
 <p>The second decides <em>how many days off</em>. The Presidential Decree on public-office holidays lists the day before Chuseok, Chuseok itself and the day after — lunar 8/14, 8/15 and 8/16 — as three separate public holidays. Applied to 2026 that is Thursday 24, Friday 25 and Saturday 26 September. Add Sunday 27, which is a public holiday in its own right under the same decree, and the run of red days is four long.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/chuseok-saturday-substitute/kasi-main-building-daejeon.jpg" alt="The main building of the Korea Astronomy and Space Science Institute in Daejeon, with wide stone steps leading up to the entrance" width="1600" height="1078" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/chuseok-saturday-substitute/kasi-main-building-daejeon.jpg" alt="The main building of the Korea Astronomy and Space Science Institute in Daejeon, with wide stone steps leading up to the entrance" width="1600" height="1078" loading="lazy" decoding="async">
 <figcaption>The Korea Astronomy and Space Science Institute in Daejeon, which publishes the calendar dataset behind the annual standard now announced by the Korea AeroSpace Administration. Source: https://commons.wikimedia.org/wiki/File:%ED%95%9C%EA%B5%AD%EC%B2%9C%EB%AC%B8%EC%97%B0%EA%B5%AC%EC%9B%90_KASI_main_building.jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0 &middot; Photo: Rickinasia, Wikimedia Commons contributor, CC BY-SA 4.0</figcaption></figure>
 
 <h3>The clause that skips Saturday</h3>
@@ -78,7 +78,7 @@ sources:
 
 <p>It is worth being precise about why this is a policy choice and not a legal necessity. The parent statute, the Act on Public Holidays, says a substitute may be designated when a public holiday overlaps a Saturday, a Sunday <em>or another public holiday</em>, and then delegates the details to Presidential Decree. The Act permits a Saturday substitute for Chuseok. The decree declines to grant one.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/chuseok-saturday-substitute/ministry-personnel-management.jpg" alt="The Ministry of Personnel Management tower in Sejong, with its Korean name board near the top of the facade" width="1171" height="860" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/chuseok-saturday-substitute/ministry-personnel-management.jpg" alt="The Ministry of Personnel Management tower in Sejong, with its Korean name board near the top of the facade" width="1171" height="860" loading="lazy" decoding="async">
 <figcaption>The Ministry of Personnel Management in Sejong is the department listed on the public-office holiday decree, which is where the Saturday rule is actually drawn. Source: https://commons.wikimedia.org/wiki/File:Ministry_of_Personnel_Management_South_Korea.jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0 &middot; Photo: Minseong Kim, Wikimedia Commons contributor, CC BY-SA 4.0</figcaption></figure>
 
 <h3>Korea added two holidays in 2026, and the printed calendars missed them</h3>
@@ -89,7 +89,7 @@ sources:
 
 <p>Those published totals are now out of date, and this guide does not replace them with new ones. The honest statement is narrower: the standard was written before Constitution Day and Labour Day were added, so a 2026 calendar printed from it will be missing holidays that the law has since created. Any total that matters for a contract or a payroll run should be recalculated against the current decree, not copied from a calendar.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/chuseok-saturday-substitute/national-assembly-yeouido.jpg" alt="The domed National Assembly Building in Yeouido, Seoul, seen across its lawn under a clear blue sky" width="1600" height="900" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/chuseok-saturday-substitute/national-assembly-yeouido.jpg" alt="The domed National Assembly Building in Yeouido, Seoul, seen across its lawn under a clear blue sky" width="1600" height="900" loading="lazy" decoding="async">
 <figcaption>The National Assembly in Yeouido passed both 2026 amendments to the Act on Public Holidays, adding Constitution Day and Labour Day. Source: https://commons.wikimedia.org/wiki/File:Republic_of_Korea_capitol.jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0 &middot; Photo: Cjb8293, Wikimedia Commons contributor, CC BY-SA 4.0</figcaption></figure>
 
 <h3>Whether a private workplace has to give the days</h3>
@@ -104,7 +104,7 @@ sources:
 
 <p>There is also one route by which a missing day can still appear. The decree lets the government designate a temporary public holiday, but only after a Cabinet meeting resolution — so it is a deliberate political act, not something the calendar does on its own.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/chuseok-saturday-substitute/chuseok-charye-table.jpg" alt="A formally set Chuseok charye table seen from above, with rice bowls, fish, fruit and rice cakes laid out in rows in front of a folding screen" width="1600" height="1200" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/chuseok-saturday-substitute/chuseok-charye-table.jpg" alt="A formally set Chuseok charye table seen from above, with rice bowls, fish, fruit and rice cakes laid out in rows in front of a folding screen" width="1600" height="1200" loading="lazy" decoding="async">
 <figcaption>A formally set charye table. The ritual is unchanged by the decree; only the number of days available to travel for it moves. Source: https://commons.wikimedia.org/wiki/File:Chuseok_table_01.JPG &middot; License: https://creativecommons.org/licenses/by-sa/3.0 &middot; Photo: Namwon030, Wikimedia Commons contributor, CC BY-SA 3.0</figcaption></figure>
 
 <h3>How to check any Korean holiday for yourself</h3>

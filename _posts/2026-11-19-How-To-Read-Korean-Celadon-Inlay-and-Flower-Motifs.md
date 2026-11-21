@@ -35,7 +35,7 @@ This legendary hue was achieved through meticulous reduction firing in long, slo
 Yet what truly established Goryeo celadon as a peerless pinnacle of world ceramic art was not the glaze alone, but the invention of *sanggam* (상감)—the technique of ceramic inlay.
 
 <figure class="post-photo">
-  <img src="/img/editorial/2026-11-19-How-To-Read-Korean-Celadon-Inlay-and-Flower-Motifs-cover.png" alt="How to Read Korean Celadon Inlay and Flower Motifs Architecture Overview">
+  <img src="https://jellyggumi.github.io/img/editorial/2026-11-19-How-To-Read-Korean-Celadon-Inlay-and-Flower-Motifs-cover.png" alt="How to Read Korean Celadon Inlay and Flower Motifs Architecture Overview">
   <figcaption>Figure 1: High-level Korean Traditional Spatial Architecture and Spatial Rhythm. AI-generated editorial illustration by Gemini; not a photograph or primary historical specimen.</figcaption>
 </figure>
 
@@ -54,7 +54,7 @@ The process of *sanggam* inlay was unforgiving and required extraordinary dexter
 4. **Biscuit Firing and Glazing**: After a preliminary low-temperature biscuit firing, the vessel was coated with translucent kingfisher glaze and fired in reduction. Under intense heat, the white slip turned brilliant chalk white, while the iron-rich red slip fired into deep, velvet jet black.
 
 <figure class="post-photo">
-  <img src="/img/editorial/2026-11-19-How-To-Read-Korean-Celadon-Inlay-and-Flower-Motifs-card1.png" alt="How to Read Korean Celadon Inlay and Flower Motifs Microclimate and Eaves Geometry">
+  <img src="https://jellyggumi.github.io/img/editorial/2026-11-19-How-To-Read-Korean-Celadon-Inlay-and-Flower-Motifs-card1.png" alt="How to Read Korean Celadon Inlay and Flower Motifs Microclimate and Eaves Geometry">
   <figcaption>Figure 2: Eaves Solar Geometry and Courtyard Thermal Convection Loop. AI-generated architectural illustration by Gemini; conceptual diagram of environmental principles.</figcaption>
 </figure>
 
@@ -67,7 +67,7 @@ Cranes (*hak*) held deep resonance in Daoist and Buddhist cosmology as messenger
 Complementing the cranes are stylized wild chrysanthemums (*gukhwa*) and lotus blossoms (*yeonhwa*). The chrysanthemum, blooming in late autumn frost when all other blossoms have withered, symbolized noble endurance, scholarly integrity, and quiet fortitude in the face of political adversity. Rendered in alternating medallions of white and black inlay, these blossoms created a balanced visual rhythm that anchored the dynamic movement of celestial clouds.
 
 <figure class="post-photo">
-  <img src="/img/editorial/2026-11-19-How-To-Read-Korean-Celadon-Inlay-and-Flower-Motifs-card2.png" alt="How to Read Korean Celadon Inlay and Flower Motifs Material Craftsmanship">
+  <img src="https://jellyggumi.github.io/img/editorial/2026-11-19-How-To-Read-Korean-Celadon-Inlay-and-Flower-Motifs-card2.png" alt="How to Read Korean Celadon Inlay and Flower Motifs Material Craftsmanship">
   <figcaption>Figure 3: Material Craftsmanship, Interlocking Timber Joinery, and Organic Materiality. AI-generated illustration by Gemini; visual study of traditional craft principles.</figcaption>
 </figure>
 

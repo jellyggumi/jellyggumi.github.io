@@ -51,7 +51,7 @@ sources:
 <p>When looking at a Korean Buddhist temple bell—called a 범종 (beomjong, Buddhist ritual bell)—the most reliable Korean signature sits at the very top rather than on the side. Alongside the arched dragon suspension loop, traditional Korean bells carry a vertical hollow cylinder known as an 음통 (eumtong, sound tube).</p>
 
 <figure class="post-photo source-image">
-  <img src="/img/source/goryeo-bronze-mirrors-bells/cma-ritual-bell-1226.jpg" alt="Goryeo cast bronze ritual bell dated 1226 with dragon suspension loop, vertical sound tube, and lotus-seated figures." width="743" height="893" loading="lazy" decoding="async">
+  <img src="https://jellyggumi.github.io/img/source/goryeo-bronze-mirrors-bells/cma-ritual-bell-1226.jpg" alt="Goryeo cast bronze ritual bell dated 1226 with dragon suspension loop, vertical sound tube, and lotus-seated figures." width="743" height="893" loading="lazy" decoding="async">
   <figcaption>Bronze Ritual Bell (청동 범종), 1226; cast bronze with incised inscription, dragon loop, and vertical sound tube. Cleveland Museum of Art, Bronze Ritual Bell, 1992.118; John L. Severance Fund; CC0; metadata stripped. Source: <a href="https://clevelandart.org/art/1992.118">https://clevelandart.org/art/1992.118</a>. License: <a href="https://creativecommons.org/publicdomain/zero/1.0/">https://creativecommons.org/publicdomain/zero/1.0/</a>.</figcaption>
 </figure>
 
@@ -64,7 +64,7 @@ sources:
 <p>Not every bronze bell in a Goryeo temple hung from a wooden beam. Monks performing esoteric Buddhist rituals held smaller bronze handbells called 금강령 (geumgangnyeong, vajra-handled ritual bell), whose handles double as sacred geometry.</p>
 
 <figure class="post-photo source-image">
-  <img src="/img/source/goryeo-bronze-mirrors-bells/cma-vajra-bell.jpg" alt="Goryeo bronze Buddhist ritual handbell from the 1300s topped with a five-pronged vajra handle." width="607" height="893" loading="lazy" decoding="async">
+  <img src="https://jellyggumi.github.io/img/source/goryeo-bronze-mirrors-bells/cma-vajra-bell.jpg" alt="Goryeo bronze Buddhist ritual handbell from the 1300s topped with a five-pronged vajra handle." width="607" height="893" loading="lazy" decoding="async">
   <figcaption>Buddhist Ritual Bell (청동 금강령), 1300s; bronze handbell with five-pronged vajra handle and incised designs. Cleveland Museum of Art, Buddhist Ritual Bell, 1998.123; Gift of Mitsuru Tajima; CC0; metadata stripped. Source: <a href="https://clevelandart.org/art/1998.123">https://clevelandart.org/art/1998.123</a>. License: <a href="https://creativecommons.org/publicdomain/zero/1.0/">https://creativecommons.org/publicdomain/zero/1.0/</a>.</figcaption>
 </figure>
 
@@ -75,7 +75,7 @@ sources:
 <p>Visitors looking at an ancient bronze mirror often wonder why curators face the decorative pattern outward instead of the reflective surface. In pre-modern Korea, the polished front side was tin-rich bronze buffed to a mirror sheen—now darkened by age—while the cast back carried the owner's social, diplomatic and seasonal wishes.</p>
 
 <figure class="post-photo source-image">
-  <img src="/img/source/goryeo-bronze-mirrors-bells/cma-eight-foiled-mirror.jpg" alt="Goryeo eight-foiled bronze mirror from the 1100s decorated in relief with flowers and paired phoenixes." width="836" height="893" loading="lazy" decoding="async">
+  <img src="https://jellyggumi.github.io/img/source/goryeo-bronze-mirrors-bells/cma-eight-foiled-mirror.jpg" alt="Goryeo eight-foiled bronze mirror from the 1100s decorated in relief with flowers and paired phoenixes." width="836" height="893" loading="lazy" decoding="async">
   <figcaption>Eight-foiled Mirror with Flower and Phoenix Design (청동 쌍난·보화무늬 팔능 거울), 1100s; cast bronze mirror back with eight lobed edges and central cord boss. Cleveland Museum of Art, Eight-foiled Mirror with Flower and Phoenix Design, 1921.660; Gift of John L. Severance; CC0; metadata stripped. Source: <a href="https://clevelandart.org/art/1921.660">https://clevelandart.org/art/1921.660</a>. License: <a href="https://creativecommons.org/publicdomain/zero/1.0/">https://creativecommons.org/publicdomain/zero/1.0/</a>.</figcaption>
 </figure>
 
@@ -86,7 +86,7 @@ sources:
 <p>Goryeo metalworkers and ceramic potters did not work in isolated worlds. As tea and wine gatherings flourished among Goryeo elites, identical vessel profiles crossed directly between hammered or cast bronze and jade-glazed stoneware.</p>
 
 <figure class="post-photo source-image">
-  <img src="/img/source/goryeo-bronze-mirrors-bells/cma-gourd-bottle.jpg" alt="Goryeo gourd-shaped bronze bottle from the 1100s with long slender neck and flared foot." width="589" height="893" loading="lazy" decoding="async">
+  <img src="https://jellyggumi.github.io/img/source/goryeo-bronze-mirrors-bells/cma-gourd-bottle.jpg" alt="Goryeo gourd-shaped bronze bottle from the 1100s with long slender neck and flared foot." width="589" height="893" loading="lazy" decoding="async">
   <figcaption>Gourd-Shaped Bottle (청동 표주박모양 정병), 1100s; tall bronze vessel with double-lobed gourd silhouette and slender spouted neck. Cleveland Museum of Art, Gourd-Shaped Bottle, 1992.113; John L. Severance Fund; CC0; metadata stripped. Source: <a href="https://clevelandart.org/art/1992.113">https://clevelandart.org/art/1992.113</a>. License: <a href="https://creativecommons.org/publicdomain/zero/1.0/">https://creativecommons.org/publicdomain/zero/1.0/</a>.</figcaption>
 </figure>
 
@@ -97,7 +97,7 @@ sources:
 <p>Where celadon potters pressed white and black clay slips into carved grooves, Goryeo metalsmiths achieved delicate contrast through 은입사 (eun-ipsa, silver inlay on bronze). After chiseling shallow channels into the dark bronze wall, the artisan hammered fine silver wire into the recessed lines and burnished the surface smooth.</p>
 
 <figure class="post-photo source-image">
-  <img src="/img/source/goryeo-bronze-mirrors-bells/cma-silver-inlaid-basin.jpg" alt="Goryeo bronze basin from the 1100s–1200s inlaid with silver calligraphy and figures." width="900" height="683" loading="lazy" decoding="async">
+  <img src="https://jellyggumi.github.io/img/source/goryeo-bronze-mirrors-bells/cma-silver-inlaid-basin.jpg" alt="Goryeo bronze basin from the 1100s–1200s inlaid with silver calligraphy and figures." width="900" height="683" loading="lazy" decoding="async">
   <figcaption>Basin with Inscribed Figures and Calligraphy (청동 은입사 호), 1100s–1200s; bronze ritual vessel decorated in silver wire inlay with Buddhist poems and child figures. Cleveland Museum of Art, Basin with Inscribed Figures and Calligraphy, 1985.112; Leonard C. Hanna Jr. Fund; CC0; metadata stripped. Source: <a href="https://clevelandart.org/art/1985.112">https://clevelandart.org/art/1985.112</a>. License: <a href="https://creativecommons.org/publicdomain/zero/1.0/">https://creativecommons.org/publicdomain/zero/1.0/</a>.</figcaption>
 </figure>
 

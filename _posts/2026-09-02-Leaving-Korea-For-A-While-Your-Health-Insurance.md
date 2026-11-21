@@ -50,7 +50,7 @@ sources:
 
 <p>Premiums are handled separately, in a different article, under different conditions. Because the two are separable, it is possible to lose coverage while still being charged.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-health-insurance-going-abroad/nhis-headquarters-wonju.jpg" alt="The National Health Insurance Service headquarters tower in Wonju with the corporate stone sign at the entrance plaza" width="1600" height="901" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-health-insurance-going-abroad/nhis-headquarters-wonju.jpg" alt="The National Health Insurance Service headquarters tower in Wonju with the corporate stone sign at the entrance plaza" width="1600" height="901" loading="lazy" decoding="async">
 <figcaption>The National Health Insurance Service headquarters in Wonju. The Service administers the scheme; the conditions described here are set by the Act and its subordinate legislation, with one route left to the Service's assessment. Source: https://commons.wikimedia.org/wiki/File:231226_%EA%B5%AD%EB%AF%BC%EA%B1%B4%EA%B0%95%EB%B3%B4%ED%97%98%EA%B3%B5%EB%8B%A8_%EB%B3%B8%EB%B6%80.jpg &middot; License: https://creativecommons.org/publicdomain/zero/1.0/ &middot; Aspere &middot; Photo: Aspere, CC0 1.0, via Wikimedia Commons</figcaption></figure>
 
 <h3>Three Months, or One if It Is Work</h3>
@@ -59,7 +59,7 @@ sources:
 
 <p>For anyone planning a stay near the boundary, the practical consequence is that the trip length is a legal fact with a bill attached, not a travel detail.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-health-insurance-going-abroad/incheon-departures-concourse.jpg" alt="The departures concourse at Incheon International Airport with check-in desks under the steel-truss roof" width="1600" height="1200" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-health-insurance-going-abroad/incheon-departures-concourse.jpg" alt="The departures concourse at Incheon International Airport with check-in desks under the steel-truss roof" width="1600" height="1200" loading="lazy" decoding="async">
 <figcaption>A departures concourse at Incheon International Airport. The statutory clock is measured in months of absence, and the one-month route additionally depends on the Service accepting the stay as work-related. Source: https://commons.wikimedia.org/wiki/File:Incheon_International_Airport_departures.jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0/ &middot; pmsyyz &middot; Photo: pmsyyz, CC BY-SA 4.0, via Wikimedia Commons</figcaption></figure>
 
 <h3>The Condition Behind the Headline</h3>
@@ -84,7 +84,7 @@ sources:
 
 <p>The statute therefore attaches a different outcome to a return dated the first of the month than to any other day. That is timing written into the rule, not a planning technique.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-health-insurance-going-abroad/korean-passport-visa-pages.jpg" alt="Blank visa pages of a South Korean passport showing the printed security artwork used for entry and exit stamps" width="1600" height="1145" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-health-insurance-going-abroad/korean-passport-visa-pages.jpg" alt="Blank visa pages of a South Korean passport showing the printed security artwork used for entry and exit stamps" width="1600" height="1145" loading="lazy" decoding="async">
 <figcaption>Blank visa pages in a South Korean passport. Entry and exit records are the evidence the Service works from when it fixes the suspension period. Source: https://commons.wikimedia.org/wiki/File:2025_South_Korean_passport_Visas.jpg &middot; License: https://creativecommons.org/publicdomain/zero/1.0/ &middot; Ranch9613 &middot; Photo: Ranch9613, CC0 1.0, via Wikimedia Commons</figcaption></figure>
 
 <h3>If You Are a Foreign Resident</h3>
@@ -93,7 +93,7 @@ sources:
 
 <p>There is also an exit from enrolment, and it is conditional. Where equivalent medical cover exists under foreign law, foreign insurance or an employment contract, the employer or the subscriber may apply for exclusion from enrolment. The Act frames this as something a person applies for, not something that happens automatically because cover exists elsewhere.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-health-insurance-going-abroad/gachon-gil-hospital.jpg" alt="The main building of Gachon University Gil Hospital seen from the access road" width="1600" height="1200" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-health-insurance-going-abroad/gachon-gil-hospital.jpg" alt="The main building of Gachon University Gil Hospital seen from the access road" width="1600" height="1200" loading="lazy" decoding="async">
 <figcaption>A university hospital in Incheon. Article 54 withholds benefits for the period spent outside Korea. Source: https://commons.wikimedia.org/wiki/File:%EA%B0%80%EC%B2%9C%EA%B8%B8%EB%B3%91%EC%9B%90_%EB%B3%B8%EA%B4%80_%EC%A0%84%EA%B2%BD,_2024%EB%85%84_10%EC%9B%94.jpg &middot; License: https://creativecommons.org/licenses/by/4.0/ &middot; Narubaru7 &middot; Photo: Narubaru7, CC BY 4.0, via Wikimedia Commons</figcaption></figure>
 
 <h3>Where to File, and What to Bring</h3>
@@ -104,7 +104,7 @@ sources:
 
 <p>The Service lists a domestic number, 1577-1000, and a separate overseas line, +82-33-811-2001, both staffed on weekdays from 09:00 to 18:00. The Service publishes the second number specifically for use from overseas. The same site lists a mobile app, The건강보험.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-health-insurance-going-abroad/gyeongpo-community-service-center.jpg" alt="A neighbourhood community service centre with a street sign and an unmanned civil-document kiosk beside the entrance" width="1600" height="1067" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-health-insurance-going-abroad/gyeongpo-community-service-center.jpg" alt="A neighbourhood community service centre with a street sign and an unmanned civil-document kiosk beside the entrance" width="1600" height="1067" loading="lazy" decoding="async">
 <figcaption>A neighbourhood community service centre with an unmanned civil-document kiosk. Civil certificates in Korea are issued through offices, kiosks and portals of this kind. Source: https://commons.wikimedia.org/wiki/File:Gyeongpo-dong_Community_service_center_20220501_001.jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0/ &middot; Mobius6 &middot; Photo: Mobius6, CC BY-SA 4.0, via Wikimedia Commons</figcaption></figure>
 
 <h3>What to Check Before You Go</h3>
@@ -113,7 +113,7 @@ sources:
 
 <p>None of this is medical or financial advice, and none of it substitutes for the Service's own determination in an individual case. It is a description of what the statute and its subordinate rules say, read directly, on the date given below.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-health-insurance-going-abroad/korean-passport-cover.jpg" alt="The cover of a Republic of Korea biometric passport showing the national emblem" width="1600" height="2185" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-health-insurance-going-abroad/korean-passport-cover.jpg" alt="The cover of a Republic of Korea biometric passport showing the national emblem" width="1600" height="2185" loading="lazy" decoding="async">
 <figcaption>A Republic of Korea passport. For foreign residents, residence status rather than nationality decides how enrolment works. Source: https://commons.wikimedia.org/wiki/File:Passport_of_South_Korea.jpg &middot; License: https://creativecommons.org/licenses/by/2.0/kr/deed.en &middot; revi &middot; Photo: revi, CC BY 2.0 KR, via Wikimedia Commons</figcaption></figure>
 
 <p><strong>Editorial method:</strong> This guide was researched and drafted with AI assistance. The rules it describes come from the National Health Insurance Act, its Enforcement Decree and its Enforcement Rule as published by the National Law Information Center; the document examples come from the Ministry of Government Legislation's EasyLaw page on overseas stays; and the phone numbers and app name come from the National Health Insurance Service's own site. None of it is the Service's decision on an individual case. The six photographs are Wikimedia Commons files credited in their captions, and the cover image is AI-generated.</p>

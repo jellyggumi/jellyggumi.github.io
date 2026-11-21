@@ -65,7 +65,7 @@ sources:
 
 <p>For anyone who buys and sells on 당근 (Danggeun, "carrot" — Karrot in English), 번개장터 (Bunjang, "lightning market") or 중고나라 (Junggonara, "secondhand land"), the wrapper episode is a useful door into something bigger. Person-to-person trade is thoroughly normalized in Korea, and the rulebook underneath it — what may not be resold at all, what the app actually knows about the other party, and who untangles a deal gone wrong — is written across Korean statutes, ministry notices and operator policy pages.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-secondhand-market-rules/dongmyo-market-street-winter.jpg" alt="Winter street view of the Dongmyo flea market alley in Seoul, with vendors' umbrellas, clothing stalls and shoppers in coats" width="2400" height="1800" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-secondhand-market-rules/dongmyo-market-street-winter.jpg" alt="Winter street view of the Dongmyo flea market alley in Seoul, with vendors' umbrellas, clothing stalls and shoppers in coats" width="2400" height="1800" loading="lazy" decoding="async">
 <figcaption>The Dongmyo flea market alley in Seoul, where Korea's older secondhand culture predates the apps. Source: https://commons.wikimedia.org/wiki/File:Dongmyo_Flea_Market_Jan_2024_03.jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0 &middot; Photo: Seefooddiet, Wikimedia Commons contributor, CC BY-SA 4.0</figcaption></figure>
 
 <h3>The list of things you own but cannot resell</h3>
@@ -78,7 +78,7 @@ sources:
 
 <p>Danggeun has been frank about why the list needs constant explaining. When it reorganized the guideline in 2023, the company said many users post prohibited items without knowing person-to-person trade in them is banned under current law.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-secondhand-market-rules/dongmyo-used-book-alley.jpg" alt="Narrow aisle of a used-book store in Seoul stacked floor to ceiling with secondhand books" width="2400" height="1800" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-secondhand-market-rules/dongmyo-used-book-alley.jpg" alt="Narrow aisle of a used-book store in Seoul stacked floor to ceiling with secondhand books" width="2400" height="1800" loading="lazy" decoding="async">
 <figcaption>A used-book aisle in the Dongmyo market. Books are the easy case; food, medicine and eyewear are not. Source: https://commons.wikimedia.org/wiki/File:Dongmyo_Flea_Market_01.jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0 &middot; Photo: Seefooddiet, Wikimedia Commons contributor, CC BY-SA 4.0</figcaption></figure>
 
 <h3>The supplement experiment that forgot to end</h3>
@@ -91,7 +91,7 @@ sources:
 
 <!--post-ad-break-->
 
-<figure class="post-photo source-image"><img src="/img/source/korea-secondhand-market-rules/dongmyo-book-stacks-portrait.jpg" alt="Floor-to-ceiling stacks of secondhand books rising in a narrow Seoul bookstore aisle" width="1800" height="2400" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-secondhand-market-rules/dongmyo-book-stacks-portrait.jpg" alt="Floor-to-ceiling stacks of secondhand books rising in a narrow Seoul bookstore aisle" width="1800" height="2400" loading="lazy" decoding="async">
 <figcaption>Stacked inventory in a Dongmyo used-book shop. Korea's secondhand stock ranges from books like these to regulated categories with their own statutes. Source: https://commons.wikimedia.org/wiki/File:Dongmyo_Flea_Market_03.jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0 &middot; Photo: Seefooddiet, Wikimedia Commons contributor, CC BY-SA 4.0</figcaption></figure>
 
 <h3>Why the buyer is not quite a consumer</h3>
@@ -112,7 +112,7 @@ sources:
 
 <p>The third layer is the least familiar one: 전자문서·전자거래분쟁조정위원회, the Electronic Document and Electronic Transaction Dispute Mediation Committee, run by the Korea Internet and Security Agency. It publishes a dedicated application form for individual-to-individual disputes, operates a self-regulation mediation channel together with Danggeun, Bunjang and Junggonara, and answers dispute counselling through the 118 line, with internet counselling consolidated into the 1372 consumer portal. It is mediation rather than judgment — both sides concede toward a settlement — and the committee currently warns applicants that a case takes about three months. Slow, consensual and real: for a deal worth a few hundred thousand won, it is the proportionate venue.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-secondhand-market-rules/dongmyo-vintage-clothing-racks.jpg" alt="Street-side racks of secondhand vintage shirts and jackets under a shop awning at a Seoul market" width="1905" height="2400" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-secondhand-market-rules/dongmyo-vintage-clothing-racks.jpg" alt="Street-side racks of secondhand vintage shirts and jackets under a shop awning at a Seoul market" width="1905" height="2400" loading="lazy" decoding="async">
 <figcaption>Vintage clothing racks at the Dongmyo market. Clothing is unregulated; the trust problems live in payment and delivery. Source: https://commons.wikimedia.org/wiki/File:Dongmyo_Flea_Market_07.jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0 &middot; Photo: Seefooddiet, Wikimedia Commons contributor, CC BY-SA 4.0 (cropped)</figcaption></figure>
 
 <h3>A short field routine</h3>
@@ -121,7 +121,7 @@ sources:
 
 <p>The boundaries worth remembering: the supplements pilot is a moving target that depends on pending legislation, platform lists change without notice, and the identity rules described here took effect on 21 July 2026 — all of it is stated as of mid-September 2026, with the current operator pages as the authority of record.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-secondhand-market-rules/dongmyo-used-book-shelves.jpg" alt="Densely packed shelves of secondhand books lining both sides of a narrow Seoul bookstore aisle" width="2400" height="1800" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-secondhand-market-rules/dongmyo-used-book-shelves.jpg" alt="Densely packed shelves of secondhand books lining both sides of a narrow Seoul bookstore aisle" width="2400" height="1800" loading="lazy" decoding="async">
 <figcaption>Shelves in the Dongmyo used-book alley. Most of the secondhand economy is this uncomplicated; the exceptions are what the law spells out. Source: https://commons.wikimedia.org/wiki/File:Dongmyo_Flea_Market_02.jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0 &middot; Photo: Seefooddiet, Wikimedia Commons contributor, CC BY-SA 4.0</figcaption></figure>
 
 <p>Much of a newcomer's secondhand buying happens in the weeks after signing a lease, a step with its own fee machinery explained in the guide to <a href="/journal/In-Korea-Seeing-The-Apartment-Is-Free-And-The-Broker-Fee-Has-A-Ceiling/">how Korea's brokerage fees actually work</a>.</p>

@@ -47,7 +47,7 @@ sources:
 
 <p>The interesting part for a newcomer is not the controversy. It is the machinery the ministry pointed at, which defines — more tightly than most people expect — what a Korean broker may charge for anything.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-brokerage-fees/nowon-apartment-towers.jpg" alt="Rows of high-rise apartment towers in Nowon-gu, Seoul, seen in daytime" width="4000" height="1800" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-brokerage-fees/nowon-apartment-towers.jpg" alt="Rows of high-rise apartment towers in Nowon-gu, Seoul, seen in daytime" width="4000" height="1800" loading="lazy" decoding="async">
 <figcaption>Apartment towers in Nowon-gu, Seoul. Sales and leases brokered in blocks like these run under the statutory fee rules. Source: https://commons.wikimedia.org/wiki/File:Wide_view_of_Nowon-gu_Apartment_buildings.jpg &middot; License: https://creativecommons.org/licenses/by-sa/3.0 &middot; Photo: Ox1997cow, Wikimedia Commons contributor, CC BY-SA 3.0</figcaption></figure>
 
 <h3>A closed list, by design</h3>
@@ -64,7 +64,7 @@ sources:
 
 <p>Seoul's ordinance table, in force since 30 December 2021, is representative. For sales, the ceiling starts at 0.6% for homes under 50 million won (capped at 250,000 won), drops to 0.4% for the wide band between 200 and 900 million won, then climbs by steps — 0.5%, 0.6% — to 0.7% for homes at 1.5 billion won and above. For leases, including jeonse, the ladder is lower: 0.5% under 50 million won (capped at 200,000 won), 0.3% for the band between 100 and 600 million won, rising to 0.6% at 1.5 billion won and above. Other provinces set their own tables within the same national range, so rates outside Seoul can differ slightly.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-brokerage-fees/seoul-housing-aerial.jpg" alt="Aerial view of dense apartment complexes, rail lines and commercial buildings in Seoul" width="2048" height="1536" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-brokerage-fees/seoul-housing-aerial.jpg" alt="Aerial view of dense apartment complexes, rail lines and commercial buildings in Seoul" width="2048" height="1536" loading="lazy" decoding="async">
 <figcaption>Seoul's dense mix of apartment complexes and commercial stock from above. Housing fee ceilings are set by each province's ordinance. Source: https://commons.wikimedia.org/wiki/File:Seoul_Apartment_Buildings_(1509272335).jpg &middot; License: https://creativecommons.org/licenses/by/2.0 &middot; Photo: Francisco Anzola, Wikimedia Commons contributor, CC BY 2.0</figcaption></figure>
 
 <h3>The formula hiding under monthly rent</h3>
@@ -77,7 +77,7 @@ sources:
 
 <!--post-ad-break-->
 
-<figure class="post-photo source-image"><img src="/img/source/korea-brokerage-fees/seongsu-riverside-towers.jpg" alt="High-rise apartment towers rising behind Seongsu Bridge over the Han River" width="3400" height="1535" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-brokerage-fees/seongsu-riverside-towers.jpg" alt="High-rise apartment towers rising behind Seongsu Bridge over the Han River" width="3400" height="1535" loading="lazy" decoding="async">
 <figcaption>Apartment towers behind Seongsu Bridge on the Han River. At sale prices above 1.5 billion won, Seoul's ceiling reaches its top step of 0.7%. Source: https://commons.wikimedia.org/wiki/File:Apartment_buildings_near_Seongsu_Bridge.jpg &middot; License: https://creativecommons.org/licenses/by-sa/4.0 &middot; Photo: Ox1997cow, Wikimedia Commons contributor, CC BY-SA 4.0</figcaption></figure>
 
 <h3>Officetels, shops and the posted number</h3>
@@ -86,7 +86,7 @@ sources:
 
 <p>For that non-housing category the rule adds a small transparency device: the broker must state, on the fee table posted in the office, the actual ceiling rate they intend to charge within the legal range, and may not exceed their own posted number. The posted table is worth reading while the coffee is poured; it is a legal document, not decoration.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-brokerage-fees/bucheon-officetel-towers.jpg" alt="Officetel and office towers around an open plaza with trees in Bucheon" width="2048" height="1536" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-brokerage-fees/bucheon-officetel-towers.jpg" alt="Officetel and office towers around an open plaza with trees in Bucheon" width="2048" height="1536" loading="lazy" decoding="async">
 <figcaption>Officetel towers in Bucheon. Small residential officetels carry their own national fee ceilings of 0.5% and 0.4%. Source: https://commons.wikimedia.org/wiki/File:Ju-Eun_Officetel_and_Capitol_Tower_-_panoramio.jpg &middot; License: https://creativecommons.org/licenses/by-sa/3.0 &middot; Photo: dokaspar, Wikimedia Commons contributor, CC BY-SA 3.0</figcaption></figure>
 
 <h3>What happens when the list is ignored</h3>
@@ -95,7 +95,7 @@ sources:
 
 <p>That is why the September argument ended where it started. The association wanted a fee for the tour; the statute recognizes only the brokerage fee and receipted expenses; and the statute's phrase about any name whatsoever left no room for a new line item. Under current law, seeing the apartment is free.</p>
 
-<figure class="post-photo source-image"><img src="/img/source/korea-brokerage-fees/nowon-lotte-tower-skyline.jpg" alt="Low-rise apartment blocks in northeastern Seoul stretching toward Lotte World Tower on the hazy skyline" width="4000" height="2252" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-brokerage-fees/nowon-lotte-tower-skyline.jpg" alt="Low-rise apartment blocks in northeastern Seoul stretching toward Lotte World Tower on the hazy skyline" width="4000" height="2252" loading="lazy" decoding="async">
 <figcaption>Low-rise blocks and distant towers across eastern Seoul. The same fee rules cover every tier of the housing stock. Source: https://commons.wikimedia.org/wiki/File:Nowon-gu_Apartment_buildings_with_Lotte_World_Tower.jpg &middot; License: https://creativecommons.org/licenses/by-sa/3.0 &middot; Photo: Ox1997cow, Wikimedia Commons contributor, CC BY-SA 3.0</figcaption></figure>
 
 <h3>Reading the office with new eyes</h3>
