@@ -52,6 +52,26 @@ for (const content of ['<p>No marker</p>', '<p>A</p><!--post-ad-break--><p>B</p>
   assert.equal(count(await render('post-content.html', { layout: 'post' }, fixtureSite, 'production', content), /<ins\s/g), 0, 'invalid marker count must not insert ad');
   cases += 1;
 }
+function parseFrontMatter(raw, relative, required = false) {
+  const front = raw.match(/^\uFEFF?---[ \t]*\r?\n([\s\S]*?)^---[ \t]*\r?$/m);
+  if (!front || front.index !== 0) {
+    if (required) throw new Error(`${relative}: missing YAML front matter`);
+    return null;
+  }
+  try {
+    const page = YAML.parse(front[1]);
+    if (!page || typeof page !== 'object' || Array.isArray(page)) throw new Error('expected a YAML mapping');
+    return page;
+  } catch (error) {
+    throw new Error(`${relative}: invalid YAML front matter: ${error.message}`, { cause: error });
+  }
+}
+
+const fixturePath = '_posts/2026-11-20-roof-tiles.md';
+assert.throws(() => parseFrontMatter('---\ncontent_type: personal\n  - title: Archive\n---\n', fixturePath, true),
+  { message: /^_posts\/2026-11-20-roof-tiles\.md: invalid YAML front matter:/ });
+assert.equal(parseFrontMatter('---\ncontent_type: personal\nsources:\n  - title: Archive\n---\n', fixturePath, true).sources[0].title, 'Archive');
+
 // A syntactically valid template can still regress on the real page front matter.
 const excluded = new Set(['.git', 'node_modules', 'tools', ...(config.exclude || [])]);
 let documents = 0;
@@ -64,10 +84,10 @@ function walk(dir) {
 }
 for (const file of walk(root)) {
   const raw = fs.readFileSync(file, 'utf8');
-  const front = raw.match(/^---\s*\n([\s\S]*?)\n---/);
-  if (!front) continue;
-  const page = YAML.parse(front[1]) || {};
-  const article = file.includes(`${path.sep}_posts${path.sep}`);
+  const relative = path.relative(root, file);
+  const article = relative.startsWith(`_posts${path.sep}`);
+  const page = parseFrontMatter(raw, relative, article);
+  if (!page) continue;
   if (!article) assert.notEqual(page.layout, 'post', `${path.relative(root, file)}: nonarticle must not adopt article layout`);
   const eligible = article && page.ads !== false && !String(page.robots || '').includes('noindex');
   await checkCase(path.relative(root, file), page, eligible ? open : closed, config);
@@ -102,8 +122,8 @@ console.log('PASS: 4 actual post-layout correction states, including escaped sco
 // Render the real guide hub against Jekyll's published collection. This catches
 // a withdrawal that still leaves a card, count or curated link on a public page.
 const livePosts = fs.readdirSync(path.join(root, '_posts')).filter(name => name.endsWith('.md')).flatMap(name => {
-  const raw = fs.readFileSync(path.join(root, '_posts', name), 'utf8');
-  const post = YAML.parse(raw.match(/^---\s*\n([\s\S]*?)\n---/)[1]);
+  const relative = `_posts/${name}`;
+  const post = parseFrontMatter(fs.readFileSync(path.join(root, relative), 'utf8'), relative, true);
   return post.published === false ? [] : [{ ...post, url: `/journal/${name.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/\.md$/, '')}/` }];
 });
 const liveRoutes = new Set(livePosts.map(post => post.url));

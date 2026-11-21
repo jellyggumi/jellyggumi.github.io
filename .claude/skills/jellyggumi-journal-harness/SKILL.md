@@ -184,9 +184,9 @@ node tools/editorial-workspace.mjs set-status \
 4. Fetch origin and require local `gh-pages` to equal its upstream exactly.
 5. Require `_config.yml`, layouts, includes, CSS and JS to be clean/committed, then run `node tools/apply-editorial-package.mjs`; it rechecks authority, refuses existing targets and copies with no-overwrite semantics.
 6. Stage only the derived paths it reports. Never use `git add -A`.
-7. Run `node tools/verify-publication-scope.mjs --staged`.
+7. Run `node tools/verify-publication-scope.mjs --staged` and `bash tools/editorial-preflight.sh`. Both must pass before committing; fix YAML at the reported file, never bypass validation.
 8. Commit once and push once. Never amend, retry with a second commit, auto-rebase or force-push.
-9. Run `node tools/verify-deployment.mjs`. It independently fetches the pushed SHA, matching successful Pages run, anonymous permalink/title/body and every exact AI-cover and source-image byte sequence, then writes `validation/deployment-proof.json` once with no-overwrite semantics.
+9. Run `node tools/verify-deployment.mjs`. It independently fetches the pushed SHA, matching successful `Editorial quality guard` and Pages runs, anonymous permalink/title/body and every exact AI-cover and source-image byte sequence, then writes `validation/deployment-proof.json` once with no-overwrite semantics.
 10. Mark `published`, update the summary and notify only after that verifier passes.
 
 Any change to title, body, image, paths, git base or visible render context changes the digest and invalidates authority for that artifact. Any failure becomes blocked with the package and deployment evidence preserved.

@@ -72,8 +72,9 @@ Record this as a successful empty run, not a failure.
 - The only automatic approval reference is `standing-routine:h78L2R0UJFRhjS9O`.
 - Re-read the policy before approval, before apply and before marking published. A revoked or mismatched key pair blocks the run.
 - Approval removes the pre-approval report/scope. Regenerate scope first, then final validation; apply and stage only the regenerated `validation/path-scope.txt`.
+- Before committing, run `bash tools/editorial-preflight.sh` against the applied and staged worktree; a red check blocks the push.
 - A publication is one new post, two new AI cover JPEGs and 4–12 new licensed source images, one commit and one push. `git add -A`, amend, force-push, automatic rebase and a second retry push are forbidden.
-- Only `node tools/verify-deployment.mjs` may create `validation/deployment-proof.json`. It must bind its own tool hash, run id, approved artifact digest, pushed SHA, remote SHA, Pages run SHA/URL/conclusion, live URL, title/body probe, every cover and source image URL/content type/byte hash and verification UTC.
+- Only `node tools/verify-deployment.mjs` may create `validation/deployment-proof.json`. It must bind its own tool hash, run id, approved artifact digest, pushed SHA, remote SHA, Pages and `Editorial quality guard` run SHA/URL/conclusion, live URL, title/body probe, every cover and source image URL/content type/byte hash and verification UTC.
 - A push with failed or missing live proof remains `[blocked]`; never report it as published or silently revert it.
 
 ## Routine memory

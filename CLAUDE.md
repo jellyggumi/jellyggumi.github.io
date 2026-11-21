@@ -162,7 +162,7 @@ node tools/editorial-workspace.mjs set-status \
 - Stage exactly the derived paths it reports. Never use `git add -A`.
 - `node tools/verify-publication-scope.mjs --staged` must prove the branch matches fetched upstream, every path is a new file, staged blobs match the approval-bound package, and validation was regenerated after approval.
 - One article means one commit and one push. Never reset, stash, clean, rebase, delete or force-push unrelated work.
-- A push is not publication. Run `node tools/verify-deployment.mjs`; only that no-overwrite verifier may write `validation/deployment-proof.json` after it independently confirms remote SHA, the matching successful Pages run, anonymous permalink HTTP 200, correct title/body and every exact AI-cover and source-image byte sequence. Only then mark `published` and change the summary to `PUBLISHED`.
+- A push is not publication. Run `node tools/verify-deployment.mjs`; only that no-overwrite verifier may write `validation/deployment-proof.json` after it independently confirms remote SHA, matching successful `Editorial quality guard` and Pages runs, anonymous permalink HTTP 200, correct title/body and every exact AI-cover and source-image byte sequence. Only then mark `published` and change the summary to `PUBLISHED`.
 
 Any red gate, dirty target path, changed origin, future date, failed Pages build or 404 leaves the package intact and reports `[blocked]`. Never auto-revert, amend, retry a second push or hide a partial deployment; preserve evidence and notify the operator.
 
@@ -172,7 +172,7 @@ Any red gate, dirty target path, changed origin, future date, failed Pages build
 - Before editing a dirty file, inspect its current diff and merge only the requested change.
 - Recheck recently modified files before concluding; parallel sessions can change the worktree.
 - Fetch origin before an approved publication and require a fast-forward-safe base. Do not auto-rebase.
-- This legacy `gh-pages` repository has no platform-enforced predeploy gate. The contract and validators are mandatory operator gates.
+- This legacy `gh-pages` repository has no platform-enforced predeploy gate. After staging and before committing, run `bash tools/editorial-preflight.sh` in the applied worktree. The same checks run in `Editorial quality guard`, including strict YAML parsing and rendering of the actual article front matter. Do not push on failure.
 - Do not rely on a local native Jekyll build in constrained sandboxes. Use source validators and the existing GitHub Pages build after an approved push.
 
 ## Scheduled 01:00 KST run

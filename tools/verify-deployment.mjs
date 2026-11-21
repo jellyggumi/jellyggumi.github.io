@@ -91,8 +91,8 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function githubRuns() {
-  const endpoint = `repos/${repoSlug}/actions/runs?branch=gh-pages&per_page=50`;
+async function githubRuns(headSha) {
+  const endpoint = `repos/${repoSlug}/actions/runs?branch=gh-pages&head_sha=${headSha}&per_page=50`;
   for (const binary of ['/opt/homebrew/bin/gh', '/usr/local/bin/gh', '/usr/bin/gh']) {
     if (!fs.existsSync(binary)) continue;
     const result = spawnSync(binary, ['api', endpoint], { cwd: root, encoding: 'utf8' });
@@ -108,20 +108,29 @@ async function githubRuns() {
   return (await response.json()).workflow_runs || [];
 }
 
-async function waitForPagesRun(headSha, deadline) {
+async function waitForPublicationRuns(headSha, deadline) {
+  const required = [
+    ['pagesRun', 'pages build and deployment', 'dynamic/pages/pages-build-deployment', 'dynamic'],
+    ['qualityRun', 'Editorial quality guard', '.github/workflows/editorial-quality-guard.yml', 'push']
+  ];
   while (true) {
-    const runs = await githubRuns();
-    const matching = runs
-      .filter((run) => run?.head_sha === headSha && run?.name === 'pages build and deployment' && run?.path === 'dynamic/pages/pages-build-deployment' && run?.event === 'dynamic')
-      .sort((a, b) => Number(b.id) - Number(a.id));
-    const run = matching[0];
-    if (run?.status === 'completed') {
-      if (run.conclusion !== 'success') throw new Error(`Matching GitHub Pages run concluded ${run.conclusion || 'without a conclusion'}: ${run.html_url || run.id}`);
-      if (!/^https:\/\/github\.com\/jellyggumi\/jellyggumi\.github\.io\/actions\/runs\/\d+$/.test(run.html_url || '')) throw new Error('Matching Pages run has an unexpected URL');
-      return run;
+    const runs = (await githubRuns(headSha)).sort((a, b) => Number(b.id) - Number(a.id));
+    const completed = {};
+    const pending = [];
+    for (const [key, name, workflowPath, event] of required) {
+      const run = runs.find((item) => item.head_sha === headSha && item.name === name && item.path === workflowPath && item.event === event);
+      if (run?.status !== 'completed') {
+        pending.push(name);
+        continue;
+      }
+      if (run.conclusion !== 'success') throw new Error(`${name} for ${headSha} concluded ${run.conclusion || 'without a conclusion'}: ${run.html_url || run.id}`);
+      if (!/^https:\/\/github\.com\/jellyggumi\/jellyggumi\.github\.io\/actions\/runs\/\d+$/.test(run.html_url || '')) throw new Error(`${name} has an unexpected run URL`);
+      completed[key] = run;
     }
-    if (Date.now() >= deadline) throw new Error(`No successful matching Pages run appeared for ${headSha} within ${waitSeconds} seconds`);
-    await sleep(60_000);
+    if (!pending.length) return completed;
+    const remaining = deadline - Date.now();
+    if (remaining <= 0) throw new Error(`No successful matching run for ${headSha} within ${waitSeconds} seconds: ${pending.join(', ')}`);
+    await sleep(Math.min(60_000, remaining));
   }
 }
 
@@ -179,7 +188,7 @@ const permalink = `${siteOrigin}/journal/${stem}/`;
 const imageUrls = [...derivedPackage.assetPaths, ...derivedPackage.referenceImagePaths].map((relative) => `${siteOrigin}/${relative}`).sort();
 
 const deadline = Date.now() + waitSeconds * 1000;
-const pagesRun = await waitForPagesRun(headSha, deadline);
+const { pagesRun, qualityRun } = await waitForPublicationRuns(headSha, deadline);
 let pageEvidence = null;
 let imageEvidence = null;
 while (true) {
@@ -226,6 +235,9 @@ const proof = {
   workflow_sha: pagesRun.head_sha,
   workflow_url: pagesRun.html_url,
   workflow_conclusion: pagesRun.conclusion,
+  editorial_workflow_sha: qualityRun.head_sha,
+  editorial_workflow_url: qualityRun.html_url,
+  editorial_workflow_conclusion: qualityRun.conclusion,
   permalink,
   permalink_status: pageEvidence.status,
   permalink_content_type: pageEvidence.content_type,
