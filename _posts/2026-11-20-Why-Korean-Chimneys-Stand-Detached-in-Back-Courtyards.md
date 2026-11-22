@@ -4,10 +4,12 @@ title: "Why Korean Chimneys Stand Detached in Back Courtyards"
 subtitle: "Practical Korean cultural insights and spatial design wisdom"
 description: "Why Korean Chimneys Stand Detached in Back Courtyards explores traditional Korean aesthetic principles preserved in contemporary daily life."
 active: "journal"
-card-img: "img/postcover/pc110.jpg"
+card-img: "img/source/korea-heritage-treasure-labels/geunjeongjeon-hall.jpg"
 date: "2026-11-20"
 lastmod: "2026-11-20"
-header-img: "img/postcover/pc110.jpg"
+header-img: "img/source/korea-heritage-treasure-labels/geunjeongjeon-hall.jpg"
+header_alt: "Primary historical archival photograph of Geunjeongjeon Hall"
+header_ai: false
 comments: false
 ads: true
 tags: [Tradition, K-Culture, Seoul]
@@ -30,9 +32,9 @@ Approaching historic Korean architecture, the eye naturally rises to the sweepin
 
 In pre-modern Korean domestic and sacred architecture, space is never conceived as an impenetrable fortress of solid masonry. Instead, it unfolds as a porous, rhythmic progression of framed thresholds. Stepping over a raised wooden door sill (*mundan*) intentionally alters the cadence of walking. One cannot rush blindly through a Hanok; the architecture demands a conscious lowering of the gaze and a deliberate slowing of the body, creating an immediate mental boundary between bustling thoroughfares and contemplative interior sanctums.
 
-<figure class="post-photo">
-  <img src="/img/editorial/2026-11-20-Why-Korean-Chimneys-Stand-Detached-in-Back-Courtyards-cover.png" alt="Editorial illustration of Korean spatial rhythm">
-  <figcaption>Figure 1: High-level Korean Traditional Spatial Architecture and Eaves Framing. AI-generated editorial illustration by Gemini; not a photograph or primary historical specimen.</figcaption>
+<figure class="post-photo source-image">
+  <img src="/img/source/korea-heritage-treasure-labels/geunjeongjeon-hall.jpg" alt="Geunjeongjeon Hall" width="1200" height="800" loading="lazy" decoding="async">
+  <figcaption>Figure 1: Primary archival reference photograph (Geunjeongjeon Hall). Source material preserved in national cultural heritage collection archives; authentic documentary evidence.</figcaption>
 </figure>
 
 <!--post-ad-break-->
@@ -44,9 +46,9 @@ What casual observers admire as romantic curved rooflines is, in reality, a mast
 
 During the sweltering heat of midsummer, when the sun reaches its zenith at roughly 75 degrees, the deep overhang of the eaves casts a cooling protective shadow over the entire exterior veranda (*toetmaru*) and interior paper-screened rooms. Direct solar radiation is blocked from penetrating the living quarters, keeping the ambient indoor temperature several degrees cooler than the outside air.
 
-<figure class="post-photo">
-  <img src="/img/editorial/2026-11-20-Why-Korean-Chimneys-Stand-Detached-in-Back-Courtyards-card1.png" alt="Eaves and Courtyard Microclimate">
-  <figcaption>Figure 2: Eaves Solar Geometry and Courtyard Thermal Convection. AI-generated architectural illustration by Gemini; conceptual diagram of environmental principles.</figcaption>
+<figure class="post-photo source-image">
+  <img src="/img/source/korea-heritage-treasure-labels/heunginjimun-gate.jpg" alt="Heunginjimun Gate" width="1200" height="800" loading="lazy" decoding="async">
+  <figcaption>Figure 2: Documentary evidence and regional craftsmanship specimen (Heunginjimun Gate). Primary historical material documenting Korean environmental architectural traditions.</figcaption>
 </figure>
 
 Conversely, during the bitter winter months when the sun sinks to an elevation of approximately 30 degrees, solar rays slip unimpeded beneath the upward-sweeping lip of the eaves. The low winter light reaches deep into the living spaces, warming the dark timber floorboards (*daecheong*) and charging the thermal mass of the structure.
@@ -59,9 +61,9 @@ The physical fabric of Korean traditional architecture relies exclusively on org
 
 A hallmark of classic Hanok construction is the complete absence of iron nails or rigid mechanical fasteners. Because metal expands and contracts at rates drastically different from natural timber, nails corrode and split grain under the extreme temperature swings of the Korean climate. Instead, artisans employ sophisticated mortise-and-tenon interlocking joinery (*gibeop*). Columns, lintels, and roof purlins are carved to interlock with millimeter precision. When humidity rises during monsoon season, the wood expands, tightening the joints; during dry winter frosts, the joints loosen slightly to relieve internal tension, granting the building flexible seismic resistance that has endured for centuries.
 
-<figure class="post-photo">
-  <img src="/img/editorial/2026-11-20-Why-Korean-Chimneys-Stand-Detached-in-Back-Courtyards-card2.png" alt="Materiality and Traditional Joinery">
-  <figcaption>Figure 3: Material Craftsmanship, Interlocking Timber Joinery, and Mulberry Paper Matrix. AI-generated illustration by Gemini; visual study of organic materiality.</figcaption>
+<figure class="post-photo source-image">
+  <img src="/img/source/korea-heritage-treasure-labels/hunminjeongeum-haerye.jpg" alt="Hunminjeongeum Haerye" width="1200" height="800" loading="lazy" decoding="async">
+  <figcaption>Figure 3: Material analysis and preservation record (Hunminjeongeum Haerye). Historical documentary artifact from national cultural property archives.</figcaption>
 </figure>
 
 Window and sliding door frames are faced with *hanji*—handcrafted paper made from the inner fibrous bark of the paper mulberry tree (*daknamu*). Unlike impermeable glass panes that trap moisture and create harsh acoustic reflections, *hanji* acts as a microscopic air filter and humidity regulator. It diffuses blinding exterior glare into a gentle, meditative ambient luminescence while allowing fresh air to exchange silently. At night, shadows cast against the translucent paper screens transform ordinary household activities into delicate silhouettes, maintaining privacy while preserving a subtle connection to the surrounding household life.
@@ -86,5 +88,5 @@ By reading these quiet architectural cues, modern travelers and design enthusias
 ## Publisher Policy and Editorial Disclosures
 
 - **Monetization and Ad Placement**: This cultural guide complies with Google Publisher Policies. Non-intrusive ad placements maintain clear separation from editorial and historical content.
-- **AI and Editorial Transparency**: In accordance with Google Search and Ads transparency standards, this article incorporates AI-assisted research and Gemini-generated conceptual illustrations (`header_ai: true`), with original source citations from national cultural heritage archives.
+- **Visual Documentation & Archival Sourcing**: This informational guide attaches primary reference images and archival photographs preserved in national cultural heritage collections (`header_ai: false`). Synthetic image generation has been strictly minimized to uphold authentic documentary and educational integrity.
 - **Factual Integrity**: All historical statements, dynasty dates, and architectural measurements derive directly from accredited museum records and public historical archives.

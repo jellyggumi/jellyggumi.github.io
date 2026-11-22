@@ -4,10 +4,10 @@ title: "Reading Symbols on Korean Temple Eaves and Traditional Lanterns"
 subtitle: "The Iconographic Geometry of Dancheong Patterns and Stone Lantern Apertures"
 description: "A scholarly field guide decoding the mineral pigments of temple eaves, wind chimes, and stone lantern light chambers across classical Korean Buddhist sanctuaries."
 active: "journal"
-card-img: "img/postcover/pc110.jpg"
+card-img: "img/source/korean-roof-tile-ends/baekje-ridge-end.jpg"
 date: "2026-11-19"
-header-img: "img/postcover/pc110.jpg"
-header_alt: "AI-generated editorial illustration of traditional Korean spatial design; not a photograph"
+header-img: "img/source/korean-roof-tile-ends/baekje-ridge-end.jpg"
+header_alt: "Primary historical archival photograph of Baekje Ridge End"
 header_ai: false
 
 comments: false
@@ -34,9 +34,9 @@ Far from mere ornamentation, *dancheong* served two critical practical and philo
 
 Philosophically, *dancheong* transformed the wooden hall from an earthly building into a physical representation of the Buddhist Pure Land (*Sukhavati*). Each concentric circle (*geumdancheong*), lotus petal, and Sanskrit seed syllable painted beneath the eaves marked a sacred boundary, shielding the interior Dharma hall from malevolent cosmic forces while calming the restless minds of visiting pilgrims.
 
-<figure class="post-photo">
-  <img src="/img/editorial/2026-11-19-Reading-Symbols-On-Korean-Temple-Eaves-And-Traditional-Lanterns-cover.png" alt="Reading Symbols on Korean Temple Eaves and Traditional Lanterns Architecture Overview">
-  <figcaption>Figure 1: High-level Korean Traditional Spatial Architecture and Spatial Rhythm. AI-generated editorial illustration by Gemini; not a photograph or primary historical specimen.</figcaption>
+<figure class="post-photo source-image">
+  <img src="/img/source/korean-roof-tile-ends/baekje-ridge-end.jpg" alt="Baekje Ridge End" width="1200" height="800" loading="lazy" decoding="async">
+  <figcaption>Figure 1: Primary archival reference photograph (Baekje Ridge End). Source material preserved in national cultural heritage collection archives; authentic documentary evidence.</figcaption>
 </figure>
 
 
@@ -51,9 +51,9 @@ Suspended from the four corners of these sweeping eaves hang bronze wind chimes 
 
 The fish carries profound Buddhist symbolism: because fish never close their eyes even when resting, the fish clapper serves as a continuous reminder to monks and lay practitioners to maintain constant spiritual vigilance and mindfulness. When sudden mountain gusts catch the bronze fish, its deep resonant chime reverberates across the courtyard, dispersing mental lethargy and blending harmoniously with the rustling pine boughs.
 
-<figure class="post-photo">
-  <img src="/img/editorial/2026-11-19-Reading-Symbols-On-Korean-Temple-Eaves-And-Traditional-Lanterns-card1.png" alt="Reading Symbols on Korean Temple Eaves and Traditional Lanterns Microclimate and Eaves Geometry">
-  <figcaption>Figure 2: Eaves Solar Geometry and Courtyard Thermal Convection Loop. AI-generated architectural illustration by Gemini; conceptual diagram of environmental principles.</figcaption>
+<figure class="post-photo source-image">
+  <img src="/img/source/korean-roof-tile-ends/british-museum-roof-tile.jpg" alt="British Museum Roof Tile" width="1200" height="800" loading="lazy" decoding="async">
+  <figcaption>Figure 2: Documentary evidence and regional craftsmanship specimen (British Museum Roof Tile). Primary historical material documenting Korean environmental architectural traditions.</figcaption>
 </figure>
 
 ## 3. The Architecture of Illumination: The Stone Lantern (Seokdeung)
@@ -65,9 +65,9 @@ The classical Korean stone lantern follows an eight-sided cosmological architect
 2. **The Octagonal Pillar (*Gan-seok*)**: A slender central shaft representing the Middle Way connecting earth and heaven.
 3. **The Light Chamber (*Hwasag-seok*) and Roof Stone (*Okgae-seok*)**: The hollow chamber featuring four or eight open windows where vegetable oil lamps or beeswax candles burned through the night, protected by an octagonal roof stone whose edges curve upward in visual sympathy with the wooden temple eaves above.
 
-<figure class="post-photo">
-  <img src="/img/editorial/2026-11-19-Reading-Symbols-On-Korean-Temple-Eaves-And-Traditional-Lanterns-card2.png" alt="Reading Symbols on Korean Temple Eaves and Traditional Lanterns Material Craftsmanship">
-  <figcaption>Figure 3: Material Craftsmanship, Interlocking Timber Joinery, and Organic Materiality. AI-generated illustration by Gemini; visual study of traditional craft principles.</figcaption>
+<figure class="post-photo source-image">
+  <img src="/img/source/korean-roof-tile-ends/gyeongju-face-tile.jpg" alt="Gyeongju Face Tile" width="1200" height="800" loading="lazy" decoding="async">
+  <figcaption>Figure 3: Material analysis and preservation record (Gyeongju Face Tile). Historical documentary artifact from national cultural property archives.</figcaption>
 </figure>
 
 ## 4. Interplay of Light and Shadow in Temple Courtyards

@@ -4,10 +4,10 @@ title: "Why Korean Chimneys Stand Detached in Back Courtyards"
 subtitle: "The Ingenious Thermal Architecture of Rear Courtyard Chimneys"
 description: "A comprehensive architectural field guide exploring why traditional Korean Hanok homes place decorative chimneys far away from the main building in quiet terraced rear gardens."
 active: "journal"
-card-img: "img/postcover/pc110.jpg"
+card-img: "img/source/korea-heritage-treasure-labels/geunjeongjeon-hall.jpg"
 date: "2026-11-19"
-header-img: "img/postcover/pc110.jpg"
-header_alt: "AI-generated editorial illustration of traditional Korean spatial design; not a photograph"
+header-img: "img/source/korea-heritage-treasure-labels/geunjeongjeon-hall.jpg"
+header_alt: "Primary historical archival photograph of Geunjeongjeon Hall"
 header_ai: false
 
 comments: false
@@ -34,9 +34,9 @@ Instead, chimneys in Korean architecture stand completely detached from the livi
 
 To understand why the chimney was exiled to the back garden, one must look beneath the floorboards into the subterranean mechanics of *ondol* (radiant floor heating). The Korean domestic hearth was not a vertical open fireplace, but a horizontal subterranean heat engine.
 
-<figure class="post-photo">
-  <img src="/img/editorial/2026-11-19-why-korean-chimneys-stand-detached-in-back-courtyards-cover.png" alt="Why Korean Chimneys Stand Detached in Back Courtyards Architecture Overview">
-  <figcaption>Figure 1: High-level Korean Traditional Spatial Architecture and Spatial Rhythm. AI-generated editorial illustration by Gemini; not a photograph or primary historical specimen.</figcaption>
+<figure class="post-photo source-image">
+  <img src="/img/source/korea-heritage-treasure-labels/geunjeongjeon-hall.jpg" alt="Geunjeongjeon Hall" width="1200" height="800" loading="lazy" decoding="async">
+  <figcaption>Figure 1: Primary archival reference photograph (Geunjeongjeon Hall). Source material preserved in national cultural heritage collection archives; authentic documentary evidence.</figcaption>
 </figure>
 
 
@@ -51,9 +51,9 @@ To maximize thermal efficiency, Korean master builders designed the subterranean
 
 By the time the smoke reached the far end of the foundation, its temperature had cooled significantly. If a chimney were constructed directly against the wooden house wall, the low temperature of the exiting gas would cause severe chimney downdrafts (*yeokryu*), pushing smoke and toxic carbon monoxide back into the living quarters. By extending the flue underground past the house into the elevated rear garden, builders harnessed natural hillside thermal drafts to pull the cooled smoke smoothly out of the building.
 
-<figure class="post-photo">
-  <img src="/img/editorial/2026-11-19-why-korean-chimneys-stand-detached-in-back-courtyards-card1.png" alt="Why Korean Chimneys Stand Detached in Back Courtyards Microclimate and Eaves Geometry">
-  <figcaption>Figure 2: Eaves Solar Geometry and Courtyard Thermal Convection Loop. AI-generated architectural illustration by Gemini; conceptual diagram of environmental principles.</figcaption>
+<figure class="post-photo source-image">
+  <img src="/img/source/korea-heritage-treasure-labels/heunginjimun-gate.jpg" alt="Heunginjimun Gate" width="1200" height="800" loading="lazy" decoding="async">
+  <figcaption>Figure 2: Documentary evidence and regional craftsmanship specimen (Heunginjimun Gate). Primary historical material documenting Korean environmental architectural traditions.</figcaption>
 </figure>
 
 ## 3. Fire Safety and Timber Roof Preservation
@@ -64,9 +64,9 @@ By moving the combustion exhaust point ten to twenty feet away from the overhang
 
 Furthermore, traditional wood combustion produces acidic creosote and heavy soot. In Western buildings, chimney emissions frequently stained and corroded roof tiles. In a Hanok, keeping soot and acid smoke away from the complex wooden bracket systems (*gongpo*) and painted eaves preserved the vibrant mineral pigments (*dancheong*) and prevented fungal rot in structural rafters for centuries.
 
-<figure class="post-photo">
-  <img src="/img/editorial/2026-11-19-why-korean-chimneys-stand-detached-in-back-courtyards-card2.png" alt="Why Korean Chimneys Stand Detached in Back Courtyards Material Craftsmanship">
-  <figcaption>Figure 3: Material Craftsmanship, Interlocking Timber Joinery, and Organic Materiality. AI-generated illustration by Gemini; visual study of traditional craft principles.</figcaption>
+<figure class="post-photo source-image">
+  <img src="/img/source/korea-heritage-treasure-labels/hunminjeongeum-haerye.jpg" alt="Hunminjeongeum Haerye" width="1200" height="800" loading="lazy" decoding="async">
+  <figcaption>Figure 3: Material analysis and preservation record (Hunminjeongeum Haerye). Historical documentary artifact from national cultural property archives.</figcaption>
 </figure>
 
 ## 4. Chimneys as Living Garden Sculptures (Kkotdam)

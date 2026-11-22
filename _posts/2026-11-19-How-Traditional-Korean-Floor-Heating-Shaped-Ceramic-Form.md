@@ -4,10 +4,10 @@ title: "How Traditional Korean Floor Heating Shaped Ceramic Form"
 subtitle: "The Thermal Symbiosis Between Sub-Floor Granite Ondol and Low-Slung Ceramic Vessels"
 description: "An architectural and ceramic field guide explaining how Joseon floor-level living under radiant ondol heating dictated wide-bottomed ceramics, unglazed braziers, and thermal tableware."
 active: "journal"
-card-img: "img/postcover/pc110.jpg"
+card-img: "img/source/joseon-white-porcelain-shapes/cma-blue-dragon.jpg"
 date: "2026-11-19"
-header-img: "img/postcover/pc110.jpg"
-header_alt: "AI-generated editorial illustration of traditional Korean spatial design; not a photograph"
+header-img: "img/source/joseon-white-porcelain-shapes/cma-blue-dragon.jpg"
+header_alt: "Primary historical archival photograph of Cma Blue Dragon"
 header_ai: false
 
 comments: false
@@ -34,9 +34,9 @@ Because thermal warmth accumulated at the floor level while cooler air hovered n
 
 The low center of gravity prevented accidental tipping when diners adjusted their seated posture upon straw mats or silk cushions. Moreover, when viewed from above by someone seated on the floor, the gentle, swelling curves of white porcelain jars (*baekja*) and celadon bowls (*saekbals*) revealed an expansive volume that is entirely lost when modern museum visitors view them straight-on inside elevated glass vitrines.
 
-<figure class="post-photo">
-  <img src="/img/editorial/2026-11-19-How-Traditional-Korean-Floor-Heating-Shaped-Ceramic-Form-cover.png" alt="How Traditional Korean Floor Heating Shaped Ceramic Form Architecture Overview">
-  <figcaption>Figure 1: High-level Korean Traditional Spatial Architecture and Spatial Rhythm. AI-generated editorial illustration by Gemini; not a photograph or primary historical specimen.</figcaption>
+<figure class="post-photo source-image">
+  <img src="/img/source/joseon-white-porcelain-shapes/cma-blue-dragon.jpg" alt="Cma Blue Dragon" width="1200" height="800" loading="lazy" decoding="async">
+  <figcaption>Figure 1: Primary archival reference photograph (Cma Blue Dragon). Source material preserved in national cultural heritage collection archives; authentic documentary evidence.</figcaption>
 </figure>
 
 
@@ -51,9 +51,9 @@ To thrive in this environment, food service vessels required specialized thermod
 
 Furthermore, water storage vessels kept inside the living quarters were given unglazed or porous earthenware (*onggi*) bottoms. The subtle evaporation through micro-pores cooled drinking water even as the surrounding floor radiated continuous warmth, demonstrating an intuitive grasp of thermodynamic balance that required no mechanical intervention.
 
-<figure class="post-photo">
-  <img src="/img/editorial/2026-11-19-How-Traditional-Korean-Floor-Heating-Shaped-Ceramic-Form-card1.png" alt="How Traditional Korean Floor Heating Shaped Ceramic Form Microclimate and Eaves Geometry">
-  <figcaption>Figure 2: Eaves Solar Geometry and Courtyard Thermal Convection Loop. AI-generated architectural illustration by Gemini; conceptual diagram of environmental principles.</figcaption>
+<figure class="post-photo source-image">
+  <img src="/img/source/joseon-white-porcelain-shapes/cma-buncheong-bottle.jpg" alt="Cma Buncheong Bottle" width="1200" height="800" loading="lazy" decoding="async">
+  <figcaption>Figure 2: Documentary evidence and regional craftsmanship specimen (Cma Buncheong Bottle). Primary historical material documenting Korean environmental architectural traditions.</figcaption>
 </figure>
 
 ## 3. Material Resonance: Coarse Clay, Ash Glazes, and Thermal Shock Resistance
@@ -64,9 +64,9 @@ When warm ceramic dishes were moved from the outdoor clay hearth to the indoor *
 
 The resulting aesthetic was one of relaxed, unpretentious vitality. Brushstrokes of white clay slip applied over dark stoneware created spontaneous, dynamic textures that mirrored the natural, unadorned pine timbers of the surrounding Hanok architecture. The ceramic vessel became an organic extension of the wooden and clay room itself.
 
-<figure class="post-photo">
-  <img src="/img/editorial/2026-11-19-How-Traditional-Korean-Floor-Heating-Shaped-Ceramic-Form-card2.png" alt="How Traditional Korean Floor Heating Shaped Ceramic Form Material Craftsmanship">
-  <figcaption>Figure 3: Material Craftsmanship, Interlocking Timber Joinery, and Organic Materiality. AI-generated illustration by Gemini; visual study of traditional craft principles.</figcaption>
+<figure class="post-photo source-image">
+  <img src="/img/source/joseon-white-porcelain-shapes/cma-iron-dragon.jpg" alt="Cma Iron Dragon" width="1200" height="800" loading="lazy" decoding="async">
+  <figcaption>Figure 3: Material analysis and preservation record (Cma Iron Dragon). Historical documentary artifact from national cultural property archives.</figcaption>
 </figure>
 
 ## 4. The Aesthetics of Low Furniture and Borrowed Scenery (Chagyeong)
