@@ -4,11 +4,11 @@ title: "The Quiet Mastery of Korean Mother-of-Pearl Inlay Furniture"
 subtitle: "Practical Korean cultural insights and spatial design wisdom"
 description: "The Quiet Mastery of Korean Mother-of-Pearl Inlay Furniture explores traditional Korean aesthetic principles preserved in contemporary daily life."
 active: "journal"
-card-img: "img/source/korean-mother-of-pearl-lacquer/foliate-tray.jpg"
+card-img: "img/postcover/pc110.jpg"
 date: "2026-11-21"
 lastmod: "2026-11-21"
-header-img: "img/source/korean-mother-of-pearl-lacquer/foliate-tray.jpg"
-header_alt: "Primary historical archival photograph of Foliate Tray"
+header-img: "img/postcover/pc110.jpg"
+header_alt: "Traditional Korean cultural heritage archival photography"
 header_ai: false
 comments: false
 ads: true
@@ -32,11 +32,6 @@ Approaching historic Korean architecture, the eye naturally rises to the sweepin
 
 In pre-modern Korean domestic and sacred architecture, space is never conceived as an impenetrable fortress of solid masonry. Instead, it unfolds as a porous, rhythmic progression of framed thresholds. Stepping over a raised wooden door sill (*mundan*) intentionally alters the cadence of walking. One cannot rush blindly through a Hanok; the architecture demands a conscious lowering of the gaze and a deliberate slowing of the body, creating an immediate mental boundary between bustling thoroughfares and contemplative interior sanctums.
 
-<figure class="post-photo source-image">
-  <img src="/img/source/korean-mother-of-pearl-lacquer/foliate-tray.jpg" alt="Foliate Tray" width="1200" height="800" loading="lazy" decoding="async">
-  <figcaption>Figure 1: Primary archival reference photograph (Foliate Tray). Source material preserved in national cultural heritage collection archives; authentic documentary evidence.</figcaption>
-</figure>
-
 <!--post-ad-break-->
 Central to this spatial orchestration is the *madang*—the open, unpaved courtyard at the core of the residential compound. Unlike Western manicured lawns or Chinese enclosed quadrangle gardens densely planted with decorative foliage, the Korean *madang* is intentionally left empty. This emptiness is not a void of neglect, but a vibrant canvas of atmospheric permeability. It functions as an environmental lung, an acoustic resonator, and a seasonal theater where shadow, breeze, and changing sunlight animate the unadorned timber surfaces throughout the day.
 
@@ -45,11 +40,6 @@ Central to this spatial orchestration is the *madang*—the open, unpaved courty
 What casual observers admire as romantic curved rooflines is, in reality, a masterclass in passive thermodynamic engineering. The projection and upward flare of Korean eaves (*cheoma*) are precisely calculated according to the seasonal solar trajectory of the Korean peninsula.
 
 During the sweltering heat of midsummer, when the sun reaches its zenith at roughly 75 degrees, the deep overhang of the eaves casts a cooling protective shadow over the entire exterior veranda (*toetmaru*) and interior paper-screened rooms. Direct solar radiation is blocked from penetrating the living quarters, keeping the ambient indoor temperature several degrees cooler than the outside air.
-
-<figure class="post-photo source-image">
-  <img src="/img/source/korean-mother-of-pearl-lacquer/hexafoil-table.jpg" alt="Hexafoil Table" width="1200" height="800" loading="lazy" decoding="async">
-  <figcaption>Figure 2: Documentary evidence and regional craftsmanship specimen (Hexafoil Table). Primary historical material documenting Korean environmental architectural traditions.</figcaption>
-</figure>
 
 Conversely, during the bitter winter months when the sun sinks to an elevation of approximately 30 degrees, solar rays slip unimpeded beneath the upward-sweeping lip of the eaves. The low winter light reaches deep into the living spaces, warming the dark timber floorboards (*daecheong*) and charging the thermal mass of the structure.
 
@@ -60,11 +50,6 @@ Furthermore, the relationship between the bare earth courtyard in the front and 
 The physical fabric of Korean traditional architecture relies exclusively on organic materials that breathe, shift, and mature in cadence with the four seasons. Master carpenters (*daemokjang*) traditionally source red pine (*geumgangsong*), allowing the wood to naturally air-dry for years before cutting.
 
 A hallmark of classic Hanok construction is the complete absence of iron nails or rigid mechanical fasteners. Because metal expands and contracts at rates drastically different from natural timber, nails corrode and split grain under the extreme temperature swings of the Korean climate. Instead, artisans employ sophisticated mortise-and-tenon interlocking joinery (*gibeop*). Columns, lintels, and roof purlins are carved to interlock with millimeter precision. When humidity rises during monsoon season, the wood expands, tightening the joints; during dry winter frosts, the joints loosen slightly to relieve internal tension, granting the building flexible seismic resistance that has endured for centuries.
-
-<figure class="post-photo source-image">
-  <img src="/img/source/korean-mother-of-pearl-lacquer/scroll-box.jpg" alt="Scroll Box" width="1200" height="800" loading="lazy" decoding="async">
-  <figcaption>Figure 3: Material analysis and preservation record (Scroll Box). Historical documentary artifact from national cultural property archives.</figcaption>
-</figure>
 
 Window and sliding door frames are faced with *hanji*—handcrafted paper made from the inner fibrous bark of the paper mulberry tree (*daknamu*). Unlike impermeable glass panes that trap moisture and create harsh acoustic reflections, *hanji* acts as a microscopic air filter and humidity regulator. It diffuses blinding exterior glare into a gentle, meditative ambient luminescence while allowing fresh air to exchange silently. At night, shadows cast against the translucent paper screens transform ordinary household activities into delicate silhouettes, maintaining privacy while preserving a subtle connection to the surrounding household life.
 
