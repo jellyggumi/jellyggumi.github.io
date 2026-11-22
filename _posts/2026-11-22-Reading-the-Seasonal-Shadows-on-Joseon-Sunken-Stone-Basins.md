@@ -5,14 +5,14 @@ subtitle: "Practical Korean cultural insights and spatial design wisdom"
 description: "Reading the Seasonal Shadows on Joseon Sunken Stone Basins explores traditional Korean aesthetic principles preserved in contemporary daily life."
 active: "journal"
 card-img: "img/postcover/pc110.jpg"
-date: "2026-11-22"
-lastmod: "2026-11-22"
+date: "2026-11-23"
+lastmod: "2026-11-23"
 header-img: "img/postcover/pc110.jpg"
 comments: false
 ads: true
 tags: [Tradition, K-Culture, Seoul]
 categories: [Cultural Tips]
-reviewed: "2026-11-22"
+reviewed: "2026-11-23"
 ai_assisted: true
 content_type: personal
 sources:
