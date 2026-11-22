@@ -42,7 +42,7 @@ sources:
 
 <p>The crab in question is 꽃게 (kkotge, the swimming crab Portunus trituberculatus), the most familiar eating crab in Korea. Ask when it is in season and the standard answer is a riddle: twice a year, and each time it is a different crab.</p>
 
-<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-blue-crab-seasons/blue-crabs-raw-fish-centre.jpg" alt="Live blue crabs piled in a shallow tank at a Korean seaside raw-fish centre, claws bound with rubber bands" width="4032" height="3024" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="/img/source/korea-blue-crab-seasons/blue-crabs-raw-fish-centre.jpg" alt="Live blue crabs piled in a shallow tank at a Korean seaside raw-fish centre, claws bound with rubber bands" width="4032" height="3024" loading="lazy" decoding="async">
 <figcaption>Blue crabs in a tank at a Korean seaside raw-fish centre, claws banded for handling. Source: https://commons.wikimedia.org/wiki/File:2020-03-22_12.15.47_%EB%B0%A9%ED%8C%8C%EC%A0%9C%ED%9A%8C%EC%84%BC%ED%83%80_%EA%BD%83%EA%B2%8C.jpg &middot; License: https://creativecommons.org/publicdomain/zero/1.0/ &middot; Photo: Choi Kwang-mo, CC0 1.0, via Wikimedia Commons</figcaption></figure>
 
 <h3>Two seasons, two different crabs</h3>
@@ -51,7 +51,7 @@ sources:
 
 <p>That last line is worth keeping. It means the same animal that commands spring's highest prices can be the bargain bin of September, not because anything is wrong with it, but because its calendar and the market's calendar disagree. If an autumn stall seems to be almost giving female crabs away, that is the reason.</p>
 
-<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-blue-crab-seasons/blue-crab-female-dorsal.jpg" alt="A live female blue crab seen from above on wet ground, its mottled brown carapace spread wide with pointed spikes at each side" width="4000" height="3000" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="/img/source/korea-blue-crab-seasons/blue-crab-female-dorsal.jpg" alt="A live female blue crab seen from above on wet ground, its mottled brown carapace spread wide with pointed spikes at each side" width="4000" height="3000" loading="lazy" decoding="async">
 <figcaption>A female blue crab seen from above; the carapace stretches into a sharp spike at each side. Source: https://commons.wikimedia.org/wiki/File:Portunus_trituberculatus.jpg &middot; License: https://creativecommons.org/licenses/by-sa/3.0/ &middot; Photo: Almandine, CC BY-SA 3.0, via Wikimedia Commons</figcaption></figure>
 
 <h3>The biology under the calendar</h3>
@@ -78,10 +78,10 @@ sources:
 
 <p>The dish tells you which crab to want. Ganjang-gejang — raw crab marinated in soy sauce — is the preparation that makes spring females an object of devotion, because the marinade seasons the roe as much as the meat. Autumn is for steaming: kkotge-jjim puts the fattened males' meat at the centre, and crab added to a soup base makes the classic kkotge-tang.</p>
 
-<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-blue-crab-seasons/ganjang-gejang.jpg" alt="Ganjang-gejang: halved raw crabs glossy with soy marinade arranged in a dark bowl, roe visible in the shells" width="4032" height="3024" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="/img/source/korea-blue-crab-seasons/ganjang-gejang.jpg" alt="Ganjang-gejang: halved raw crabs glossy with soy marinade arranged in a dark bowl, roe visible in the shells" width="4032" height="3024" loading="lazy" decoding="async">
 <figcaption>Ganjang-gejang, raw crab marinated in soy sauce — the dish that makes spring females famous. Source: https://commons.wikimedia.org/wiki/File:Ganjang-gejang_1.jpg &middot; License: https://creativecommons.org/licenses/by/2.0/ &middot; Photo: lazy fri13th, CC BY 2.0, via Wikimedia Commons</figcaption></figure>
 
-<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-blue-crab-seasons/kkotge-jjim-steamed-crab.jpg" alt="Steamed blue crabs turned shell-side up on a plate, their shells red-orange from cooking" width="3008" height="2000" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="/img/source/korea-blue-crab-seasons/kkotge-jjim-steamed-crab.jpg" alt="Steamed blue crabs turned shell-side up on a plate, their shells red-orange from cooking" width="3008" height="2000" loading="lazy" decoding="async">
 <figcaption>Kkotge-jjim, steamed blue crab; the shell turns red when cooked. Source: https://commons.wikimedia.org/wiki/File:Korean_food-Kkotgejjim-01.jpg &middot; License: https://creativecommons.org/licenses/by-sa/2.0/ &middot; Photo: WeI-chieh Chiu, CC BY-SA 2.0, via Wikimedia Commons</figcaption></figure>
 
 <p>The red of that steamed shell has a name: astaxanthin, a pigment in the shell that turns red with heat. And the crab's own name holds a small trap for English speakers. It looks like "flower crab" — 꽃 is flower — but the food-information service passes on the accepted account that the name comes from 곶 (got), an old word for a pointed cape of land, after the spiked shape of the shell: 곶게 wore down into 꽃게. The crab is named for a headland, not a blossom.</p>
@@ -92,7 +92,7 @@ sources:
 
 <p>The point is not that those species are free-for-alls — licensing and area rules still govern fishing generally — but that the species-level protection follows taxonomy, not appearance or naming. A rule built for one Latin name does not stretch to cover its cousins.</p>
 
-<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/korea-blue-crab-seasons/blue-crab-from-above.jpg" alt="A live blue crab viewed from directly above against dark ground, showing the wide carapace and paddle-shaped rear legs" width="1365" height="2048" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="/img/source/korea-blue-crab-seasons/blue-crab-from-above.jpg" alt="A live blue crab viewed from directly above against dark ground, showing the wide carapace and paddle-shaped rear legs" width="1365" height="2048" loading="lazy" decoding="async">
 <figcaption>The protected species itself, with the wide carapace and paddle-shaped swimming legs. Source: https://commons.wikimedia.org/wiki/File:Portunus_trituberculatus_242358853.jpg &middot; License: https://creativecommons.org/publicdomain/zero/1.0/ &middot; Photo: 江国彬, CC0 1.0, via Wikimedia Commons</figcaption></figure>
 
 <h3>Using the calendar</h3>

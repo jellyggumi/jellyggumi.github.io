@@ -61,7 +61,7 @@ sources:
 
 <p>The statute is short, but almost every article says something revealing about how seriously the state takes the game. Article 7 of the Act designates 5 November of every year as Baduk Day. Article 5 obliges the culture minister to establish a national baduk promotion basic plan every five years. Article 2 defines a baduk instructor (바둑지도자) as a holder of the baduk-discipline sport-instructor qualification under Article 11 of the National Sports Promotion Act — this definition ties baduk instruction to the sport-instructor system. Article 2 defines a professional player (바둑전문기사) as someone who passed a skill-verification competition prescribed by presidential decree. Even the future is legislated: Article 12 tells the culture minister to reflect convergence with traditional play, artificial intelligence and science and technology in related policy.</p>
 
-<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/baduk-korea-institution/sinan-baduk-stones.jpg" alt="Baduk stone pieces displayed in the Sinan Shipwreck Gallery of the National Museum of Korea" width="1600" height="1067" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="/img/source/baduk-korea-institution/sinan-baduk-stones.jpg" alt="Baduk stone pieces displayed in the Sinan Shipwreck Gallery of the National Museum of Korea" width="1600" height="1067" loading="lazy" decoding="async">
 <figcaption>Baduk stones in the National Museum of Korea's Sinan Shipwreck Gallery, according to the photographer's catalogue note. Source: https://commons.wikimedia.org/wiki/File:Stone_Pieces_for_Baduk_(Board_Game)_(17173187033).jpg · License: http://creativecommons.org/publicdomain/zero/1.0/deed.en · Gary Todd · Photo: Gary Todd, CC0 1.0, via Wikimedia Commons</figcaption></figure>
 
 <p>The credited Commons record places baduk stone pieces in the Sinan Shipwreck Gallery of the National Museum of Korea. The photograph documents the museum display; by itself, it does not date baduk's arrival in Korea or identify the ship's route.</p>
@@ -72,7 +72,7 @@ sources:
 
 <p>The Samsung Cup preliminary is part of the same machinery. The association reports Mok Jinseok's qualification in the same results-and-leagues system it uses for professional competition.</p>
 
-<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/baduk-korea-institution/lee-sedol-2016.jpg" alt="Portrait of professional baduk player Lee Sedol in 2016" width="367" height="550" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="/img/source/baduk-korea-institution/lee-sedol-2016.jpg" alt="Portrait of professional baduk player Lee Sedol in 2016" width="367" height="550" loading="lazy" decoding="async">
 <figcaption>Lee Sedol in 2016, the year of the AlphaGo match. Source: https://commons.wikimedia.org/wiki/File:Lee_Se-Dol_-_2016_(cropped).jpg · License: https://creativecommons.org/licenses/by/2.0 · LG Electronics · Photo: LG Electronics, CC BY 2.0, via Wikimedia Commons</figcaption></figure>
 
 <p>AlphaGo beat Lee Sedol 4-1 in Seoul in March 2016 in a match DeepMind says was watched by over 200 million people, with Lee described as a winner of 18 world titles. DeepMind presents the audience figure as its own project-page claim rather than as an independently audited measurement. DeepMind says Lee's Move 78 in game four had a one-in-10,000 probability and helped him win; the project page adds that players have examined Move 78 and AlphaGo's earlier Move 37 ever since.</p>
@@ -85,7 +85,7 @@ sources:
 
 <p>In the Standard Korean Dictionary, the first listed sense of 초읽기 is the baduk countdown in which a recorder calls out the final seconds of a player's clock. The same entry's second sense defines it figuratively as a situation becoming urgent for time. That official second sense, not a list of invented examples, is the evidence that the word travelled beyond the board.</p>
 
-<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/baduk-korea-institution/baduk-board-midgame.jpg" alt="A baduk board in the middle of a game, black and white stones forming territories" width="1600" height="1071" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="/img/source/baduk-korea-institution/baduk-board-midgame.jpg" alt="A baduk board in the middle of a game, black and white stones forming territories" width="1600" height="1071" loading="lazy" decoding="async">
 <figcaption>A game in progress: territories forming out of alternating stones. Source: https://commons.wikimedia.org/wiki/File:Baduk_or_Go.jpg · License: https://creativecommons.org/licenses/by-sa/2.0 · theaucitron · Photo: theaucitron, CC BY-SA 2.0, via Wikimedia Commons</figcaption></figure>
 
 <p>Once the pattern is visible, it keeps appearing, and the dictionary keeps receipts. The Standard Korean Dictionary defines 승부수(勝負手) as a decisive move that determines the outcome in baduk or similar board games. The Standard Korean Dictionary lists the first sense of 무리수(無理手) as a baduk move played out of overreach. The Standard Korean Dictionary defines 자충수(自充手) first as the baduk move that fills in one's own liberties. Those board definitions are the starting point for reading later metaphors; the immediate context, not the syllable 수 alone, determines whether a speaker is invoking the game.</p>
@@ -102,10 +102,10 @@ sources:
 <li><strong>In the language.</strong> Collecting board words in the wild — 정석, 초읽기, 승부수 — is a genuinely fun listening exercise, and it doubles as a conversation starter.</li>
 </ul>
 
-<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/baduk-korea-institution/opening-move-hand.jpg" alt="Close-up of one black and one white baduk stone on a wooden board" width="1600" height="1067" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="/img/source/baduk-korea-institution/opening-move-hand.jpg" alt="Close-up of one black and one white baduk stone on a wooden board" width="1600" height="1067" loading="lazy" decoding="async">
 <figcaption>A close-up of black and white baduk stones on a wooden board. Source: https://commons.wikimedia.org/wiki/File:114.365_Opening_Move.jpg · License: https://creativecommons.org/licenses/by-sa/2.0 · Reilly Butler · Photo: Reilly Butler, CC BY-SA 2.0, via Wikimedia Commons</figcaption></figure>
 
-<figure class="post-photo source-image"><img src="https://jellyggumi.github.io/img/source/baduk-korea-institution/ansan-baduk-boards.jpg" alt="A Korean baduk board photographed for the Commons record titled Ansan Cultural Center 62" width="1600" height="1200" loading="lazy" decoding="async">
+<figure class="post-photo source-image"><img src="/img/source/baduk-korea-institution/ansan-baduk-boards.jpg" alt="A Korean baduk board photographed for the Commons record titled Ansan Cultural Center 62" width="1600" height="1200" loading="lazy" decoding="async">
 <figcaption>The Commons description says “Baduk (Korean go board),” and its object name is “Ansan Cultural Center 62.” Source: https://commons.wikimedia.org/wiki/File:Ansan_Cultural_Center_62.JPG · License: https://creativecommons.org/licenses/by-sa/3.0 · Piotrus · Photo: Piotrus, CC BY-SA 3.0, via Wikimedia Commons</figcaption></figure>
 
 <p>A few honest boundaries. Tournament results and league line-ups change constantly — the Samsung Cup detail above is a snapshot of late August 2026, not a permanent fact. This guide also stays deliberately out of teaching the rules; that is a different article, and plenty of good beginner resources exist in English. What stays stable is the institutional frame: the statute, the November date, the five-year plans, the dictionary entries. Those move at the speed of law and lexicography, which is to say, slowly.</p>

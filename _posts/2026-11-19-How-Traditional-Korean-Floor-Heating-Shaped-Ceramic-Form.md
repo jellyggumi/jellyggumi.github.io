@@ -35,7 +35,7 @@ Because thermal warmth accumulated at the floor level while cooler air hovered n
 The low center of gravity prevented accidental tipping when diners adjusted their seated posture upon straw mats or silk cushions. Moreover, when viewed from above by someone seated on the floor, the gentle, swelling curves of white porcelain jars (*baekja*) and celadon bowls (*saekbals*) revealed an expansive volume that is entirely lost when modern museum visitors view them straight-on inside elevated glass vitrines.
 
 <figure class="post-photo">
-  <img src="https://jellyggumi.github.io/img/editorial/2026-11-19-How-Traditional-Korean-Floor-Heating-Shaped-Ceramic-Form-cover.png" alt="How Traditional Korean Floor Heating Shaped Ceramic Form Architecture Overview">
+  <img src="/img/editorial/2026-11-19-How-Traditional-Korean-Floor-Heating-Shaped-Ceramic-Form-cover.png" alt="How Traditional Korean Floor Heating Shaped Ceramic Form Architecture Overview">
   <figcaption>Figure 1: High-level Korean Traditional Spatial Architecture and Spatial Rhythm. AI-generated editorial illustration by Gemini; not a photograph or primary historical specimen.</figcaption>
 </figure>
 
@@ -52,7 +52,7 @@ To thrive in this environment, food service vessels required specialized thermod
 Furthermore, water storage vessels kept inside the living quarters were given unglazed or porous earthenware (*onggi*) bottoms. The subtle evaporation through micro-pores cooled drinking water even as the surrounding floor radiated continuous warmth, demonstrating an intuitive grasp of thermodynamic balance that required no mechanical intervention.
 
 <figure class="post-photo">
-  <img src="https://jellyggumi.github.io/img/editorial/2026-11-19-How-Traditional-Korean-Floor-Heating-Shaped-Ceramic-Form-card1.png" alt="How Traditional Korean Floor Heating Shaped Ceramic Form Microclimate and Eaves Geometry">
+  <img src="/img/editorial/2026-11-19-How-Traditional-Korean-Floor-Heating-Shaped-Ceramic-Form-card1.png" alt="How Traditional Korean Floor Heating Shaped Ceramic Form Microclimate and Eaves Geometry">
   <figcaption>Figure 2: Eaves Solar Geometry and Courtyard Thermal Convection Loop. AI-generated architectural illustration by Gemini; conceptual diagram of environmental principles.</figcaption>
 </figure>
 
@@ -65,7 +65,7 @@ When warm ceramic dishes were moved from the outdoor clay hearth to the indoor *
 The resulting aesthetic was one of relaxed, unpretentious vitality. Brushstrokes of white clay slip applied over dark stoneware created spontaneous, dynamic textures that mirrored the natural, unadorned pine timbers of the surrounding Hanok architecture. The ceramic vessel became an organic extension of the wooden and clay room itself.
 
 <figure class="post-photo">
-  <img src="https://jellyggumi.github.io/img/editorial/2026-11-19-How-Traditional-Korean-Floor-Heating-Shaped-Ceramic-Form-card2.png" alt="How Traditional Korean Floor Heating Shaped Ceramic Form Material Craftsmanship">
+  <img src="/img/editorial/2026-11-19-How-Traditional-Korean-Floor-Heating-Shaped-Ceramic-Form-card2.png" alt="How Traditional Korean Floor Heating Shaped Ceramic Form Material Craftsmanship">
   <figcaption>Figure 3: Material Craftsmanship, Interlocking Timber Joinery, and Organic Materiality. AI-generated illustration by Gemini; visual study of traditional craft principles.</figcaption>
 </figure>
 

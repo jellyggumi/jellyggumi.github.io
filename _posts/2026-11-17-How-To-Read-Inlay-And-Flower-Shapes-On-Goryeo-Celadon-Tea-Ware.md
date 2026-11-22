@@ -48,7 +48,7 @@ sources:
 <p>Modern tea drinkers usually expect a flat saucer under a cup. In Goryeo ceramic culture, however, the cup was paired with a specialized architectural stand called a 잔탁 (jantak, cup stand and saucer). The vessel features a raised central pedestal hollowed to cradle the foot of a tall, fluted cup.</p>
 
 <figure class="post-photo source-image">
-  <img src="https://jellyggumi.github.io/img/source/goryeo-celadon-tea-ware/cma-cup-stand.jpg" alt="Goryeo floral-shaped celadon cup stand from the 1100s–1200s." width="900" height="671" loading="lazy" decoding="async">
+  <img src="/img/source/goryeo-celadon-tea-ware/cma-cup-stand.jpg" alt="Goryeo floral-shaped celadon cup stand from the 1100s–1200s." width="900" height="671" loading="lazy" decoding="async">
   <figcaption>Floral-shaped celadon cup stand, 1100s–1200s; carved lobed flange cradles a central raised cup pedestal. Cleveland Museum of Art, Floral-shaped Cup Stand, 1918.430; The Worcester R. Warner Collection; CC0; metadata stripped. Source: <a href="https://clevelandart.org/art/1918.430">https://clevelandart.org/art/1918.430</a>. License: <a href="https://creativecommons.org/publicdomain/zero/1.0/">https://creativecommons.org/publicdomain/zero/1.0/</a>.</figcaption>
 </figure>
 
@@ -61,7 +61,7 @@ sources:
 <p>While neighboring Song dynasty kilns produced monochrome glazes, Goryeo potters pioneered a revolutionary decorative technique unique to Korea: 상감 (sanggam, inlaid celadon). Rather than painting minerals onto the surface, the potter carved grooves into the leather-hard clay, inlaid white kaolin and red iron-rich slips into the carvings, scraped the surface flush, and fired the piece under a transparent green-gray glaze.</p>
 
 <figure class="post-photo source-image">
-  <img src="https://jellyggumi.github.io/img/source/goryeo-celadon-tea-ware/cma-inlaid-cup-saucer.jpg" alt="Floral-shaped cup and saucer with inlaid chrysanthemum design." width="900" height="786" loading="lazy" decoding="async">
+  <img src="/img/source/goryeo-celadon-tea-ware/cma-inlaid-cup-saucer.jpg" alt="Floral-shaped cup and saucer with inlaid chrysanthemum design." width="900" height="786" loading="lazy" decoding="async">
   <figcaption>Floral-shaped cup and saucer with inlaid chrysanthemum design, 1100s–1200s; white and black sanggam slips beneath a luminous celadon glaze. Cleveland Museum of Art, Floral-shaped Cup and Saucer with Inlaid Chrysanthemum Design, 1928.171; Gift of Dr. and Mrs. Sherman E. Lee; CC0; metadata stripped. Source: <a href="https://clevelandart.org/art/1928.171">https://clevelandart.org/art/1928.171</a>. License: <a href="https://creativecommons.org/publicdomain/zero/1.0/">https://creativecommons.org/publicdomain/zero/1.0/</a>.</figcaption>
 </figure>
 
@@ -72,7 +72,7 @@ sources:
 <p>Before inlaid celadon became dominant in the mid-1100s, Goryeo potters mastered 음각 (eumgak, incised carving) and 양각 (yanggak, relief carving). By angling the bamboo knife as it cut into the wet clay, the craftsman created varying groove depths. During firing, the liquid celadon glaze pooled deeper in the valleys, creating natural shading and translucent depth.</p>
 
 <figure class="post-photo source-image">
-  <img src="https://jellyggumi.github.io/img/source/goryeo-celadon-tea-ware/cma-bowl-incised-lotus.jpg" alt="Goryeo celadon bowl and saucer with incised lotus and peony design." width="900" height="510" loading="lazy" decoding="async">
+  <img src="/img/source/goryeo-celadon-tea-ware/cma-bowl-incised-lotus.jpg" alt="Goryeo celadon bowl and saucer with incised lotus and peony design." width="900" height="510" loading="lazy" decoding="async">
   <figcaption>Bowl and saucer with incised lotus and peony design, 1100s; variable glaze pooling creates natural shading along petal contours. Cleveland Museum of Art, Bowl and Saucer with Incised Lotus and Peony Design, 1918.455; The Worcester R. Warner Collection; CC0; metadata stripped. Source: <a href="https://clevelandart.org/art/1918.455">https://clevelandart.org/art/1918.455</a>. License: <a href="https://creativecommons.org/publicdomain/zero/1.0/">https://creativecommons.org/publicdomain/zero/1.0/</a>.</figcaption>
 </figure>
 
@@ -83,7 +83,7 @@ sources:
 <p>Tea preparation required pouring hot water from tall ceramic ewers. Goryeo potters treated the lids and spouts of these vessels not merely as utilitarian closures, but as miniature sculptural artworks depicting bamboo shoots, gourds, ducks, and lotus buds.</p>
 
 <figure class="post-photo source-image">
-  <img src="https://jellyggumi.github.io/img/source/goryeo-celadon-tea-ware/cma-pitcher-cover.jpg" alt="Celadon cover for a pitcher from the 1100s." width="900" height="843" loading="lazy" decoding="async">
+  <img src="/img/source/goryeo-celadon-tea-ware/cma-pitcher-cover.jpg" alt="Celadon cover for a pitcher from the 1100s." width="900" height="843" loading="lazy" decoding="async">
   <figcaption>Cover for a pitcher, 1100s; sculptural handle knob designed for secure handling during tea pouring. Cleveland Museum of Art, Cover for a Pitcher, 1917.1090; Gift of Charles W. Harkness; CC0; metadata stripped. Source: <a href="https://clevelandart.org/art/1917.1090">https://clevelandart.org/art/1917.1090</a>. License: <a href="https://creativecommons.org/publicdomain/zero/1.0/">https://creativecommons.org/publicdomain/zero/1.0/</a>.</figcaption>
 </figure>
 

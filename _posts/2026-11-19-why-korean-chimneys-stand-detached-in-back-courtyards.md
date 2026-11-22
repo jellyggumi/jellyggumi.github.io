@@ -35,7 +35,7 @@ Instead, chimneys in Korean architecture stand completely detached from the livi
 To understand why the chimney was exiled to the back garden, one must look beneath the floorboards into the subterranean mechanics of *ondol* (radiant floor heating). The Korean domestic hearth was not a vertical open fireplace, but a horizontal subterranean heat engine.
 
 <figure class="post-photo">
-  <img src="https://jellyggumi.github.io/img/editorial/2026-11-19-why-korean-chimneys-stand-detached-in-back-courtyards-cover.png" alt="Why Korean Chimneys Stand Detached in Back Courtyards Architecture Overview">
+  <img src="/img/editorial/2026-11-19-why-korean-chimneys-stand-detached-in-back-courtyards-cover.png" alt="Why Korean Chimneys Stand Detached in Back Courtyards Architecture Overview">
   <figcaption>Figure 1: High-level Korean Traditional Spatial Architecture and Spatial Rhythm. AI-generated editorial illustration by Gemini; not a photograph or primary historical specimen.</figcaption>
 </figure>
 
@@ -52,7 +52,7 @@ To maximize thermal efficiency, Korean master builders designed the subterranean
 By the time the smoke reached the far end of the foundation, its temperature had cooled significantly. If a chimney were constructed directly against the wooden house wall, the low temperature of the exiting gas would cause severe chimney downdrafts (*yeokryu*), pushing smoke and toxic carbon monoxide back into the living quarters. By extending the flue underground past the house into the elevated rear garden, builders harnessed natural hillside thermal drafts to pull the cooled smoke smoothly out of the building.
 
 <figure class="post-photo">
-  <img src="https://jellyggumi.github.io/img/editorial/2026-11-19-why-korean-chimneys-stand-detached-in-back-courtyards-card1.png" alt="Why Korean Chimneys Stand Detached in Back Courtyards Microclimate and Eaves Geometry">
+  <img src="/img/editorial/2026-11-19-why-korean-chimneys-stand-detached-in-back-courtyards-card1.png" alt="Why Korean Chimneys Stand Detached in Back Courtyards Microclimate and Eaves Geometry">
   <figcaption>Figure 2: Eaves Solar Geometry and Courtyard Thermal Convection Loop. AI-generated architectural illustration by Gemini; conceptual diagram of environmental principles.</figcaption>
 </figure>
 
@@ -65,7 +65,7 @@ By moving the combustion exhaust point ten to twenty feet away from the overhang
 Furthermore, traditional wood combustion produces acidic creosote and heavy soot. In Western buildings, chimney emissions frequently stained and corroded roof tiles. In a Hanok, keeping soot and acid smoke away from the complex wooden bracket systems (*gongpo*) and painted eaves preserved the vibrant mineral pigments (*dancheong*) and prevented fungal rot in structural rafters for centuries.
 
 <figure class="post-photo">
-  <img src="https://jellyggumi.github.io/img/editorial/2026-11-19-why-korean-chimneys-stand-detached-in-back-courtyards-card2.png" alt="Why Korean Chimneys Stand Detached in Back Courtyards Material Craftsmanship">
+  <img src="/img/editorial/2026-11-19-why-korean-chimneys-stand-detached-in-back-courtyards-card2.png" alt="Why Korean Chimneys Stand Detached in Back Courtyards Material Craftsmanship">
   <figcaption>Figure 3: Material Craftsmanship, Interlocking Timber Joinery, and Organic Materiality. AI-generated illustration by Gemini; visual study of traditional craft principles.</figcaption>
 </figure>
 

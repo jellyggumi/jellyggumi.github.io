@@ -51,7 +51,7 @@ sources:
 <p>To understand the pure white porcelain of Joseon, one must begin in the transition from the Goryeo dynasty. When Goryeo collapsed in the late 1300s, the refined celadon kilns dispersed, and potters turned to a freer, earthier style known as 분청 (Buncheong).</p>
 
 <figure class="post-photo source-image">
-  <img src="https://jellyggumi.github.io/img/source/joseon-white-porcelain-shapes/cma-buncheong-bottle.jpg" alt="Buncheong stoneware bottle with incised and sgraffito fish design." width="686" height="893" loading="lazy" decoding="async">
+  <img src="/img/source/joseon-white-porcelain-shapes/cma-buncheong-bottle.jpg" alt="Buncheong stoneware bottle with incised and sgraffito fish design." width="686" height="893" loading="lazy" decoding="async">
   <figcaption>Buncheong bottle with sgraffito fish, 1400s–1500s; white slip applied over dark clay before the rise of royal white porcelain. Cleveland Museum of Art, Bottle with Incised and Sgraffito Fish Design, 1962.153; The Severance and Greta Millikin Purchase Fund; CC0; metadata stripped. Source: <a href="https://clevelandart.org/art/1962.153">https://clevelandart.org/art/1962.153</a>. License: <a href="https://creativecommons.org/publicdomain/zero/1.0/">https://creativecommons.org/publicdomain/zero/1.0/</a>.</figcaption>
 </figure>
 
@@ -64,7 +64,7 @@ sources:
 <p>By the 1600s and 1700s, Joseon governance elevated Neo-Confucian ideals: filial piety, frugality, clarity and scholarly contemplation. Ornate gold, vibrant enamels and complex polychrome glazes common in neighboring courts were avoided in favor of pristine white clay covered in transparent glaze.</p>
 
 <figure class="post-photo source-image">
-  <img src="https://jellyggumi.github.io/img/source/joseon-white-porcelain-shapes/cma-white-jar.jpg" alt="Joseon plain white porcelain jar from the 1700s." width="937" height="893" loading="lazy" decoding="async">
+  <img src="/img/source/joseon-white-porcelain-shapes/cma-white-jar.jpg" alt="Joseon plain white porcelain jar from the 1700s." width="937" height="893" loading="lazy" decoding="async">
   <figcaption>Joseon plain white porcelain jar, 1700s; unadorned surfaces reflect Neo-Confucian frugality. Cleveland Museum of Art, Jar, 1983.28; Gift of Dr. and Mrs. Sherman E. Lee; CC0; metadata stripped. Source: <a href="https://clevelandart.org/art/1983.28">https://clevelandart.org/art/1983.28</a>. License: <a href="https://creativecommons.org/publicdomain/zero/1.0/">https://creativecommons.org/publicdomain/zero/1.0/</a>.</figcaption>
 </figure>
 
@@ -77,7 +77,7 @@ sources:
 <p>When Joseon jars carry painted designs, the color of the painting tells an economic and political story. Blue decoration required cobalt oxide, an imported mineral known as 회청 (hoecheong) or 회회청 (hoehoecheong), brought through costly overland trade routes from Central Asia through Ming and Qing China.</p>
 
 <figure class="post-photo source-image">
-  <img src="https://jellyggumi.github.io/img/source/joseon-white-porcelain-shapes/cma-iron-dragon.jpg" alt="Joseon jar with dragon and clouds design in underglaze iron." width="900" height="808" loading="lazy" decoding="async">
+  <img src="/img/source/joseon-white-porcelain-shapes/cma-iron-dragon.jpg" alt="Joseon jar with dragon and clouds design in underglaze iron." width="900" height="808" loading="lazy" decoding="async">
   <figcaption>Jar with dragon and clouds in underglaze iron, late 1600s; iron-brown pigments replaced scarce cobalt. Cleveland Museum of Art, Jar with Dragon and Clouds Design, 1986.69; John L. Severance Fund; CC0; metadata stripped. Source: <a href="https://clevelandart.org/art/1986.69">https://clevelandart.org/art/1986.69</a>. License: <a href="https://creativecommons.org/publicdomain/zero/1.0/">https://creativecommons.org/publicdomain/zero/1.0/</a>.</figcaption>
 </figure>
 
@@ -86,7 +86,7 @@ sources:
 <p>Cleveland Museum of Art object 1986.69 is a late 1600s Joseon porcelain jar featuring a dragon and clouds design executed in underglaze iron. The potter ground local iron-bearing rock into slip (철화, cheolhwa), painting with energetic, expressive brown strokes. Rather than a royal blue emblem, this dragon feels bold and fiercely spirited.</p>
 
 <figure class="post-photo source-image">
-  <img src="https://jellyggumi.github.io/img/source/joseon-white-porcelain-shapes/cma-blue-dragon.jpg" alt="Joseon porcelain jar with dragon design painted in underglaze blue." width="685" height="900" loading="lazy" decoding="async">
+  <img src="/img/source/joseon-white-porcelain-shapes/cma-blue-dragon.jpg" alt="Joseon porcelain jar with dragon design painted in underglaze blue." width="685" height="900" loading="lazy" decoding="async">
   <figcaption>Jar with dragon design in underglaze cobalt blue, 1700s; royal emblem rendered in vivid blue pigment. Cleveland Museum of Art, Jar with Dragon Design, 1986.85; John L. Severance Fund; CC0; metadata stripped. Source: <a href="https://clevelandart.org/art/1986.85">https://clevelandart.org/art/1986.85</a>. License: <a href="https://creativecommons.org/publicdomain/zero/1.0/">https://creativecommons.org/publicdomain/zero/1.0/</a>.</figcaption>
 </figure>
 
@@ -97,7 +97,7 @@ sources:
 <p>In the 1800s, the strict court monopoly over royal kilns gradually loosened. Wealthy merchants and scholar-officials commissioned pieces that reflected direct human desires for health, prosperity and longevity, transforming decorative styles.</p>
 
 <figure class="post-photo source-image">
-  <img src="https://jellyggumi.github.io/img/source/joseon-white-porcelain-shapes/cma-relief-jar.jpg" alt="Joseon glazed porcelain jar with auspicious characters molded in relief." width="900" height="798" loading="lazy" decoding="async">
+  <img src="/img/source/joseon-white-porcelain-shapes/cma-relief-jar.jpg" alt="Joseon glazed porcelain jar with auspicious characters molded in relief." width="900" height="798" loading="lazy" decoding="async">
   <figcaption>Jar with four auspicious characters in relief, 1800s; late Joseon relief decoration expressing folk wishes. Cleveland Museum of Art, Jar with Four Auspicious Characters in Relief, 1981.3; Gift of Dr. and Mrs. Sherman E. Lee; CC0; metadata stripped. Source: <a href="https://clevelandart.org/art/1981.3">https://clevelandart.org/art/1981.3</a>. License: <a href="https://creativecommons.org/publicdomain/zero/1.0/">https://creativecommons.org/publicdomain/zero/1.0/</a>.</figcaption>
 </figure>
 
