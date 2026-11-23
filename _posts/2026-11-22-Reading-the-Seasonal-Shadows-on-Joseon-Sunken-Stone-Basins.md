@@ -5,8 +5,8 @@ subtitle: "Practical Korean cultural insights and spatial design wisdom"
 description: "Reading the Seasonal Shadows on Joseon Sunken Stone Basins explores traditional Korean aesthetic principles preserved in contemporary daily life."
 active: "journal"
 card-img: "img/source/goryeo-bronze-mirrors-bells/cma-eight-foiled-mirror.jpg"
-date: "2026-11-23"
-lastmod: "2026-11-23"
+date: "2026-11-24"
+lastmod: "2026-11-24"
 header-img: "img/source/goryeo-bronze-mirrors-bells/cma-eight-foiled-mirror.jpg"
 header_alt: "Primary historical archival photograph of Cma Eight Foiled Mirror"
 header_ai: false
@@ -14,7 +14,7 @@ comments: false
 ads: true
 tags: [Tradition, K-Culture, Seoul]
 categories: [Cultural Tips]
-reviewed: "2026-11-23"
+reviewed: "2026-11-24"
 ai_assisted: true
 content_type: personal
 sources:
