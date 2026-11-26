@@ -5,8 +5,8 @@ subtitle: "Practical Korean cultural insights and spatial design wisdom"
 description: "Why Traditional Korean Gatehouses Faced South Toward Sunlight explores traditional Korean aesthetic principles preserved in contemporary daily life."
 active: "journal"
 card-img: "img/source/korea-heritage-treasure-labels/geunjeongjeon-hall.jpg"
-date: "2026-11-25"
-lastmod: "2026-11-25"
+date: "2026-11-26"
+lastmod: "2026-11-26"
 header-img: "img/source/korea-heritage-treasure-labels/geunjeongjeon-hall.jpg"
 header_alt: "Primary historical archival photograph of Geunjeongjeon Hall"
 header_ai: false
@@ -14,7 +14,7 @@ comments: false
 ads: true
 tags: [Tradition, K-Culture, Seoul]
 categories: [Cultural Tips]
-reviewed: "2026-11-25"
+reviewed: "2026-11-26"
 ai_assisted: true
 content_type: personal
 sources:
