@@ -5,8 +5,8 @@ subtitle: "Practical Korean cultural insights and spatial design wisdom"
 description: "The Subtle Elegance of Joseon Dynasty Iron-Glazed Ceramic Bottles explores traditional Korean aesthetic principles preserved in contemporary daily life."
 active: "journal"
 card-img: "img/source/joseon-white-porcelain-shapes/cma-blue-dragon.jpg"
-date: "2026-11-26"
-lastmod: "2026-11-26"
+date: "2026-11-27"
+lastmod: "2026-11-27"
 header-img: "img/source/joseon-white-porcelain-shapes/cma-blue-dragon.jpg"
 header_alt: "Primary historical archival photograph of Cma Blue Dragon"
 header_ai: false
@@ -14,7 +14,7 @@ comments: false
 ads: true
 tags: [Tradition, K-Culture, Seoul]
 categories: [Cultural Tips]
-reviewed: "2026-11-26"
+reviewed: "2026-11-27"
 ai_assisted: true
 content_type: personal
 sources:
